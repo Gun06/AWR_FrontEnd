@@ -1,0 +1,31 @@
+.xans-board-secure {
+    margin: 14px 7px 0;
+    padding: 0 0 29px;
+    line-height: 1.5;
+}
+
+.xans-board-secure h3 {
+    color: #2e2e2e;
+    text-align: center;
+    line-height: 43px;
+}
+
+.xans-board-secure .secret {
+    margin: -1px 0 0;
+    background: #fff;
+}
+
+.xans-board-secure .secret fieldset {
+    margin: 0 auto;
+    padding: 14px 0px;
+    width: 150px;
+}
+
+.xans-board-secure .info {
+    padding: 0 0 30px;
+    text-align: center
+}
+
+.xans-board-secure .password label {
+    display: none;
+}

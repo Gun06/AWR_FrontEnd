@@ -1,0 +1,216 @@
+<!--@layout(/layout/basic/layout.html)-->
+<meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes">
+<!--@js(/layout/basic/js/list.js)-->
+<!-- js(/product/product_timedeal.js)-->
+
+
+<div class="content_detail">
+    <div class="title" module="product_headcategory" style="display:none;">
+        <h2><span>{$name_1}</span></h2>
+    </div>
+    <!--@css(/product/detail.css)-->
+    <div module="product_detail" class="detail_area_">
+        <div class="" module="product_additional">{$simple_desc}</div>
+        <div module="product_additional" class="archive_detail_text">
+            <h3 class="archive_ti">{$name}</h3>
+            {$product_detail}
+        </div>
+
+
+
+
+
+
+
+        <script>
+            $().ready(function () {
+
+                $(".test12 > img").each(function () {
+                    var toweimg = $(this).attr("src");
+                    0 < $(this).attr("src").length && $(this).parents("a").addClass("show") || $(this).parents("a").remove()
+                    $(this).parents("a.show").attr("src", toweimg);
+                    console.log(toweimg);
+                });
+            });
+        </script>
+        <style>
+            #container .content_detail {
+                padding: 20px;
+                background: #f8f8f8;
+            }
+
+            .archive_ti {
+                font-size: 20px;
+                border-bottom: 1px solid #000;
+                padding-bottom: 10px;
+                margin-bottom: 20px;
+            }
+
+            .archive_detail_text {
+                display: block;
+                max-width: 500px;
+                margin: 0 auto;
+                text-align: center;
+                padding: 50px 20px;
+                column-count: 1;
+                font-size: 13px;
+                line-height: 2;
+            }
+
+            .press_detail_wrap::after {
+                clear: both;
+                display: block;
+                content: "";
+            }
+
+            .facny_addimge {
+                font-size: 0;
+                letter-spacing: 0;
+                float: left;
+                font-size: 0;
+                letter-spacing: 0;
+                margin-left: -1%;
+                margin-right: -1%;
+            }
+
+            .facny_addimge>a {
+                display: inline-block;
+                padding: 0 1% 2%;
+                width: 33.3%;
+                box-sizing: border-box;
+            }
+
+            .info_wrap {
+                float: left;
+                box-sizing: border-box;
+                display: inline-block;
+                position: sticky;
+                top: 160px;
+                vertical-align: top;
+                padding: 10px 30px 0 0px;
+                width: 275px;
+                text-align: left;
+            }
+
+            .info_wrap .simple_line {
+                padding: 30px 0 0 0;
+            }
+
+            @media all and (max-width: 1000px) {
+                #container {
+                    padding: 52px 0px 50px;
+                }
+
+                #container .content_detail {
+                    padding: 0;
+                }
+
+                .archive_detail_text {
+                    display: block;
+                    padding: 50px 20px;
+                    column-count: 1;
+                    font-size: 13px;
+                    line-height: 2;
+                }
+
+                .press_detail_wrap {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .press_detail_wrap::after {
+                    clear: both;
+                    display: block;
+                    content: "";
+                }
+
+                .facny_addimge {
+                    order: 2;
+                    font-size: 0;
+                    letter-spacing: 0;
+                    float: right;
+                    font-size: 0;
+                    letter-spacing: 0;
+                    overflow-x: hidden;
+                    margin: 0;
+                }
+
+                .facny_addimge>a {
+                    display: inline-block;
+                    padding: 0;
+                    width: 50%;
+                    box-sizing: border-box;
+                }
+
+                .info_wrap {
+                    order: 1;
+                    float: left;
+                    box-sizing: border-box;
+                    display: block;
+                    position: relative;
+                    top: 0;
+                    vertical-align: top;
+                    padding: 10px 30px 0 0px;
+                    width: 100%;
+                    text-align: left;
+                }
+
+                .info_wrap .simple_line {
+                    padding: 30px 0 0 0;
+                }
+            }
+        </style>
+        <script src="/artfinger/js/fancybox.umd.js"></script>
+        <!--script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script-->
+        <!--@css(/artfinger/css/fancybox.css)-->
+        <!--link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/-->
+
+        <div class="facny_addimge">
+
+            <a href="" data-fancybox="group" class="test12"><img src="{$add_image_src1}" /></a>
+            <a href="" data-fancybox="group" class="test12"><img src="{$add_image_src2}" /></a>
+            <a href="" data-fancybox="group" class="test12"><img src="{$add_image_src3}" /></a>
+            <a href="" data-fancybox="group" class="test12"><img src="{$add_image_src4}" /></a>
+            <a href="" data-fancybox="group" class="test12"><img src="{$add_image_src5}" /></a>
+            <a href="" data-fancybox="group" class="test12"><img src="{$add_image_src6}" /></a>
+            <a href="" data-fancybox="group" class="test12"><img src="{$add_image_src7}" /></a>
+            <a href="" data-fancybox="group" class="test12"><img src="{$add_image_src8}" /></a>
+            <a href="" data-fancybox="group" class="test12"><img src="{$add_image_src9}" /></a>
+            <a href="" data-fancybox="group" class="test12"><img src="{$add_image_src10}" /></a>
+            <a href="" data-fancybox="group" class="test12"><img src="{$add_image_src11}" /></a>
+            <a href="" data-fancybox="group" class="test12"><img src="{$add_image_src12}" /></a>
+            <a href="" data-fancybox="group" class="test12"><img src="{$add_image_src13}" /></a>
+            <a href="" data-fancybox="group" class="test12"><img src="{$add_image_src14}" /></a>
+            <a href="" data-fancybox="group" class="test12"><img src="{$add_image_src15}" /></a>
+            <a href="" data-fancybox="group" class="test12"><img src="{$add_image_src16}" /></a>
+            <a href="" data-fancybox="group" class="test12"><img src="{$add_image_src17}" /></a>
+            <a href="" data-fancybox="group" class="test12"><img src="{$add_image_src18}" /></a>
+            <a href="" data-fancybox="group" class="test12"><img src="{$add_image_src19}" /></a>
+            <a href="" data-fancybox="group" class="test12"><img src="{$add_image_src20}" /></a>
+
+        </div>
+
+
+
+
+
+        <script>
+            Fancybox.bind("[data-fancybox]", {
+                arrows: true,
+                wheel: "slide",
+                Thumbs: { showOnStart: false, },
+                Toolbar: false,
+                infobar: true,
+                loop: true,
+                animationEffect: "fade",
+                buttons: [
+
+                    "close"
+                ],
+            });
+        </script>
+
+
+    </div>
+</div>

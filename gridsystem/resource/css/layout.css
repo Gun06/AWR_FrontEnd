@@ -1,0 +1,148 @@
+@charset "utf-8";
+
+
+출처: https: //wooaoe.tistory.com/49 [개발개발 울었다:티스토리]
+
+#container {
+    min-height: calc(100vh - 42px) !important;
+    padding: 60px 0 50px 0;
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-transition: -webkit-transform .3s ease-out;
+    transition: -webkit-transform .3s ease-out;
+}
+
+#container .content_prd {
+    margin: 0 auto;
+    padding: 0 0px;
+}
+
+#container .content_detail {
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+#container .content_prd_ {
+    margin: 75px auto 0;
+    padding: 0 0px;
+}
+
+#container .content_board {
+    max-width: 1130px;
+    margin: 50px auto 0;
+}
+
+#container .content_info {
+    margin: 80px auto 0;
+    padding: 0 20px;
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    column-gap: 60px;
+}
+
+#container .content_info::after {
+    clear: both;
+    display: block;
+    content: ""
+}
+
+
+
+@keyframes down_line {
+    10% {
+        transform: translate(-50%, -75);
+    }
+
+    20% {
+        transform: translate(-50%, -100%);
+    }
+
+    30% {
+        transform: translate(-50%, -75%);
+    }
+
+    40% {
+        transform: translate(-50%, -50%);
+    }
+
+    50% {
+        transform: translate(-50%, -25%);
+    }
+
+    60% {
+        transform: translate(-50%, -0%);
+    }
+
+    70% {
+        transform: translate(-50%, -25%);
+    }
+
+    100% {
+        transform: translate(-50%, -50%);
+    }
+}
+
+/*
+#aside .artfinger_slide_wrap .xans-layout-category > li.selected { background-color:#fff; }    
+#aside .artfinger_slide_wrap .xans-layout-category li.noChild > a.cate { background-image:none !important; }  
+#aside .artfinger_slide_wrap .xans-layout-category li.selected.noChild { background-color:#fff; }
+#aside .artfinger_slide_wrap .xans-layout-category li.selected.noChild > a.cate { color:#fff; }    
+#aside .artfinger_slide_wrap .xans-layout-category li.selected > ul { display:block; }*/
+
+/* 공통 */
+.dimmed {
+    display: none;
+    position: fixed;
+    left: 0px;
+    top: 0;
+    right: 0px;
+    bottom: 0px;
+    z-index: 150;
+    background: rgba(0, 0, 0, .4);
+}
+
+.dimmed.show {
+    display: block;
+}
+
+/* 
+@media all and (min-width:900px) {
+  body { border:1px solid #e5e9f2; border-width:0 1px; box-sizing:border-box; }
+}
+*/
+
+
+@media all and (max-width : 1000px) {
+    #container {
+        padding: 64px 0px 50px;
+    }
+
+    #container .content_board2 {
+        padding: 0 10px;
+    }
+
+    #container .content_prd {
+        padding: 0 0px;
+        overflow: hidden;
+    }
+
+    #container .content_detail {
+        padding: 0 10px;
+    }
+
+    #container .content_board {
+        max-width: 100%;
+    }
+
+    #container .content_info {
+        padding: 0 10px;
+        margin: 0 auto 0px;
+        display: block;
+    }
+
+    .top_prd {
+        padding: 0 0px;
+    }
+
+}

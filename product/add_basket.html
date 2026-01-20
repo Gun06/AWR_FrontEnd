@@ -1,0 +1,27 @@
+<!--@layout(/layout/basic/layer.html)-->
+<!--@css(/layout/basic/css/ec-base-layer.css)-->
+
+<style type="text/css">
+    .xans-product-basketadd.ec-base-layer.typeModal {
+        width: 306px;
+    }
+
+    .xans-product-basketadd.ec-base-layer.typeModal .wrap {
+        padding: 79px 14px 14px;
+        text-align: center;
+        line-height: 1.5em;
+    }
+</style>
+<div module="Product_BasketAdd" class="ec-base-layer typeModal">
+    <h1>장바구니</h1>
+    <div class="wrap">
+        <p>장바구니에 상품이<br>정상적으로 담겼습니다.</p>
+    </div>
+    <div class="ec-base-button gColumn">
+        <a href="#none" class="btnEm" onclick="{$move_basket_page}" style="border:0; text-decoration:underline;">장바구니
+            이동</a>
+        <a href="#none" class="btnEm" onclick="$('#confirmLayer').hide();"
+            style="border:0; text-decoration:underline;">쇼핑 계속하기</a>
+    </div>
+    <a href="#none" class="btnClose" onclick="$('#confirmLayer').hide();">닫기</a>
+</div>

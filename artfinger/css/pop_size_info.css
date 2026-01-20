@@ -1,0 +1,118 @@
+#promotionBanner {
+    display: none;
+}
+
+#promotionBanner.use {
+    display: block;
+}
+
+.notice_listpage_wrap {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    background: #000;
+    z-index: 2;
+    max-width: 400px;
+    height: auto;
+    font-weight: 300;
+}
+
+.notice_listpage {
+    position: relative;
+    padding: 30px 20px;
+    color: #fff;
+    line-height: 20px;
+    display: block;
+    font-weight: 400;
+    font-size: 12px;
+    text-align: left;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.notice_listpage .top_line {
+    display: flex;
+    justify-content: space-between;
+}
+
+.notice_listpage .top_line .con_wi {
+    width: -moz-fit-content;
+    width: fit-content;
+}
+
+.notice_listpage .top_line .con_wi>h3 {
+    font-size: 14px;
+    display: block;
+    margin-bottom: 10px;
+    animation-duration: 2.8s, 1s;
+    animation-timing-function: steps(14), step-end;
+}
+
+.notice_listpage .top_line .con_wi>h3 {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right-width: 1px;
+}
+
+.notice_listpage .top_line .con_wi>h3 {
+    animation: typing 4.5s steps(50) infinite, .5s step-end infinite;
+    border-right: 1px solid;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+.notice_listpage .bottom_line {
+    line-height: 1.5;
+}
+
+.notice_listpage .close {
+    cursor: pointer;
+    width: 22px;
+    height: 22px;
+    position: relative;
+}
+
+.notice_listpage .close:before,
+.notice_listpage .close:after {
+    position: absolute;
+    content: ' ';
+    height: 15px;
+    width: 1px;
+    background-color: #EA5019;
+    right: 50%;
+}
+
+.notice_listpage .close:before {
+    transform: rotate(45deg);
+}
+
+.notice_listpage .close:after {
+    transform: rotate(-45deg);
+}
+
+
+
+
+
+@media all and (max-width : 700px) {
+    .notice_listpage {
+        padding: 15px;
+    }
+
+    .notice_listpage_wrap {
+        bottom: 10px;
+        max-width: calc(100% - 20px);
+        right: 10px;
+    }
+
+
+}

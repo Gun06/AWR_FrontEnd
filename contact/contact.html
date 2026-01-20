@@ -1,0 +1,82 @@
+<!--@layout(/layout/basic/layout.html)-->
+<div class="content_board">
+    <div class="top_prd">
+        <!--@import(/artfinger/product_menupackage.html)-->
+    </div>
+
+    <div module="Board_ListPackage_1002">
+
+        <div class="ec-base-table typeList gBorder">
+            <table border="1" summary="" style="margin:0px 0 0">
+                <caption>게시판 목록</caption>
+
+
+                <ul module="board_list_1002" class="accordion2">
+                    <!--
+                        $login_page_url = /member/login.html
+                        $deny_access_url = /index.html
+                    -->
+                    <li style="{$list_bg_color} {$list_char_color}">
+                        <a class="subject left txtBreak"><span class="{$category_display|display}"
+                                style="padding-left: 10px; width: 106px; display: inline-block; text-align: center;">{$category_name}</span>
+                            {$subject}</a>
+                        <div class="tab_wrap">{$content}</div>
+                    </li>
+                    <li style="{$list_bg_color} {$list_char_color}">
+                        <a class="subject left txtBreak"><span class="{$category_display|display}"
+                                style="padding-left: 10px; width: 106px; display: inline-block; text-align: center;">{$category_name}</span>
+                            {$subject}</a>
+                        <div class="tab_wrap">{$content}</div>
+                    </li>
+                </ul>
+            </table>
+        </div>
+    </div>
+    <div module="board_paging_1002" class="ec-base-paginate board" style="display:none">
+        <!--
+            $count = 5
+        -->
+        <a href="{$param_prev}"><i class="xi-angle-left-min" alt="이전 페이지"></i></a>
+        <ol>
+            <li><a href="{$param_num}" class="{$param_class}">{$page_num}</a></li>
+            <li><a href="{$param_num}" class="{$param_class}">{$page_num}</a></li>
+        </ol>
+        <a href="{$param_next}"><i class="xi-angle-right-min" alt="다음 페이지"></i></a>
+    </div>
+
+
+    <!-- 관리자 전용 메뉴 -->
+    <div module="board_ButtonList_1002" class="ec-base-button list_wrt_but {$write_display|display}">
+        <a href="/board/product/write.html{$param_write}" class="btnStrong">WRITE</a>
+    </div>
+
+
+    <style>
+        .xans-product-menupackage {
+            width: 100%;
+        }
+
+        .xans-product-menupackage .menuCategory {
+            text-align: center;
+        }
+
+        .xans-product-menupackage .menuCategory>li.title {
+            margin: 0 auto;
+            display: block;
+        }
+
+        .accordion2 {
+            text-align: center;
+        }
+
+        .accordion2>li {
+            padding-bottom: 35px;
+            line-height: 25px;
+        }
+    </style>
+
+
+
+
+
+</div>

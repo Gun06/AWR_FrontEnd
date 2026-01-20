@@ -1,0 +1,361 @@
+.boardListPackage {
+    background: #fff;
+    width: 100%;
+}
+
+.boardListPackage .titleArea {
+    overflow: hidden;
+    position: relative;
+    padding: 18px 45px 19px 56px;
+    border-top: 1px solid #dfdfdf;
+    background: #fff;
+}
+
+.boardListPackage .titleArea h2.title {
+    font-size: 15px;
+    text-align: center;
+}
+
+.boardListPackage .titleArea .btnBack {
+    overflow: hidden;
+    position: absolute;
+    left: 17px;
+    top: 19px;
+    width: 20px;
+    height: 20px;
+    font-size: 1px;
+    line-height: 0;
+    color: transparent;
+    background: url('//img.echosting.cafe24.com/skin/dnd_ko_KR/common/module/detail/btn_title_back.png') no-repeat 0 0;
+    background-size: 20px auto;
+}
+
+.boardListPackage .write {
+    padding: 17px 12px 16px;
+}
+
+.boardListPackage .write .button {
+    display: block;
+    width: 100%;
+    height: 40px;
+    border: 1px solid #000;
+    font-size: 13px;
+    line-height: 41px;
+    color: #000;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* 정렬 */
+.boardListPackage .brdSort {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: 0 16px 0 6px;
+    background: #f6f6f6;
+}
+
+.boardListPackage .brdSort .sort {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    margin: 10px 0 10px 10px;
+}
+
+.boardListPackage .brdSort .sort:empty {
+    display: none;
+}
+
+.boardListPackage .brdSort .sort:only-child {
+    -webkit-flex: none;
+    -ms-flex: none;
+    flex: none;
+    width: 50%;
+}
+
+.boardListPackage .brdSort .sort select {
+    width: 100%;
+    height: 28px;
+    font-size: 12px;
+    line-height: 28px;
+    cursor: pointer;
+}
+
+/* 리스트 */
+
+.list_wrt_but {}
+
+.boardListPackage .brdList {
+    width: 100%;
+    display: block;
+    margin: 0px 0 0;
+    font-size: 11px;
+    border-top: 1px solid #dfdfdf;
+}
+
+.boardListPackage .brdList li {
+    position: relative;
+    padding: 14px 5px;
+    color: #757575;
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.boardListPackage .brdList li>a {
+    display: flex;
+    color: #757575;
+}
+
+.boardListPackage .brdList li>a .thumbnail {
+    vertical-align: top;
+    display: inline-block;
+}
+
+.boardListPackage .brdList li>a .thumbnail img {
+    width: 55px;
+    padding-right: 10px;
+}
+
+.boardListPackage .brdList li>a .description {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.boardListPackage .brdList li>a .description .blist_top {}
+
+.boardListPackage .brdList li>a .description .blist_top::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.boardListPackage .brdList li>a .description .blist_top .category_line {
+    float: left;
+}
+
+.boardListPackage .brdList li>a .description .blist_top .subject {
+    float: left;
+    font-weight: 400;
+}
+
+.boardListPackage .brdList li>a .description .blist_top .name {
+    float: right;
+}
+
+.boardListPackage .brdList li a .description .blist_bottom {
+    line-height: 15px;
+}
+
+.boardListPackage .brdList li a .description .blist_bottom::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.boardListPackage .brdList li a .description .blist_bottom>span {
+    float: left;
+    margin-right: 6px;
+}
+
+.boardListPackage .brdList li a .description .blist_bottom>.name {
+    float: right;
+    margin-right: 0;
+}
+
+.boardListPackage .brdList li .subject {
+    display: block;
+    padding: 0 0 7px;
+    font-size: 12px;
+    line-height: 1.3em;
+    color: #1b1b1b;
+    font-weight: normal;
+    word-break: break-all;
+}
+
+.boardListPackage .brdList li .comment {
+    color: #000;
+}
+
+.boardListPackage .brdList li .point img {
+    width: auto;
+    height: 11px;
+    vertical-align: -1px;
+}
+
+
+
+.boardListPackage .brdList .view {
+    width: 33px;
+    height: 33px;
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.boardListPackage .brdList .view .button {
+    font-size: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.boardListPackage .brdList .view .button>img {
+    width: 12px;
+    height: 8px;
+}
+
+/* 본문읽기 설정_리스트펼치기 */
+.boardListPackage li.contentView {
+    display: block;
+    padding: 20px 16px 26px;
+    font-size: 13px;
+    line-height: 20px;
+    color: #5d5d5d;
+    word-break: break-all;
+    background: #f6f6f6;
+}
+
+.boardListPackage li.contentView img {
+    max-width: 100%;
+}
+
+/* 게시글 없음 */
+.boardListPackage .empty {
+    padding: 28px 0;
+    text-align: center;
+    font-size: 12px;
+    background: #fff;
+}
+
+/* brdPaginate */
+.boardListPackage .brdPaginate.typeList {
+    padding: 20px 0 48px;
+    text-align: center;
+}
+
+.boardListPackage .brdPaginate.typeList [class*='btn'] {
+    display: inline-block;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    font-size: 1px;
+    line-height: 0;
+    color: transparent;
+    border: 1px solid #dedfe2;
+    vertical-align: top;
+}
+
+.boardListPackage .brdPaginate.typeList [class*='btn']:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 8px;
+    height: 13px;
+    margin: -6px 0 0 -4px;
+    background: url('//img.echosting.cafe24.com/skin/dnd_ko_KR/common/module/sfix_btn_paginate.png') no-repeat 0 0;
+    background-size: 100px auto;
+}
+
+.boardListPackage .brdPaginate.typeList .btnNext:before {
+    background-position: -50px 0;
+}
+
+.boardListPackage .brdPaginate.typeList .page {
+    display: inline-block;
+    height: 32px;
+    vertical-align: top;
+}
+
+.boardListPackage .brdPaginate.typeList .page:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.boardListPackage .brdPaginate.typeList .page li {
+    float: left;
+}
+
+.boardListPackage .brdPaginate.typeList .page li a {
+    display: inline-block;
+    margin: 0 18px;
+    font-size: 15px;
+    line-height: 32px;
+    color: #999;
+}
+
+.boardListPackage .brdPaginate.typeList .page .other {}
+
+.boardListPackage .brdPaginate.typeList .page .this {
+    font-weight: bold;
+    color: #000;
+}
+
+
+
+
+.boardListPackage.reviewlist {}
+
+.boardListPackage.reviewlist .brdList {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 0;
+    gap: 12px;
+}
+
+.boardListPackage.reviewlist .brdList li {
+    border: 1px solid #ebebeb;
+    padding: 0 0 10px;
+    border-radius: 0 0 0 0;
+}
+
+.boardListPackage.reviewlist .brdList li .thumbnail {
+    position: relative;
+    height: 0;
+    display: block;
+    padding-bottom: 100%;
+    padding-bottom: 238px;
+    overflow: hidden;
+}
+
+.boardListPackage.reviewlist .brdList li .thumbnail>a.img>img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.boardListPackage.reviewlist .brdList li .description {
+    padding: 10px 5px;
+    box-sizing: border-box;
+}
+
+.boardListPackage.reviewlist .brdList li .description .point {
+    margin-top: 5px;
+    display: block;
+}
+
+
+@media all and (max-width : 1000px) {
+    .boardListPackage.reviewlist .brdList {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        border-top: 0;
+        gap: 6px;
+    }
+
+    .boardListPackage.reviewlist .brdList li .thumbnail {
+        position: relative;
+        height: 0;
+        display: block;
+        padding-bottom: 100%;
+        padding-bottom: 90%;
+        overflow: hidden;
+    }
+}

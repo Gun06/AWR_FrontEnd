@@ -1,0 +1,140 @@
+/*Tab 2*/
+.css3-tab-nav {
+    font-size: 0;
+    margin: 30px 0 15px;
+    list-style-type: none;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #dfdfdf;
+    /*set to left, center, or right to align the tabs as desired*/
+}
+
+.css3-tab-nav label {
+    display: inline-block;
+    text-align: left;
+    margin: 0;
+    margin-right: 18px;
+    padding: 0 0 15px;
+    font-weight: 300;
+    font-size: 13px;
+    color: #999;
+}
+
+div.tabcontents {
+    border-top: 0;
+    color: #000;
+}
+
+div.tabcontents p {
+    line-height: 170%;
+    height: 170%;
+    color: #000;
+}
+
+
+.css3-tab {
+    list-style: none;
+    margin: 0 auto 10px;
+    padding: 0px 0 20px;
+    position: relative;
+    width: 100%;
+    font-size: 12px;
+    line-height: 170%;
+}
+
+.css3-tab input[type='radio'] {
+    display: none;
+}
+
+.css3-tab .css3-tab-content {
+    display: none;
+    border-top: 0;
+    padding: 0px 0px;
+    color: #000;
+}
+
+.css3-tab .css3-tab-content .pre {
+    white-space: pre-line;
+}
+
+.css3-tab input[id='tabOne']:checked~.css3-tab-nav label[for='tabOne'] {
+    color: #000;
+    font-weight: 400;
+}
+
+.css3-tab input[id='tabOne']:checked~div.tab-one {
+    display: block;
+}
+
+.css3-tab input[id='tabTwo']:checked~.css3-tab-nav label[for='tabTwo'] {
+    color: #000;
+    font-weight: 400;
+}
+
+.css3-tab input[id='tabTwo']:checked~div.tab-two {
+    display: block;
+}
+
+.css3-tab input[id='tabThree']:checked~.css3-tab-nav label[for='tabThree'] {
+    color: #000;
+    font-weight: 400;
+}
+
+.css3-tab input[id='tabThree']:checked~div.tab-three {
+    display: block;
+}
+
+.css3-tab input[id='tabFour']:checked~.css3-tab-nav label[for='tabFour'] {
+    color: #000;
+    font-weight: 400;
+}
+
+.css3-tab input[id='tabFour']:checked~div.tab-four {
+    display: block;
+}
+
+.css3-tab input[id='tabFive']:checked~.css3-tab-nav label[for='tabFive'] {
+    color: #000;
+    font-weight: 400;
+}
+
+.css3-tab input[id='tabFive']:checked~div.tab-five {
+    display: block;
+}
+
+.css3-tab input[id='addNew']:checked~.css3-tab-nav label[for='addNew'] {
+    color: black;
+    cursor: default;
+}
+
+.css3-tab input[id='addNew']:checked~div.add-new {
+    display: block;
+}
+
+.css3-tab .css3-tab-content table th,
+.css3-tab .css3-tab-content table td {
+    padding: 0 0 5px;
+    font-size: 12px;
+}
+
+.css3-tab .css3-tab-content,
+.css3-tab .css3-tab-content .tx_for span,
+.css3-tab .css3-tab-content .tx_for p,
+.css3-tab .css3-tab-content .tx_for div,
+.css3-tab .css3-tab-content .tx_for,
+.css3-tab .css3-tab-content pre {
+    font-size: 12px !important;
+    line-height: 20px !important;
+}
+
+.css3-tab .css3-tab-content pre {
+    white-space: break-spaces;
+}
+
+@media all and (max-width:1000px) {
+    .css3-tab {
+        margin: 0px auto 40px;
+    }
+
+}

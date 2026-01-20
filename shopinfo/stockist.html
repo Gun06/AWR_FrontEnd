@@ -1,0 +1,31 @@
+<!--@layout(/layout/basic/layout.html)-->
+<div class="content_info">
+    <div class="shopinfo_ti" module="product_headcategory">
+        <h2>{$title_text_or_image}</h2>
+    </div>
+    <div class="shopinfo_cont">
+        <!--@css(/css/module/mall/company.css)-->
+        <div module="Board_ListPackage_1002" class="stockist">
+            <div class="ec-base-table typeList gBorder">
+                <table border="1" summary="" style="margin:0px 0 0">
+                    <caption>게시판 목록</caption>
+                    <ul module="board_list_1002" class="accordion2">
+                        <!--
+                        $login_page_url = /member/login.html
+                        $deny_access_url = /index.html
+                    -->
+                        <li>
+                            <p>{$subject}</p>
+                            <div class="tab_wrap">{$content}</div>
+                        </li>
+                        <li>
+                            <p>{$subject}</p>
+                            <div class="tab_wrap">{$content}</div>
+                        </li>
+                    </ul>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>

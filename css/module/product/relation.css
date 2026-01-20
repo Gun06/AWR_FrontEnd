@@ -1,0 +1,88 @@
+ .xans-product-relation .relation {
+     margin: 50px auto 10px;
+     padding: 0 0 30px;
+     position: relative;
+     color: #8f8f91;
+     overflow: hidden;
+ }
+
+ .xans-product-relation .relation .box img {
+     margin-bottom: 10px
+ }
+
+ .xans-product-relation .relation h3 {
+     color: #000;
+     margin-bottom: 10px;
+     font-size: 13px;
+     font-weight: normal;
+ }
+
+ .xans-product-relation .relation ul.prdList {
+     display: table;
+     font-size: 0;
+     line-height: 0;
+     margin-left: -0.5%;
+     margin-right: -0.5%
+ }
+
+ .xans-product-relation .relation ul.prdList img {
+     vertical-align: middle;
+ }
+
+ .xans-product-relation .relation ul.prdList li.item {
+     display: inline-block;
+     margin: 20px 0;
+     color: #757575;
+     vertical-align: top;
+     *display: inline;
+     *zoom: 1;
+ }
+
+ .xans-product-relation .relation ul.prdList li.item {
+     width: 20%;
+     padding: 0 0
+ }
+
+ .xans-product-relation .relation ul.prdList li.item .box {
+     width: 100%;
+ }
+
+ .xans-product-relation .relation ul.prdList li.item .box p {
+     margin-bottom: 5px
+ }
+
+ .xans-product-relation .relation ul.prdList li.item .box a {
+     line-height: 100%;
+ }
+
+ .xans-product-relation .relation .box img {
+     box-sizing: border-box;
+ }
+
+ .xans-product-relation .box {
+     margin: 0 auto;
+     font-size: 11px;
+     line-height: 18px;
+     text-align: left
+ }
+
+ .xans-product-relation .box {
+     display: block;
+     margin: 3px 0 0;
+     color: #000;
+     font-weight: normal;
+     font-size: 11px;
+ }
+
+ .xans-product-relation .salePrice strong {
+     color: #000;
+ }
+
+ .xans-product-relation .box strong {
+     font-weight: normal;
+ }
+
+ .xans-product-relation .box .strike {
+     font-weight: normal;
+     text-decoration: line-through;
+ }

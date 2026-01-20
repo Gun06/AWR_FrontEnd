@@ -1,0 +1,97 @@
+/* 쿠폰 */
+.xans-coupon-productdetailajax.ec-base-fold {}
+
+.xans-coupon-productdetailajax.ec-base-fold>.title {
+    padding: 10px 0 0 0;
+}
+
+.xans-coupon-productdetailajax.ec-base-fold>.title>h2 {
+    font-weight: 400;
+}
+
+.xans-coupon-productdetailajax.ec-base-fold>.title:after {
+    content: '';
+    position: absolute;
+    right: 1px;
+    top: 50%;
+    width: 12px;
+    height: 8px;
+    border: 0px;
+    margin: -4px 0 0;
+    background: url(//img.echosting.cafe24.com/skin/dnd_ko_KR/common/module/detail/ico_product_set_arrow.png) no-repeat 0 0;
+    background-size: 12px auto;
+    -webkit-transition: .3s ease-out;
+    transition: .3s ease-out;
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.xans-coupon-productdetailajax .contents {
+    background: #fff;
+    border: 1px solid #000;
+}
+
+.xans-coupon-productdetailajax .contents li {
+    padding: 3px 0;
+    border-top: 1px solid #ececec;
+}
+
+.xans-coupon-productdetailajax .contents li:first-child {
+    border-top: 0;
+}
+
+.xans-coupon-productdetailajax .coupon {
+    display: flex;
+    justify-content: center;
+    margin: 4px auto;
+    font-size: 12px;
+    padding: 0 4px;
+    line-height: 1.5;
+    text-align: center;
+    background-repeat: no-repeat;
+}
+
+.xans-coupon-productdetailajax .coupon .detail {
+    display: flex
+}
+
+.xans-coupon-productdetailajax .contents .detail strong.title {
+    text-align: center;
+}
+
+.xans-coupon-productdetailajax .contents .detail p.discount {}
+
+.xans-coupon-productdetailajax .coupon .title {
+    display: block;
+    padding: 0 0 0;
+    font-size: 10px;
+    line-height: 15px;
+    text-align: left;
+    font-weight: normal;
+}
+
+.xans-coupon-productdetailajax .coupon .discount {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: bold;
+    text-align: left;
+    text-decoration: none;
+}
+
+.xans-coupon-productdetailajax .coupon .discount span {}
+
+.xans-coupon-productdetailajax .coupon .period {
+    font-size: 11px;
+    line-height: 13px;
+    text-align: left;
+}
+
+.xans-coupon-productdetailajax .coupon .button {
+    margin: 0 0 0 7px;
+}
+
+.xans-coupon-productdetailajax .coupon .button a {
+    vertical-align: middle;
+    font-size: 18px;
+}

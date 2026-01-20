@@ -1,0 +1,36 @@
+.xans-member-findpasswdresult {
+    margin: 14px 7px 0;
+    padding: 0 0 29px;
+    color: #353535;
+    font-size: 13px;
+}
+
+.xans-member-findpasswdresult .info {
+    padding: 14px 0;
+    text-align: left;
+    font-weight: normal;
+    line-height: 1.6em;
+    background: #fff;
+}
+
+.xans-member-findpasswdresult .info p {
+    font-size: 13px;
+}
+
+.xans-member-findpasswdresult .info p span {
+    display: block;
+    color: #000;
+    font-weight: bold;
+}
+
+.xans-member-findpasswdresult .ec-base-table {
+    margin: 14px auto 0;
+}
+
+.mypage_wrap .mypage_cont {
+    width: 400px !important;
+}
+
+.ec-base-button {
+    margin: 30px auto 0 !important;
+}

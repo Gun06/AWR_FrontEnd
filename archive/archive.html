@@ -1,0 +1,145 @@
+<!--@layout(/layout/basic/layout.html)-->
+
+<div module="product_listnormal" class="look_main">
+
+    <ul>
+        <li id="anchorBoxId_{$product_no}" class="look_list">
+            <div class="look_content">
+                <a href="/archive/detail.html{$param}" class="{$product_name_display|display}">
+                    <span class="look_title"> {$product_name}</span>
+                </a>
+            </div>
+            <a href="/archive/detail.html{$param}" class="look_bg">
+                <picture class="overlay">
+                    <img src="{$image_medium}" id="{$image_medium_id}" alt="{$seo_alt_tag}" class="onemain">
+                </picture>
+            </a>
+        </li>
+        <li id="anchorBoxId_{$product_no}" class="look_list">
+            <div class="look_content">
+                <a href="/archive/detail.html{$param}" class="{$product_name_display|display}">
+                    <span class="look_title"> {$product_name}</span>
+                </a>
+            </div>
+            <a href="/archive/detail.html{$param}" class="look_bg">
+                <picture class="overlay">
+                    <img src="{$image_medium}" id="{$image_medium_id}" alt="{$seo_alt_tag}" class="onemain">
+                </picture>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+
+        var firstImgSrc = $('.onemain').attr('src');
+        $('#container').prepend("<div class='firstwrap'><img class='firstone' src='" + firstImgSrc + "'></div>");
+
+
+
+    });        
+</script>
+<style>
+    .look_main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+        position: relative;
+        min-height: calc(100vh - 156px);
+    }
+
+    .look_main ul {
+        min-width: 50%;
+        text-align: left;
+    }
+
+    .look_main ul li.look_list {
+        display: grid;
+        z-index: 2;
+    }
+
+    .look_main ul li.look_list .look_content {
+        border-bottom: 1px solid #000;
+        z-index: 44;
+    }
+
+    .look_main ul li.look_list .look_content>a {
+        display: block;
+        padding: 24px 0;
+    }
+
+    .look_main ul li.look_list:first-child .look_content {
+        border-top: 1px solid #000;
+    }
+
+    .look_main ul li.look_list .overlay {
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        object-fit: cover;
+        pointer-events: none;
+        z-index: 4;
+        right: 0;
+        bottom: 0;
+    }
+
+    .look_main ul li.look_list .overlay img {
+        width: 100%;
+    }
+
+    .firstwrap {
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        pointer-events: none;
+        z-index: 2;
+        right: 0;
+        bottom: 0;
+    }
+
+    .firstwrap .firstone {
+        width: 100%;
+    }
+
+    .look_list:hover .look_content>span {
+        padding: 0 24px;
+        transition: ease 0.4s;
+    }
+
+    .look_list:hover .look_bg .overlay {
+        opacity: 1;
+    }
+
+
+    @media all and (max-aspect-ratio: 16/12) {
+        .look_main ul {
+            width: 80%;
+        }
+
+        .look_main ul li.look_list .look_content>a {
+            display: block;
+            padding: 9px 0;
+        }
+
+        .firstwrap .firstone,
+        .look_main ul li.look_list .overlay img {
+            height: 100%;
+            width: auto;
+            position: absolute;
+            max-width: none;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+
+    }
+</style>

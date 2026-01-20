@@ -1,0 +1,97 @@
+.xans-mall-company {
+    font-size: 12px;
+}
+
+.xans-mall-company .info {}
+
+.xans-mall-company .info img {
+    width: auto !important;
+    height: auto !important;
+    max-width: 100%;
+}
+
+.xans-mall-company img {
+    max-width: 100%;
+    text-align: center;
+}
+
+
+.xans-mall-company .about2 {
+    max-width: 1000px;
+}
+
+.xans-mall-company .about2 img {
+    max-width: 100%
+}
+
+
+.content_board2 .tab_wrap {
+    color: #000;
+}
+
+
+.membership {
+    text-align: center;
+}
+
+.membership .boxTitle {
+    margin: 0 0 50px;
+    font-size: 13px;
+    color: #000;
+    text-align: center;
+    display: block;
+}
+
+.membership ul {
+    border-top: 2px solid #000;
+}
+
+.membership ul>li {
+    border-bottom: 1px solid #000;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.membership ul>li .subject {
+    font-weight: bold;
+    padding-bottom: 10px;
+    font-size: 13px;
+    border-bottom: 1px solid #000;
+    color: #000;
+}
+
+.membership ul>li .tab_wrap {
+    padding: 20px 0;
+    color: #000;
+    line-height: 200%;
+    font-size: 12px;
+}
+
+.stockist {}
+
+.stockist .accordion2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.stockist .accordion2 li.xans-record- {
+    display: inline-block;
+}
+
+.stockist .accordion2 li.xans-record->p {
+    font-weight: 600;
+    text-decoration: underline;
+    margin-bottom: 4px;
+}
+
+.stockist .accordion2 li.xans-record-:nth-child(2n) {
+    text-align: right;
+}
+
+.stockist .accordion2 li.xans-record-:nth-child(2n) .tab_wrap,
+.stockist .accordion2 li.xans-record-:nth-child(2n) .tab_wrap div,
+.stockist .accordion2 li.xans-record-:nth-child(2n) .tab_wrap p,
+.stockist .accordion2 li.xans-record-:nth-child(2n) .tab_wrap a,
+.stockist .accordion2 li.xans-record-:nth-child(2n) .tab_wrap span {
+    text-align: right !important;
+}

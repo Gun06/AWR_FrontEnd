@@ -1,0 +1,65 @@
+<div id="prdReview">
+    <div class="board">
+        <h3>REVIEW</h3>
+        <div class="brdButton">
+            <a href="{$review_write}" class="">WRITE</a>
+            <!--a href="{$review_list}" class="viewLink">상품 후기 전체 보기</a-->
+        </div>
+        <a name="use_review"></a>
+        <div module="product_review">
+            <!--
+                $count = 5
+            -->
+            <p class="noAccess {$deny_display|display}">글읽기 권한이 없습니다.</p>
+            <div class="minor {$adult_display|display}">
+                <p class="text">19세 미만의 미성년자는 출입을 금합니다.</p>
+                <a class="button" href="/intro/board.html{$returnParam}">성인인증하기</a>
+            </div>
+            <ul class="brdList {$list_display|display}">
+                <li>
+                    <a href="/product/provider/review_read.xml{$param_read}" class="link">
+                        <strong class="subject">{$icon_re}{$icon_lock}{$icon_mobile}{$icon_file}<span
+                                class="text">{$subject}</span><span
+                                class="commentCnt">{$comment_count}</span><!--{$icon_hit}{$icon_new}--></strong>
+                        <div class="info">
+                            <span class="point {$use_point_display|display}"><img
+                                    src="//img.echosting.cafe24.com/skin/dnd_ko_KR/common/module/board/ico_star{$point_count}.png"
+                                    alt="{$point_count}점" height="10"></span>
+                            <span class="id" title="작성자">{$writer}</span>
+                            <span class="date {$date_display|display}" title="작성일">{$write_date}</span>
+                            <!--span class="{$hit_display|display}">조회 {$hit_count}</span-->
+                            <span class="{$vote_display|display}">추천 {$vote}</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/product/provider/review_read.xml{$param_read}" class="link">
+                        <strong class="subject">{$icon_re}{$icon_lock}{$icon_mobile}{$icon_file}<span
+                                class="text">{$subject}</span><span
+                                class="commentCnt">{$comment_count}</span><!--{$icon_hit}{$icon_new}--></strong>
+                        <div class="info">
+                            <span class="point {$use_point_display|display}"><img
+                                    src="//img.echosting.cafe24.com/skin/dnd_ko_KR/common/module/board/ico_star{$point_count}.png"
+                                    alt="{$point_count}점" height="10"></span>
+                            <span class="id" title="작성자">{$writer}</span>
+                            <span class="date {$date_display|display}" title="작성일">{$write_date}</span>
+                            <!--span class="{$hit_display|display}">조회 {$hit_count}</span-->
+                            <span class="{$vote_display|display}">추천 {$vote}</span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div module="product_reviewpaging" class="brdPaginate typeList">
+            <a href="{$param_before}" class="btnPrev">이전 페이지</a>
+            <ol class="page">
+                <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+                <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+                <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+                <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+                <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+            </ol>
+            <a href="{$param_next}" class="btnNext">다음 페이지</a>
+        </div>
+    </div>
+</div>

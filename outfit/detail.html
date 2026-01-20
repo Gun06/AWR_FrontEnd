@@ -1,0 +1,157 @@
+<div id="mun_lookbook_detail">
+    <p class="close22"></p>
+    <div class="detailArea left_image_area">
+        <div class="imgArea" module="product_image"><!-- 이미지 영역 -->
+            <!--@js(/js/module/product/product_image.js)-->
+            <div>
+                <div class="swiper-wrapper" module="product_addimage" style="text-align:center;">
+                    <div class="swiper-slide">{$add_img}</div>
+                </div>
+            </div>
+        </div><!-- //이미지 영역 -->
+    </div>
+
+    <div module="product_relation" class="ec-base-product right_product_area"><!-- 추천상품 -->
+        <!--@css(/css/module/product/relation.css)-->
+        <div class="relation ">
+            <div module="product_relationlist">
+                <ul class="prdList">
+                    <li class="item">
+                        <div class="box">
+                            <a href="{$link_product_detail}"><img src="{$img_small}" alt="{$seo_alt_tag}"
+                                    class="thumb" /></a>
+                            <p><a href="{$link_product_detail}">{$name}</a></p>
+                            <ul>
+                                <li><strong
+                                        class="{$product_sale_strike}">{$disp_product_price}{$product_tax_type_text}</strong>
+                                </li>
+                                <li class="salePrice {$sale_price_display|display}">{$disp_sale_price}</li>
+                            </ul>
+                            <p class="rel_but"><a href="{$link_product_detail}">제품보러가기</a></p>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="box">
+                            <a href="{$link_product_detail}"><img src="{$img_small}" alt="{$seo_alt_tag}"
+                                    class="thumb" /></a>
+                            <p><a href="{$link_product_detail}">{$name}</a></p>
+                            <ul>
+                                <li><strong
+                                        class="{$product_sale_strike}">{$disp_product_price}{$product_tax_type_text}</strong>
+                                </li>
+                                <li class="salePrice {$sale_price_display|display}">{$disp_sale_price}</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div><!-- //추천상품 -->
+
+    </div>
+    <!-- //상단 제품 정보 -->
+
+    <style>
+        html.modal body {
+            overflow: hidden;
+        }
+
+        html.modal #lookbook-modal {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+
+        html.modal #lookbook-modal::-webkit-scrollbar {
+            display: none;
+            /* Chrome, Safari, Opera*/
+        }
+
+        html.modal #lookbook-modal .left_image_area {
+            width: 50%;
+            max-height: 100vh;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        html.modal #lookbook-modal .right_product_area {
+            width: 48%;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        html.modal #lookbook-modal .xans-product-relation .relation ul.prdList li.item {
+            width: 100%;
+            max-width: 240px;
+            margin: 0 auto;
+        }
+
+        .xans-product-relation .relation {
+            margin: 60px auto 50px;
+            padding: 0 20px;
+        }
+
+        .xans-product-relation .relation ul.prdList {
+            margin: 0 auto;
+        }
+
+        .xans-product-relation .relation ul.prdList li.item .box a {
+            font-size: 13px;
+        }
+
+        .xans-product-relation .relation .box img {
+            margin-bottom: 20px;
+        }
+
+        .xans-product-relation .rel_but {
+            border: 1px solid #000;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .xans-product-relation .rel_but a {
+            display: block;
+            padding: 10px 0;
+        }
+
+        @media only screen and (max-width:1000px) {
+
+            html.modal #lookbook-modal .left_image_area {
+                width: 100%;
+                display: block;
+            }
+
+            html.modal #lookbook-modal .right_product_area {
+                width: 100%;
+                display: block;
+                background: #fff;
+            }
+
+            .xans-product-relation .relation {
+                margin: 0 auto 0;
+            }
+
+            .xans-product-relation .relation ul.prdList li.item {
+                margin: 4px 0;
+            }
+
+            .xans-product-relation .relation ul.prdList li.item .box p {
+                padding: 0 4px;
+            }
+
+            .xans-product-relation .box ul {
+                padding: 1px 4px;
+            }
+
+            html.modal #lookbook-modal .xans-product-relation .relation ul.prdList li.item {
+                width: 100%;
+                margin: 0 auto;
+            }
+
+            .xans-product-relation .relation {
+                padding: 20px;
+            }
+
+        }
+    </style>

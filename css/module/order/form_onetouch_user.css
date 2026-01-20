@@ -1,0 +1,465 @@
+/*버튼*/
+#userStyle #mCafe24Order .btnNormal {
+    border: 1px solid #dfdfdf;
+}
+
+#userStyle #mCafe24Order .btnSubmit {
+    background: #000;
+    border: 1px solid #000;
+}
+
+#userStyle #mCafe24Order #btn_coupon_select {
+    height: 40px;
+}
+
+/*배경컬러 및 라인색상*/
+#userStyle #mCafe24Order {
+    padding-top: 112px;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+    background: #fff;
+}
+
+#userStyle #mCafe24Order input[type="text"],
+#userStyle #mCafe24Order input[type="password"],
+#userStyle #mCafe24Order input[type="number"],
+#userStyle #mCafe24Order input[type="tel"] {
+    border: 1px solid #dfdfdf;
+}
+
+#userStyle #mCafe24Order .btnBasic {
+    border: 1px solid #dfdfdf;
+}
+
+#userStyle #mCafe24Order select {
+    border: 1px solid #dfdfdf;
+}
+
+#userStyle #mCafe24Order #oemail2 {
+    border: 0 !important;
+}
+
+#userStyle #mCafe24Order .segment.unique {
+    border-top: 0 !important;
+}
+
+#userStyle #mCafe24Order .ec-base-fold {
+    border-bottom: 1px solid #fff;
+    border-top: 1px solid #dfdfdf;
+}
+
+/*고민스*/
+#userStyle #mCafe24Order .orderArea .totalPrice .title {
+    background: #fff;
+}
+
+#userStyle #mCafe24Order .totalPay.paymentPrice {
+    background: #fff;
+}
+
+#userStyle #mCafe24Order .ec-paymethod-input-detail #payment_input_cash,
+#mCafe24Order .ec-paymethod-input-detail #payment_input_tcash,
+#userStyle #mCafe24Order .ec-paymethod-input-detail #payment_input_icash {
+    background: #fff;
+    border: 1px solid #dfdfdf;
+}
+
+#userStyle #mCafe24Order .payMethod>li .inner>.ec-base-label>input:checked~label {
+    border: 1px solid #dfdfdf;
+    color: #000;
+}
+
+#userStyle #mCafe24Order .totalPay {
+    background: #fff;
+}
+
+#userStyle #orderFixItem.ec-base-button.gFull [class*="btn"] {
+    background: #000;
+}
+
+#userStyle #mCafe24Order .pannelArea {
+    background: #fff;
+}
+
+#userStyle #mCafe24Order .ec-base-layer {
+    background: #fff;
+}
+
+#userStyle #mCafe24Order #ec-orderform-defer-layer .ec-base-box {
+    background: #fff;
+}
+
+#userStyle #mCafe24Order #ec-orderform-defer-layer .ec-base-table thead>tr>th {
+    background: #fff;
+}
+
+#userStyle #mCafe24Order .joinArea>.ec-base-table {
+    background: #fff;
+}
+
+#userStyle #mCafe24Order .agreeArea .allAgree {
+    border-bottom: 0;
+    padding: 20px 0px 0px;
+}
+
+#userStyle #mCafe24Order .agreeArea .agreement li {
+    padding: 15px 0 0px 0;
+    border-top: 0;
+}
+
+#userStyle #mCafe24Order .agreeArea .checkNone {
+    border-top: 0;
+}
+
+#userStyle #mCafe24Order .ec-base-tab ul {
+    border-top: 1px solid #fff;
+    ;
+}
+
+#userStyle #mCafe24Order .ec-base-tab li {
+    border-left: 1px solid #dfdfdf;
+    border-bottom: 1px solid #dfdfdf;
+    background: #fff;
+}
+
+#userStyle #mCafe24Order .ec-base-tab li.selected {
+    border-bottom: 1px solid #fff;
+    border-top: 1px solid #dfdfdf;
+}
+
+#userStyle #mCafe24Order .ec-base-tab li:first-child {
+    border-left: 0;
+}
+
+#userStyle #mCafe24Order .payMethod>li.selected>.inner {
+    border-color: #dfdfdf;
+}
+
+/*바로구매 주문상품영역*/
+#userStyle #mCafe24Order .product_detail #totalProducts {
+    border-bottom: 0;
+    border-top: solid 1px #dfdfdf;
+}
+
+/*결제완료페이지*/
+#userStyle #mCafe24Order.xans-order-result .ec-base-fold {
+    border-color: #ddd;
+}
+
+/*폰트컬러*/
+#userStyle #mCafe24Order .txtStrong {
+    color: #000;
+}
+
+#userStyle #mCafe24Order .txtEm {
+    color: #000;
+}
+
+/*폰트사이즈*/
+#userStyle #mCafe24Order .title h2,
+#userStyle #mCafe24Order .totalPay .heading,
+#userStyle #mCafe24Order .txtStrong,
+#userStyle #mCafe24Order .ec-base-tab li a,
+#userStyle #mCafe24Order #btn_payment {
+    font-size: 13px;
+    line-height: 27px;
+}
+
+input,
+select,
+textarea {
+    font-size: 13px !important
+}
+
+#userStyle #mCafe24Order .payMethod>li>label,
+#userStyle #mCafe24Order .ec-base-table tbody th,
+#userStyle #mCafe24Order input[type="radio"]+label,
+#userStyle #mCafe24Order input[type="text"],
+#userStyle #mCafe24Order input[type="password"],
+#userStyle #mCafe24Order input[type="number"],
+#userStyle #mCafe24Order input[type="tel"],
+#userStyle #mCafe24Order input[type="checkbox"]+label,
+#userStyle #mCafe24Order .btnNormal,
+#userStyle #mCafe24Order .btnStrong,
+#userStyle #mCafe24Order .btnBasic,
+#userStyle #mCafe24Order .btnBase,
+#userStyle #mCafe24Order .txtEm,
+#userStyle #mCafe24Order .segment .ec-base-table tbody th,
+#userStyle #mCafe24Order .segment .ec-base-table tbody td,
+#userStyle #mCafe24Order.xans-order-result .ec-base-table.gCellNarrow tbody th,
+#userStyle #mCafe24Order.xans-order-result .ec-base-prdInfo .description .prdName,
+#userStyle #mCafe24Order .ec-base-prdInfo .description .info li,
+#userStyle #mCafe24Order .recentShipArea .name,
+#userStyle #mCafe24Order .ec-base-prdInfo .description .prdName,
+#userStyle #mCafe24Order .recentShipArea .recent .address,
+#userStyle #mCafe24Order .ec-base-prdInfo .description .proPrice,
+#userStyle #mCafe24Order .orderArea .totalPrice .deliveryFee,
+#userStyle #mCafe24Order .payMethod>li.selected>.inner,
+#userStyle #mCafe24Order .discountDetail .heading,
+#userStyle #mCafe24Order .discountDetail .discountList .title .control span,
+#userStyle #mCafe24Order .discountDetail .summary,
+#userStyle #mCafe24Order .segment .paymentList ul li,
+#userStyle #mCafe24Order .orderArea .totalPrice .title h3,
+#userStyle #mCafe24Order .agreeArea .agreement .agree .check>label,
+#userStyle #mCafe24Order .agreeArea .checkNone label,
+#userStyle #mCafe24Order .agreeArea .checkNone .agree-msg {
+    font-size: 13px;
+}
+
+/*바로구매 주문상품영역*/
+#userStyle #mCafe24Order .product_detail .product_info h3.name,
+#userStyle #mCafe24Order .product_detail .product_info .ProductPrice,
+#userStyle #mCafe24Order .product_detail .product_info .quantity .option_name,
+#userStyle #mCafe24Order .product_detail .product_info .quantity,
+#userStyle #mCafe24Order .product_detail .product_info .delivery_price .txt_delivery,
+#userStyle #mCafe24Order .product_detail .totalPrice>strong,
+#userStyle #mCafe24Order .product_detail .totalPrice .total,
+#userStyle #mCafe24Order .product_detail .totalPrice .total strong,
+#userStyle #mCafe24Order .product_detail .product_info .delivery_price .delv_price_B strong {
+    font-size: 13px;
+    font-weight: 400;
+    color: #000;
+}
+
+#userStyle #mCafe24Order .xans-product-detail .overview .btnDetail {
+    font-size: 12px;
+}
+
+/*아이콘*/
+#userStyle #mCafe24Order .ec-base-prdInfo .btnRemove {
+    border: 1px solid #dfdfdf;
+    width: 20px;
+    height: 20px;
+}
+
+#userStyle #mCafe24Order .ec-base-prdInfo .btnRemove:before {
+    width: 12px;
+    left: 3px;
+    background: #000;
+}
+
+#userStyle #mCafe24Order .ec-base-prdInfo .btnRemove:after {
+    width: 12px;
+    left: 3px;
+    background: #000;
+}
+
+#userStyle #mCafe24Order .ec-base-fold>.title:after {
+    border: 1px solid #000;
+    border-right: 0;
+    border-bottom: 0;
+    width: 10px;
+    height: 10px;
+}
+
+#userStyle #mCafe24Order input:not(:disabled):checked[type="checkbox"] {
+    background-image: url(/web/upload/bg_newCheckbox_checked.png);
+}
+
+#userStyle #mCafe24Order .agreeArea .agreement .btnAgree {
+    background: url(/web/upload/btn_agree.png) no-repeat center center;
+    background-size: 9px 15px;
+}
+
+#userStyle #mCafe24Order input:not(:disabled):checked[type="radio"] {
+    background-image: url(/web/upload/addbase/bg_newRadio_checked.png);
+}
+
+#userStyle #mCafe24Order .segment .paymentList .discountName i {
+    top: -4px;
+}
+
+#userStyle #mCafe24Order .discountDetail .discountList .title .heading:after {
+    top: 3px;
+}
+
+#userStyle #mCafe24Order .ec-base-fold>.title:after {
+    top: 26px;
+}
+
+#userStyle #mCafe24Order .ec-base-fold.selected>.title:after {
+    top: 31px;
+}
+
+#userStyle #mCafe24Order .discountDetail.mCouponModify .ec-order-expandwrap .ec-order-expand .txt_info:after,
+#userStyle #mCafe24Order .discountDetail.mCouponModify .ec-order-expandwrap .ec-coupon-expand .txt_info:after {
+    top: 1px;
+}
+
+#userStyle #mCafe24Order #ec-jigsaw-title-orderProduct:after {
+    display: none;
+}
+
+/*바로구매 주문상품영역*/
+#userStyle #mCafe24Order .product_detail .product_info .ec-base-qty .QuantityDown,
+#userStyle #mCafe24Order .product_detail .product_info .ec-base-qty .QuantityUp,
+#userStyle #mCafe24Order .product_detail .product_info .ec-base-qty #quantity {
+    border: 0;
+}
+
+#userStyle #mCafe24Order #ec-jigsaw-area-productdetail .xans-product-mobileimage .ec-base-paginate {
+    bottom: 0;
+}
+
+/*정렬*/
+#userStyle #mCafe24Order .agreeArea .agreement .agree .check>label {
+    line-height: 26px;
+}
+
+#userStyle #mCafe24Order .ec-base-prdInfo .thumbnail,
+#userStyle #mCafe24Order .ec-base-prdInfo .thumbnail img {
+    height: auto !important;
+    border: 0;
+}
+
+#userStyle #mCafe24Order .discountDetail .displayFlex .control .discountPrice {
+    margin: 12px 10px 0 0;
+}
+
+#userStyle #mCafe24Order span#ec-jigsaw-heading-orderProduct {
+    margin-right: -32px;
+    display: block;
+}
+
+#userStyle #mCafe24Order .payMethod>li .inner>.ec-base-label>input:checked~label {
+    padding: 10px 16px;
+}
+
+#userStyle #mCafe24Order .ec-base-tab a {
+    padding: 5px 5px 4px;
+}
+
+#userStyle #mCafe24Order .agreeArea .checkNone ul li {
+    margin: 0;
+}
+
+/*바로구매 주문상품영역*/
+#userStyle #mCafe24Order .product_detail .product_info .quantity {
+    padding: 0;
+}
+
+#userStyle #mCafe24Order .product_detail .product_info .delivery_price {
+    padding: 5px 0;
+}
+
+#userStyle #mCafe24Order .product_detail .product_info .ec-base-qty {
+    margin-right: -14px;
+}
+
+#userStyle #mCafe24Order .xans-product-detail.ec-base-fold.selected>.contents {
+    padding: 0 16px 40px;
+}
+
+#userStyle #mCafe24Order .product_detail .product_info h3.name {
+    margin-bottom: 20px;
+}
+
+
+/*주문완료페이지*/
+#userStyle #mCafe24Order #order_inner {
+    border: 1px solid #dfdfdf;
+}
+
+#userStyle #mCafe24Order .resultArea {
+    margin: 20px 0;
+    padding: 0 14px;
+}
+
+#userStyle #mCafe24Order .resultInfo {
+    margin: 0;
+    border-top: 0;
+}
+
+#userStyle #mCafe24Order.xans-order-result .ec-base-table.gCellNarrow tbody th,
+#userStyle #mCafe24Order.xans-order-result .ec-base-table.gCellNarrow tbody td,
+#userStyle #mCafe24Order.xans-order-result .ec-base-table.typeView>table>tbody>tr:first-child>th,
+#userStyle #mCafe24Order.xans-order-result .ec-base-table.typeView>table>tbody>tr>th {
+    color: #000;
+}
+
+#userStyle #mCafe24Order.xans-order-result .contents {
+    border-top: 0;
+}
+
+#userStyle #mCafe24Order.xans-order-result .pannelArea {
+    border: 0;
+    border-top: 1px solid #dfdfdf;
+}
+
+#userStyle #mCafe24Order .ec-base-table.typeView>table>tbody>tr>td,
+#userStyle #mCafe24Order.xans-order-result .ec-base-table.typeView>table>tbody>tr>th {
+    border-top: 0;
+    padding: 16px 0px;
+}
+
+#userStyle #mCafe24Order .pannelArea {
+    margin: 0 0 0;
+    padding: 0 0 10px;
+}
+
+#userStyle #mCafe24Order.xans-order-result .ec-base-fold>.title:after {
+    border: none;
+    border-right: 0;
+    border-bottom: 0;
+    width: 17px;
+    height: 17px;
+}
+
+#header {
+    max-width: 100%;
+}
+
+
+@media all and (max-width:1000px) {
+    #userStyle #mCafe24Order.typeHeader {
+        padding-top: 122px;
+    }
+
+    /*폰트사이즈*/
+    #userStyle #mCafe24Order .title h2,
+    #userStyle #mCafe24Order .totalPay .heading,
+    #userStyle #mCafe24Order .txtStrong {
+        font-size: 12px;
+    }
+
+    input,
+    select,
+    textarea {
+        font-size: 12px !important
+    }
+
+    #userStyle #mCafe24Order .payMethod>li>label,
+    #userStyle #mCafe24Order .ec-base-table tbody th,
+    #userStyle #mCafe24Order input[type="radio"]+label,
+    #userStyle #mCafe24Order input[type="text"],
+    #userStyle #mCafe24Order input[type="password"],
+    #userStyle #mCafe24Order input[type="number"],
+    #userStyle #mCafe24Order input[type="tel"],
+    #userStyle #mCafe24Order input[type="checkbox"]+label,
+    #userStyle #mCafe24Order .btnNormal,
+    #userStyle #mCafe24Order .btnStrong,
+    #userStyle #mCafe24Order .btnBasic,
+    #userStyle #mCafe24Order .btnBase,
+    #userStyle #mCafe24Order .segment .ec-base-table tbody th,
+    #userStyle #mCafe24Order .segment .ec-base-table tbody td,
+    #userStyle #mCafe24Order .btnNormal,
+    #userStyle #mCafe24Order .btnStrong,
+    #userStyle #mCafe24Order .btnBasic,
+    #userStyle #mCafe24Order .btnBase,
+    #userStyle #mCafe24Order .btnSubmit {
+        font-size: 12px;
+    }
+
+}
+
+/* PC */
+@media all and (min-width:1024px) {
+
+    #userStyle #header {
+        max-width: 100%;
+    }
+
+    #userStyle #mCafe24Order .ec-base-tab li a {
+        font-size: 13px;
+    }
+}

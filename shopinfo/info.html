@@ -1,0 +1,27 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@css(/artfinger/css/company.css)-->
+<div class="content_info">
+    <div class="shopinfo_ti">
+        <h2>Contact us</h2>
+    </div>
+    <div class="board_cont">
+        <div class="company_info" module="Layout_footer">
+            <ul>
+                <h2>고객센터</h2>
+
+                <li>TEL {$phone}</li>
+                <br>
+                <li module="Layout_Info" class="bankinfo">{$runtime}</li>
+                <br>
+                <li>{$mall_zipcode} {$mall_addr1} {$mall_addr2}</li>
+            </ul>
+            <ul>
+                <h2>실시간 문의</h2>
+                <li class="{$cpo_email|display}">E-MAIL <a href="mailto:{$cpo_email}">{$cpo_email}</a></li>
+                <li class="snscate"><a href="#" target="_blank" class="snsl4">카톡상담 바로가기</a></li>
+                <!--왼쪽 소스에서 a href="여기에 변경될 링크주소를 기입해주세요"-->
+            </ul>
+        </div>
+
+    </div>
+</div>

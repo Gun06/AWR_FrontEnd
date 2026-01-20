@@ -1,0 +1,26 @@
+<div module="coupon_productdetailajax" class="ec-base-fold theme1 selected eToggle">
+    <!--@css(/css/module/product/productDetailAjax.css)-->
+
+    <ul class="contents">
+        <li>
+            <div class="coupon {$background_class}"> <!--style="background-image:url('{$background_url}')"-->
+                <div class="detail" {$call_coupon_detail}>
+                    <strong class="title"
+                        style="color:#000; font-size:12px; line-height:20px;">{$coupon_name|cut:80,...}</strong>
+                    <!--p class="discount" style="color:#000; font-size:12px; line-height:20px;">{$coupon_content}</p-->
+                </div>
+                <div class="button"><a href="{$coupon_issue_url}"><i class="xi-download"></a></div>
+            </div>
+        </li>
+        <li>
+            <div class="coupon {$background_class}"> <!--style="background-image:url('{$background_url}')"-->
+                <div class="detail" {$call_coupon_detail}>
+                    <strong class="title"
+                        style="color:#000; font-size:12px; line-height:20px;">{$coupon_name|cut:80,...}</strong>
+                    <!--p class="discount" style="color:#000; font-size:12px; line-height:20px;">{$coupon_content}</p-->
+                </div>
+                <div class="button"><a href="{$coupon_issue_url}"><i class="xi-download"></a></div>
+            </div>
+        </li>
+    </ul>
+</div>

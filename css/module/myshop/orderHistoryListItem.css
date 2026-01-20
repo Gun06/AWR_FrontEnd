@@ -1,0 +1,99 @@
+/* 타이틀 */
+.xans-myshop-orderhistorylistitem .title h3 {
+    line-height: 43px;
+    margin: 7px 0 0;
+    padding: 0 0 0 14px;
+    font-size: 13px;
+    color: #000;
+}
+
+.xans-myshop-orderhistorylistitem .order h3 {
+    overflow: hidden;
+    margin: 50px 0 0;
+    padding: 0 0px;
+    line-height: 43px;
+    color: #000;
+    font-size: 13px;
+    font-weight: normal;
+    border-top: 1px solid #000;
+}
+
+.xans-myshop-orderhistorylistitem .order h3:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.xans-myshop-orderhistorylistitem .order h3 a {
+    color: #fff;
+}
+
+
+/* 상품 리스트 */
+.xans-myshop-orderhistorylistitem .ec-base-prdInfo .thumbnail {
+    overflow: visible;
+}
+
+.xans-myshop-orderhistorylistitem .ec-base-prdInfo .thumbnail img {
+    height: auto !important;
+}
+
+.xans-myshop-orderhistorylistitem .orderList .ec-base-prdInfo {
+    border-bottom: 1px solid #000;
+    margin: 0 !important;
+    border-width: thin !important;
+}
+
+.xans-myshop-orderhistorylistitem {
+    margin: 0 0 30px;
+}
+
+.xans-myshop-orderhistorylistitem .order {
+    position: relative;
+}
+
+.xans-myshop-orderhistorylistitem .order .date {
+    font-weight: bold;
+}
+
+.xans-myshop-orderhistorylistitem a.btnDetail {
+    position: absolute;
+    top: 14px;
+    right: 0px;
+    padding: 0;
+    font-size: 13px;
+    color: #000;
+    background: none;
+}
+
+.xans-myshop-orderhistorylistitem .empty {
+    text-align: center;
+    padding: 30px 0 30px;
+}
+
+.xans-myshop-orderhistorylistitem .request {
+    position: relative;
+    overflow: hidden;
+    margin: 0 0px -6px;
+    padding: 0 14px;
+    font-weight: bold;
+    color: #000;
+    text-align: center;
+}
+
+.xans-myshop-orderhistorylistitem .prdFoot {
+    background: none !important;
+}
+
+.xans-myshop-orderhistorylistitem .prdFoot .gLeft {
+    padding-left: 2px;
+}
+
+.xans-myshop-orderhistorylistitem .prdFoot+.request {
+    margin-top: 0px;
+    margin-bottom: 7px;
+}
+
+.xans-myshop-orderhistorylistitem .request [class*='btn'] {
+    margin: 6px 0;
+}

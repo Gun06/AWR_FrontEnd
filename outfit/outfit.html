@@ -1,0 +1,282 @@
+<!--@layout(/layout/basic/layout.html)-->
+<div class="content_prd">
+
+    <!-- 추천상품 -->
+    <div class="swiper-container-recommend main05" module="product_listrecommend">
+        <h3 class="lr_pad"><span>SELEB PICK!</span></h3>
+
+        <!--@import(/artfinger/outfit_recommend.html)-->
+
+    </div>
+    <!-- //추천상품 -->
+
+
+
+    <style>
+        .main05 {
+            position: relative;
+            padding-top: 0px;
+            padding-bottom: 0;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+
+        .main05 .title {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            text-align: left;
+            width: 100%;
+            ,
+            box-sizing: border-box;
+            z-index: 8;
+        }
+
+        .main05 .title {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            text-align: left;
+            width: 100%;
+            ,
+            box-sizing: border-box;
+            z-index: 8;
+        }
+
+        .main05 .title span {
+            font-size: 20px;
+            color: #000;
+            border-radius: 50%;
+            border: 1px solid #000;
+            padding: 7px 15px;
+        }
+
+        .main05 .marquee .js-marquee ul {
+            font-size: 0;
+            letter-spacing: 0;
+            display: flex;
+            position: relative;
+            left: -100%;
+        }
+
+        .main05 .marquee .js-marquee ul li {
+            width: 380px;
+            display: inline-block;
+        }
+
+        .main05.swiper-container-recommend h3.lr_pad {
+            border-top: 0;
+        }
+
+        /*modal*/
+        #lookbook-modal {
+            opacity: 0;
+            visibility: hidden;
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            overflow: auto;
+            z-index: 4000;
+            cursor: url(/web/upload/mundane/i_bar_search_minus.cur), auto;
+        }
+
+        #lookbook-modal #mun_lookbook_detail {
+            position: absolute;
+            max-width: calc(100% - 300px);
+            max-height: calc(100vh - 100px);
+            margin: 0 auto;
+            background-color: #fff;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #lookbook-modal #mun_lookbook_detail img {
+            max-width: 100%;
+            max-height: calc(100vh - 100px);
+        }
+
+        html.modal #lookbook-modal {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .close22 {
+            display: none;
+            position: relative;
+            width: 30px;
+            height: 30px;
+            position: fixed;
+            top: 0px;
+            right: 0px;
+            z-index: 99999999;
+            cursor: pointer
+        }
+
+        .close22::before,
+        .close22::after {
+            content: "";
+            clear: both;
+            display: block;
+            position: absolute;
+            width: 70%;
+            height: 1px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            background-color: #000;
+        }
+
+        .close22::before {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+
+        .close22.modal {
+            display: block
+        }
+
+        .lookbook_modal_zoom {
+            margin: 10px 5px;
+        }
+
+        .lookbook {
+            font-size: 0px;
+            margin: 0 -5px;
+        }
+
+        .lookbook>li {
+            width: 33.3%;
+            display: inline-block;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .lookbook>li:after {
+            position: absolute;
+            content: "";
+            height: 100%;
+            right: 0;
+            top: 0;
+        }
+
+        .lookbook>li:nth-child(3n):after {
+            display: none;
+        }
+
+        .lookbook::after {
+            clear: both;
+            display: block;
+            content: ""
+        }
+
+        .lookbook .modal_cont {
+            margin: 0px 5px 10px;
+            box-sizing: border-box;
+        }
+
+        .lookbook>li img {
+            width: 100%;
+        }
+
+        .lookbook {
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 0px;
+            box-sizing: border-box;
+        }
+
+        .lookbook [id^=grid] {
+            margin-left: 0;
+        }
+
+        .lookbook .modal_cont .description {
+            position: absolute;
+            bottom: 5px;
+            right: 10px;
+        }
+
+        .lookbook .modal_cont .description strong.name {
+            font-weight: 400;
+        }
+
+        @media all and (max-width:1000px) {
+            .main05 {
+                margin-bottom: 10px;
+            }
+
+            .main05.swiper-container-recommend h3.lr_pad {
+                font-size: 12px;
+            }
+
+            .main05 .marquee .js-marquee ul li {
+                width: 100px;
+            }
+
+            .lookbook_modal_zoom {
+                margin: 0px 7.5px 0;
+            }
+
+            .lookbook .modal_cont {
+                margin: 0px 2.5px 5px;
+                box-sizing: border-box;
+            }
+
+            #lookbook-modal #mun_lookbook_detail {
+                width: 76%;
+                max-width: 85%;
+                max-height: calc(100vh);
+            }
+
+            .lookbook>li {
+                width: 50%;
+            }
+        }
+    </style>
+    <div id="lookbook-modal">
+        <div class="close22"></div>
+    </div>
+
+    <div class="lookbook_modal_zoom " id="productnew">
+        <div module="product_normalpackage">
+            <ul module="product_listnormal" class="ec-base-product lookbook">
+                <li class="col1">
+                    <div class="modal_cont">
+                        <a href="/outfit/detail.html{$param}"><img src="{$image_medium}" id="{$image_medium_id}"
+                                alt="{$seo_alt_tag}" /></a>
+
+                    </div>
+                </li>
+                <li class="col1">
+                    <div class="modal_cont">
+                        <a href="/outfit/detail.html{$param}"><img src="{$image_medium}" id="{$image_medium_id}"
+                                alt="{$seo_alt_tag}" /></a>
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <script>
+        var thumb = $('.ec-base-product.lookbook').find('.modal_cont'),
+            modal = $('#lookbook-modal');
+        thumb.each(function () {
+            $(this).find('a').click(function () {
+                event.preventDefault ? event.preventDefault() : (event.returnValue = false);
+                modal.scrollTop(0);
+                modal.load($(this).attr('href'), function () {
+                    $('html, .close22').addClass('modal');
+                });
+            });
+        });
+        $('#lookbook-modal').click(function () {
+            $('html').removeClass('modal');
+        });
+    </script>
+
+</div>

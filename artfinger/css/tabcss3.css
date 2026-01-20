@@ -1,0 +1,136 @@
+.css3-tab {
+    width: 100%;
+    display: flex;
+    list-style: none;
+    margin: 0px auto 40px;
+    padding: 0px 0 0 0;
+    position: relative;
+    letter-spacing: 0
+}
+
+.css3-tab .css3-tab-content::after {
+    clear: both;
+    display: block;
+    content: ""
+}
+
+.css3-tab .content_right {
+    width: 100%;
+    margin-top: -46px;
+}
+
+.css3-tab .content_right h2 {
+    font-weight: 500;
+    font-size: 12px;
+    color: #000;
+    text-align: left;
+    margin: 30px 0 40px;
+}
+
+.css3-tab .content_right h3 {
+    position: relative;
+    margin: 50px 0 10px;
+    font-size: 12px;
+    color: #000;
+    font-weight: 500;
+}
+
+.css3-tab .content_right b {
+    font-size: 12px;
+    color: #000
+}
+
+
+
+/*.css3-tab .css3-tab-nav label:before { display:block; content:""; position:absolute; top:5px; right:100px; width:200px; height:1px; background:#ccc; }*/
+.css3-tab .css3-tab-nav label span {
+    position: absolute;
+    right: 50px;
+    vertical-align: middle
+}
+
+.css3-tab .css3-tab-nav label:hover {
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    color: #000
+}
+
+.css3-tab-nav label {
+    margin: 0px;
+}
+
+.css3-tab .cont p,
+.css3-tab .cont span,
+.css3-tab .cont {
+    line-height: 160% !important;
+    font-size: 12px !important
+}
+
+
+/*  reactive 소스 */
+@media all and (max-width : 640px) {
+
+    /*아이폰 5이하 */
+    .css3-tab {
+        display: block;
+    }
+
+    .css3-tab .css3-tab-content {
+        width: 100%;
+    }
+
+    .css3-tab .css3-tab-nav {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .cust_right {
+        width: 0%
+    }
+
+    .css3-tab .css3-tab-nav label {
+        padding-right: 0px;
+        font-size: 14px;
+    }
+
+    .css3-tab .css3-tab-content .content_left {
+        float: none;
+        width: 100%;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    .css3-tab .css3-tab-content .content_right {
+        float: none;
+        width: 100%;
+        max-height: calc(100vh - 300px);
+        overflow-y: auto;
+    }
+
+}
+
+@media all and (min-width : 641px) and (max-width : 802px) and (orientation : landscape) {
+
+    /*아이패드 탭 데스크탑 -모드*/
+    .modalContentWrap {
+        width: 100%
+    }
+
+}
+
+@media all and (min-width : 641px) and (max-width : 802px) and (orientation : portrait) {
+
+    /*아이패드 탭 |모드*/
+    .modalContentWrap {
+        width: 100%
+    }
+
+}
+
+@media all and (min-width : 803px) and (max-width : 925px) {
+    .modalContentWrap {
+        width: 100%
+    }
+
+
+}

@@ -1,0 +1,30 @@
+<!--@layout(/layout/basic/layout.html)-->
+<div class="content_prd">
+
+    <div module="product_normalpackage">
+        <!--@css(/css/module/product/listnormal.css)-->
+
+        <div module="product_listnormal" class="ec-base-product press">
+            <!--
+                $count = 12
+                $basket_result = /product/add_basket.html
+                $basket_option = /product/basket_option.html
+            -->
+            <ul class="prdList grid4">
+                <!--@import(/artfinger/anchorbox_press.html)-->
+            </ul>
+        </div>
+    </div>
+
+    <div module="product_normalpaging" class="ec-base-paginate">
+        <!--@import(/artfinger/prd_page_prev.html)-->
+        <ol>
+            <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+            <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+            <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+            <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+            <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+        </ol>
+        <!--@import(/artfinger/prd_page_next.html)-->
+    </div>
+</div>

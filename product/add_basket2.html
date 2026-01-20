@@ -1,0 +1,245 @@
+<style type="text/css">
+    .xans-order-layerbasket .xans-order-list {
+        display: table;
+        table-layout: fixed;
+        width: 100%;
+        margin: 14px auto 7px;
+        font-size: 0;
+        line-height: 0;
+        text-align: left;
+    }
+
+    .xans-order-layerbasket .xans-order-list>li {
+        position: relative;
+        display: inline-block;
+        text-align: left;
+        vertical-align: top;
+    }
+
+    .xans-order-layerbasket .thumbnail {
+        margin: 0 4px;
+    }
+
+    .xans-order-layerbasket .thumbnail img {
+        width: 100%;
+        border: 1px solid #ececec;
+    }
+
+    .xans-order-layerbasket p {
+        color: #111;
+        margin: 3px 5px 0;
+        word-break: break-all;
+        line-height: 1.25;
+        font-size: 11px;
+    }
+
+    .xans-order-layerbasket .name {
+        margin-top: 0;
+    }
+
+    .xans-order-layerbasket .name .ec-set-product-name {
+        display: block;
+        margin: 0 0 3px;
+    }
+
+    .xans-order-layerbasket .name a {
+        color: #111;
+        font-size: 13px;
+        padding-bottom: 8px;
+        display: block;
+    }
+
+    .xans-order-layerbasket .option {}
+
+    .xans-order-layerbasket .price {
+        color: #111;
+        font-weight: 400;
+    }
+
+    .xans-order-layerbasket .price strong {
+        color: #111;
+        font-family: verdana;
+        font-size: 12px;
+    }
+
+    .xans-order-layerbasket .strike {
+        text-decoration: line-through;
+    }
+
+    .xans-order-layerbasket .strike strong {
+        font-weight: normal;
+    }
+
+    .xans-order-layerbasket .grid4 li {
+        width: 25%;
+    }
+
+    .ec-base-layer.typeModal.bsket_detail::before {
+        content: "";
+        clear: both;
+        display: block;
+        left: 0;
+        top: 0;
+        right: 440px;
+        position: fixed;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, .4);
+        z-index: -5;
+    }
+
+    .ec-base-layer.typeModal.bsket_detail {
+        width: 440px;
+        right: 0;
+        margin-left: auto;
+        left: auto;
+        top: 0;
+        bottom: 0;
+        border: 0px;
+    }
+
+    .ec-base-layer.typeModal.bsket_detail h1 {
+        border-radius: 0;
+        text-align: left;
+        font-weight: 400;
+        padding: 40px 17px 1px 19px;
+        height: auto;
+    }
+
+    .ec-base-layer.typeModal.bsket_detail.xans-order-layerbasket .xans-order-list>li {
+        display: block;
+        width: 100%;
+        margin-bottom: 18px;
+    }
+
+    .ec-base-layer.typeModal.bsket_detail.xans-order-layerbasket .xans-order-list>li .thumbnail {
+        display: inline-block;
+        width: 95px;
+        vertical-align: top;
+    }
+
+    .ec-base-layer.typeModal.bsket_detail.xans-order-layerbasket .xans-order-list>li .information {
+        display: inline-block;
+        vertical-align: top;
+        padding-left: 13px;
+    }
+
+    .ec-base-layer.typeModal.bsket_detail.bsket_detail {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .ec-base-layer.typeModal.bsket_detail.bsket_detail .orba_top {}
+
+    .ec-base-layer.typeModal.bsket_detail.bsket_detail .orba_bottom {}
+
+    .ec-base-layer.typeModal.bsket_detail.bsket_detail .orba_top .wrap {
+        max-height: calc(100vh - 252px);
+    }
+
+    .ec-base-layer.typeModal.bsket_detail.bsket_detail .orba_bottom>.ec-base-button {
+        margin: 15px;
+    }
+
+    .ec-base-layer.typeModal.bsket_detail.bsket_detail .btnClose {
+        width: 50px;
+        height: 50px;
+        background: none;
+    }
+
+    .ec-base-layer.typeModal.bsket_detail.bsket_detail .btnClose::before,
+    .ec-base-layer.typeModal.bsket_detail.bsket_detail .btnClose::after {
+        position: absolute;
+        content: "";
+        clear: both;
+        display: block;
+        width: 21px;
+        height: 1px;
+        background-color: #000;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .ec-base-layer.typeModal.bsket_detail.bsket_detail .btnClose::before {
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    .ec-base-layer.typeModal.bsket_detail.bsket_detail .btnClose::after {
+        transform: translate(-50%, -50%) rotate(135deg);
+    }
+
+    @media all and (max-width:1000px) {
+        .ec-base-layer.typeModal.bsket_detail {
+            width: 100%;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+
+    }
+</style>
+<div module="Order_LayerBasket" class="ec-base-layer typeModal bsket_detail">
+    <div class="orba_top">
+        <h1>장바구니 ({$item_total})</h1>
+        <div class="wrap">
+            <ul class="grid1" module="Order_list">
+                <li>
+                    <div class="thumbnail"><a href="/product/detail.html{$param}"><img src="{$img}"
+                                onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';"
+                                alt="{$name_alt}" /></a></div>
+                    <div class="information">
+                        <p class="name">{$product_name_link}{$icon}</p>
+                        <p class="amount">QTY : {$quantity}</p>
+                        <p class="option">{$option_str}</p>
+                        <p class="price">{$purchase_price}</p>
+                        <p class="{$purchase_price_ref_display|display}"><strong>{$purchase_price_ref}</strong></p>
+                        <p class="{$discount_price_display|display}"><strong class="txtWarn">-{$discount_price}</strong>
+                        </p>
+                        <p class="{$discount_price_ref_display|display}"><strong
+                                class="txtWarn">{$discount_price_ref}</strong></p>
+                        <p class="option {$subscription_show_display|display}"><strong>배송주기</strong> <span
+                                class="txtEm">{$subscription_option_str}</span></p>
+                    </div>
+                </li>
+                <li>
+                    <div class="thumbnail"><a href="/product/detail.html{$param}"><img src="{$img}"
+                                onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';"
+                                alt="{$name_alt}" /></a></div>
+                    <div class="information">
+                        <p class="name">{$product_name_link}{$icon}</p>
+                        <p class="amount">QTY : {$quantity}</p>
+                        <p class="option">{$option_str}</p>
+                        <p class="price">{$purchase_price}</p>
+                        <p class="{$purchase_price_ref_display|display}"><strong>{$purchase_price_ref}</strong></p>
+                        <p class="{$discount_price_display|display}"><strong class="txtWarn">-{$discount_price}</strong>
+                        </p>
+                        <p class="{$discount_price_ref_display|display}"><strong
+                                class="txtWarn">{$discount_price_ref}</strong></p>
+                        <p class="option {$subscription_show_display|display}"><strong>배송주기</strong> <span
+                                class="txtEm">{$subscription_option_str}</span></p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div module="Order_LayerBasketPaging" class="ec-base-paginate typeList">
+            <a href="#none" {$param_before} class="btnPrev">이전 페이지</a>
+            <ol>
+                <li><a href="#none" {$param} class="{$param_class}">{$no}</a></li>
+                <li><a href="#none" {$param} class="{$param_class}">{$no}</a></li>
+            </ol>
+            <a href="#none" {$param_next} class="btnNext">다음 페이지</a>
+        </div>
+    </div>
+
+    <div class="orba_bottom">
+        <div class="ec-base-button gColumn">
+            <a href="/order/basket.html{$basket_param}" class="btnEm">장바구니 이동</a>
+            <a href="#none" onclick="Basket.orderLayerAll(this)" link-order="/order/orderform.html?basket_type=all_buy"
+                link-login="/member/login.html" class="btnSubmit">주문하기</a>
+        </div>
+    </div>
+
+    <a href="#none" class="btnClose" onclick="$('#confirmLayer').hide();">닫기</a>
+</div>

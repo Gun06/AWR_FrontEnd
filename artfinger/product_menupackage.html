@@ -1,0 +1,42 @@
+<div module="Product_menupackage" class="prd_menupackage">
+    <!--@css(/css/module/product/menupackage.css)-->
+    <!--@js(/js/module/product/menucategory.js)-->
+
+    <!--@import(/product/shoppQ/searchContent.html)-->
+
+    <ul class="menuCategory">
+        <!--li module="product_headcategory" class="title">{$name_1}</li-->
+        <li module="product_displaycategory" style="display:{$display};" class="{$selected}">
+            <a href="/{$design_page_url}?{$param_cate_no}">{$category_name}
+                <!--span class="count {$product_count_display|display}">({$product_count})</span--></a>
+            <ul module="product_children">
+                <li class="{$selected}">
+                    <a href="/{$design_page_url}?{$param_cate_no}">{$category_name}
+                        <!--span class="{$product_count_display|display}">({$product_count})</span--></a>
+                    <div class="button">
+                        {$children_icon}
+                        <ul module="product_children" class="subCategory">
+                            <li class="{$selected}"><a href="{$link_product_list_sub}">{$category_name} <span
+                                        class="{$product_count_display|display}">({$product_count})</span></a></li>
+                            <li class="{$selected}"><a href="{$link_product_list_sub}">{$category_name} <span
+                                        class="{$product_count_display|display}">({$product_count})</span></a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="{$selected}">
+                    <a href="/{$design_page_url}?{$param_cate_no}">{$category_name}
+                        <!--span class="{$product_count_display|display}">({$product_count})</span--></a>
+                    <div class="button">
+                        {$children_icon}
+                        <ul module="product_children" class="subCategory">
+                            <li class="{$selected}"><a href="{$link_product_list_sub}">{$category_name} <span
+                                        class="{$product_count_display|display}">({$product_count})</span></a></li>
+                            <li class="{$selected}"><a href="{$link_product_list_sub}">{$category_name} <span
+                                        class="{$product_count_display|display}">({$product_count})</span></a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>

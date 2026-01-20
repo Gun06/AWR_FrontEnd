@@ -1,0 +1,62 @@
+.xans-myshop-summary {
+    margin: 14px 7px;
+}
+
+.xans-myshop-summary h3 {
+    padding: 14px 0;
+    font-size: 13px;
+    line-height: 1.2em;
+    color: #000;
+    background: #fff;
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.xans-myshop-summary .ec-base-table,
+.xans-myshop-summary .ec-base-table th,
+.xans-myshop-summary .ec-base-table td {
+    border-color: #dfdfdf;
+}
+
+/* 관련 링크 */
+.xans-myshop-mileagepackage .navigation {
+    padding: 0 7px 14px;
+    font-size: 12px;
+}
+
+.xans-myshop-mileagepackage .navigation ul {
+    border: 1px solid #dfdfdf;
+}
+
+.xans-myshop-mileagepackage .navigation li {
+    background: #fff;
+    border-top: 1px solid #dfdfdf;
+}
+
+.xans-myshop-mileagepackage .navigation li:first-child {
+    border-top: 0;
+}
+
+.xans-myshop-mileagepackage .navigation li a {
+    display: block;
+    position: relative;
+    padding: 14px;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 1.2em;
+    color: #4a5164;
+}
+
+.xans-myshop-mileagepackage .navigation li a:after {
+    display: block;
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: url("//img.echosting.cafe24.com/skin/mobile_ko_KR/layout/ico_arrow_gray.png") right 50% no-repeat;
+    background-size: 20px 20px;
+    transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+}

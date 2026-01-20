@@ -1,0 +1,99 @@
+#top_promotionBanner {
+    display: none;
+}
+
+#top_promotionBanner.use {
+    display: block;
+    border-bottom: 1px solid;
+}
+
+#layout #top_promotionBanner {
+    display: none;
+}
+
+
+.topband_banner_wrap {
+    position: relative;
+    padding: 2px 0;
+    line-height: 20px;
+    display: block;
+    font-weight: 400;
+    font-size: 11px;
+    text-align: left;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+.topband_banner_wrap .close2 {
+    cursor: pointer;
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 10px;
+    color: #fff;
+    width: 22px;
+    height: 22px;
+}
+
+.topband_banner_wrap .close2:before,
+.topband_banner_wrap .close2:after {
+    position: absolute;
+    content: ' ';
+    height: 15px;
+    width: 1px;
+    background-color: #fff;
+    top: 50%;
+    right: 50%;
+}
+
+.topband_banner_wrap .close2:before {
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.topband_banner_wrap .close2:after {
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+
+.topband_banner_wrap a.first {
+    width: 300px;
+    padding-bottom: 50px;
+}
+
+.topband_banner_wrap a.second {
+    width: 190px;
+}
+
+.topband_banner_wrap a {
+    display: block;
+    width: 268px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+
+.topband_banner_wrap a img {
+    max-width: 100%;
+}
+
+
+
+
+@media all and (max-width : 1000px) {
+
+    .topband_banner_wrap .close {
+        right: 10px;
+    }
+
+    .topband_banner_wrap {
+        font-size: 10px;
+    }
+
+    .topband_banner_wrap b {
+        font-size: 11px;
+    }
+
+
+
+}

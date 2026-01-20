@@ -1,0 +1,267 @@
+<!--@layout(/layout/basic/layout.html)-->
+<div class="content_info" module="Board_ListPackage_4">
+    <div class="shopinfo_ti" module="board_title_4">
+        <h2>{$board_name}</h2>
+    </div>
+    <div class="board_cont">
+        <!--import(/artfinger/board_menupackage.html)-->
+        <div class="boardListPackage">
+            <!--@css(/board/product/list.css)-->
+
+
+            <div module="board_ButtonList_4" class="ec-base-button list_wrt_but {$write_display|display}">
+                <a href="/board/product/write.html{$param_write}" class="btnStrong">글쓰기</a>
+            </div>
+
+            <div class="brdSort">
+                <div module="board_category_4" class="sort">{$form.board_category}</div>
+                <div module="board_ReplySort_4" class="sort">{$reply_sort}</div>
+            </div>
+
+            <ul module="board_notice_4" class="brdList">
+                <!--
+                $count = 20
+                $login_page_url = /member/login.html
+                $deny_access_url = /index.html
+            -->
+                <li>
+                    <a href="{$link_board_detail}" class="link">
+                        <span class="thumbnail">
+                            {$product_img}
+                        </span>
+                        <span class="description">
+                            <div class="blist_top">
+                                <span class="category_line {$category_display|display}"
+                                    title="카테고리">{$category_name}</span>
+                                <strong class="subject">{$icon_re}{$icon_lock}{$icon_mobile}{$icon_file} <span
+                                        class="text">{$subject}</span><span
+                                        class="commentCnt">{$comment_count}</span><!--{$icon_hit}{$icon_new}--></strong>
+                            </div>
+                            <div class="blist_bottom">
+                                <span class="{$hit_display|display}" id="viewcount">조회 {$hit_count}</span>
+                                <span class="{$vote_display|display}">추천 {$vote}</span>
+                                <span class="date {$date_display|display}" title="작성일">{$write_date}</span>
+                                <span class="name" title="작성자">{$writer}</span>
+                            </div>
+                            <span class="point {$point_display|display}"><img
+                                    src="//img.echosting.cafe24.com/skin/dnd_ko_KR/common/module/board/ico_star{$point_count}.png"
+                                    alt="{$point_count}점" height="10"></span>
+                        </span>
+                    </a>
+                    <span class="view {$mobile_spread_btn_area}">
+                        <button type="button" id="{$mobile_spread_btn}" class="button">
+                            <img id="{$mobile_spread_btn_up}"
+                                src="//img.echosting.cafe24.com/skin/dnd_ko_KR/common/module/board/ico_toggle_arrow_up.png"
+                                alt="내용 접기" style="display:none;" /><img id="{$mobile_spread_btn_down}"
+                                src="//img.echosting.cafe24.com/skin/dnd_ko_KR/common/module/board/ico_toggle_arrow_down.png"
+                                alt="내용 보기" /></button>
+                    </span>
+                </li>
+
+                <li>
+                    <a href="{$link_board_detail}" class="link">
+                        <span class="thumbnail">
+                            {$product_img}
+                        </span>
+                        <span class="description">
+                            <div class="blist_top">
+                                <span class="category_line {$category_display|display}"
+                                    title="카테고리">{$category_name}</span>
+                                <strong class="subject">{$icon_re}{$icon_lock}{$icon_mobile}{$icon_file} <span
+                                        class="text">{$subject}</span><span
+                                        class="commentCnt">{$comment_count}</span><!--{$icon_hit}{$icon_new}--></strong>
+                            </div>
+                            <div class="blist_bottom">
+                                <span class="{$hit_display|display}" id="viewcount">조회 {$hit_count}</span>
+                                <span class="{$vote_display|display}">추천 {$vote}</span>
+                                <span class="date {$date_display|display}" title="작성일">{$write_date}</span>
+                                <span class="name" title="작성자">{$writer}</span>
+                            </div>
+                            <span class="point {$point_display|display}"><img
+                                    src="//img.echosting.cafe24.com/skin/dnd_ko_KR/common/module/board/ico_star{$point_count}.png"
+                                    alt="{$point_count}점" height="10"></span>
+                        </span>
+                    </a>
+                    <span class="view {$mobile_spread_btn_area}">
+                        <button type="button" id="{$mobile_spread_btn}" class="button">
+                            <img id="{$mobile_spread_btn_up}"
+                                src="//img.echosting.cafe24.com/skin/dnd_ko_KR/common/module/board/ico_toggle_arrow_up.png"
+                                alt="내용 접기" style="display:none;" /><img id="{$mobile_spread_btn_down}"
+                                src="//img.echosting.cafe24.com/skin/dnd_ko_KR/common/module/board/ico_toggle_arrow_down.png"
+                                alt="내용 보기" /></button>
+                    </span>
+                </li>
+            </ul>
+            <ul module="board_fixed_4" class="brdList">
+                <!--
+                $count = 20
+                $login_page_url = /member/login.html
+                $deny_access_url = /index.html
+            -->
+                <li>
+                    <a href="{$link_board_detail}" class="link">
+                        <span class="thumbnail">
+                            {$product_img}
+                        </span>
+                        <span class="description">
+                            <div class="blist_top">
+                                <span class="category_line {$category_display|display}"
+                                    title="카테고리">{$category_name}</span>
+                                <strong class="subject">{$icon_re}{$icon_lock}{$icon_mobile}{$icon_file} <span
+                                        class="text">{$subject}</span><span
+                                        class="commentCnt">{$comment_count}</span><!--{$icon_hit}{$icon_new}--></strong>
+                            </div>
+                            <div class="blist_bottom">
+                                <span class="{$hit_display|display}" id="viewcount">조회 {$hit_count}</span>
+                                <span class="{$vote_display|display}">추천 {$vote}</span>
+                                <span class="date {$date_display|display}" title="작성일">{$write_date}</span>
+                                <span class="name" title="작성자">{$writer}</span>
+                            </div>
+                            <span class="point {$point_display|display}"><img
+                                    src="//img.echosting.cafe24.com/skin/dnd_ko_KR/common/module/board/ico_star{$point_count}.png"
+                                    alt="{$point_count}점" height="10"></span>
+                        </span>
+                    </a>
+                    <span class="view {$mobile_spread_btn_area}">
+                        <button type="button" id="{$mobile_spread_btn}" class="button">
+                            <img id="{$mobile_spread_btn_up}"
+                                src="//img.echosting.cafe24.com/skin/dnd_ko_KR/common/module/board/ico_toggle_arrow_up.png"
+                                alt="내용 접기" style="display:none;" /><img id="{$mobile_spread_btn_down}"
+                                src="//img.echosting.cafe24.com/skin/dnd_ko_KR/common/module/board/ico_toggle_arrow_down.png"
+                                alt="내용 보기" /></button>
+                    </span>
+                </li>
+
+                <li>
+                    <a href="{$link_board_detail}" class="link">
+                        <span class="thumbnail">
+                            {$product_img}
+                        </span>
+                        <span class="description">
+                            <div class="blist_top">
+                                <span class="category_line {$category_display|display}"
+                                    title="카테고리">{$category_name}</span>
+                                <strong class="subject">{$icon_re}{$icon_lock}{$icon_mobile}{$icon_file} <span
+                                        class="text">{$subject}</span><span
+                                        class="commentCnt">{$comment_count}</span><!--{$icon_hit}{$icon_new}--></strong>
+                            </div>
+                            <div class="blist_bottom">
+                                <span class="{$hit_display|display}" id="viewcount">조회 {$hit_count}</span>
+                                <span class="{$vote_display|display}">추천 {$vote}</span>
+                                <span class="date {$date_display|display}" title="작성일">{$write_date}</span>
+                                <span class="name" title="작성자">{$writer}</span>
+                            </div>
+                            <span class="point {$point_display|display}"><img
+                                    src="//img.echosting.cafe24.com/skin/dnd_ko_KR/common/module/board/ico_star{$point_count}.png"
+                                    alt="{$point_count}점" height="10"></span>
+                        </span>
+                    </a>
+                    <span class="view {$mobile_spread_btn_area}">
+                        <button type="button" id="{$mobile_spread_btn}" class="button">
+                            <img id="{$mobile_spread_btn_up}"
+                                src="//img.echosting.cafe24.com/skin/dnd_ko_KR/common/module/board/ico_toggle_arrow_up.png"
+                                alt="내용 접기" style="display:none;" /><img id="{$mobile_spread_btn_down}"
+                                src="//img.echosting.cafe24.com/skin/dnd_ko_KR/common/module/board/ico_toggle_arrow_down.png"
+                                alt="내용 보기" /></button>
+                    </span>
+                </li>
+            </ul>
+            <ul module="board_list_4" class="brdList">
+                <!--
+                
+                $login_page_url = /member/login.html
+                $deny_access_url = /index.html
+            -->
+                <li>
+                    <a href="{$link_board_detail}" class="link">
+                        <div class="thumbnail">
+                            {$product_img}
+                        </div>
+                        <span class="description">
+                            <div class="blist_top">
+                                <span class="category_line {$category_display|display}"
+                                    title="카테고리">{$category_name}</span>
+                                <strong class="subject">{$icon_re}{$icon_lock}{$icon_mobile}{$icon_file} <span
+                                        class="text">{$subject}</span><span
+                                        class="commentCnt">{$comment_count}</span><!--{$icon_hit}{$icon_new}--></strong>
+                            </div>
+                            <div class="blist_bottom">
+                                <span class="{$hit_display|display}" id="viewcount">조회 {$hit_count}</span>
+                                <span class="{$vote_display|display}">추천 {$vote}</span>
+                                <span class="date {$date_display|display}" title="작성일">{$write_date}</span>
+                                <span class="name" title="작성자">{$writer}</span>
+                            </div>
+                            <span class="point {$point_display|display}"><img
+                                    src="//img.echosting.cafe24.com/skin/dnd_ko_KR/common/module/board/ico_star{$point_count}.png"
+                                    alt="{$point_count}점" height="10"></span>
+                        </span>
+                    </a>
+                    <span class="view {$mobile_spread_btn_area}">
+                        <button type="button" id="{$mobile_spread_btn}" class="button">
+                            <img id="{$mobile_spread_btn_up}"
+                                src="//img.echosting.cafe24.com/skin/dnd_ko_KR/common/module/board/ico_toggle_arrow_up.png"
+                                alt="내용 접기" style="display:none;" /><img id="{$mobile_spread_btn_down}"
+                                src="//img.echosting.cafe24.com/skin/dnd_ko_KR/common/module/board/ico_toggle_arrow_down.png"
+                                alt="내용 보기" /></button>
+                    </span>
+                </li>
+
+                <li>
+                    <a href="{$link_board_detail}" class="link">
+                        <div class="thumbnail">
+                            {$product_img}
+                        </div>
+                        <span class="description">
+                            <div class="blist_top">
+                                <span class="category_line {$category_display|display}"
+                                    title="카테고리">{$category_name}</span>
+                                <strong class="subject">{$icon_re}{$icon_lock}{$icon_mobile}{$icon_file} <span
+                                        class="text">{$subject}</span><span
+                                        class="commentCnt">{$comment_count}</span><!--{$icon_hit}{$icon_new}--></strong>
+                            </div>
+                            <div class="blist_bottom">
+                                <span class="{$hit_display|display}" id="viewcount">조회 {$hit_count}</span>
+                                <span class="{$vote_display|display}">추천 {$vote}</span>
+                                <span class="date {$date_display|display}" title="작성일">{$write_date}</span>
+                                <span class="name" title="작성자">{$writer}</span>
+                            </div>
+                            <span class="point {$point_display|display}"><img
+                                    src="//img.echosting.cafe24.com/skin/dnd_ko_KR/common/module/board/ico_star{$point_count}.png"
+                                    alt="{$point_count}점" height="10"></span>
+                        </span>
+                    </a>
+                    <span class="view {$mobile_spread_btn_area}">
+                        <button type="button" id="{$mobile_spread_btn}" class="button">
+                            <img id="{$mobile_spread_btn_up}"
+                                src="//img.echosting.cafe24.com/skin/dnd_ko_KR/common/module/board/ico_toggle_arrow_up.png"
+                                alt="내용 접기" style="display:none;" /><img id="{$mobile_spread_btn_down}"
+                                src="//img.echosting.cafe24.com/skin/dnd_ko_KR/common/module/board/ico_toggle_arrow_down.png"
+                                alt="내용 보기" /></button>
+                    </span>
+                </li>
+            </ul>
+            <div module="board_empty_4" class="empty {$empty_display|display}">{$empty_message}</div>
+            <div module="board_paging_4" class="ec-base-paginate typeList">
+                <!--
+                $count = 5
+            -->
+                <a href="{$param_prev}" class="btnPrev">이전 페이지</a>
+                <ol class="page">
+                    <li><a href="{$param_num}" class="{$param_class}">{$page_num}</a></li>
+                    <li><a href="{$param_num}" class="{$param_class}">{$page_num}</a></li>
+                </ol>
+                <a href="{$param_next}" class="btnNext">다음 페이지</a>
+            </div>
+        </div>
+
+        <div module="board_search_4">
+            <!--@css(/css/module/board/search.css)-->
+            <fieldset class="boardSearch">
+                <legend>게시물 검색</legend>
+                <div class="category">{$form.product_category_selector} {$form.search_date} {$form.search_key}</div>
+                <div class="ec-base-field">{$form.search} <button class="btnStrong"
+                        onclick="{$action_search}">검색</button></div>
+            </fieldset>
+        </div>
+    </div>
+</div>

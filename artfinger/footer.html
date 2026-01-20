@@ -1,0 +1,42 @@
+<!--@css(/artfinger/css/footer.css)-->
+<div id="footer" module="Layout_footer" class="footer_pc">
+
+    <!--@import(/artfinger/foot_pc_2.html)--><!--간단 사업자하단 심사후-->
+</div><!--//whell section-->
+
+<div id="footer" module="Layout_footer" class="footer_mo">
+    <ul class="accordion_more_footer">
+        <li>
+            <a>AGREEMENT</a>
+            <ol class="tab_wrap">
+                <li><a href="/shopinfo/info.html">CONTACT</a></li>
+                <li><a href="/shopinfo/customercenter.html">GUIDE</a></li>
+                <li><a href="/member/agreement.html">TERMS OF USE</a></li>
+                <li><a href="/member/privacy.html">PRIVACY POLICY</a></li>
+            </ol>
+        </li>
+        <li>
+            <a>COMPANY INFO</a>
+            <ol class="tab_wrap">
+                <li>COMPANY {$company_name}</li>
+                <li>OWNER {$president_name}</li>
+                <li>BUSINESS NO {$company_regno}</li>
+                <li>ONLINE-ORDER NO {$network_regno} <!--span>{$biz_no_link}</span--></li>
+                <li class="{$cpo_email|display}">E-MAIL. <a href="mailto:{$cpo_email}"
+                        style="text-transform:uppercase;">{$cpo_email}</a></li>
+            </ol>
+        </li>
+        <li class="foot_area_inf">
+            <a>CUSTOMER SERVICE</a>
+            <ol class="tab_wrap">
+                <li>TEL {$phone}</li>
+                <li>ADDRESS: {$mall_zipcode} {$mall_addr1} {$mall_addr2}</li>
+                <li module="Layout_Info" class="bankinfo">{$runtime}</li>
+            </ol>
+        </li>
+    </ul>
+    <ul class="snscate">
+        <!--@import(/artfinger/foot_sns2.html)-->
+        <li class="copy">Copyright &copy;{$mall_name}. All rights reserved.</li>
+    </ul>
+</div><!--//whell section-->

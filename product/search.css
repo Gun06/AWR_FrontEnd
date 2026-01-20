@@ -1,0 +1,1292 @@
+   #shopQ .typePopup .searchForm .search {
+       margin: 0;
+       border-bottom: 0;
+   }
+
+   /* 연관검색어 */
+   #shopQ .keywordArea {
+       padding-bottom: 10px;
+   }
+
+   #shopQ .keywordArea .inner {
+       padding: 20px 16px 16px;
+   }
+
+   #shopQ .keywordArea .heading {
+       font-weight: normal;
+       font-size: 12px;
+       color: #abaeb5;
+   }
+
+   #shopQ .keywordArea .list {
+       margin: 12px 0 0;
+   }
+
+   #shopQ .keywordArea .list>a {
+       display: inline-block;
+       margin: 0 12px 0 0;
+       font-size: 12px;
+       line-height: 18px;
+       color: #000;
+       vertical-align: top;
+   }
+
+   #shopQ .keywordArea .list>a:hover {
+       text-decoration: none;
+   }
+
+
+   .searchField {
+       display: block !important;
+       text-align: center;
+   }
+
+   .searchField .searchbox input.keyword {
+       display: inline-block;
+       border: 0;
+       border-bottom: 1px solid #000;
+   }
+
+   .searchField .searchbox button.btnStrong {
+       display: inline-block;
+       margin-left: -3px;
+   }
+
+   .searchField .searchbox .xans-product-searchdata {
+       display: inline-block;
+   }
+
+   /* prd */
+   .productPackage {
+       background: #fff;
+       margin-top: 50px;
+   }
+
+   .productList {
+       position: relative;
+       width: 100%;
+       padding: 50px 0px 0;
+       box-sizing: border-box;
+       background-color: #fff;
+   }
+
+   .productList .xans-product-searchdata {
+       padding: 0 62px 20px 0;
+   }
+
+   .productList img {
+       max-width: 100%;
+   }
+
+   .productList li {
+       vertical-align: top;
+   }
+
+   .productList .prdList:after {
+       content: '';
+       display: block;
+       clear: both;
+   }
+
+   .productList .thumbnail {
+       position: relative;
+   }
+
+   .productList .thumbnail a {
+       display: block;
+       position: relative;
+       font-size: 0;
+       background: #f6f6f8;
+   }
+
+   .productList .thumbnail a img {
+       max-width: 100%;
+       max-height: 100%;
+       width: 100%;
+       height: auto;
+   }
+
+   .productList .thumbnail .prdIcon {
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 100%;
+       background-repeat: no-repeat;
+       background-size: 30% auto;
+   }
+
+   /* ??????????????? */
+   .productList .thumbnail .icon {
+       position: absolute;
+       bottom: 0;
+       left: 0;
+       font-size: 0;
+   }
+
+   .productList .thumbnail .icon img {
+       margin: 0 4px 0 0;
+       vertical-align: bottom;
+   }
+
+   .productList .thumbnail .thumber_1 {}
+
+   .productList .thumbnail .thumber_2 {
+       opacity: 0;
+       position: absolute;
+       top: 0;
+       left: 0px;
+       width: 100%;
+       right: 0;
+       text-align: center;
+       transition: opacity .4s;
+   }
+
+   .productList .thumbnail:hover .thumber_2 {
+       opacity: 1;
+       transition: opacity .4s;
+   }
+
+   .productList .description {
+       min-height: 10px;
+       margin: 0 0px;
+       line-height: 1em;
+       text-align: left;
+   }
+
+   .productList .description .description::after {
+       clear: both;
+       display: block;
+       content: ""
+   }
+
+   .productList .description .name {
+       float: left;
+       width: 70%;
+       display: block;
+       word-wrap: break-word;
+       margin: 0 0 10px;
+   }
+
+   .productList .description .name a {
+       display: block;
+       text-align: left;
+       font-size: 13px;
+       color: #1b1b1b;
+       font-weight: normal;
+   }
+
+   .productList .description .name span[rel="상품요약정보"] {
+       display: block;
+       text-align: left;
+   }
+
+   .productList .description ul.spec {
+       float: right;
+       width: 30%;
+       min-width: 90px;
+       display: block;
+   }
+
+   .productList .description ul.spec li {
+       text-align: right;
+       display: block;
+       margin-bottom: 6px;
+   }
+
+   .productList .icon {
+       float: left;
+       width: 70%;
+       display: block;
+       margin: 0 0 7px;
+   }
+
+   .productList .icon img {
+       margin: 0 4px 0 0;
+   }
+
+   .productList .icon .icon_img {
+       margin: 0 0 2px;
+   }
+
+   .productList .description .price {
+       font-size: 12px;
+       margin: 0 0 7px;
+   }
+
+   .productList .description .strike,
+   .productList .description .mPriceStrike {
+       text-decoration: line-through;
+   }
+
+   .productList .description li.cart {
+       margin: 0 0 7px;
+   }
+
+   .productList .description .color {
+       overflow: hidden;
+       margin: 0;
+   }
+
+   .productList .description .color .chips {
+       float: left;
+       width: 12px;
+       height: 10px;
+       margin: 0 2px 2px 0;
+       font-size: 0;
+       line-height: 0;
+       border: 1px solid #e3e3e3;
+   }
+
+   .productList .description .likeButton button {
+       border: 0;
+       background: none;
+   }
+
+   .productList .description .likeButton button strong {
+       margin: 0 0 0 3px;
+       font-size: 11px;
+       line-height: 20px;
+       color: #757575;
+   }
+
+   .productList .description .likeButton.selected button strong {
+       line-height: 20px;
+       color: #2e2e2e;
+   }
+
+   .productList .description .icon {
+       display: block;
+       margin: 17px 0 0 0;
+   }
+
+   .productList .description .icon img {
+       margin: 2px 2px 0 0;
+       vertical-align: middle;
+   }
+
+   .productList.typeThumb .prdList {
+       display: -webkit-flex;
+       display: -ms-flex;
+       display: flex;
+       -ms-flex-wrap: wrap;
+       -webkit-flex-wrap: wrap;
+       flex-wrap: wrap;
+       margin: 0 0 0 -10px;
+   }
+
+   .productList.typeThumb .prdList>li {
+       float: left;
+       width: 50%;
+       -webkit-flex-basis: 50%;
+       -ms-flex-basis: 50%;
+       flex-basis: 50%;
+       box-sizing: border-box;
+       padding: 0 0 20px 0;
+   }
+
+   .productList.typeThumb .prdList>li>.inner {
+       padding-left: 10px;
+   }
+
+   .productList.typeThumb .prdList.small>li {
+       width: 33.3%;
+       -webkit-flex-basis: 33.3%;
+       -ms-flex-basis: 33.3%;
+       flex-basis: 33.3%;
+   }
+
+
+   /* 정렬 버튼 */
+   .productList .btnSorting {
+       position: absolute;
+       right: 16px;
+       top: 20px;
+   }
+
+   .productList .btnSorting button {
+       overflow: hidden;
+       position: relative;
+       float: left;
+       width: 31px;
+       height: 28px;
+       box-sizing: border-box;
+       font-size: 1px;
+       line-height: 0;
+       color: transparent;
+       background: #ededed;
+   }
+
+   .productList .btnSorting button.selected {
+       border: 1px solid #000;
+       background: #fff;
+   }
+
+   .productList .btnSorting button:before {
+       content: '';
+       position: absolute;
+       left: 50%;
+       top: 50%;
+       width: 12px;
+       height: 12px;
+       margin: -6px 0 0 -6px;
+       background: url('//img.echosting.cafe24.com/skin/dnd_ko_KR/common/module/sfix_btn_sorting.png') no-repeat 0 0;
+       background-size: 100px auto;
+   }
+
+   .productList .btnSorting button.bigView:before {
+       background-position: 0 0;
+   }
+
+   .productList .btnSorting button.bigView.selected:before {
+       background-position: 0 -50px;
+   }
+
+   .productList .btnSorting button.smallView:before {
+       background-position: -50px 0;
+   }
+
+   .productList .btnSorting button.smallView.selected:before {
+       background-position: -50px -50px;
+   }
+
+   /* paginate */
+   .productPaginate.typeList {
+       display: block;
+       margin: 20px auto 0;
+       padding: 0 0 48px;
+       text-align: center;
+       background: #fff;
+       white-space: nowrap;
+   }
+
+   .productPaginate.typeList [class*='btn'] {
+       display: inline-block;
+       position: relative;
+       width: 30px;
+       height: 30px;
+       font-size: 1px;
+       line-height: 0;
+       color: transparent;
+       border: 1px solid #dedfe2;
+       vertical-align: top;
+   }
+
+   .productPaginate.typeList [class*='btn']:before {
+       content: '';
+       position: absolute;
+       left: 50%;
+       top: 50%;
+       width: 8px;
+       height: 13px;
+       margin: -6px 0 0 -4px;
+       background: url('//img.echosting.cafe24.com/skin/dnd_ko_KR/common/module/sfix_btn_paginate.png') no-repeat 0 0;
+       background-size: 100px auto;
+   }
+
+   .productPaginate.typeList .btnNext:before {
+       background-position: -50px 0;
+   }
+
+   .productPaginate.typeList .page {
+       display: inline-block;
+       height: 32px;
+       vertical-align: top;
+   }
+
+   .productPaginate.typeList .page:after {
+       content: '';
+       display: block;
+       clear: both;
+   }
+
+   .productPaginate.typeList .page li {
+       display: inline-block;
+   }
+
+   .productPaginate.typeList .page li a {
+       display: block;
+       margin: 0 8px;
+       font-size: 15px;
+       line-height: 32px;
+       color: #999;
+       text-decoration: none;
+   }
+
+   .productPaginate.typeList .page .other {}
+
+   .productPaginate.typeList .page .this {
+       font-weight: bold;
+       color: #000;
+   }
+
+   /* 할인 기간 */
+   .discountPeriod {
+       display: inline-block;
+   }
+
+   .layerDiscountPeriod {
+       display: none;
+       border: 1px solid #565960;
+       background: #fff;
+       -webkit-box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.15);
+       -moz-box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.15);
+       box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.15);
+   }
+
+   .layerDiscountPeriod strong.title {
+       display: block;
+       margin: 0 0 12px;
+       padding: 0 35px 0 0;
+       font-weight: bold;
+       color: #2e2e2e;
+   }
+
+   .layerDiscountPeriod strong.title img {
+       vertical-align: middle;
+   }
+
+   .layerDiscountPeriod .content p {
+       margin: 2px 0 0;
+       font-size: 11px;
+       line-height: 16px;
+       color: #757575;
+       letter-spacing: -1px;
+   }
+
+   .layerDiscountPeriod .content p strong {
+       font-weight: normal;
+       font-size: 12px;
+       color: #2e2e2e;
+   }
+
+   .layerDiscountPeriod .content p strong span {
+       font-size: 11px;
+   }
+
+   .layerDiscountPeriod .edge {
+       display: none;
+   }
+
+   /* 구매조건에 따라 배송비 차등부과 layer */
+   .shippingFee .ec-base-tooltip .btnTooltip {
+       position: static;
+   }
+
+   .shippingFee .ec-base-tooltip .btnTooltip .differentialShipping .close a {
+       text-indent: 150%;
+   }
+
+   .shippingFee .ec-base-tooltip .btnTooltip .differentialShipping {
+       left: 0;
+       right: 0;
+       width: 88%;
+       margin: 3px auto 0;
+   }
+
+   /* shopQ start*/
+   #ec-product-searchdata-form {
+       display: block !important;
+   }
+
+   /* 상세검색 레이어 팝업(팝업형) */
+   .xans-product-searchdata .searchCondition {
+       display: none;
+       z-index: 301;
+       overflow-y: auto;
+       max-width: 900px;
+       margin: 0 auto;
+       position: fixed;
+       top: 0;
+       left: 0;
+       right: 0;
+       bottom: 0;
+       background: #fff;
+       -webkit-overflow-scrolling: touch;
+   }
+
+   .xans-product-searchdata .searchCondition h2 {
+       padding: 16px 50px 16px 16px;
+       font-size: 15px;
+       line-height: 18px;
+       font-weight: bold;
+       background: #fff;
+       color: #000;
+   }
+
+   .xans-product-searchdata .searchCondition .btnClose {
+       display: inline-block;
+       width: 50px;
+       height: 50px;
+       position: absolute;
+       right: 0;
+       top: 0;
+       z-index: 110;
+       color: #000;
+       font-size: 0;
+       line-height: 0;
+       background: url('https://moma-img.cafe24img.com/img/1/f653/close_btn.png') 0 0 no-repeat;
+       background-size: 50px;
+   }
+
+   .xans-product-searchdata .searchCondition .wrap {
+       padding: 0 0 86px;
+       border-top: 1px solid #dedfe2;
+       font-size: 13px;
+       background: #fff;
+   }
+
+   .xans-product-searchdata .searchCondition .toggleArea.selected {
+       position: relative;
+       border-bottom: 0;
+   }
+
+   .xans-product-searchdata .searchCondition .toggleArea {
+       position: relative;
+       border-bottom: 1px solid #dedfe2;
+   }
+
+   .xans-product-searchdata .searchCondition .toggleArea>.title {
+       position: relative;
+       overflow: hidden;
+       padding: 18px 100px 18px 40px;
+       color: #000;
+       cursor: pointer;
+       font-size: 14px;
+       line-height: 14px;
+       background-color: #f6f6f6;
+       -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+   }
+
+   .xans-product-searchdata .searchCondition .toggleArea>.title:after {
+       display: block;
+       position: absolute;
+       top: 0;
+       left: 14px;
+       content: "";
+       width: 20px;
+       height: 100%;
+       background: url("https://moma-img.cafe24img.com/img/1/f653/ico_arrow.png") no-repeat center;
+       background-size: 20px;
+       -webkit-transform: rotate(180deg);
+       -moz-transform: rotate(180deg);
+       transform: rotate(180deg);
+   }
+
+   .xans-product-searchdata .searchCondition .toggleArea.selected>.title:after {
+       -webkit-transform: rotate(0);
+       -moz-transform: rotate(0);
+       transform: rotate(0);
+   }
+
+   .xans-product-searchdata .searchCondition .toggleArea.disable>.title:after {
+       background-image: none !important;
+   }
+
+   .xans-product-searchdata .searchCondition .toggleArea>.title h3 {
+       float: left;
+       font-size: 13px;
+       text-transform: uppercase;
+       word-break: break-all;
+       word-wrap: break-word;
+   }
+
+   .xans-product-searchdata .searchCondition .toggleArea>.contents {
+       display: none;
+       border: 1px solid #d5d5d5;
+       border-left: 0;
+       border-right: 0;
+       background: #fff;
+       -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+       box-sizing: border-box;
+   }
+
+   .xans-product-searchdata .searchCondition .toggleArea.selected>.contents,
+   .xans-product-searchdata .searchCondition .toggleArea.disable>.contents {
+       display: block;
+   }
+
+   .xans-product-searchdata .searchCondition .toggleArea .btnClear {
+       position: absolute;
+       top: 10px;
+       right: 16px;
+       display: inline-block;
+       height: 28px;
+       line-height: 28px;
+       margin: 0;
+       padding: 0 10px;
+       border: 1px solid #dedfe2;
+       cursor: pointer;
+       outline: 0;
+       vertical-align: middle;
+       font-size: 12px;
+       font-weight: normal;
+       color: #000;
+       background: #fff;
+       border-radius: 5px;
+       box-sizing: border-box;
+   }
+
+   /* 체크박스 */
+   .xans-product-searchdata .searchCondition .check .xans-product-filterform {
+       padding: 14px 16px 0;
+       display: flex;
+       flex-wrap: wrap;
+   }
+
+   .xans-product-searchdata .searchCondition .check li {
+       margin: 0 0 14px 0;
+       flex-basis: 50%;
+   }
+
+   .xans-product-searchdata .searchCondition .check li label {
+       display: inline-block;
+       word-break: break-all;
+       word-wrap: break-word;
+       min-height: 0;
+       line-height: 20px;
+       color: #54504f;
+   }
+
+   .xans-product-searchdata .searchCondition .check li label.selected {
+       color: #000;
+   }
+
+   .xans-product-searchdata .searchCondition .check li input {
+       margin: 0 4px 0 0;
+       background-image: url(https://moma-img.cafe24img.com/img/1/f653/bg_checkbox.png);
+   }
+
+   .xans-product-searchdata .searchCondition .check li input:checked {
+       background-image: url(https://moma-img.cafe24img.com/img/1/f653/bg_checkbox_checked.png);
+   }
+
+   .xans-product-searchdata .searchCondition .check .icoColor {
+       display: inline-block;
+       margin: -2px 4px 0 0;
+       width: 18px;
+       height: 18px;
+       border: 1px solid #e9e9e9;
+       vertical-align: middle;
+       -webkit-border-radius: 10px;
+       -moz-border-radius: 10px;
+       border-radius: 10px;
+   }
+
+   /* 텍스트버튼 */
+   .xans-product-searchdata .searchCondition .button .xans-product-filterform {
+       padding: 14px 16px;
+       margin: -5px 0 0 -4px;
+       font-size: 0;
+       line-height: 0;
+   }
+
+   .xans-product-searchdata .searchCondition .button li {
+       display: inline-block;
+       padding: 5px 0 0 4px;
+       min-width: 33.33%;
+       max-width: 100%;
+       vertical-align: top;
+       box-sizing: border-box;
+       -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+   }
+
+   .xans-product-searchdata .searchCondition .button li button {
+       display: inline-block;
+       width: 100%;
+       border: 1px solid #d5d5d5;
+       padding: 6px 6px 4px;
+       border-radius: 2px;
+       outline: 0;
+       cursor: pointer;
+       font-size: 12px;
+       line-height: 18px;
+       color: #54504f;
+       word-break: break-all;
+       word-wrap: break-word;
+       background: #fff;
+   }
+
+   .xans-product-searchdata .searchCondition .button li.selected button {
+       border-color: #000;
+       color: #fff;
+       background: #000;
+   }
+
+   /* 텍스트버튼 풀타입 */
+   .xans-product-searchdata .searchCondition .button.full .xans-product-filterform {
+       padding: 0;
+       margin: 0;
+   }
+
+   .xans-product-searchdata .searchCondition .button.full li {
+       width: 100%;
+       padding: 0;
+       border: 1px solid #fff;
+       border-bottom-color: #e5e9f2;
+   }
+
+   .xans-product-searchdata .searchCondition .button.full li button {
+       border: 0;
+       font-size: 13px;
+       padding: 10px 6px 11px;
+       color: #54504f;
+   }
+
+   .xans-product-searchdata .searchCondition .button.full li.selected button {
+       background: #fff;
+       color: #000;
+   }
+
+   .xans-product-searchdata .searchCondition.shopQShow .button.full li.selected button {
+       border-color: #000;
+       color: #fff;
+       background: #000;
+   }
+
+   .xans-product-searchdata .searchCondition .button.full .txtRange {
+       color: #757575;
+   }
+
+   /* 컬러칩 */
+   .xans-product-searchdata .searchCondition .colorChip .xans-product-filterform {
+       padding: 14px 16px;
+       margin: -14px 0 0;
+       font-size: 0;
+       line-height: 0;
+   }
+
+   .xans-product-searchdata .searchCondition .colorChip li {
+       position: relative;
+       display: inline-block;
+       width: 20%;
+       margin: 14px 0 0;
+       text-align: center;
+       vertical-align: middle;
+   }
+
+   .xans-product-searchdata .searchCondition .colorChip li .circle {
+       display: inline-block;
+       width: 45px;
+       height: 45px;
+       outline: 0;
+       cursor: pointer;
+       border-radius: 27px;
+   }
+
+   .xans-product-searchdata .searchCondition .colorChip li.selected .icoColorCheck {
+       position: absolute;
+       top: 50%;
+       left: 50%;
+       display: block;
+       width: 28px;
+       height: 23px;
+       margin: -11px 0 0 -14px;
+       background: url("//img.echosting.cafe24.com/skin/mobile/product/ico_color_selected.png") no-repeat 0 0;
+       background-size: 28px auto;
+   }
+
+   .xans-product-searchdata .searchCondition.shopQShow .colorChip li .circle {
+       display: inline-block;
+       width: 26px;
+       height: 26px;
+       outline: 0;
+       cursor: pointer;
+       border-radius: 13px;
+   }
+
+   .xans-product-searchdata .searchCondition.shopQShow .colorChip li.selected .icoColorCheck {
+       position: absolute;
+       top: 0;
+       left: 0;
+       display: block;
+       width: 26px;
+       height: 26px;
+       margin: 0;
+       background: url("//img.echosting.cafe24.com/skin/mobile/product/ico_color_selected.png") no-repeat 5px 6px;
+       background-size: 18px auto;
+   }
+
+   /* 금액 입력 */
+   .xans-product-searchdata .searchCondition .priceInput {
+       margin: 14px 0;
+       text-align: center;
+       color: #54504f;
+   }
+
+   .xans-product-searchdata .searchCondition .priceInput>input[type="text"] {
+       width: 43%;
+       margin: 0 4px 0 0;
+   }
+
+   .xans-product-searchdata .searchCondition .priceInput>input {
+       color: #54504f;
+       border-radius: 4px;
+   }
+
+   .xans-product-searchdata .searchCondition .priceInput>input:focus {
+       border-color: #dcd8d6;
+   }
+
+   /* 범위지정 */
+   .xans-product-searchdata .searchCondition .priceSlide .slider {
+       position: relative;
+       padding: 9px 16px 11px;
+       margin: 14px 16px 14px 8px;
+   }
+
+   .xans-product-searchdata .searchCondition .priceSlide .range {
+       position: static;
+       box-shadow: 0 0 0 0;
+       height: 4px;
+       background: #abaeb5;
+       border-radius: 4px;
+       border: 0;
+   }
+
+   .xans-product-searchdata .searchCondition .priceSlide .noUi-base {
+       position: static;
+       box-shadow: 0 0 0 0;
+       height: 4px;
+       background: #abaeb5;
+       border-radius: 0;
+       border: 0;
+   }
+
+   .xans-product-searchdata .searchCondition .priceSlide .noUi-connect {
+       position: absolute;
+       top: 0px;
+       border-top: 1px solid #000;
+       border-bottom: 1px solid #000;
+       height: 4px;
+       box-shadow: none;
+       bottom: initial;
+       font-size: 0;
+       line-height: 0;
+       background: #000;
+       box-sizing: border-box;
+   }
+
+   .xans-product-searchdata .searchCondition .priceSlide .noUi-handle {
+       position: absolute;
+       top: -8px;
+       display: block;
+       margin: 0 0 0 10px;
+       width: 22px;
+       height: 22px;
+       background: #000;
+       border-radius: 11px;
+       box-shadow: none;
+       font-size: 0;
+       line-height: 0;
+       outline: 0;
+       border: 0;
+       cursor: pointer;
+   }
+
+   .xans-product-searchdata .searchCondition .priceSlide .noUi-handle:before,
+   .xans-product-searchdata .searchCondition .priceSlide .noUi-handle:after {
+       display: none;
+   }
+
+   .xans-product-searchdata .searchCondition .priceSlide .value {
+       overflow: hidden;
+       margin: 0 16px 14px;
+       text-align: right;
+       font-size: 12px;
+       color: #54504f;
+   }
+
+   .xans-product-searchdata .searchCondition.shopQShow .priceSlide .value {
+       margin: 0 16px 14px 0;
+   }
+
+   .xans-product-searchdata .searchCondition .priceSlide .value .minPrice {
+       float: left;
+   }
+
+   /* 검색결과 레이어팝업 */
+   .xans-product-searchdata .xans-product-searchconditiondata {
+       position: relative;
+       overflow: hidden;
+       margin: 0 0 30px;
+       padding: 0 48px 0 16px;
+       white-space: nowrap;
+       background: #f6f6f6;
+       box-sizing: border-box;
+       -webkit-overflow-scrolling: touch;
+   }
+
+   .xans-product-searchdata .xans-product-searchconditiondata .searchDataResult {
+       overflow-x: auto;
+   }
+
+   .xans-product-searchdata .xans-product-searchconditiondata .searchDataResult li {
+       display: inline-block;
+       height: 30px;
+       line-height: 30px;
+       padding: 0 30px 0 10px;
+       margin: 13px 4px 13px 0;
+       border: 1px solid #e1e0cc;
+       vertical-align: top;
+       color: #5d5d5d;
+       font-size: 12px;
+       background: #fff;
+       box-sizing: border-box;
+       position: relative;
+   }
+
+   .xans-product-searchdata .xans-product-searchconditiondata .searchDataResult li .icoColor {
+       display: inline-block;
+       margin: 0;
+       width: 18px;
+       height: 18px;
+       border: 1px solid #e9e9e9;
+       vertical-align: middle;
+       -webkit-border-radius: 10px;
+       -moz-border-radius: 10px;
+       border-radius: 10px;
+       font-size: 0;
+       line-height: 0;
+       margin: -3px 4px 0 0;
+   }
+
+   .xans-product-searchdata .xans-product-searchconditiondata .btnSearchDelete {
+       right: 0;
+       top: 0;
+       width: 30px;
+       height: 30px;
+       overflow: hidden;
+       position: absolute;
+       font-size: 1px;
+       line-height: 0;
+       color: transparent;
+   }
+
+   .xans-product-searchdata .xans-product-searchconditiondata .btnSearchDelete:before {
+       content: '';
+       position: absolute;
+       background-image: url(//img.echosting.cafe24.com/skin/dnd_ko_KR/common/module/sfix_search_form.png);
+       background-repeat: no-repeat;
+       background-size: 150px 25px;
+       right: 8px;
+       top: 8px;
+       width: 12px;
+       height: 12px;
+       background-position: -100px 0;
+   }
+
+   .xans-product-searchdata .xans-product-searchconditiondata .btnRefresh {
+       overflow: hidden;
+       position: absolute;
+       right: 10px;
+       top: 13px;
+       width: 30px;
+       height: 30px;
+       border: 0;
+       font-size: 1px;
+       line-height: 0;
+       color: transparent;
+       text-indent: -150%;
+       background: url(https://moma-img.cafe24img.com/img/1/f653/btn_refresh.png) no-repeat 5px 5px;
+       background-size: 20px 20px;
+       outline: 0;
+       cursor: pointer;
+   }
+
+   /* 팝업형 결과 내 검색 */
+   .xans-product-searchdata .searchCondition .withinInput {
+       padding: 14px 16px;
+       font-size: 0;
+       line-height: 0;
+   }
+
+   .xans-product-searchdata .searchCondition .withinInput .search {
+       position: relative;
+   }
+
+   #ec-product-fixed-form-filter.xans-product-searchdata .searchCondition .withinInput .search {
+       margin: 0;
+   }
+
+   #ec-product-fixed-form-filter.xans-product-searchdata .searchCondition .withinInput .search .btnDelete {
+       right: 35px;
+   }
+
+   .xans-product-searchdata .searchCondition .withinInput .search .keyword {
+       width: 100%;
+       height: 36px;
+       padding: 10px;
+       font-size: 13px;
+       line-height: 13px;
+       font-weight: inherit;
+       color: #353535;
+       border: 1px solid #dedfe2;
+       border-radius: 0;
+       outline-style: none;
+       box-sizing: border-box;
+       padding-right: 69px;
+   }
+
+   .xans-product-searchdata .searchCondition .withinInput .suggest ul {
+       display: none;
+       width: 100%;
+       margin-top: -1px;
+       border: 1px solid #ccc;
+       box-sizing: border-box;
+       background: #fff;
+   }
+
+   .xans-product-searchdata .searchCondition .withinInput .suggest li {
+       overflow: hidden;
+       height: 30px;
+       padding: 0 8px;
+       font-size: 13px;
+       color: #353535;
+       line-height: 30px;
+       text-overflow: ellipsis;
+       white-space: nowrap;
+   }
+
+   .xans-product-searchdata .searchCondition .withinInput .suggest li:hover,
+   .xans-product-searchdata .searchCondition .withinInput .suggest li.selected {
+       cursor: pointer;
+       background: #f1f1f1;
+   }
+
+   /* shopQShow */
+   .xans-product-searchdata .searchCondition.shopQShow {
+       display: block !important;
+       position: static;
+   }
+
+   .xans-product-searchdata .searchCondition.shopQShow .wrap {
+       padding: 0 0 13px;
+       border-top: 1px solid #e5e9f2;
+   }
+
+   .xans-product-searchdata .searchCondition.shopQShow .toggleArea {
+       display: flex;
+       flex-wrap: wrap;
+   }
+
+   .xans-product-searchdata .searchCondition.shopQShow .toggleArea .title {
+       flex: 0 0 110px;
+       box-sizing: border-box;
+       background: #fff;
+       padding: 18px 23px 13px 16px;
+       pointer-events: none;
+   }
+
+   .xans-product-searchdata .searchCondition.shopQShow .toggleArea .contents {
+       flex: 1;
+       border: 0;
+       overflow-x: auto;
+       display: flex;
+   }
+
+   .xans-product-searchdata .searchCondition.shopQShow .toggleArea .contents.search.searchForm {
+       display: inline-block;
+   }
+
+   .xans-product-searchdata .searchCondition.shopQShow .toggleArea .contents.priceSlide {
+       display: block;
+   }
+
+   .xans-product-searchdata .searchCondition.shopQShow .toggleArea>.title:after {
+       display: none;
+   }
+
+   .xans-product-searchdata .searchCondition.shopQShow .toggleArea .title h3 {
+       font-size: 12px;
+       font-weight: normal;
+   }
+
+   .xans-product-searchdata .searchCondition.shopQShow .button .xans-product-filterform {
+       padding: 14px 0 14px 0;
+       margin: 0;
+       display: -webkit-box;
+       -webkit-overflow-scrolling: touch;
+       -ms-overflow-style: none;
+       overflow: -moz-scrollbars-none;
+       flex-wrap: nowrap;
+   }
+
+   .xans-product-searchdata .searchCondition.shopQShow .button li {
+       min-width: auto;
+       padding: 0 4px 0 0;
+       display: block;
+   }
+
+   .xans-product-searchdata .searchCondition.shopQShow .button li button {
+       padding: 0 12px;
+       line-height: 28px;
+   }
+
+   .xans-product-searchdata .searchCondition.shopQShow .check .xans-product-filterform {
+       padding: 14px 0;
+       list-style: none;
+       display: -webkit-box;
+       -webkit-overflow-scrolling: touch;
+       -ms-overflow-style: none;
+       overflow: -moz-scrollbars-none;
+       flex-wrap: nowrap;
+   }
+
+   .xans-product-searchdata .searchCondition.shopQShow .check li {
+       flex-basis: auto;
+       margin: 0;
+   }
+
+   .xans-product-searchdata .searchCondition.shopQShow .check li label {
+       padding-right: 30px;
+   }
+
+   .xans-product-searchdata .searchCondition .check li input:checked+label {
+       color: #000;
+   }
+
+   .xans-product-searchdata .searchCondition.shopQShow .colorChip .xans-product-filterform {
+       padding: 14px 0;
+       margin: 0;
+       list-style: none;
+       display: -webkit-box;
+       -webkit-overflow-scrolling: touch;
+       -ms-overflow-style: none;
+       overflow: -moz-scrollbars-none;
+       flex-wrap: nowrap;
+   }
+
+   .xans-product-searchdata .searchCondition.shopQShow .colorChip li {
+       width: auto;
+       margin: 0 16px 0 0;
+       display: block;
+   }
+
+   .xans-product-searchdata .searchCondition.shopQShow .check .icoColor {
+       margin-right: 7px;
+   }
+
+   .xans-product-searchdata .searchCondition.shopQShow .button.full .xans-product-filterform {
+       padding: 14px 0 14px 0;
+       white-space: nowrap;
+   }
+
+   .xans-product-searchdata .searchCondition.shopQShow .button.full li {
+       margin: 0 4px 0 0;
+       padding: 0;
+       border: 1px solid #d5d5d5;
+       width: auto;
+   }
+
+   .xans-product-searchdata .searchCondition.shopQShow .priceInput {
+       display: inline-block;
+       display: flex;
+       line-height: 30px;
+   }
+
+   .xans-product-searchdata .searchCondition.shopQShow .contents.button.full .priceInput>input[type="text"] {
+       width: 100px;
+       height: 30px;
+   }
+
+   .xans-product-searchdata .searchCondition.shopQShow .priceSlide .slider {
+       padding-left: 0;
+   }
+
+   .xans-product-searchdata .searchCondition.shopQShow .priceSlide .slider .noUi-target {
+       border: 0;
+       box-shadow: none;
+       height: 4px;
+   }
+
+   .xans-product-searchdata .searchCondition.shopQShow .withinInput {
+       padding: 14px 16px 14px 0;
+   }
+
+   .xans-product-searchdata .searchCondition.shopQShow .withinInput .search {
+       margin: 0;
+   }
+
+   /* pop btn */
+   #shopQ .ec-base-button.gFixed {
+       box-shadow: 0 0 0;
+       text-align: center;
+       position: fixed;
+       left: 0;
+       right: 0;
+       bottom: 0;
+       width: 100%;
+       border-top: 1px solid #e5e9f2;
+       background: #fbfbfd;
+       padding: 9px 16px 20px;
+       box-sizing: border-box;
+   }
+
+   #shopQ .ec-base-button.gFixed .ec-base-button[class*="gColumn"] {
+       max-width: 872px;
+       margin: 0 auto;
+   }
+
+   #shopQ .ec-base-button.gFixed .ec-base-button[class*="gColumn"] button {
+       -webkit-flex: 1;
+       -ms-flex: 1;
+       flex: 1;
+       height: 40px;
+       margin: 0 2px;
+       padding: 0 10px;
+       border: 1px solid #000;
+       font-size: 13px;
+       line-height: 40px;
+       box-sizing: border-box;
+       text-decoration: none;
+       text-align: center;
+       border-radius: 0;
+   }
+
+   #shopQ .ec-base-button.gFixed .ec-base-button[class*="gColumn"] .btnEm {
+       background: #fff;
+       font-weight: normal;
+   }
+
+   #shopQ .ec-base-button.gFixed .ec-base-button[class*="gColumn"] .btnSubmit {
+       color: #fff;
+       background: #000;
+   }
+
+   #shopQ .typeList>.moreTags {
+       text-align: center;
+       display: flex;
+   }
+
+   #shopQ .typeList>.moreTags button {
+       display: block;
+       height: 36px;
+       border: 1px solid #000;
+       font-size: 12px;
+       margin: 13px 16px 13px;
+       color: #000;
+       line-height: 36px;
+       box-sizing: border-box;
+       text-decoration: none;
+       text-align: center;
+       width: 100%;
+   }
+
+   #shopQ .typeList>.moreTags button:before {
+       content: '+ ';
+   }
+
+   /* shopQ end*/
+
+
+   @media all and (max-width : 1000px) {
+       .searchbox {
+           width: 100%;
+           display: flex;
+           margin-top: 10px;
+           justify-content: center;
+       }
+   }

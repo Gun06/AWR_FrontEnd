@@ -1,0 +1,79 @@
+/* 타이틀 */
+.xans-myshop-addrregister {
+    position: relative;
+}
+
+.xans-myshop-addrregister h3 {
+    padding: 0px;
+    margin-bottom: 10px;
+    line-height: 43px;
+    font-size: 12px;
+    color: #000;
+}
+
+.xans-myshop-addrregister h3::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.xans-myshop-addrregister h3 a {
+    font-size: 12px;
+    float: right;
+    text-decoration: underline;
+}
+
+/* 리스트 */
+.xans-myshop-addrregister .ec-base-table {
+    border: 0;
+}
+
+.xans-myshop-addrregister .ec-base-table th,
+.xans-myshop-addrregister .ec-base-table td {
+    padding: 12px 0;
+    border-top: 1px solid #fff;
+    font-size: 12px;
+    vertical-align: top;
+}
+
+.xans-myshop-addrregister .ec-base-table.typeWrite select {
+    margin: 0 4px 0 0;
+}
+
+.xans-myshop-addrregister .ec-base-table.typeWrite .shipping td {
+    padding: 7px 15px 7px 0;
+    text-align: right;
+}
+
+/* input 크기 조절 */
+.xans-myshop-addrregister #ma_rcv_title,
+.xans-myshop-addrregister #ma_rcv_name {
+    width: 100%;
+}
+
+.xans-myshop-addrregister #ma_rcv_phone1,
+.xans-myshop-addrregister #ma_rcv_mobile_no1 {
+    width: calc(33.3% - 3px);
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.xans-myshop-addrregister #ma_rcv_phone2,
+.xans-myshop-addrregister #ma_rcv_phone3,
+.xans-myshop-addrregister #ma_rcv_mobile_no2,
+.xans-myshop-addrregister #ma_rcv_mobile_no3 {
+    width: calc(33.3% - 4px);
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.xans-myshop-addrregister input[type=text],
+.xans-myshop-addrregister input[type=password],
+.xans-myshop-addrregister input[type=number],
+.xans-myshop-addrregister input[type=tel],
+.xans-myshop-addrregister textarea,
+.xans-myshop-addrregister select,
+.xans-myshop-addrregister .btnBasic,
+.xans-myshop-addrregister .btnEm {
+    border-color: #000;
+}

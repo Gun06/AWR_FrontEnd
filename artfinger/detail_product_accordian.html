@@ -1,0 +1,39 @@
+<!--탭스타일 캐시기록없이 -->
+
+<div class='css3-tab' module="mall_faq">
+    <input type='radio' name='a' id='tabOne' tabindex="1">
+    <input type='radio' name='a' id='tabTwo' tabindex="2">
+    <input type='radio' name='a' id='tabThree' tabindex="3">
+    <input type='radio' name='a' id='tabFour' tabindex="4">
+    <!--input type='radio' name='a' id='tabFive' tabindex="5"-->
+
+    <div class="css3-tab-nav">
+        <label for='tabOne'>FEATURES </label>
+        <label for='tabTwo'>FIT&SIZE </label>
+        <label for='tabThree'>FABRIC&CARE</label>
+        <label for='tabFour'>SHIPPING&RETURNS </label>
+        <!--label for='tabFive'>결제안내</label-->
+    </div>
+
+
+    <div class='css3-tab-content tab-one'>
+        <div module="product_additional" class="tx_for">
+            <pre>{$simple_desc}</pre>
+        </div>
+    </div>
+
+    <div class='css3-tab-content tab-two'>
+        <div module="product_additional" class="tx_for">{$size_guide_description}</div>
+    </div>
+    <div class='css3-tab-content tab-three'>
+        <div module="product_additional" class="tx_for">{$service_info}</div>
+    </div>
+    <div class='css3-tab-content tab-four'>
+        <div module="product_additional" class="tx_for">{$shipping_info}</div>
+    </div>
+    <!--div class='css3-tab-content tab-five'>
+   <div module="product_additional" class="tx_for">{$payment_info}</div>
+</div-->
+
+
+</div>

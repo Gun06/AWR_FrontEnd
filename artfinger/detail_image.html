@@ -1,0 +1,27 @@
+<div class="prdThumbnail productDetailImageView ">
+    <div class="imgArea pc_im_swier" module="product_image"><!-- 이미지 영역 -->
+        <!--@js(/js/module/product/product_image.js)-->
+        <div class="swiper-container-detail gallery-top">
+            <div class="swiper-wrapper" module="product_addimage" style="text-align:center;">
+                <div class="swiper-slide">{$add_img}</div>
+                <div class="swiper-slide">{$add_img}</div>
+            </div>
+            <div class="swiper-pagination-detail"></div>
+            <!-- Add Arrows -->
+            <!--div class="swiper-button-next-detail swiper-button-black"></div>
+            <div class="swiper-button-prev-detail swiper-button-black"></div-->
+        </div>
+    </div><!-- //이미지 영역 -->
+
+    <div module="product_additional" class="prdAdditional  ">
+        <div class="event">
+            {$common_event_a}
+            {$common_event_b}
+        </div>
+        <div id="prdDetail">
+            <div id="prdDetailContent">
+                {$product_detail}
+            </div>
+        </div>
+    </div>
+</div>

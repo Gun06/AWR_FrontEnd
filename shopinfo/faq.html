@@ -1,0 +1,95 @@
+<!--@layout(/layout/basic/layout.html)-->
+<div class="content_info">
+    <div class="shopinfo_ti" module="product_headcategory">
+        <h2>{$title_text_or_image}</h2>
+    </div>
+    <div class="shopinfo_cont">
+        <div module="Board_ListPackage_3001">
+
+            <!--@css(/css/module/board/listPackage_accordian.css)-->
+
+            <div class="boardSort">
+                <span module="board_category_3001">{$form.board_category}</span>
+                <span module="board_ReplySort_3001">{$reply_sort}</span>
+            </div>
+
+            <div module="board_search_3001" class="sch" style="display:none;">
+                <!--@css(/css/module/board/search2.css)-->
+                <fieldset class="boardSearch">
+                    <legend>게시물 검색</legend>
+                    <p class="ePlaceholder" title="지점검색">{$form.search_date} {$form.search_key} {$form.search} <a
+                            href="#none" onclick="{$action_search}">SEARCH</a></p>
+                </fieldset>
+            </div>
+
+            <div class="ec-base-table typeList gBorder">
+                <table border="1" summary="" style="margin:0px 0 0">
+                    <caption>게시판 목록</caption>
+
+
+                    <ul module="board_list_3001" class="accordion2">
+                        <!--
+                        $login_page_url = /member/login.html
+                        $deny_access_url = /index.html
+                    -->
+                        <li style="{$list_bg_color} {$list_char_color}">
+                            <a class="subject left txtBreak"><span class="{$category_display|display}"
+                                    style="padding-left: 10px; width: 106px; display: inline-block; text-align: center;">{$category_name}</span>
+                                {$subject}</a>
+                            <div class="tab_wrap">{$content}</div>
+                        </li>
+                        <li style="{$list_bg_color} {$list_char_color}">
+                            <a class="subject left txtBreak"><span class="{$category_display|display}"
+                                    style="padding-left: 10px; width: 106px; display: inline-block; text-align: center;">{$category_name}</span>
+                                {$subject}</a>
+                            <div class="tab_wrap">{$content}</div>
+                        </li>
+                    </ul>
+                </table>
+            </div>
+        </div>
+        <div module="board_paging_3001" class="ec-base-paginate board" style="display:none">
+            <!--
+            $count = 5
+        -->
+            <a href="{$param_prev}"><i class="xi-angle-left-min" alt="이전 페이지"></i></a>
+            <ol>
+                <li><a href="{$param_num}" class="{$param_class}">{$page_num}</a></li>
+                <li><a href="{$param_num}" class="{$param_class}">{$page_num}</a></li>
+            </ol>
+            <a href="{$param_next}"><i class="xi-angle-right-min" alt="다음 페이지"></i></a>
+        </div>
+
+
+        <!-- 관리자 전용 메뉴 -->
+        <div module="board_ButtonList_3001" class="ec-base-button list_wrt_but {$write_display|display}">
+            <a href="/board/product/write.html{$param_write}" class="btnStrong">WRITE</a>
+        </div>
+
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script>
+            (function ($) {
+                $('.accordion2 > li:eq(300) a.subject').addClass('active').next().slideDown();
+
+                $('.accordion2 a.subject').click(function (j) {
+                    var dropDown = $(this).closest('li').find('.tab_wrap');
+
+                    $(this).closest('.accordion2').find('.tab_wrap').not(dropDown).slideUp();
+
+                    if ($(this).hasClass('active')) {
+                        $(this).removeClass('active');
+                    } else {
+                        $(this).closest('.accordion2').find('a.active').removeClass('active');
+                        $(this).addClass('active');
+                    }
+
+                    dropDown.stop(false, true).slideToggle();
+
+                    j.preventDefault();
+                });
+            })(jQuery);
+        </script>
+    </div>
+</div>

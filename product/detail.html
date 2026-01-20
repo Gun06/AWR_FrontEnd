@@ -1,0 +1,61 @@
+<!--@layout(/layout/basic/layout.html)-->
+<meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes">
+<!--@js(/layout/basic/js/list.js)-->
+<!-- js(/product/product_timedeal.js)-->
+
+
+<div class="content_detail">
+    <div class="title" module="product_headcategory" style="display:none;">
+        <h2><span>{$name_1}</span></h2>
+    </div>
+    <!--@css(/product/detail.css)-->
+    <div module="product_detail" class="detail_area_">
+        <!-- import(/artfinger/size_info.html)-->
+        <!--
+             $coupon_download_page = /coupon/coupon_productdetail.html
+      		$use_item_sale_price = T
+         -->
+        <!--@import(/artfinger/detail_description.html)-->
+        <!--@import(/artfinger/detail_image.html)-->
+    </div>
+    <div class="prdAdditional" module="product_additional">
+        <!--@import(/artfinger/detail_productwith.html)-->
+        <!--@import(/artfinger/detail_review.html)-->
+        <!--@import(/artfinger/detail_qna.html)-->
+    </div>
+</div>
+
+<!--@js(/product/detail.js)-->
+<!--@js(/artfinger/js/pre_ico_detail.js)-->
+<script type="text/javascript">
+    if ($(window).width() > 800) {
+        (function () {
+            var win = $(window);
+            var sizes = {
+                half: 0.5,
+                full: 1,
+                threequarter: 3 / 4,
+                onefive: 1.5,
+                "double": 2,
+                triple: 3
+            }
+            for (k in sizes) {
+                var v = sizes[k]
+                $("." + k).css({
+                    height: Math.floor(win.height() * v) + "px"
+                });
+            };
+
+            function attach() {
+                $('.detail_area_ .prdDescription').stick_in_parent({ offset_top: 145 });
+                $(".detail_area_ .prdDescription:not(.use_manual)").stick_in_parent();
+                $(".detail_area_ .prdDescription.use_manual").stick_in_parent({
+                    parent: ".container2",
+                    spacer: ".manual_spacer"
+                });
+            };
+            attach();
+        })();
+    }        
+</script>

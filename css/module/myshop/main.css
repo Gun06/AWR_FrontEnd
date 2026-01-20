@@ -1,0 +1,74 @@
+#myshopMain {
+    background-color: #fff;
+    padding: 0px 0px;
+}
+
+#myshopMain ul {
+    border: 1px solid #dfdfdf;
+    padding: 30px 0 0 20px;
+}
+
+#myshopMain ul:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#myshopMain .shopMain {
+    vertical-align: top;
+    display: inline-block;
+    width: 49%;
+    text-align: left;
+    margin: 0 0 30px 0px;
+    padding: 0px 0px;
+    box-sizing: border-box;
+}
+
+#myshopMain .shopMain h3 {
+    position: relative;
+    font-size: 13px;
+    color: #333;
+    font-weight: normal;
+}
+
+#myshopMain .shopMain h3 strong {
+    display: none;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+#myshopMain .shopMain h3 span {
+    padding: 6px 0 0;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+#myshopMain .shopMain h3 a {
+    display: block;
+    padding: 0 0 10px;
+}
+
+#myshopMain .shopMain h3 a:hover {
+    text-decoration: none;
+}
+
+#myshopMain .shopMain p {
+    font-size: 13px;
+}
+
+#myshopMain .shopMain p a {
+    font-size: 13px;
+    line-height: 18px;
+    color: #8f8f8f;
+}
+
+.log_but {
+    margin-top: 10px;
+}
+
+.log_but>a.btn_wht_a {
+    font-size: 13px;
+    font-weight: normal;
+}
+
+/* 아이콘 */

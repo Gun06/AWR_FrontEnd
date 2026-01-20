@@ -1,0 +1,1001 @@
+.xans-board-title {
+    overflow: hidden;
+    position: relative;
+}
+
+.xans-board-title h2.title {
+    text-align: center;
+}
+
+.brdRead .btnNormal,
+.brdRead .btnStrong,
+.brdRead .btnBasic {
+    border: 1px solid #dfdfdf;
+}
+
+.boardReadPackage {
+    padding: 0 0 30px;
+}
+
+.boardReadPackage .brdProduct .productInfo {
+    padding: 12px 0px;
+}
+
+.brdProduct .productInfo .prdBox {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    padding: 20px 0 0;
+    border-top: 1px solid #dfdfdf;
+    background: #fff;
+}
+
+.brdProduct .productInfo .thumbnail {
+    overflow: hidden;
+    width: 68px;
+    margin: 0 0 0 0px;
+    box-sizing: border-box;
+}
+
+.brdProduct .productInfo .thumbnail>.link {
+    display: block;
+}
+
+.brdProduct .productInfo .thumbnail img {
+    width: 100%;
+}
+
+.brdProduct .productInfo .description {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    overflow: hidden;
+    margin: 5px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.brdProduct .productInfo .description .prdName {
+    display: block;
+    font-weight: normal;
+    font-size: 0;
+}
+
+.brdProduct .productInfo .description .prdName a {
+    display: inline-block;
+    margin: 0 6px 0 0;
+    font-size: 12px;
+    line-height: 18px;
+    color: #000;
+    text-decoration: none;
+    word-break: break-all;
+    vertical-align: middle;
+}
+
+.brdProduct .productInfo .description .prdName img {
+    margin: 0 2px 0 0;
+    vertical-align: middle;
+}
+
+.brdProduct .productInfo .description .info li {
+    font-size: 12px;
+    line-height: 18px;
+    color: #000;
+}
+
+.brdProduct .productInfo .description .btnDetail {
+    display: inline-block;
+    margin: 5px 0 0;
+    font-size: 12px;
+    line-height: 17px;
+    color: #000;
+    text-decoration: none;
+}
+
+.brdProduct .productInfo .description .btnDetail:after {
+    content: '';
+    display: inline-block;
+    width: 7px;
+    height: 10px;
+    margin: 3px 0 0 6px;
+    vertical-align: top;
+}
+
+.boardReadPackage .brdRead {
+    background: #fff;
+}
+
+.brdRead .head {
+    padding: 10px 0px 20px;
+}
+
+.brdRead .head h3.subject {
+    font-size: 15px;
+    line-height: 20px;
+    color: #000;
+}
+
+.brdRead .head h3.subject .adminAnswer {
+    margin: 0 0 10px;
+}
+
+.brdRead .head .description {
+    overflow: hidden;
+    margin: 7px 0 7px;
+    padding: 0 2px;
+}
+
+.brdRead .head .description .info {
+    position: relative;
+    display: inline-block;
+    padding: 0 7px 0 0px;
+    margin: 7px 0 0;
+    color: #757575;
+    margin: 10px 0 0;
+}
+
+.brdRead .head .description .append {
+    position: relative;
+    display: inline-block;
+    padding: 0 7px 0 8px;
+    margin: 7px 0 0;
+    color: #757575;
+}
+
+.brdRead .head .description .info span:first-child {
+    padding-left: 0;
+}
+
+.brdRead .head .description .info,
+.brdRead .head .description .info a {
+    font-size: 12px;
+    color: #999;
+}
+
+.brdRead .head .description .info .point {
+    display: inline-block;
+    height: 10px;
+    margin: 1px 3px 0 0;
+    vertical-align: top;
+}
+
+.brdRead .head .description .info>span:before {
+    content: '';
+    display: inline-block;
+    width: 1px;
+    height: 8px;
+    margin: 3px 8px 0;
+    vertical-align: top;
+    background: #dddee0;
+}
+
+.brdRead .head .description .info>span:first-child:before,
+.brdRead .head .description .info>span.point+span:before {
+    display: none;
+}
+
+.brdRead .head .description .append {
+    margin: 3px 0 0;
+    font-size: 0;
+}
+
+.brdRead .head .description .append>span {
+    display: inline-block;
+    font-size: 12px;
+    color: #999;
+}
+
+.brdRead .head .description .append>span:before {
+    content: '';
+    display: inline-block;
+    width: 1px;
+    height: 8px;
+    margin: 3px 8px 0;
+    background: #dddee0;
+}
+
+.brdRead .head .description .append>span.point+span:before,
+.brdRead .head .description .append>span:first-child:before {
+    display: none;
+}
+
+.brdRead .head .description .append .vote {
+    float: right;
+}
+
+.brdRead .head .description .append .vote:before {
+    display: none;
+}
+
+.brdRead .head .description .append .vote .button {
+    display: inline-block;
+    border: 1px solid #dedfe2;
+    border-radius: 4px;
+    height: 28px;
+    padding: 0 12px;
+    font-size: 12px;
+    line-height: 26px;
+    color: #0078ea;
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.brdRead .head .description .append .vote .button:before {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 13px;
+    margin: 0 5px 0 0;
+    vertical-align: middle;
+    background: url('//img.echosting.cafe24.com/skin/dnd_ko_KR/common/module/board/ico_vote.png') no-repeat 0 0;
+    background-size: 12px auto;
+}
+
+.brdRead .body {
+    padding: 10px 0 20px;
+    font-size: 12px;
+    color: #5d5d5d;
+    line-height: 20px;
+    word-break: break-all;
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.brdRead .body .image {
+    text-align: center;
+}
+
+.brdRead .body img {
+    display: inline-block;
+    margin: 0 0 16px;
+    max-width: 100%;
+}
+
+.brdRead .body .attach {
+    position: relative;
+    margin: 21px 0 0;
+    padding: 0 0 0 18px;
+    line-height: 20px;
+}
+
+.brdRead .body .attach a {
+    font-size: 12px;
+    color: #999;
+    text-decoration: none;
+}
+
+.brdRead .body .attach:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    vertical-align: middle;
+    background: url('//img.echosting.cafe24.com/skin/dnd_ko_KR/common/module/board/ico_attach.png') no-repeat 0 0;
+    background-size: 12px auto;
+}
+
+.brdRead .foot {
+    margin: 0 0px;
+    padding: 0 0 20px;
+}
+
+.brdRead .foot .passwordGroup {
+    padding: 34px 0 25px;
+}
+
+.brdRead .foot .passwordGroup .password .form input {
+    width: 100%;
+}
+
+.brdRead .foot .passwordGroup .password .help {
+    margin: 7px 0 0;
+    font-size: 12px;
+    color: #999;
+}
+
+.brdRead .foot .formGroup {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: space-between;
+    -ms-justify-content: space-between;
+    justify-content: space-between;
+    margin: 20px 0 6px;
+}
+
+.brdRead .foot .formGroup .gLeft {
+    text-align: left;
+    font-size: 0;
+}
+
+.brdRead .foot .formGroup .gRight {
+    text-align: right;
+    font-size: 0;
+}
+
+.brdRead .foot .formGroup .gCenter {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.brdRead .foot .formGroup .button {
+    display: inline-block;
+    height: 28px;
+    padding: 0 10px;
+    border: 1px solid #dedfe2;
+    border-radius: 4px;
+    font-size: 12px;
+    line-height: 28px;
+    color: #000;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.brdRead .foot .formGroup .gLeft .button {
+    margin: 0 4px 0 0;
+}
+
+.brdRead .foot .formGroup .gRight .button {
+    margin: 0 0 0 4px;
+    vertical-align: top;
+}
+
+.brdRead .foot .btnList {
+    display: inline-block;
+    width: 100%;
+    height: 36px;
+    margin: 10px 0;
+    border: 1px solid #dfdfdf;
+    font-size: 12px;
+    color: #000;
+    line-height: 36px;
+    text-decoration: none;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* 댓글영역 */
+.boardCommentPackage {
+    overflow: hidden;
+    background: #fff;
+}
+
+.boardCommentPackage .brdCmtTitle {
+    margin: 0 0;
+    padding: 16px 0px 4px;
+}
+
+.boardCommentPackage .brdCmtTitle h3 {
+    display: inline-block;
+    font-weight: normal;
+    font-size: 12px;
+    color: #000;
+}
+
+.boardCommentPackage .empty {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center;
+    height: 160px;
+    padding: 0 16px;
+    font-size: 12px;
+    color: #999;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* 비밀글 확인 */
+.cmtSecret {
+    margin: 16px 15px 34px;
+}
+
+.cmtSecret #secure_password {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+/* 권한 없음 */
+.brdCmtAuthority {
+    margin: 20px 16px;
+    padding: 12px 10px 11px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #000;
+    text-align: center;
+    background: #fff;
+}
+
+/* 댓글리스트 공통요소*/
+.boardCommentPackage .formGroup {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: space-between;
+    -ms-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -ms-align-items: center;
+    align-items: center;
+}
+
+.boardCommentPackage .formGroup .gLeft {
+    text-align: left;
+    font-size: 0;
+}
+
+.boardCommentPackage .formGroup .gRight {
+    text-align: right;
+    font-size: 0;
+}
+
+.boardCommentPackage .formGroup .button {
+    display: inline-block;
+    height: 28px;
+    padding: 0 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    line-height: 28px;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.boardCommentPackage .formGroup .button.theme1 {
+    border: 1px solid #dedfe2;
+    color: #000;
+    background: #fff;
+}
+
+.boardCommentPackage .formGroup .button.theme2 {
+    border: 1px solid #dfdfdf;
+    color: #fff;
+    background: #000;
+}
+
+.boardCommentPackage .formGroup .button.large {
+    min-width: 67px;
+    height: 36px;
+    font-size: 12px;
+    line-height: 36px;
+    border-radius: 0;
+    text-align: center;
+}
+
+.boardCommentPackage .formGroup .button.large.theme1 {
+    border-color: #000;
+}
+
+.boardCommentPackage .formGroup .gLeft .button {
+    margin: 0 4px 0 0;
+}
+
+.boardCommentPackage .formGroup .gRight .button {
+    margin: 0 0 0 4px;
+    vertical-align: top;
+}
+
+/* brdPaginate */
+/* typeList */
+.boardCommentPackage .brdPaginate.typeList {
+    padding: 20px 0 48px;
+    text-align: center;
+}
+
+.boardCommentPackage .brdPaginate.typeList [class*='btn'] {
+    display: inline-block;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    font-size: 1px;
+    line-height: 0;
+    color: transparent;
+    border: 1px solid #dedfe2;
+    vertical-align: top;
+}
+
+.boardCommentPackage .brdPaginate.typeList [class*='btn']:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 8px;
+    height: 13px;
+    margin: -6px 0 0 -4px;
+    background: url('//img.echosting.cafe24.com/skin/dnd_ko_KR/common/module/sfix_btn_paginate.png') no-repeat 0 0;
+    background-size: 100px auto;
+}
+
+.boardCommentPackage .brdPaginate.typeList .btnNext:before {
+    background-position: -50px 0;
+}
+
+.boardCommentPackage .brdPaginate.typeList .page {
+    display: inline-block;
+    height: 32px;
+    max-width: 220px;
+    vertical-align: top;
+}
+
+.boardCommentPackage .brdPaginate.typeList .page:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.boardCommentPackage .brdPaginate.typeList .page li {
+    float: left;
+}
+
+.boardCommentPackage .brdPaginate.typeList .page li a {
+    display: inline-block;
+    margin: 0 18px;
+    font-size: 15px;
+    line-height: 32px;
+    color: #999;
+}
+
+.boardCommentPackage .brdPaginate.typeList .page .this {
+    font-weight: bold;
+    color: #000;
+}
+
+/* 댓글리스트 */
+.boardCommentPackage .brdCmtList {
+    background: #fff;
+}
+
+.brdCmt li {
+    position: relative;
+    padding: 19px 0px;
+}
+
+.brdCmt li>.info {
+    margin: 0 0 9px;
+    font-size: 0;
+}
+
+.brdCmt li>.info>span {
+    display: inline-block;
+    font-size: 12px;
+    color: #999;
+    vertical-align: middle;
+}
+
+.brdCmt li>.info>span:before {
+    content: '';
+    display: inline-block;
+    width: 1px;
+    height: 8px;
+    margin: 3px 8px 0;
+    background: #dddee0;
+}
+
+.brdCmt li>.info>span:first-child:before,
+.brdCmt li>.info .point+span:before {
+    display: none;
+}
+
+.brdCmt li>.info .point {
+    height: 10px;
+    margin: 1px 3px 0 0;
+    vertical-align: top;
+}
+
+.brdCmt li>.info .writer a {
+    color: #757575;
+}
+
+.brdCmt li>.comment {
+    font-size: 12px;
+    line-height: 20px;
+    color: #5d5d5d;
+    word-wrap: break-word;
+}
+
+.brdCmt li>.comment .icon>img {
+    display: inline-block;
+    width: inherit !important;
+    height: inherit !important;
+    margin: 0 3px 0 0;
+    vertical-align: middle;
+}
+
+.brdCmt li>.comment+.formGroup {
+    margin: 25px 0 0;
+}
+
+.brdCmt li>.formGroup .btnReply {
+    display: inline-block;
+    position: relative;
+    padding: 0 16px 0 0;
+    font-size: 14px;
+    color: #000;
+    vertical-align: top;
+}
+
+.brdCmt li>.formGroup .btnReply:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 8px;
+    height: 5px;
+    margin: -2px 0 0;
+    background: url('//img.echosting.cafe24.com/skin/dnd_ko_KR/common/module/board/btn_reply.png') no-repeat 0 0;
+    background-size: 8px auto;
+}
+
+.brdCmt li>.formGroup .btnReply .number {
+    margin: 0 0 0 3px;
+    color: #0078ea;
+}
+
+/* 댓글의 댓글영역 */
+.brdCmt li.replyArea {
+    padding-left: 36px;
+}
+
+.brdCmt li.replyArea:before {
+    content: '댓글의 댓글';
+    position: absolute;
+    left: 22px;
+    top: 24px;
+    width: 6px;
+    height: 6px;
+    font-size: 1px;
+    line-height: 0;
+    text-indent: -150%;
+    color: transparent;
+    background: url('//img.echosting.cafe24.com/skin/dnd_ko_KR/common/module/board/ico_reply.png') no-repeat 0 0;
+    background-size: 6px auto;
+}
+
+/* 댓글쓰기(write), 댓글수정(modify), 댓글의 댓글 쓰기(reply) 공통 */
+.brdEditor .titEditor {
+    display: block;
+    margin: 0 0 12px;
+    font-size: 12px;
+    color: #000;
+}
+
+.brdEditor .info {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    margin: 0 0 0 -10px;
+}
+
+.brdEditor .info .name,
+.brdEditor .info .password {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    margin: 0 0 0 10px;
+}
+
+.brdEditor .info input {
+    width: 100%;
+    height: 36px;
+    border: 1px solid #dfdfdf;
+    padding: 0 10px;
+}
+
+.brdEditor .comment {
+    display: block;
+    margin: 10px 0 0;
+    word-wrap: break-word;
+}
+
+.brdEditor .comment textarea {
+    width: 100%;
+    height: 62px;
+    box-sizing: border-box;
+    border: 1px solid #dfdfdf;
+    padding: 10px;
+}
+
+.brdEditor .comment .byte {
+    display: block;
+    margin: 2px 0 0;
+    font-size: 12px;
+    color: #999;
+    text-align: right;
+}
+
+.brdEditor .comment .byte .current {
+    color: #000;
+}
+
+.brdEditor .formGroup {
+    margin: 15px 0 0;
+}
+
+.brdEditor .formGroup .secret label {
+    height: 20px;
+    font-size: 12px;
+    color: #000;
+    line-height: 20px;
+}
+
+.brdEditor .formGroup .secret label input[type="checkbox"] {
+    vertical-align: top;
+}
+
+.brdEditor .byteRating {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    margin: 12px 0 0;
+}
+
+.brdEditor .byteRating .label {
+    width: 64px;
+    padding: 0 10px 0 0;
+    font-weight: normal;
+    font-size: 12px;
+    color: #757575;
+    box-sizing: border-box;
+}
+
+.brdEditor .byteRating .rating {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+.brdEditor .byteRating .rating em {
+    font-style: normal;
+}
+
+.brdEditor .byteRating .rating input[type=radio]+label {
+    margin: 0 7px 0 4px;
+}
+
+.brdEditor .captcha {
+    margin: 20px 0 32px;
+}
+
+.brdEditor .captcha:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.brdEditor .captcha .image {
+    float: left;
+    min-height: 36px;
+    margin: 0 10px 0 0;
+    padding: 5px;
+    box-sizing: border-box;
+    background: #dedfe2;
+}
+
+.brdEditor .captcha .form {
+    overflow: hidden;
+}
+
+.brdEditor .captcha .form input[type="text"] {
+    width: 100%;
+}
+
+.brdEditor .captcha .help {
+    clear: both;
+    margin: 7px 0 0;
+    font-size: 12px;
+    color: #999;
+}
+
+/* 댓글 쓰기 */
+.boardCommentPackage .brdCmtWrite .brdEditor {
+    margin: -1px 0 0;
+    padding: 20px 16px;
+    border-top: 1px solid #dfdfdf;
+    background: #fff;
+}
+
+/* 댓글 수정 */
+.boardCommentPackage .brdCmtModify .brdEditor {
+    padding: 22px 16px 19px;
+    border-top: 1px solid #dfdfdf;
+    background: #fff;
+}
+
+/* 댓글의 댓글 수정 */
+.boardCommentPackage .brdCmt li.replyArea .brdCmtModify {
+    margin-left: -36px;
+}
+
+/* 댓글의 댓글 쓰기 */
+.boardCommentPackage .brdCmtReply {
+    margin: 10px 0 0;
+}
+
+.boardCommentPackage .brdCmtReply .brdEditor {
+    padding: 20px 16px;
+    border-top: 1px solid #dfdfdf;
+    background: #fff;
+}
+
+/* 페이지네이션 typeBoard */
+.brdPaginate.typeBoard .page {
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.brdPaginate.typeBoard .page li {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    padding: 15px 16px;
+    border-top: 1px solid #dfdfdf;
+}
+
+.brdPaginate.typeBoard .page .label {
+    width: 64px;
+    padding: 0 5px 0 0;
+    font-weight: normal;
+    font-size: 12px;
+    color: #757575;
+    box-sizing: border-box;
+}
+
+.brdPaginate.typeBoard .page .link {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    font-size: 12px;
+    color: #000;
+    text-decoration: none;
+    word-break: break-all;
+}
+
+/* 관련글 보기 */
+.boardListGroup {
+    overflow: hidden;
+    margin: -1px 0 0;
+    border-top: 1px solid #dfdfdf;
+    background: #fff;
+}
+
+.boardListGroup:before {
+    content: '';
+    display: block;
+    height: 10px;
+    background: #fff;
+}
+
+.boardListGroup .brdListTitle {
+    margin: 0 16px;
+    padding: 16px 0 14px;
+}
+
+.boardListGroup .brdListTitle h3 {
+    display: inline-block;
+    font-size: 12px;
+    color: #000;
+}
+
+.boardListGroup .empty {
+    height: 222px;
+    padding: 58px 10px 20px;
+    font-size: 12px;
+    color: #999;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.boardListGroup .brdList li {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.boardListGroup .brdList li>.link {
+    display: block;
+    width: 100%;
+    padding: 16px 16px 15px;
+    text-decoration: none;
+    word-break: break-all;
+    box-sizing: border-box;
+}
+
+.boardListGroup .brdList .subject {
+    display: block;
+    font-size: 14px;
+    color: #000;
+    font-weight: normal;
+}
+
+.boardListGroup .brdList .subject .text {
+    margin: 0 3px 0 0;
+}
+
+.boardListGroup .brdList .subject>img {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 3px 0 0;
+}
+
+.boardListGroup .brdList .subject .commentCnt {
+    margin: 0 3px 0 0;
+    color: #999;
+}
+
+.boardListGroup .brdList .category {
+    display: inline-block;
+    margin: 5px 0 0;
+    font-size: 12px;
+    color: #999;
+}
+
+.boardListGroup .brdList .info {
+    display: block;
+    margin: 10px 0 0;
+    font-size: 12px;
+    color: #999;
+}
+
+.boardListGroup .brdList .info .point {
+    display: inline-block;
+    height: 10px;
+    margin: 1px 3px 0 0;
+    vertical-align: middle;
+}
+
+.boardListGroup .brdList .info>span:before {
+    content: '';
+    display: inline-block;
+    width: 1px;
+    height: 8px;
+    margin: 3px 8px 0;
+    background: #dddee0;
+}
+
+.boardListGroup .brdList .info>span:first-child:before,
+.boardListGroup .brdList .info>span.point+span:before {
+    display: none;
+}
+
+.boardListGroup .brdList .append {
+    display: block;
+}
+
+.boardListGroup .brdList .append {
+    margin: 3px 0 0;
+    font-size: 0;
+}
+
+.boardListGroup .brdList .append>span {
+    display: inline-block;
+    font-size: 12px;
+    color: #999;
+}
+
+.boardListGroup .brdList .append>span:before {
+    content: '';
+    display: inline-block;
+    width: 1px;
+    height: 8px;
+    margin: 5px 8px 0;
+    vertical-align: top;
+    background: #dddee0;
+}
+
+.boardListGroup .brdList .append>span:first-child:before {
+    display: none;
+}

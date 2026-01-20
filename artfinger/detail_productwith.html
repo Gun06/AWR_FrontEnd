@@ -1,0 +1,40 @@
+<div module="product_relation" class="ec-base-product"><!-- 추천상품 -->
+    <!--@css(/css/module/product/relation.css)-->
+    <div class="relation swiper_relation_wrap">
+        <h3 class="lr_pad">RECOMMEND ITEM</h3>
+        <div class="swiper-container4">
+            <div class="swiper-wrapper" style="margin:0 auto" module="product_relationlist">
+                <li class="item swiper-slide" onclick="document.location.href='{$link_product_detail}'"
+                    style="cursor:pointer;">
+                    <div class="box">
+                        <a href="{$link_product_detail}"><img src="{$img_small}" alt="{$seo_alt_tag}"
+                                class="thumb" /></a>
+                        <p><a href="{$link_product_detail}">{$name}</a></p>
+                        <ul>
+                            <li><strong
+                                    class="{$product_sale_strike}">{$disp_product_price}{$product_tax_type_text}</strong>
+                            </li>
+                            <li class="salePrice {$sale_price_display|display}">{$disp_sale_price}</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="item swiper-slide" onclick="document.location.href='{$link_product_detail}'"
+                    style="cursor:pointer;">
+                    <div class="box">
+                        <a href="{$link_product_detail}"><img src="{$img_small}" alt="{$seo_alt_tag}"
+                                class="thumb" /></a>
+                        <p><a href="{$link_product_detail}">{$name}</a></p>
+                        <ul>
+                            <li><strong
+                                    class="{$product_sale_strike}">{$disp_product_price}{$product_tax_type_text}</strong>
+                            </li>
+                            <li class="salePrice {$sale_price_display|display}">{$disp_sale_price}</li>
+                        </ul>
+                    </div>
+                </li>
+            </div>
+            <div class="swiper-pagination4 swiper-pagination-white"></div>
+        </div>
+
+    </div>
+</div><!-- //추천상품 -->

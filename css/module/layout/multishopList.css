@@ -1,0 +1,101 @@
+/* LANGUAGE 메뉴 - 다른 메뉴와 완전히 동일 */
+
+/* 메인 링크 색상 강제 설정 */
+#header .header_wrap .gnb .artcate .d1-wrap .d1[module="Layout_multishopList"]>a {
+    color: inherit !important;
+}
+
+/* 메인 페이지에서 흰색 */
+#main #header .header_wrap .gnb .artcate .d1-wrap .d1[module="Layout_multishopList"]>a {
+    color: #fff !important;
+}
+
+/* 호버 시 회색 (다른 메뉴와 동일) */
+#header .header_wrap .gnb .artcate .d1-wrap .d1[module="Layout_multishopList"]>a:hover,
+#header .header_wrap .gnb .artcate .d1-wrap .d1[module="Layout_multishopList"].on>a {
+    color: #999 !important;
+}
+
+/* 드롭다운 배경/테두리/그림자 제거 */
+#header .header_wrap .gnb .artcate .d1[module="Layout_multishopList"] .d2-wrap {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* 드롭다운 링크 색상 강제 설정 */
+#header .header_wrap .gnb .artcate .d1[module="Layout_multishopList"] .d2-wrap .d2>a {
+    background: none !important;
+    color: inherit !important;
+}
+
+/* 메인 페이지 드롭다운 흰색 */
+#main #header .header_wrap .gnb .artcate .d1[module="Layout_multishopList"] .d2-wrap .d2>a {
+    color: #fff !important;
+}
+
+/* 드롭다운 호버 시 회색 */
+#header .header_wrap .gnb .artcate .d1[module="Layout_multishopList"] .d2-wrap .d2:hover>a {
+    color: #999 !important;
+}
+
+
+/* 모바일 */
+.gridContainer [module="Layout_multishopList"] {
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.gridContainer [module="Layout_multishopList"] .toggle2 {
+    position: relative;
+    display: block;
+    padding: 0 0 0 0;
+    color: #000;
+    background: none
+}
+
+.gridContainer [module="Layout_multishopList"] .toggle2 span {
+    padding: 0 25px 0 0;
+    font-size: 14px;
+}
+
+.gridContainer [module="Layout_multishopList"] .toggle2:after {
+    width: 5px;
+    height: 5px;
+    border-right: 1px solid #555;
+    border-bottom: 1px solid #555;
+    position: absolute;
+    right: 10px;
+    content: " ";
+    top: 5px;
+    transform: rotate(45deg);
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.gridContainer [module="Layout_multishopList"]>ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -10px;
+    box-sizing: border-box;
+    padding: 10px 10px;
+    background: #fff;
+}
+
+.gridContainer [module="Layout_multishopList"]>ul li {
+    display: block;
+    text-align: left;
+}
+
+.gridContainer [module="Layout_multishopList"]>ul li a {
+    line-height: 30px;
+    font-size: 13px;
+}
+
+.gridContainer [module="Layout_multishopList"]>ul li:last-child a {
+    padding-bottom: 10px;
+}

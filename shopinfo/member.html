@@ -1,0 +1,34 @@
+<!--@layout(/layout/basic/layout.html)-->
+<div class="content_info">
+    <div class="shopinfo_ti" module="product_headcategory">
+        <h2>{$title_text_or_image}</h2>
+    </div>
+    <div class="shopinfo_cont">
+        <!--@css(/css/module/mall/company.css)-->
+        <div module="Board_ListPackage_5" class="membership">
+            <!--h3 class="boxTitle"  module="board_title_5" >{$board_name}</h3-->
+            <div class="ec-base-table typeList gBorder">
+                <table border="1" summary="" style="margin:0px 0 0">
+                    <caption>게시판 목록</caption>
+                    <ul module="board_list_5" class="accordion2">
+                        <!--
+                        $login_page_url = /member/login.html
+                        $deny_access_url = /index.html
+                    -->
+                        <li style="{$list_bg_color} {$list_char_color}">
+                            <div class="subject txtBreak"><span
+                                    class="{$category_display|display}">{$category_name}</span> {$subject}</div>
+                            <div class="tab_wrap">{$content}</div>
+                        </li>
+                        <li style="{$list_bg_color} {$list_char_color}">
+                            <div class="subject txtBreak"><span
+                                    class="{$category_display|display}">{$category_name}</span> {$subject}</div>
+                            <div class="tab_wrap">{$content}</div>
+                        </li>
+                    </ul>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>

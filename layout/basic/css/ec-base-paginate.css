@@ -1,0 +1,343 @@
+@charset "utf-8";
+
+
+
+/* typeList */
+.ec-base-paginate {
+    padding: 30px 0;
+    font-size: 0;
+    line-height: 0;
+    text-align: center;
+    margin-top: -1px;
+}
+
+.ec-base-paginate ol {
+    margin: 0 10px;
+}
+
+.ec-base-paginate ol,
+.ec-base-paginate ol li {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.ec-base-paginate>a img {
+    height: 27px;
+}
+
+.ec-base-paginate ol li a {
+    display: inline-block;
+    width: 24px;
+    height: 27px;
+    font-size: 12px;
+    line-height: 27px;
+    color: #1b1b1b;
+    vertical-align: middle;
+    background: #fff;
+}
+
+.ec-base-paginate ol li .this {
+    font-weight: bold;
+}
+
+.ec-base-paginate [class*='btn'] {
+    display: inline-block;
+    overflow: hidden;
+    width: 31px;
+    height: 27px;
+    font-size: 1px;
+    line-height: 0;
+    color: transparent;
+    text-indent: -150%;
+    vertical-align: middle;
+    background: #fff;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 5px auto;
+}
+
+.ec-base-paginate .btnPrev {
+    background-image: url("//img.echosting.cafe24.com/skin/mobile/layout/btn_prev.png");
+}
+
+.ec-base-paginate .btnNext {
+    background-image: url("//img.echosting.cafe24.com/skin/mobile/layout/btn_next.png");
+}
+
+.ec-base-paginate.typeList {
+    padding: 30px 0;
+    font-size: 0;
+    line-height: 0;
+}
+
+.ec-base-paginate.typeList ol {
+    margin: 0 5px;
+}
+
+.ec-base-paginate.typeList ol,
+.ec-base-paginate.typeList ol li {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.ec-base-paginate>a img {
+    height: 27px;
+}
+
+.ec-base-paginate.typeList ol li a {
+    display: inline-block;
+    width: 24px;
+    height: 27px;
+    font-size: 12px;
+    line-height: 27px;
+    color: #1b1b1b;
+    vertical-align: middle;
+    background: #fff;
+}
+
+.ec-base-paginate.typeList ol li .this {
+    font-weight: bold;
+}
+
+.ec-base-paginate.typeList [class*='btn'] {
+    display: inline-block;
+    overflow: hidden;
+    width: 31px;
+    height: 27px;
+    font-size: 1px;
+    line-height: 0;
+    color: transparent;
+    text-indent: -150%;
+    vertical-align: middle;
+    background: #fff;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 5px auto;
+}
+
+.ec-base-paginate.typeList .btnPrev {
+    background-image: url("//img.echosting.cafe24.com/skin/mobile/layout/btn_prev.png");
+}
+
+.ec-base-paginate.typeList .btnNext {
+    background-image: url("//img.echosting.cafe24.com/skin/mobile/layout/btn_next.png");
+}
+
+/* typeMoreview */
+.ec-base-paginate.typeMoreview {
+    margin: 0 auto;
+}
+
+.ec-base-paginate.typeMoreview .btnMore {
+    display: block;
+    padding: 12px 0;
+    border-top: 1px solid #f1f1f1;
+    border-bottom: 1px solid #d5d5d5;
+    color: #757575;
+    font-weight: bold;
+    background: #f5f5f5;
+}
+
+.ec-base-paginate.typeMoreview .icoMore {
+    display: inline-block;
+    margin: 0 0 0 8px;
+    width: 13px;
+    height: 8px;
+    font-size: 0;
+    line-height: 0;
+    vertical-align: baseline;
+    background: url("//img.echosting.cafe24.com/skin/mobile/layout/btn_more.png") no-repeat 0 50%;
+    background-size: 13px auto;
+}
+
+/* typeSwipe */
+.ec-base-paginate.typeSwipe {
+    font-size: 0;
+    line-height: 0;
+}
+
+.ec-base-paginate.typeSwipe button.circle {
+    overflow: hidden;
+    margin: 0 3px 0 4px;
+    width: 7px;
+    height: 7px;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #bbb;
+}
+
+.ec-base-paginate.typeSwipe button.circle.selected {
+    background-color: #000;
+}
+
+.ec-base-paginate.typeSwipe span {
+    overflow: hidden;
+    font-size: 1px;
+    line-height: 0;
+    color: transparent;
+    text-indent: -150%;
+}
+
+.ec-base-paginate.typeSwipe button.prev,
+.ec-base-paginate.typeSwipe button.next {
+    width: 31px;
+    font-size: 15px;
+    line-height: 1.2em;
+    border: 0;
+    cursor: pointer;
+    background: url("//img.echosting.cafe24.com/skin/mobile/layout/btn_prev.png") no-repeat 50% 50%;
+    background-size: 7px auto;
+}
+
+.ec-base-paginate.typeSwipe button.next {
+    background: url("//img.echosting.cafe24.com/skin/mobile/layout/btn_next.png") no-repeat 50% 50%;
+    background-size: 7px auto;
+}
+
+.ec-base-paginate.typeSwipe .prev,
+.ec-base-paginate.typeSwipe .next {
+    display: none;
+}
+
+/* typeZoom */
+.ec-base-paginate.typeZoom .btnPrev,
+.ec-base-paginate.typeZoom .btnNext {
+    overflow: hidden;
+    width: 31px;
+    height: 27px;
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+    font-size: 1px;
+    line-height: 0;
+    color: transparent;
+    text-indent: -150%;
+    background: url("//img.echosting.cafe24.com/skin/mobile/layout/btn_prev.png") no-repeat 50% 50%;
+    background-size: 7px auto;
+}
+
+.ec-base-paginate.typeZoom .btnNext {
+    background: url("//img.echosting.cafe24.com/skin/mobile/layout/btn_next.png") no-repeat 50% 50%;
+    background-size: 7px auto;
+}
+
+/* typeTotal */
+.paginate.typeTotal {
+    color: #696969;
+}
+
+.paginate.typeTotal>span {
+    margin: 0 8px;
+    font-weight: bold;
+}
+
+.paginate.typeTotal p {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.paginate.typeTotal .icoPrev,
+.paginate.typeTotal .icoNext {
+    width: 7px;
+    height: 13px;
+    font-size: 15px;
+    line-height: 1.2em;
+    background: url("//img.echosting.cafe24.com/skin/mobile/layout/btn_prev.png") no-repeat 50% 50%;
+    background-size: 7px auto;
+}
+
+.paginate.typeTotal .icoNext {
+    background: url("//img.echosting.cafe24.com/skin/mobile/layout/btn_next.png") no-repeat 50% 50%;
+    background-size: 7px auto;
+}
+
+.paginate.typeTotal p span {
+    overflow: hidden;
+    display: block;
+    width: 29px;
+    text-indent: -999px;
+}
+
+.paginate.typeTotal strong {
+    color: #508bed;
+}
+
+
+
+/*add */
+.ec-base-paginate.xans-product-normalpaging {}
+
+.ec-base-paginate.xans-product-normalpaging .first {
+    font-size: 10px;
+    line-height: 27px;
+    height: 27px;
+    padding: 0 7px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.ec-base-paginate.xans-product-normalpaging .first .once {}
+
+.ec-base-paginate.xans-product-normalpaging .first .twi {
+    margin-left: -5px;
+}
+
+.ec-base-paginate.xans-product-normalpaging .first_nt {
+    font-size: 9px;
+    line-height: 27px;
+    height: 27px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.ec-base-paginate.xans-product-normalpaging .first_nt span {
+    vertical-align: middle;
+    line-height: 27px;
+    padding: 0 2px;
+}
+
+.ec-base-paginate.xans-product-normalpaging .first i,
+.ec-base-paginate.xans-product-normalpaging .first_nt i {
+    line-height: 27px;
+    height: 27px;
+    vertical-align: middle;
+}
+
+/*search*/
+.ec-base-paginate.xans-search-paging {}
+
+.ec-base-paginate.xans-search-paging .first {
+    font-size: 10px;
+    line-height: 27px;
+    height: 27px;
+    padding: 0 7px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.ec-base-paginate.xans-search-paging .first .once {}
+
+.ec-base-paginate.xans-search-paging .first .twi {
+    margin-left: -5px;
+}
+
+.ec-base-paginate.xans-search-paging .first_nt {
+    font-size: 9px;
+    line-height: 27px;
+    height: 27px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.ec-base-paginate.xans-search-paging .first_nt span {
+    vertical-align: middle;
+    line-height: 27px;
+    padding: 0 2px;
+}
+
+.ec-base-paginate.xans-search-paging .first i,
+.ec-base-paginate.xans-search-paging .first_nt i {
+    line-height: 27px;
+    height: 27px;
+    vertical-align: middle;
+}

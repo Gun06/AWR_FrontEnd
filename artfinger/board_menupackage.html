@@ -1,0 +1,25 @@
+<div module="Product_menupackage" class="board_menupackage">
+    <!--@css(/css/module/product/menupackage.css)-->
+    <!--@js(/js/module/product/menucategory.js)-->
+    <div class="title" module="board_title_1002">
+        <!--p class="board_sub" module="board_title_1002">{$board_info}</p-->
+        <ul module="Layout_BoardInfo" class="menuCategory_board">
+            <li class="board_{$board_name}"><a href="{$board_list_url}">{$board_name}</a></li>
+            <li class="board_{$board_name}"><a href="{$board_list_url}">{$board_name}</a></li>
+            <li class="board_{$board_name}"><a href="{$board_list_url}">{$board_name}</a></li>
+            <li class="board_{$board_name}"><a href="{$board_list_url}">{$board_name}</a></li>
+            <li class="board_{$board_name}"><a href="{$board_list_url}">{$board_name}</a></li>
+            <li class="board_{$board_name}"><a href="{$board_list_url}">{$board_name}</a></li>
+        </ul>
+        <script type="text/javascript">
+            var selectedMenuNm = "board_" + "{$board_name}";
+            $(".menuCategory_board li").each(function (i) {
+                if ($(this)[0].classList[0] == selectedMenuNm) {
+
+                    $(this).find(" a").addClass('boadron');
+                }
+            });
+            console.log(selectedMenuNm);
+        </script>
+    </div>
+</div>

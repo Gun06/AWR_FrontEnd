@@ -1,0 +1,178 @@
+/*배경컬러 및 라인색상*/
+#userStyle #mCafe24Order {
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+    background: #fff;
+}
+
+#userStyle #mCafe24Order input[type="text"],
+#userStyle #mCafe24Order input[type="password"],
+#userStyle #mCafe24Order input[type="number"],
+#userStyle #mCafe24Order input[type="tel"] {
+    border: 1px solid #000;
+}
+
+#userStyle #mCafe24Order .btnBasic {
+    border: 1px solid #000;
+}
+
+#userStyle #mCafe24Order select {
+    border: 1px solid #000;
+}
+
+#userStyle #mCafe24Order #oemail2 {
+    border: 0 !important;
+}
+
+#userStyle #mCafe24Order .segment.unique {
+    border-top: 0 !important;
+}
+
+#userStyle #mCafe24Order .ec-base-fold {
+    border-bottom: 1px solid #fff;
+    border-top: 1px solid #000;
+}
+
+/*고민스*/
+#userStyle #mCafe24Order .orderArea .totalPrice .title {
+    background: #fff;
+}
+
+#userStyle #mCafe24Order .totalPay.paymentPrice {
+    background: #fff;
+}
+
+#userStyle #mCafe24Order .ec-paymethod-input-detail #payment_input_cash,
+#mCafe24Order .ec-paymethod-input-detail #payment_input_tcash,
+#userStyle #mCafe24Order .ec-paymethod-input-detail #payment_input_icash {
+    background: #fff;
+    border: 1px solid #000;
+    ;
+}
+
+#userStyle #mCafe24Order .payMethod>li .inner>.ec-base-label>input:checked~label {
+    border: 1px solid #000;
+    color: #000;
+}
+
+#userStyle #mCafe24Order .totalPay {
+    background: #fff;
+}
+
+#userStyle #orderFixItem.ec-base-button.gFull [class*="btn"] {
+    background: #000;
+}
+
+#userStyle #mCafe24Order .pannelArea {
+    background: #fff;
+}
+
+#userStyle #mCafe24Order .ec-base-layer {
+    background: #fff;
+}
+
+#userStyle #mCafe24Order #ec-orderform-defer-layer .ec-base-box {
+    background: #fff;
+}
+
+#userStyle #mCafe24Order #ec-orderform-defer-layer .ec-base-table thead>tr>th {
+    background: #fff;
+}
+
+#userStyle #mCafe24Order .joinArea>.ec-base-table {
+    background: #fff;
+}
+
+#userStyle #mCafe24Order .agreeArea .allAgree {
+    border-bottom: 0;
+    padding: 20px 0px 0px;
+}
+
+#userStyle #mCafe24Order .agreeArea .agreement li {
+    padding: 15px 0 0px 0;
+    border-top: 0;
+}
+
+#userStyle #mCafe24Order .agreeArea .checkNone {
+    border-top: 0;
+}
+
+/*폰트컬러*/
+#userStyle #mCafe24Order .txtStrong {
+    color: #000;
+}
+
+#userStyle #mCafe24Order .txtEm {
+    color: #000;
+}
+
+/*폰트사이즈*/
+#userStyle #mCafe24Order .title h2,
+#userStyle #mCafe24Order .totalPay .heading,
+#userStyle #mCafe24Order .txtStrong {
+    font-size: 16px;
+}
+
+input,
+select,
+textarea {
+    font-size: 13px !important
+}
+
+#userStyle #mCafe24Order .payMethod>li>label,
+#userStyle #mCafe24Order .ec-base-table tbody th,
+#userStyle #mCafe24Order input[type="radio"]+label,
+#userStyle #mCafe24Order input[type="text"],
+#userStyle #mCafe24Order input[type="password"],
+#userStyle #mCafe24Order input[type="number"],
+#userStyle #mCafe24Order input[type="tel"],
+#userStyle #mCafe24Order input[type="checkbox"]+label,
+#userStyle #mCafe24Order .btnNormal,
+#userStyle #mCafe24Order .btnStrong,
+#userStyle #mCafe24Order .btnBasic,
+#userStyle #mCafe24Order .btnBase,
+#userStyle #mCafe24Order .segment .ec-base-table tbody th,
+#userStyle #mCafe24Order .segment .ec-base-table tbody td {
+    font-size: 14px;
+}
+
+/*아이콘*/
+#userStyle #mCafe24Order .ec-base-prdInfo .btnRemove {
+    border: 1px solid #000;
+    width: 20px;
+    height: 20px;
+}
+
+#userStyle #mCafe24Order .ec-base-prdInfo .btnRemove:before {
+    width: 12px;
+    left: 3px;
+    background: #000;
+}
+
+#userStyle #mCafe24Order .ec-base-prdInfo .btnRemove:after {
+    width: 12px;
+    left: 3px;
+    background: #000;
+}
+
+#userStyle #mCafe24Order .ec-base-fold>.title:after {
+    border: 1px solid #000;
+    border-right: 0;
+    border-bottom: 0;
+    width: 10px;
+    height: 10px;
+}
+
+#userStyle #mCafe24Order input:not(:disabled):checked[type="checkbox"] {
+    background-image: url(/web/upload/bg_newCheckbox_checked.png);
+}
+
+#userStyle #mCafe24Order .agreeArea .agreement .btnAgree {
+    background: url(/web/upload/btn_agree.png) no-repeat center center;
+    background-size: 9px 15px;
+}
+
+/*정렬*/
+#userStyle #mCafe24Order .agreeArea .agreement .agree .check>label {
+    line-height: 26px;
+}

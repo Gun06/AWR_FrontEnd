@@ -1,0 +1,19 @@
+.xans-member-passwordreset {
+    margin: 14px 7px 0;
+    padding: 0 0 29px;
+    color: #1b1b1b;
+    font-size: 12px;
+}
+
+.xans-member-passwordreset .ec-base-table.typeWrite p {
+    margin: 0;
+    word-break: keep-all;
+}
+
+.mypage_wrap .mypage_cont {
+    width: 400px !important;
+}
+
+.ec-base-button {
+    margin: 30px auto 0 !important;
+}

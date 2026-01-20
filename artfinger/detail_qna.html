@@ -1,0 +1,69 @@
+<div id="prdQnA">
+    <div class="board">
+        <h3>Q&amp;A</h3>
+        <div class="brdButton">
+            <a href="{$qna_write}" class="">WRITE</a>
+            <!--a href="{$qna_list}" class="viewLink">상품 문의 전체 보기</a-->
+        </div>
+        <a name="use_review"></a>
+        <div module="product_qna">
+            <!--
+                $count = 5
+            -->
+            <p class="noAccess {$deny_display|display}">글읽기 권한이 없습니다.</p>
+            <div class="minor {$adult_display|display}">
+                <p><span>19세 미만의 미성년자</span>는 출입을 금합니다.</p>
+                <a class="btnBasic" href="/intro/board.html{$returnParam}">성인인증하기</a>
+            </div>
+            <ul class="brdList {$list_display|display}">
+                <li>
+                    <a href="/board/product/read.html{$param_read}" class="link">
+                        <strong class="subject">{$icon_re}{$icon_lock}{$icon_mobile}{$icon_file}<span
+                                class="text">{$subject}</span><span
+                                class="commentCnt">{$comment_count}</span>{$icon_hit}{$icon_new}</strong>
+                        <div class="info">
+                            <span class="point {$use_point_display|display}"><img
+                                    src="//img.echosting.cafe24.com/skin/mobile_ko_KR/board/ico_star{$point_count}.png"
+                                    alt="{$point_count}점" width="50" height="8"></span>
+                            <span class="id" title="작성자">{$writer}</span>
+                        </div>
+                        <div class="append">
+                            <span class="date {$date_display|display}" title="작성일">{$write_date}</span>
+                            <span class="{$hit_display|display}">조회 {$hit_count}</span>
+                            <span class="{$vote_display|display}">추천 {$vote}</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/board/product/read.html{$param_read}" class="link">
+                        <strong class="subject">{$icon_re}{$icon_lock}{$icon_mobile}{$icon_file}<span
+                                class="text">{$subject}</span><span
+                                class="commentCnt">{$comment_count}</span>{$icon_hit}{$icon_new}</strong>
+                        <div class="info">
+                            <span class="point {$use_point_display|display}"><img
+                                    src="//img.echosting.cafe24.com/skin/mobile_ko_KR/board/ico_star{$point_count}.png"
+                                    alt="{$point_count}점" width="50" height="8"></span>
+                            <span class="id" title="작성자">{$writer}</span>
+                        </div>
+                        <div class="append">
+                            <span class="date {$date_display|display}" title="작성일">{$write_date}</span>
+                            <span class="{$hit_display|display}">조회 {$hit_count}</span>
+                            <span class="{$vote_display|display}">추천 {$vote}</span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div module="product_qnapaging" class="brdPaginate typeList">
+            <a href="{$param_before}" class="btnPrev">이전 페이지</a>
+            <ol class="page">
+                <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+                <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+                <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+                <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+                <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+            </ol>
+            <a href="{$param_next}" class="btnNext">다음 페이지</a>
+        </div>
+    </div>
+</div>
