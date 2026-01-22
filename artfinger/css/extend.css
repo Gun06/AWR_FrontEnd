@@ -547,3 +547,39 @@
     }
 
 }
+
+/* ============================================
+   장바구니 모달 배경 블러 처리
+   ============================================ */
+.ec-base-layer.typeModal.bsket_detail::before,
+.ec-base-layer.typeModal.bsket_detail:before,
+div.ec-base-layer.typeModal.bsket_detail::before,
+div.ec-base-layer.typeModal.bsket_detail:before,
+.xans-order-layerbasket::before,
+.xans-order-layerbasket:before {
+    background: rgba(0, 0, 0, .2) !important;
+    background-color: rgba(0, 0, 0, .2) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+/* ============================================
+   상품/메뉴 페이지 헤더 수정 (메인 헤더는 건들지 않음)
+   ============================================ */
+
+/* SVG 아이콘 숨기고 텍스트 표시 */
+#layout #header .header_wrap .account_area>ul li svg {
+    display: none !important;
+}
+
+#layout #header .header_wrap .account_area>ul li a {
+    padding: 0 0 0 25px !important;
+    font-size: 13px !important;
+    color: #000 !important;
+}
+
+/* 언어 메뉴가 메인 메뉴와 같은 줄에 표시되도록 */
+#layout #header .header_wrap .gnb .artcate .d1-wrap .d1 {
+    display: inline-block !important;
+    vertical-align: middle !important;
+}

@@ -148,6 +148,8 @@
 .dnd_module_9742c60d3a2ee81fffada3eade8d931d>header.open #dimmedSlider {
     display: block !important;
     opacity: 1;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
 }
 
 .dnd_module_9742c60d3a2ee81fffada3eade8d931d>header .searchLayer .topSearch {
@@ -355,7 +357,9 @@
     right: 0px;
     bottom: 0px;
     z-index: 150;
-    background: rgba(0, 0, 0, .4);
+    background: rgba(0, 0, 0, .2);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
 }
 
 .dnd_module_c785e267507864e0f86dfc2033986f74 .navDimmed.show {

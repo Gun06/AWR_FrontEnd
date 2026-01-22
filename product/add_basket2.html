@@ -1,23 +1,30 @@
 <style type="text/css">
+    /* 기본 스타일 */
     .xans-order-layerbasket .xans-order-list {
-        display: table;
-        table-layout: fixed;
+        display: block;
         width: 100%;
-        margin: 14px auto 7px;
-        font-size: 0;
-        line-height: 0;
-        text-align: left;
+        margin: 10px 0 0 0;
+        padding: 0;
+        list-style: none;
+        background-color: #fff !important;
     }
 
     .xans-order-layerbasket .xans-order-list>li {
         position: relative;
-        display: inline-block;
+        display: block;
+        width: 100%;
         text-align: left;
-        vertical-align: top;
+        margin-bottom: 15px;
+        background-color: #fff !important;
+    }
+
+    .xans-order-layerbasket .xans-order-list>li:last-child {
+        margin-bottom: 5px;
     }
 
     .xans-order-layerbasket .thumbnail {
         margin: 0 4px;
+        background-color: #fff !important;
     }
 
     .xans-order-layerbasket .thumbnail img {
@@ -27,9 +34,9 @@
 
     .xans-order-layerbasket p {
         color: #111;
-        margin: 3px 5px 0;
+        margin: 2px 5px 0;
         word-break: break-all;
-        line-height: 1.25;
+        line-height: 1.2;
         font-size: 11px;
     }
 
@@ -44,8 +51,8 @@
 
     .xans-order-layerbasket .name a {
         color: #111;
-        font-size: 13px;
-        padding-bottom: 8px;
+        font-size: 12px;
+        padding-bottom: 4px;
         display: block;
     }
 
@@ -74,6 +81,39 @@
         width: 25%;
     }
 
+    /* 페이지네이션 스타일 */
+    .ec-base-layer.typeModal.bsket_detail .ec-base-paginate {
+        text-align: center;
+        padding: 10px 0 10px 0;
+        margin: 0;
+        background-color: #fff !important;
+        background: #fff !important;
+    }
+
+    .ec-base-layer.typeModal.bsket_detail .ec-base-paginate a,
+    .ec-base-layer.typeModal.bsket_detail .ec-base-paginate ol li {
+        display: inline-block;
+        margin: 0 3px;
+        background: transparent !important;
+        background-color: transparent !important;
+    }
+
+    .ec-base-layer.typeModal.bsket_detail .ec-base-paginate ol {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        background: #fff !important;
+        background-color: #fff !important;
+    }
+
+    .ec-base-layer.typeModal.bsket_detail .ec-base-paginate .btnPrev,
+    .ec-base-layer.typeModal.bsket_detail .ec-base-paginate .btnNext {
+        background: transparent !important;
+        background-color: transparent !important;
+    }
+
+    /* 배경 블러 처리 */
     .ec-base-layer.typeModal.bsket_detail::before {
         content: "";
         clear: both;
@@ -83,10 +123,11 @@
         right: 440px;
         position: fixed;
         bottom: 0;
-        background-color: rgba(0, 0, 0, .4);
+        background-color: #fff !important;
         z-index: -5;
     }
 
+    /* 메인 레이어 스타일 */
     .ec-base-layer.typeModal.bsket_detail {
         width: 440px;
         right: 0;
@@ -95,56 +136,146 @@
         top: 0;
         bottom: 0;
         border: 0px;
+        background-color: #fff !important;
+        overflow: hidden !important;
+    }
+
+    .ec-base-layer.typeModal.bsket_detail::-webkit-scrollbar,
+    .ec-base-layer.typeModal.bsket_detail *::-webkit-scrollbar {
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;
+    }
+
+    .ec-base-layer.typeModal.bsket_detail,
+    .ec-base-layer.typeModal.bsket_detail * {
+        -ms-overflow-style: none !important;
+        scrollbar-width: none !important;
     }
 
     .ec-base-layer.typeModal.bsket_detail h1 {
         border-radius: 0;
         text-align: left;
         font-weight: 400;
-        padding: 40px 17px 1px 19px;
+        padding: 30px 70px 10px 19px;
         height: auto;
+        background-color: #fff !important;
     }
 
     .ec-base-layer.typeModal.bsket_detail.xans-order-layerbasket .xans-order-list>li {
         display: block;
         width: 100%;
-        margin-bottom: 18px;
+        margin-bottom: 12px;
+        background-color: #fff !important;
+    }
+
+    .ec-base-layer.typeModal.bsket_detail.xans-order-layerbasket .xans-order-list>li:last-child {
+        margin-bottom: 0;
     }
 
     .ec-base-layer.typeModal.bsket_detail.xans-order-layerbasket .xans-order-list>li .thumbnail {
         display: inline-block;
-        width: 95px;
+        width: 85px;
         vertical-align: top;
+        background-color: #fff !important;
     }
 
     .ec-base-layer.typeModal.bsket_detail.xans-order-layerbasket .xans-order-list>li .information {
         display: inline-block;
         vertical-align: top;
-        padding-left: 13px;
+        padding-left: 10px;
+        width: calc(100% - 100px);
+        max-width: calc(100% - 100px);
+        box-sizing: border-box;
+        background-color: #fff !important;
     }
 
+    /* Flex 레이아웃 */
     .ec-base-layer.typeModal.bsket_detail.bsket_detail {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        height: 100%;
+        background-color: #fff !important;
+        background: #fff !important;
     }
 
-    .ec-base-layer.typeModal.bsket_detail.bsket_detail .orba_top {}
+    .ec-base-layer.typeModal.bsket_detail.bsket_detail .orba_top {
+        flex: 1;
+        overflow: visible !important;
+        overflow-y: visible !important;
+        overflow-x: hidden !important;
+        background-color: #fff !important;
+        background: #fff !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
 
-    .ec-base-layer.typeModal.bsket_detail.bsket_detail .orba_bottom {}
+    .ec-base-layer.typeModal.bsket_detail.bsket_detail .orba_top::-webkit-scrollbar {
+        display: none !important;
+        width: 0 !important;
+    }
+
+    .ec-base-layer.typeModal.bsket_detail.bsket_detail .orba_top {
+        -ms-overflow-style: none !important;
+        scrollbar-width: none !important;
+    }
+
+    .ec-base-layer.typeModal.bsket_detail.bsket_detail .orba_bottom {
+        flex-shrink: 0;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        padding: 12px 15px;
+        background-color: #fff !important;
+        background: #fff !important;
+        border-top: 1px solid #f0f0f0;
+    }
 
     .ec-base-layer.typeModal.bsket_detail.bsket_detail .orba_top .wrap {
-        max-height: calc(100vh - 252px);
+        padding: 0 19px 5px 19px;
+        background-color: #fff !important;
+        background: #fff !important;
+        overflow: visible !important;
+        max-height: none !important;
+        height: auto !important;
+        min-height: auto !important;
+    }
+
+    .ec-base-layer.typeModal.bsket_detail.bsket_detail .orba_top .wrap::-webkit-scrollbar {
+        display: none !important;
+        width: 0 !important;
+    }
+
+    /* wrap 높이 제한 완전히 제거 */
+    .ec-base-layer.typeModal.bsket_detail .wrap {
+        max-height: none !important;
+        height: auto !important;
     }
 
     .ec-base-layer.typeModal.bsket_detail.bsket_detail .orba_bottom>.ec-base-button {
-        margin: 15px;
+        margin: 0;
+        display: flex;
+        justify-content: center;
     }
 
+    .ec-base-layer.typeModal.bsket_detail.bsket_detail .orba_bottom .ec-base-button a {
+        height: 45px;
+        line-height: 45px;
+        font-size: 14px;
+        font-weight: 500;
+        width: 100%;
+    }
+
+    /* 닫기 버튼 */
     .ec-base-layer.typeModal.bsket_detail.bsket_detail .btnClose {
+        position: absolute;
+        top: 30px;
+        right: 19px;
         width: 50px;
         height: 50px;
         background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 10;
     }
 
     .ec-base-layer.typeModal.bsket_detail.bsket_detail .btnClose::before,
@@ -169,15 +300,215 @@
         transform: translate(-50%, -50%) rotate(135deg);
     }
 
-    @media all and (max-width:1000px) {
+    /* 반응형: 모바일 */
+    @media all and (max-width:768px) {
         .ec-base-layer.typeModal.bsket_detail {
-            width: 100%;
-            left: 0;
-            right: 0;
+            width: 100% !important;
+            max-width: 100% !important;
+            left: 0 !important;
+            right: 0 !important;
             top: 0;
             bottom: 0;
+            background-color: #fff !important;
         }
 
+        .ec-base-layer.typeModal.bsket_detail::before {
+            right: 0 !important;
+            background-color: #fff !important;
+        }
+
+        .ec-base-layer.typeModal.bsket_detail h1 {
+            padding: 30px 60px 15px 15px;
+            font-size: 16px;
+            background-color: #fff !important;
+        }
+
+        .ec-base-layer.typeModal.bsket_detail .wrap {
+            max-height: none !important;
+            height: auto !important;
+        }
+
+        .ec-base-layer.typeModal.bsket_detail.xans-order-layerbasket .xans-order-list>li .thumbnail {
+            width: 80px;
+        }
+
+        .ec-base-layer.typeModal.bsket_detail.xans-order-layerbasket .xans-order-list>li .information {
+            padding-left: 10px;
+            font-size: 12px;
+            width: calc(100% - 95px);
+            max-width: calc(100% - 95px);
+        }
+
+        .ec-base-layer.typeModal.bsket_detail.bsket_detail .orba_top {
+            overflow: visible !important;
+            overflow-y: visible !important;
+            background-color: #fff !important;
+            background: #fff !important;
+            margin: 0 !important;
+            flex: 1;
+        }
+
+        .ec-base-layer.typeModal.bsket_detail.bsket_detail .orba_top::-webkit-scrollbar,
+        .ec-base-layer.typeModal.bsket_detail *::-webkit-scrollbar {
+            display: none !important;
+            width: 0 !important;
+        }
+
+        .ec-base-layer.typeModal.bsket_detail.bsket_detail .orba_bottom {
+            margin-top: 0 !important;
+            margin-bottom: 0 !important;
+            padding: 12px;
+            background-color: #fff !important;
+            background: #fff !important;
+        }
+
+        .ec-base-layer.typeModal.bsket_detail.bsket_detail .ec-base-button a {
+            font-size: 13px;
+            height: 45px;
+            line-height: 45px;
+        }
+
+        .ec-base-layer.typeModal.bsket_detail.bsket_detail .btnClose {
+            top: 30px;
+            right: 15px;
+        }
+
+        /* 모바일에서 모든 요소 흰색 강제 */
+        .ec-base-layer.typeModal.bsket_detail,
+        .ec-base-layer.typeModal.bsket_detail *:not(img):not(.btnClose):not(.btnClose::before):not(.btnClose::after) {
+            background-color: #fff !important;
+            background: #fff !important;
+        }
+
+        .ec-base-layer.typeModal.bsket_detail div:not(.ec-base-button):not(.btnClose),
+        .ec-base-layer.typeModal.bsket_detail ul,
+        .ec-base-layer.typeModal.bsket_detail li,
+        .ec-base-layer.typeModal.bsket_detail p {
+            background-color: #fff !important;
+            background: #fff !important;
+        }
+    }
+
+    /* 반응형: 태블릿 */
+    @media all and (min-width:769px) and (max-width:1200px) {
+        .ec-base-layer.typeModal.bsket_detail {
+            width: 380px;
+            max-width: 90vw;
+            background-color: #fff !important;
+        }
+
+        .ec-base-layer.typeModal.bsket_detail::before {
+            right: 380px;
+            background-color: #fff !important;
+        }
+
+        .ec-base-layer.typeModal.bsket_detail h1 {
+            padding: 35px 70px 15px 15px;
+            font-size: 17px;
+            background-color: #fff !important;
+        }
+
+        .ec-base-layer.typeModal.bsket_detail .wrap {
+            max-height: none !important;
+            height: auto !important;
+        }
+
+        .ec-base-layer.typeModal.bsket_detail.xans-order-layerbasket .xans-order-list>li .thumbnail {
+            width: 85px;
+        }
+
+        .ec-base-layer.typeModal.bsket_detail.xans-order-layerbasket .xans-order-list>li .information {
+            width: calc(100% - 100px);
+            max-width: calc(100% - 100px);
+        }
+
+        .ec-base-layer.typeModal.bsket_detail.bsket_detail .orba_top {
+            overflow: visible !important;
+            overflow-y: visible !important;
+            background-color: #fff !important;
+            background: #fff !important;
+            margin: 0 !important;
+            flex: 1;
+        }
+
+        .ec-base-layer.typeModal.bsket_detail.bsket_detail .orba_top::-webkit-scrollbar,
+        .ec-base-layer.typeModal.bsket_detail *::-webkit-scrollbar {
+            display: none !important;
+            width: 0 !important;
+        }
+
+        .ec-base-layer.typeModal.bsket_detail.bsket_detail .orba_bottom {
+            margin-top: 0 !important;
+            margin-bottom: 0 !important;
+            padding: 13px;
+            background-color: #fff !important;
+            background: #fff !important;
+        }
+
+        .ec-base-layer.typeModal.bsket_detail.bsket_detail .btnClose {
+            top: 35px;
+            right: 15px;
+        }
+
+        /* 태블릿에서 모든 요소 흰색 강제 */
+        .ec-base-layer.typeModal.bsket_detail,
+        .ec-base-layer.typeModal.bsket_detail *:not(img):not(.btnClose):not(.btnClose::before):not(.btnClose::after) {
+            background-color: #fff !important;
+            background: #fff !important;
+        }
+
+        .ec-base-layer.typeModal.bsket_detail div:not(.ec-base-button):not(.btnClose),
+        .ec-base-layer.typeModal.bsket_detail ul,
+        .ec-base-layer.typeModal.bsket_detail li,
+        .ec-base-layer.typeModal.bsket_detail p {
+            background-color: #fff !important;
+            background: #fff !important;
+        }
+    }
+
+    /* 추가: 모든 요소 흰색 배경 강제 */
+    .ec-base-layer.typeModal.bsket_detail {
+        background-color: #fff !important;
+        background: #fff !important;
+    }
+
+    .ec-base-layer.typeModal.bsket_detail,
+    .ec-base-layer.typeModal.bsket_detail *:not(img):not(.btnClose):not(.btnClose::before):not(.btnClose::after) {
+        background-color: #fff !important;
+        background: #fff !important;
+    }
+
+    .ec-base-layer.typeModal.bsket_detail .orba_top,
+    .ec-base-layer.typeModal.bsket_detail .wrap,
+    .ec-base-layer.typeModal.bsket_detail h1,
+    .ec-base-layer.typeModal.bsket_detail .xans-order-list,
+    .ec-base-layer.typeModal.bsket_detail .xans-order-list li,
+    .ec-base-layer.typeModal.bsket_detail .ec-base-paginate,
+    .ec-base-layer.typeModal.bsket_detail .grid1,
+    .ec-base-layer.typeModal.bsket_detail ul,
+    .ec-base-layer.typeModal.bsket_detail li,
+    .ec-base-layer.typeModal.bsket_detail p,
+    .ec-base-layer.typeModal.bsket_detail .thumbnail,
+    .ec-base-layer.typeModal.bsket_detail .information,
+    .ec-base-layer.typeModal.bsket_detail .name,
+    .ec-base-layer.typeModal.bsket_detail .amount,
+    .ec-base-layer.typeModal.bsket_detail .option,
+    .ec-base-layer.typeModal.bsket_detail .price,
+    .ec-base-layer.typeModal.bsket_detail .orba_bottom {
+        background-color: #fff !important;
+        background: #fff !important;
+    }
+
+    .ec-base-layer.typeModal.bsket_detail div:not(.ec-base-button):not(.btnClose) {
+        background-color: #fff !important;
+        background: #fff !important;
+    }
+
+    /* body와 html 배경도 흰색으로 */
+    body .ec-base-layer.typeModal.bsket_detail,
+    html .ec-base-layer.typeModal.bsket_detail {
+        background-color: #fff !important;
+        background: #fff !important;
     }
 </style>
 <div module="Order_LayerBasket" class="ec-base-layer typeModal bsket_detail">
@@ -185,6 +516,42 @@
         <h1>장바구니 ({$item_total})</h1>
         <div class="wrap">
             <ul class="grid1" module="Order_list">
+                <li>
+                    <div class="thumbnail"><a href="/product/detail.html{$param}"><img src="{$img}"
+                                onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';"
+                                alt="{$name_alt}" /></a></div>
+                    <div class="information">
+                        <p class="name">{$product_name_link}{$icon}</p>
+                        <p class="amount">QTY : {$quantity}</p>
+                        <p class="option">{$option_str}</p>
+                        <p class="price">{$purchase_price}</p>
+                        <p class="{$purchase_price_ref_display|display}"><strong>{$purchase_price_ref}</strong></p>
+                        <p class="{$discount_price_display|display}"><strong class="txtWarn">-{$discount_price}</strong>
+                        </p>
+                        <p class="{$discount_price_ref_display|display}"><strong
+                                class="txtWarn">{$discount_price_ref}</strong></p>
+                        <p class="option {$subscription_show_display|display}"><strong>배송주기</strong> <span
+                                class="txtEm">{$subscription_option_str}</span></p>
+                    </div>
+                </li>
+                <li>
+                    <div class="thumbnail"><a href="/product/detail.html{$param}"><img src="{$img}"
+                                onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';"
+                                alt="{$name_alt}" /></a></div>
+                    <div class="information">
+                        <p class="name">{$product_name_link}{$icon}</p>
+                        <p class="amount">QTY : {$quantity}</p>
+                        <p class="option">{$option_str}</p>
+                        <p class="price">{$purchase_price}</p>
+                        <p class="{$purchase_price_ref_display|display}"><strong>{$purchase_price_ref}</strong></p>
+                        <p class="{$discount_price_display|display}"><strong class="txtWarn">-{$discount_price}</strong>
+                        </p>
+                        <p class="{$discount_price_ref_display|display}"><strong
+                                class="txtWarn">{$discount_price_ref}</strong></p>
+                        <p class="option {$subscription_show_display|display}"><strong>배송주기</strong> <span
+                                class="txtEm">{$subscription_option_str}</span></p>
+                    </div>
+                </li>
                 <li>
                     <div class="thumbnail"><a href="/product/detail.html{$param}"><img src="{$img}"
                                 onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';"
@@ -235,9 +602,8 @@
 
     <div class="orba_bottom">
         <div class="ec-base-button gColumn">
-            <a href="/order/basket.html{$basket_param}" class="btnEm">장바구니 이동</a>
             <a href="#none" onclick="Basket.orderLayerAll(this)" link-order="/order/orderform.html?basket_type=all_buy"
-                link-login="/member/login.html" class="btnSubmit">주문하기</a>
+                link-login="/member/login.html" class="btnSubmit">Checkout</a>
         </div>
     </div>
 

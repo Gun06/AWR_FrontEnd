@@ -99,7 +99,9 @@
     right: 0px;
     bottom: 0px;
     z-index: 150;
-    background: rgba(0, 0, 0, .4);
+    background: rgba(0, 0, 0, .2);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
 }
 
 .dimmed.show {
