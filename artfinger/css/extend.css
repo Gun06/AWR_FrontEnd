@@ -661,3 +661,37 @@ div#mCafe24Basket .ec-base-layer {
     top: 25px !important;
     right: 10px !important;
 }
+
+/* 장바구니 레이어의 wrap 영역 높이 조정 - checkout 버튼이 보이도록 */
+#mCafe24Basket .ec-base-layer .wrap,
+#mCafe24Basket .ec-base-layer.typeModal .wrap,
+.xans-order-layerbasket .ec-base-layer .wrap,
+.ec-base-layer.typeModal.bsket_detail .wrap {
+    max-height: calc(100vh - 200px) !important;
+    padding-bottom: 20px !important;
+}
+
+/* checkout 버튼이 항상 보이도록 레이어 하단 패딩 추가 */
+#mCafe24Basket .ec-base-layer,
+#mCafe24Basket .ec-base-layer.typeModal,
+.xans-order-layerbasket.ec-base-layer,
+.ec-base-layer.typeModal.bsket_detail {
+    padding-bottom: 40px !important;
+    background: #fff !important;
+    box-sizing: border-box !important;
+}
+
+/* checkout 버튼 위치 조정 - 항상 보이도록 */
+#mCafe24Basket .ec-base-layer .ec-base-button,
+#mCafe24Basket .ec-base-layer .wrap+.ec-base-button,
+#mCafe24Basket .ec-base-layer>.ec-base-button,
+.xans-order-layerbasket .ec-base-button,
+.ec-base-layer.typeModal.bsket_detail .ec-base-button {
+    position: sticky !important;
+    bottom: 0 !important;
+    background: #fff !important;
+    z-index: 10 !important;
+    margin-top: 0 !important;
+    padding-top: 5px !important;
+    padding-bottom: 15px !important;
+}
