@@ -583,3 +583,81 @@ div.ec-base-layer.typeModal.bsket_detail:before,
     display: inline-block !important;
     vertical-align: middle !important;
 }
+
+/* ============================================
+   헤더가 항상 최상단에 오도록 z-index 조정
+   장바구니(z-index: 300)보다 높게 설정
+   ============================================ */
+#header,
+header#header,
+#layout #header,
+#layout header#header {
+    z-index: 9999 !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+}
+
+/* 헤더 내부 요소들도 높은 z-index 적용 */
+#header .header,
+#header .header_wrap,
+#header .headerMenu {
+    position: relative !important;
+    z-index: 9999 !important;
+}
+
+/* DND 모듈 헤더도 동일하게 적용 */
+.dnd_module_9742c60d3a2ee81fffada3eade8d931d>header,
+header.dnd_module_9742c60d3a2ee81fffada3eade8d931d {
+    z-index: 9999 !important;
+    position: relative !important;
+}
+
+.dnd_module_9742c60d3a2ee81fffada3eade8d931d>header .header {
+    z-index: 9999 !important;
+    position: relative !important;
+}
+
+.dnd_module_9742c60d3a2ee81fffada3eade8d931d>header.open .header {
+    z-index: 10000 !important;
+}
+
+/* 장바구니 레이어의 z-index를 헤더보다 낮게 조정 */
+#mCafe24Basket .ec-base-layer,
+#popup #mCafe24Basket .ec-base-layer,
+div#mCafe24Basket .ec-base-layer {
+    z-index: 100 !important;
+}
+
+/* 장바구니가 헤더 아래에 위치하도록 top 조정 (헤더 높이만큼) */
+#mCafe24Basket .ec-base-layer:not(.typeModal) {
+    top: 80px !important;
+    height: calc(100% - 80px) !important;
+}
+
+/* typeModal도 헤더 아래로 조정 */
+#mCafe24Basket .ec-base-layer.typeModal,
+.xans-order-layerbasket.ec-base-layer.typeModal,
+.ec-base-layer.typeModal.bsket_detail {
+    top: 80px !important;
+    z-index: 100 !important;
+}
+
+/* 장바구니 닫기 버튼을 헤더 아래로 이동 - 모든 타입 포함 */
+#mCafe24Basket .ec-base-layer .btnClose,
+#mCafe24Basket .ec-base-layer:not(.typeModal) .btnClose,
+#mCafe24Basket .ec-base-layer.typeModal .btnClose,
+.xans-order-layerbasket .btnClose,
+.ec-base-layer.typeModal.bsket_detail .btnClose,
+.ec-base-layer.typeModal .btnClose {
+    top: 25px !important;
+    right: 10px !important;
+    z-index: 510 !important;
+}
+
+/* typeWide 스타일의 닫기 버튼도 조정 */
+#mCafe24Basket .ec-base-layer.typeWide .btnClose {
+    top: 25px !important;
+    right: 10px !important;
+}
