@@ -1,378 +1,551 @@
 .xans-member-login {}
 
-.xans-member-login .boxTitle {
-    font-size: 13px;
-    color: #000;
-    text-align: center;
-}
-
 .xans-member-login .login {
-    margin: 0 auto;
+    margin: 40px auto 80px;
+    padding: 0 20px;
+    max-width: 500px;
 }
 
-.xans-member-login .login .tab_logjo {}
-
-.xans-member-login .login .tab_logjo li {
-    display: inline-block;
-    text-align: center;
-    padding: 15px 0;
-    padding-right: 20px;
-}
-
-.xans-member-login .login .tab_logjo li a {
-    color: #c4c4c4;
-    font-size: 13px;
-}
-
-.xans-member-login .login .tab_logjo li:first-child {}
-
-.xans-member-login .login .tab_logjo>.lo {
-    background-color: #fff;
-}
-
-.xans-member-login .login .tab_logjo>.lo a {
-    color: #000;
-}
-
-.xans-member-login .login .boxTitle {
+/* Section Titles */
+.xans-member-login .section-title {
+    font-size: 18px;
     font-weight: normal;
-    font-size: 17px;
-    padding-bottom: 20px;
+    color: #000;
+    text-align: left;
+    margin-bottom: 20px;
+    padding: 0;
 }
 
-.xans-member-login .login fieldset {
+/* Sign In Section */
+.xans-member-login .sign-in-section {
+    margin-bottom: 40px;
+}
+
+.xans-member-login .sign-in-section fieldset {
     position: relative;
-    margin: 0px auto 0;
-    padding: 0px 0 35px;
+    margin: 0;
+    padding: 0;
+    border: 0;
 }
 
-.xans-member-login .login fieldset .extend_title {
-    display: block;
-    margin-top: 15px;
-    font-size: 13px;
-    color: #000;
-    width: 100%;
-}
-
-.xans-member-login .login fieldset .extend_title::after {
-    content: "";
-    clear: both;
-    display: block;
-}
-
-.xans-member-login .login fieldset .extend_title span.ti {
-    float: left;
-    width: 50%;
-}
-
-.xans-member-login .login fieldset .extend_title a {
-    float: right;
-    width: 50%;
-    color: #bbb;
-    text-align: right;
-}
-
+/* Input Fields - label 자체 스타일 (박스처럼 보이지 않도록 완전히 제거) */
 .xans-member-login .login fieldset .id,
-.xans-member-login .login fieldset .password {
-    overflow: hidden;
-    display: block;
-    margin: 0 0 8px;
-    border: 1px solid #dfdfdf;
-    color: #000;
-}
-
-.xans-member-login .login fieldset .password {
-    margin-bottom: 18px;
+.xans-member-login .login fieldset .password,
+.xans-member-login .login fieldset .id.ePlaceholder,
+.xans-member-login .login fieldset .password.ePlaceholder,
+.xans-member-login .sign-in-section .id,
+.xans-member-login .sign-in-section .password,
+.xans-member-login .sign-in-section .id.ePlaceholder,
+.xans-member-login .sign-in-section .password.ePlaceholder,
+.xans-member-login label.id,
+.xans-member-login label.password,
+.xans-member-login label.id.ePlaceholder,
+.xans-member-login label.password.ePlaceholder {
+    overflow: visible !important;
+    display: block !important;
+    margin: 0 0 12px !important;
+    padding: 0 !important;
+    border: 0 none !important;
+    border-width: 0 !important;
+    border-style: none !important;
+    border-color: transparent !important;
+    border-top: 0 !important;
+    border-right: 0 !important;
+    border-bottom: 0 !important;
+    border-left: 0 !important;
+    border-radius: 0 !important;
+    background-color: transparent !important;
+    background: none !important;
+    background-image: none !important;
+    color: transparent !important;
+    position: relative !important;
+    font-size: 0 !important;
+    line-height: 0 !important;
+    text-indent: -9999px !important;
+    box-shadow: none !important;
+    outline: none !important;
+    min-height: 0 !important;
+    height: auto !important;
+    width: 100% !important;
 }
 
 .xans-member-login .login fieldset .id span,
 .xans-member-login .login fieldset .password span {
-    height: 36px;
-    line-height: 36px;
-    padding: 0 0 0 0px;
-    color: #c9c9c9;
+    display: none;
 }
 
+.xans-member-login .login fieldset .id input[type=text],
+.xans-member-login .login fieldset .id input[type=email],
+.xans-member-login .login fieldset .password input[type=password],
 .xans-member-login .login fieldset input[type=text],
-.xans-member-login .login fieldset input[type=password] {
+.xans-member-login .login fieldset input[type=password],
+.xans-member-login .login fieldset .id.ePlaceholder input,
+.xans-member-login .login fieldset .password.ePlaceholder input {
     width: 100%;
-    height: 38px;
-    line-height: 38px;
-    padding: 2px 2px 2px 5px;
-    border: 0 none;
-    color: #000;
-}
-
-.xans-member-login .login fieldset .security {
-    padding: 0 0 0 5px;
-    margin: 10px 0;
-    color: #757575;
-}
-
-.xans-member-login .login fieldset .security img {
-    vertical-align: middle;
-}
-
-.xans-member-login .login fieldset>a {
-    margin-top: 5px;
-}
-
-.xans-member-login .login fieldset ul {
-    overflow: hidden;
-    padding: 20px 55px 5px;
+    height: 42px;
+    line-height: 42px;
+    padding: 0 15px;
     margin: 0;
-    border: 0;
-}
-
-.xans-member-login .login fieldset li {
-    float: left;
-    padding: 0 9px 0 13px;
-}
-
-.xans-member-login .login fieldset li:after {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    color: #000 !important;
+    font-size: 15px !important;
+    box-sizing: border-box;
+    background-color: #fff;
+    display: block;
     position: relative;
-    top: 2px;
-    right: -10px;
-    content: "";
-    display: inline-block;
-    width: 1px;
-    height: 11px;
-    border-right: 1px solid #d9d9d9;
+    z-index: 1;
+    text-indent: 0 !important;
 }
 
-.xans-member-login .login fieldset li:last-child:after {
-    border: none;
+.xans-member-login .login fieldset .id input[type=text]:focus,
+.xans-member-login .login fieldset .id input[type=email]:focus,
+.xans-member-login .login fieldset .password input[type=password]:focus,
+.xans-member-login .login fieldset input[type=text]:focus,
+.xans-member-login .login fieldset input[type=password]:focus {
+    outline: none;
+    border: 1px solid #b0b0b0;
 }
 
-.xans-member-login .login fieldset li a {
-    color: #2e2e2e;
+/* Placeholder 색상 - 모든 브라우저 지원 (명확하게 보이도록) */
+.xans-member-login .login fieldset .id input[type=text]::placeholder,
+.xans-member-login .login fieldset .id input[type=email]::placeholder,
+.xans-member-login .login fieldset .password input[type=password]::placeholder,
+.xans-member-login .login fieldset input[type=text]::placeholder,
+.xans-member-login .login fieldset input[type=password]::placeholder,
+.xans-member-login .sign-in-section .id input::placeholder,
+.xans-member-login .sign-in-section .password input::placeholder,
+.xans-member-login .login fieldset .id.ePlaceholder input::placeholder,
+.xans-member-login .login fieldset .password.ePlaceholder input::placeholder,
+.xans-member-login label.id input::placeholder,
+.xans-member-login label.password input::placeholder,
+#member_id::placeholder,
+#member_passwd::placeholder {
+    color: #999 !important;
+    opacity: 1 !important;
+    font-size: 15px !important;
+    font-weight: normal !important;
+    -webkit-text-fill-color: #999 !important;
 }
 
-.xans-member-login .login fieldset .link {
-    position: relative;
-    margin: 0px 0px 0 0;
-    padding: 5px 0 0 0;
-    color: #757575;
-    border-top: 1px solid #e9e9e9;
+.xans-member-login .login fieldset .id input[type=text]::-webkit-input-placeholder,
+.xans-member-login .login fieldset .id input[type=email]::-webkit-input-placeholder,
+.xans-member-login .login fieldset .password input[type=password]::-webkit-input-placeholder,
+.xans-member-login .login fieldset input[type=text]::-webkit-input-placeholder,
+.xans-member-login .login fieldset input[type=password]::-webkit-input-placeholder,
+.xans-member-login .sign-in-section .id input::-webkit-input-placeholder,
+.xans-member-login .sign-in-section .password input::-webkit-input-placeholder,
+.xans-member-login .login fieldset .id.ePlaceholder input::-webkit-input-placeholder,
+.xans-member-login .login fieldset .password.ePlaceholder input::-webkit-input-placeholder,
+.xans-member-login label.id input::-webkit-input-placeholder,
+.xans-member-login label.password input::-webkit-input-placeholder,
+#member_id::-webkit-input-placeholder,
+#member_passwd::-webkit-input-placeholder {
+    color: #999 !important;
+    opacity: 1 !important;
+    font-size: 15px !important;
+    font-weight: normal !important;
+    -webkit-text-fill-color: #999 !important;
 }
 
-.xans-member-login .login fieldset .link a {
-    font-size: 12px;
+.xans-member-login .login fieldset .id input[type=text]::-moz-placeholder,
+.xans-member-login .login fieldset .id input[type=email]::-moz-placeholder,
+.xans-member-login .login fieldset .password input[type=password]::-moz-placeholder,
+.xans-member-login .login fieldset input[type=text]::-moz-placeholder,
+.xans-member-login .login fieldset input[type=password]::-moz-placeholder,
+.xans-member-login .sign-in-section .id input::-moz-placeholder,
+.xans-member-login .sign-in-section .password input::-moz-placeholder,
+.xans-member-login .login fieldset .id.ePlaceholder input::-moz-placeholder,
+.xans-member-login .login fieldset .password.ePlaceholder input::-moz-placeholder,
+.xans-member-login label.id input::-moz-placeholder,
+.xans-member-login label.password input::-moz-placeholder,
+#member_id::-moz-placeholder,
+#member_passwd::-moz-placeholder {
+    color: #999 !important;
+    opacity: 1 !important;
+    font-size: 15px !important;
+    font-weight: normal !important;
 }
 
+.xans-member-login .login fieldset .id input[type=text]:-ms-input-placeholder,
+.xans-member-login .login fieldset .id input[type=email]:-ms-input-placeholder,
+.xans-member-login .login fieldset .password input[type=password]:-ms-input-placeholder,
+.xans-member-login .login fieldset input[type=text]:-ms-input-placeholder,
+.xans-member-login .login fieldset input[type=password]:-ms-input-placeholder,
+.xans-member-login .sign-in-section .id input:-ms-input-placeholder,
+.xans-member-login .sign-in-section .password input:-ms-input-placeholder,
+.xans-member-login .login fieldset .id.ePlaceholder input:-ms-input-placeholder,
+.xans-member-login .login fieldset .password.ePlaceholder input:-ms-input-placeholder,
+.xans-member-login label.id input:-ms-input-placeholder,
+.xans-member-login label.password input:-ms-input-placeholder,
+#member_id:-ms-input-placeholder,
+#member_passwd:-ms-input-placeholder {
+    color: #999 !important;
+    opacity: 1 !important;
+    font-size: 15px !important;
+    font-weight: normal !important;
+}
+
+/* input 자체의 색상도 명확히 설정 (입력한 텍스트는 검은색) */
+.xans-member-login .login fieldset .id input[type=text],
+.xans-member-login .login fieldset .id input[type=email],
+.xans-member-login .login fieldset .password input[type=password],
+.xans-member-login .login fieldset input[type=text],
+.xans-member-login .login fieldset input[type=password],
+#member_id,
+#member_passwd {
+    color: #000 !important;
+}
+
+/* ePlaceholder 클래스가 있는 경우 label의 span 숨기기 */
+.xans-member-login .login fieldset .id.ePlaceholder span,
+.xans-member-login .login fieldset .password.ePlaceholder span,
+.xans-member-login .login fieldset .id span,
+.xans-member-login .login fieldset .password span,
+.xans-member-login .login fieldset .id.ePlaceholder input+span,
+.xans-member-login .login fieldset .password.ePlaceholder input+span {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    left: -9999px !important;
+}
+
+/* label의 텍스트 노드 완전히 숨기기 */
+.xans-member-login .login fieldset .id.ePlaceholder:before,
+.xans-member-login .login fieldset .password.ePlaceholder:before,
+.xans-member-login .login fieldset .id:before,
+.xans-member-login .login fieldset .password:before {
+    display: none !important;
+    content: none !important;
+}
+
+/* label 내부의 모든 텍스트 숨기기 (input 제외) - 이미 위에서 정의됨 */
+
+/* label 내부의 input만 정상 표시 */
+.xans-member-login .login fieldset .id.ePlaceholder input,
+.xans-member-login .login fieldset .password.ePlaceholder input,
+.xans-member-login .login fieldset .id input,
+.xans-member-login .login fieldset .password input {
+    font-size: 15px !important;
+    line-height: 42px !important;
+    color: #000 !important;
+    text-indent: 0 !important;
+    display: block !important;
+    width: 100% !important;
+}
+
+/* Buttons */
+.xans-member-login .btn_signin,
+.xans-member-login .btn_create_account,
+.xans-member-login .btn_check_status {
+    display: block;
+    width: 100%;
+    height: 42px;
+    line-height: 42px;
+    padding: 0 15px;
+    margin: 0 0 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+    color: #333;
+    text-align: center;
+    font-size: 15px;
+    text-decoration: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-weight: normal;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.xans-member-login .btn_signin:hover,
+.xans-member-login .btn_create_account:hover,
+.xans-member-login .btn_check_status:hover {
+    background-color: #eeeeee;
+}
+
+.xans-member-login .btn_create_account {
+    background-color: #d0d0d0;
+    color: #fff;
+    border: 1px solid #d0d0d0;
+}
+
+.xans-member-login .btn_create_account:hover {
+    background-color: #c5c5c5;
+    border-color: #c5c5c5;
+}
+
+.xans-member-login .btn_check_status {
+    background-color: #fff;
+    color: #333;
+}
+
+.xans-member-login .btn_check_status:hover {
+    background-color: #f9f9f9;
+}
+
+/* Social Login Buttons */
 .xans-member-login .login fieldset .snsArea {
-    padding: 0 0 0px;
+    padding: 0;
+    margin: 20px 0;
+    list-style: none;
 }
 
 .xans-member-login .login fieldset .snsArea li {
-    margin: 7px 9px 0 0;
+    margin: 0 0 12px;
     padding: 0;
     background: none;
+    float: none;
+    display: block;
 }
 
 .xans-member-login .login fieldset .snsArea li:after {
     content: none;
 }
 
-.xans-member-login .login fieldset #noMemberWrap {
-    border-top: 0;
-    margin-top: 0;
+.xans-member-login .login fieldset .snsArea li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 42px;
+    padding: 0 15px;
+    box-sizing: border-box;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #333;
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+    line-height: 1;
+}
+
+.xans-member-login .login fieldset .snsArea li.kakao a {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #e0e0e0;
+}
+
+.xans-member-login .login fieldset .snsArea li.naver a {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #e0e0e0;
+}
+
+.xans-member-login .login fieldset .snsArea li a>img {
+    display: none;
+}
+
+/* Forgot Links */
+.xans-member-login .forgot_link {
+    display: block;
+    margin-top: 15px;
+}
+
+.xans-member-login .forgot_link a {
+    display: block;
+    color: #666;
+    font-size: 13px;
+    text-decoration: none;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+.xans-member-login .forgot_link a:hover {
+    color: #000;
+}
+
+/* Order Status Section */
+.xans-member-login .order-status-section {
+    margin-top: 60px;
+}
+
+.xans-member-login .order-status-desc {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+    text-align: left;
+    line-height: 1.5;
+}
+
+.xans-member-login .order-status-title {
+    cursor: pointer;
+}
+
+.xans-member-login .order-status-section.is-collapsed .order-status-form {
+    display: none;
+}
+
+/* Order Status Form */
+.xans-member-login .order-status-section .xans-myshop-orderhistorynologin {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+}
+
+.xans-member-login .order-status-section .xans-myshop-orderhistorynologin h3.boxTitleCenter {
+    display: none;
+}
+
+.xans-member-login .order-status-section .ec-base-desc {
+    margin: 0;
+    padding: 0;
+}
+
+.xans-member-login .order-status-section .ec-base-desc dt {
+    display: none;
+}
+
+.xans-member-login .order-status-section .ec-base-desc dd {
+    margin: 0 0 12px;
+    padding: 0;
+}
+
+.xans-member-login .order-status-section .ec-base-desc dd input[type=text],
+.xans-member-login .order-status-section .ec-base-desc dd input[type=password],
+.xans-member-login .order-status-section .ec-base-desc dd input[type=number],
+.xans-member-login .order-status-section .ec-base-desc dd input[type=tel],
+.xans-member-login .order-status-section input[type=text],
+.xans-member-login .order-status-section input[type=password] {
+    width: 100% !important;
+    height: 42px !important;
+    line-height: 42px !important;
+    padding: 0 15px !important;
+    border: 1px solid #e0e0e0 !important;
+    border-radius: 8px !important;
+    background-color: #fff !important;
+    color: #000 !important;
+    font-size: 15px !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+}
+
+.xans-member-login .order-status-section .ec-base-desc dd input[type=text]::placeholder,
+.xans-member-login .order-status-section .ec-base-desc dd input[type=password]::placeholder,
+.xans-member-login .order-status-section .ec-base-desc dd input[type=number]::placeholder,
+.xans-member-login .order-status-section .ec-base-desc dd input[type=tel]::placeholder,
+.xans-member-login .order-status-section input[type=text]::placeholder,
+.xans-member-login .order-status-section input[type=password]::placeholder {
+    color: #666 !important;
+    opacity: 1 !important;
+    font-size: 15px !important;
+}
+
+.xans-member-login .order-status-section .ec-base-desc dd input[type=text]::-webkit-input-placeholder,
+.xans-member-login .order-status-section .ec-base-desc dd input[type=password]::-webkit-input-placeholder,
+.xans-member-login .order-status-section .ec-base-desc dd input[type=number]::-webkit-input-placeholder,
+.xans-member-login .order-status-section .ec-base-desc dd input[type=tel]::-webkit-input-placeholder,
+.xans-member-login .order-status-section input[type=text]::-webkit-input-placeholder,
+.xans-member-login .order-status-section input[type=password]::-webkit-input-placeholder {
+    color: #666 !important;
+    opacity: 1 !important;
+    font-size: 15px !important;
+}
+
+.xans-member-login .order-status-section .ec-base-desc dd input[type=text]::-moz-placeholder,
+.xans-member-login .order-status-section .ec-base-desc dd input[type=password]::-moz-placeholder,
+.xans-member-login .order-status-section .ec-base-desc dd input[type=number]::-moz-placeholder,
+.xans-member-login .order-status-section .ec-base-desc dd input[type=tel]::-moz-placeholder,
+.xans-member-login .order-status-section input[type=text]::-moz-placeholder,
+.xans-member-login .order-status-section input[type=password]::-moz-placeholder {
+    color: #666 !important;
+    opacity: 1 !important;
+    font-size: 15px !important;
+}
+
+.xans-member-login .order-status-section .ec-base-desc dd input[type=text]:-ms-input-placeholder,
+.xans-member-login .order-status-section .ec-base-desc dd input[type=password]:-ms-input-placeholder,
+.xans-member-login .order-status-section .ec-base-desc dd input[type=number]:-ms-input-placeholder,
+.xans-member-login .order-status-section .ec-base-desc dd input[type=tel]:-ms-input-placeholder,
+.xans-member-login .order-status-section input[type=text]:-ms-input-placeholder,
+.xans-member-login .order-status-section input[type=password]:-ms-input-placeholder {
+    color: #666 !important;
+    opacity: 1 !important;
+    font-size: 15px !important;
+}
+
+.xans-member-login .order-status-section .submit {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.xans-member-login .order-status-section .submit button,
+.xans-member-login .order-status-section .submit .btn_check_status,
+.xans-member-login .order-status-section button.btn_check_status {
+    width: 100% !important;
+    height: 42px !important;
+    line-height: 42px !important;
+    padding: 0 15px !important;
+    margin: 0 !important;
+    border: 1px solid #e0e0e0 !important;
+    border-radius: 8px !important;
+    background-color: #fff !important;
+    color: #333 !important;
+    text-align: right !important;
+    font-size: 15px !important;
+    cursor: pointer !important;
+    box-sizing: border-box !important;
+    font-family: inherit !important;
+}
+
+/* Hide old elements */
+.xans-member-login .boxTitle {
+    display: none;
+}
+
+.xans-member-login .login .tab_logjo {
+    display: none;
 }
 
 .xans-member-login .login .mo_but {
     display: none;
 }
 
-.xans-member-login .btn_blk_a,
-.xans-member-login .btn_wht_a {
-    font-size: 13px;
-}
-
-.xans-member-login .login fieldset .snsArea {
-    padding: 0 0 0px;
-    text-align: center;
-}
-
-.xans-member-login .login fieldset .snsArea>p {
-    text-align: center;
-    display: block;
-    font-size: 14px;
-    margin-top: 30px;
-}
-
-.xans-member-login .login fieldset .snsArea li {
-    margin: 10px 0 0 0;
-    padding: 0;
-    background: none;
-    float: none;
-    display: block;
-    text-align: center;
-}
-
-.xans-member-login .login fieldset .snsArea li a {
-    display: block;
-    width: 100%;
-    display: block;
-    padding: 7px 17px 7px 2px;
-    box-sizing: border-box;
-}
-
-.xans-member-login .login fieldset .snsArea li a>img {
-    width: 14px;
-    float: left;
-    padding: 3px;
-}
-
-.xans-member-login .login fieldset .snsArea li.naver a {
-    background-color: #26c826;
-    color: #fff;
-}
-
-.xans-member-login .login fieldset .snsArea li.naver a>img {
-    width: 17px;
-    float: left;
-    padding: 1px 3px 3px;
-}
-
-.xans-member-login .login fieldset .snsArea li.facebook a {
-    background-color: #44619c;
-    color: #fff;
-}
-
-.xans-member-login .login fieldset .snsArea li.facebook a>img {
-    width: 19px;
-    float: left;
-    padding: 1px 3px;
-}
-
-.xans-member-login .login fieldset .snsArea li.google a {
-    background-color: #5086f7;
-    color: #fff;
-}
-
-.xans-member-login .login fieldset .snsArea li.google a>img {
-    width: 19px;
-    float: left;
-    padding: 1px 3px;
-}
-
-.xans-member-login .login fieldset .snsArea li.kakao a {
-    background-color: #ffeb00;
-    color: #391c1c;
-}
-
-.xans-member-login .login fieldset .snsArea li.kakao a>img {
-    width: 19px;
-    float: left;
-    padding: 1px 3px;
-}
-
-.xans-member-login .login fieldset .snsArea li.line a {
-    background-color: #26c826;
-    color: #fff;
-}
-
-.xans-member-login .login fieldset .snsArea li.line a>img {
-    width: 19px;
-    float: left;
-    padding: 3px;
-}
-
-.xans-member-login .login fieldset .snsArea li.apple a {
-    background-color: #000000;
-    color: #fff;
-}
-
-.xans-member-login .login fieldset .snsArea li.apple a>img {
-    width: 19px;
-    float: left;
-    padding: 0 3px 7px;
-}
-
-.xans-member-login .login fieldset .snsArea li:after {
-    content: none;
-}
-
-.xans-member-login .forgot_link {
-    display: block;
-    margin-top: 10px;
-}
-
-.xans-member-login .forgot_link a {
-    color: #555;
-}
-
-.xans-member-login .forgot_link span {
-    padding: 0 10px;
-}
-
 .xans-member-login .join_but {
-    display: block;
-    margin-top: 50px;
-    margin-bottom: 15px;
-    padding: 50px 0 0;
-    border-top: 1px solid #dfdfdf;
-}
-
-.xans-member-login .join_but p {
-    display: block;
-    color: #555;
-    font-size: 13px;
-    padding-bottom: 10px;
-}
-
-
-.d1-wrap_m .login {
-    padding: 5px 30px 20px;
-    text-align: left;
-}
-
-.d1-wrap_m .login .boxTitle {
     display: none;
 }
 
-.d1-wrap_m .login .log_wp {
-    display: flex;
-    gap: 30px;
-}
-
-.d1-wrap_m .login .log_wp .log_wp1 {
-    flex: 1;
-}
-
-.d1-wrap_m .login .log_wp .log_wp2 {
-    flex: 1;
-    margin-top: 15px;
-}
-
-.d1-wrap_m .login .log_wp .log_wp2 .join_but {
-    padding-top: 0;
-    margin-top: 0;
-    border-top: 0px;
-}
-
-.d1-wrap_m .login .log_wp .log_wp2 .join_but p {
-    padding-bottom: 0;
-}
-
-.d1-wrap_m .xans-myshop-orderhistorynologin {
+.xans-member-login .login fieldset .extend_title {
     display: none;
 }
 
-.d1-wrap_m .login fieldset {
-    padding: 0;
+.xans-member-login .login fieldset .link {
+    display: none;
 }
 
-@media all and (max-width : 1000px) {
-    .xans-member-login .login fieldset {
-        padding: 20px 0px;
+/* Desktop styles */
+@media all and (min-width: 1001px) {
+    .xans-member-login .login {
+        max-width: 500px;
+        padding: 40px 20px 80px;
+    }
+}
+
+/* Mobile styles */
+@media all and (max-width: 1000px) {
+    .xans-member-login .login {
+        margin: 20px auto 60px;
+        padding: 0 15px;
+        max-width: 100%;
     }
 
-    .xans-member-login .login .boxTitle {
-        padding-bottom: 10px;
+    .xans-member-login .section-title {
+        font-size: 16px;
+        margin-bottom: 15px;
     }
 
-    .xans-member-login .login .mo_but {
-        display: block;
+    .xans-member-login .sign-in-section {
+        margin-bottom: 30px;
+    }
+
+    .xans-member-login .order-status-section {
+        margin-top: 40px;
     }
 }
