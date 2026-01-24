@@ -76,6 +76,9 @@ $(document).ready(function () {
 });
 
 function setCategory2() {
+    // 현재 페이지의 카테고리 제목 가져오기
+    var look_cate_ti = $('.title h2.hid_ti2').text() || $('.title h2 span').text() || '';
+    
     $("#aside .artfinger_slide_wrap .group_nav .xans-layout-category .menu_v_mo ul.d1-wrap-mo > li > ul.d2-wrap > .d2").each(function (index) {
         var look_cate2 = $(this).closest('.d2-wrap').siblings('a').text();
         if (look_cate_ti == look_cate2) {

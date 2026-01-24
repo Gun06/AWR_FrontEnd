@@ -156,6 +156,9 @@ function setCategory() {
         })
     })();
 
+    // 현재 페이지의 카테고리 제목 가져오기
+    var look_cate_ti = $('.title h2 span').text() || '';
+
     $("#header .header_wrap .gnb .artcate .d2-wrap .d2").each(function (index) {
         var look_cate = $(this).closest('.d2-wrap').prev('a').text();
         if (look_cate_ti == look_cate) {

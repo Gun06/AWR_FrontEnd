@@ -695,3 +695,61 @@ div#mCafe24Basket .ec-base-layer {
     padding-top: 5px !important;
     padding-bottom: 15px !important;
 }
+
+/* ============================================
+   로그인 페이지 소셜 로그인 버튼 스타일 수정
+   ============================================ */
+.xans-member-login .login fieldset .snsArea li a {
+    height: 38px !important;
+    line-height: 38px !important;
+    padding: 0 17px !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+    text-align: center !important;
+    transition: none !important;
+}
+
+.xans-member-login .login fieldset .snsArea li a:hover {
+    background-color: inherit !important;
+    opacity: 1 !important;
+}
+
+.xans-member-login .login fieldset .snsArea li a>img {
+    position: absolute !important;
+    left: 16px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 20px !important;
+    height: 20px !important;
+    padding: 0 !important;
+    float: none !important;
+    display: block !important;
+}
+
+.xans-member-login .login fieldset .snsArea li.naver a {
+    background-color: #26c826 !important;
+    color: #fff !important;
+}
+
+.xans-member-login .login fieldset .snsArea li.naver a:hover {
+    background-color: #26c826 !important;
+}
+
+.xans-member-login .login fieldset .snsArea li.naver a>img {
+    width: 20px !important;
+    height: 20px !important;
+}
+
+.xans-member-login .login fieldset .snsArea li.kakao a {
+    background-color: #ffeb00 !important;
+    color: #391c1c !important;
+}
+
+.xans-member-login .login fieldset .snsArea li.kakao a:hover {
+    background-color: #ffeb00 !important;
+}
+
+.xans-member-login .login fieldset .snsArea li.kakao a>img {
+    width: 20px !important;
+    height: 20px !important;
+}
