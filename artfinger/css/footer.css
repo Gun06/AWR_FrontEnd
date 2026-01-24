@@ -271,6 +271,7 @@
         margin: 0px auto 0px;
     }
 }
+
 /* Footer New Layout Styles (User Request) */
 .footer_pc .footer_inner.footer_new_layout {
     display: block !important;
@@ -337,5 +338,6 @@
 .footer_pc .footer_inner.footer_new_layout .section_right .menu_list li a {
     color: #000;
     font-weight: 500;
-    display: inline-block !important; /* Force show */
+    display: inline-block !important;
+    /* Force show */
 }
