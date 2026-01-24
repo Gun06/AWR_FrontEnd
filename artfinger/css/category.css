@@ -851,3 +851,54 @@ html.expand #aside {
         float: left;
     }
 }
+
+/* ============================================
+   모바일 사이드바 스타일 보정 (Fix)
+   ============================================ */
+
+/* 1. 중복/숨김 카테고리 (32번: 중분류 About) 숨김 처리 */
+/* 메뉴 간격이 벌어지는 원인이므로 아예 none 처리 -> 관리자 설정 완료로 주석 처리 */
+/* #aside .menu_v_mo li[data-param*="cate_no=32"] {
+    display: none !important;
+} */
+
+/* 2. Language 메뉴 및 모든 메뉴 아이템 스타일 통일 및 겹침 방지 */
+#aside .menu_v_mo ul.d1-wrap-mo>li {
+    display: block !important;
+    position: relative !important;
+    height: auto !important;
+    overflow: visible !important;
+    margin-bottom: 0px !important;
+    clear: both !important;
+    width: 100% !important;
+}
+
+/* Language 메뉴 텍스트 스타일 */
+#aside .menu_v_mo ul.d1-wrap-mo>li[module="Layout_multishopList"]>a {
+    font-size: 14px !important;
+    line-height: 30px !important;
+    color: #000 !important;
+    display: block !important;
+    text-decoration: none !important;
+    padding: 0 !important;
+    font-weight: normal !important;
+    height: 30px !important;
+}
+
+/* 3. 메뉴 그룹 간 간격 조정 및 겹침 방지 */
+#aside .menu_v_mo ul.d1-wrap-mo {
+    margin-bottom: 30px !important;
+    display: block !important;
+    height: auto !important;
+}
+
+/* 회원 메뉴 (Login, Logout 등) 그룹 위치 보정 */
+#aside .menu_v_mo ul.member {
+    padding-top: 20px !important;
+    margin-top: 0px !important;
+    border-top: 1px solid #eee;
+    /* 시각적 구분 */
+    display: block !important;
+    clear: both !important;
+    position: relative !important;
+}

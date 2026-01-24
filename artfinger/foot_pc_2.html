@@ -1,27 +1,37 @@
-<div class="footer_inner">
-    <div class="inner1">
-        <ul class="snscate">
-            <!--@import(/artfinger/foot_sns2.html)-->
-            <li>Copyright &copy; {$mall_name}. All rights reserved.</li>
-        </ul>
+<div class="footer_inner_custom">
+    <!-- Row 1: Top Right Info (Hours, Tel, Address) -->
+    <div class="ft_top_row">
+        <span module="Layout_Info" class="bankinfo">{$runtime}</span>
+        <span>TEL {$phone}</span>
+        <span>ADDRESS: {$mall_zipcode} {$mall_addr1} {$mall_addr2}</span>
     </div>
-    <div class="inner3">
-        <ul class="foot_area_inf">
-            <li module="Layout_Info" class="bankinfo">{$runtime}</li>
-            <li>TEL {$phone}</li>
-            <li>ADDRESS: {$mall_zipcode} {$mall_addr1} {$mall_addr2}</li>
-        </ul>
-        <ul>
-            <li>COMPANY {$company_name}</li>
-            <li>OWNER {$president_name}</li>
-            <li>BUSINESS NO {$company_regno}</li>
-            <li class=" ">ONLINE-ORDER NO {$network_regno} <!--span>{$biz_no_link}</span--></li>
-            <li class="onlineorder {$cpo_email|display}">E-MAIL. <a href="mailto:{$cpo_email}"
-                    style="text-transform:uppercase;">{$cpo_email}</a></li>
-            <li class="ali_right"><a href="/shopinfo/info.html">CONTACT</a></li>
-            <li class="ali_right"><a href="/shopinfo/customercenter.html">GUIDE</a></li>
-            <li class="ali_right"><a href="/member/agreement.html">TERMS OF USE</a></li>
-            <li class="ali_right"><a href="/member/privacy.html">PRIVACY POLICY</a></li>
-        </ul>
+
+    <!-- Row 2: Bottom Area (3 Columns: Left, Center, Right) -->
+    <div class="ft_bottom_row">
+        <!-- Left: Copyright -->
+        <div class="ft_col_left">
+            <div class="ft_copy_title">Copyright</div>
+            <div class="ft_copy_text">Copyright &copy; AWESOME REASON. All rights reserved.</div>
+        </div>
+
+        <!-- Center: Company Info -->
+        <div class="ft_col_center">
+            <span>COMPANY {$company_name}</span>
+            <span>OWNER {$president_name}</span>
+            <span>BUSINESS NO {$company_regno}</span>
+            <span>ONLINE-ORDER NO {$network_regno} <!--span>{$biz_no_link}</span--></span>
+            <span class="{$cpo_email|display}">E-MAIL. <a href="mailto:{$cpo_email}"
+                    style="text-transform:uppercase;">{$cpo_email}</a></span>
+        </div>
+
+        <!-- Right: Links -->
+        <div class="ft_col_right">
+            <ul class="ft_links">
+                <li><a href="/shopinfo/info.html">CONTACT</a></li>
+                <li><a href="/shopinfo/customercenter.html">GUIDE</a></li>
+                <li><a href="/member/agreement.html">TERMS OF USE</a></li>
+                <li><a href="/member/privacy.html">PRIVACY POLICY</a></li>
+            </ul>
+        </div>
     </div>
 </div>
