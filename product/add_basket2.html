@@ -261,7 +261,7 @@
         height: 45px;
         line-height: 45px;
         font-size: 14px;
-        font-weight: 500;
+        font-weight: normal;
         width: 100%;
     }
 
@@ -510,7 +510,460 @@
         background-color: #fff !important;
         background: #fff !important;
     }
+
+    /* 총 주문금액 요약 스타일 */
+    .ec-base-layer.typeModal.bsket_detail .totalSummary {
+        margin-top: 10px;
+        padding: 0;
+        background-color: #fff !important;
+    }
+
+    .ec-base-layer.typeModal.bsket_detail .totalSummary {
+        margin-top: 20px;
+        padding: 0 14px 10px;
+        background: #fff;
+    }
+
+    .ec-base-layer.typeModal.bsket_detail .totalSummary .title {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 12px 0;
+        margin: 0;
+        border: none;
+    }
+
+    .ec-base-layer.typeModal.bsket_detail .totalSummary .title h3 {
+        margin: 0;
+        padding: 0;
+        font-size: 13px;
+        font-weight: normal;
+        color: #333;
+        line-height: 1.4;
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        flex: 0 0 auto;
+    }
+
+    .ec-base-layer.typeModal.bsket_detail .totalSummary .title h3 .label-ko {
+        display: block;
+        font-size: 13px;
+        color: #333;
+        line-height: 1.3;
+    }
+
+    .ec-base-layer.typeModal.bsket_detail .totalSummary .title h3 .label-en {
+        display: block;
+        font-size: 11px;
+        color: #757575;
+        font-weight: normal;
+        line-height: 1.2;
+        letter-spacing: 0.2px;
+    }
+
+    .ec-base-layer.typeModal.bsket_detail .totalSummary .title p,
+    .ec-base-layer.typeModal.bsket_detail .totalSummary .title.shipping>div {
+        margin: 0;
+        padding: 0;
+        font-size: 13px;
+        color: #000;
+        text-align: right;
+        line-height: 1.4;
+        flex: 0 0 auto;
+        min-width: 110px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-start;
+    }
+
+    .ec-base-layer.typeModal.bsket_detail .totalSummary .title p strong,
+    .ec-base-layer.typeModal.bsket_detail .totalSummary .title.shipping>div strong {
+        font-weight: normal;
+        color: #000;
+        font-size: 13px;
+        line-height: 1.3;
+        display: block;
+    }
+
+    .ec-base-layer.typeModal.bsket_detail .totalSummary .title p strong span,
+    .ec-base-layer.typeModal.bsket_detail .totalSummary .title.shipping>div strong span {
+        display: block;
+        font-weight: normal;
+        margin-top: 2px;
+    }
+
+    .ec-base-layer.typeModal.bsket_detail .totalSummary .title:after {
+        display: none;
+    }
+
+    .ec-base-layer.typeModal.bsket_detail .totalSummary .title.shipping {
+        border-top: none;
+        padding-top: 12px;
+    }
+
+    .ec-base-layer.typeModal.bsket_detail .totalSummary .total {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 14px 0 0;
+        margin-top: 8px;
+        border-top: 1px solid #e0e0e0;
+        font-size: 14px;
+        font-weight: normal;
+        color: #000;
+    }
+
+    .ec-base-layer.typeModal.bsket_detail .totalSummary .total>span:first-child {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        flex: 0 0 auto;
+        margin: 0;
+        padding: 0;
+    }
+
+    .ec-base-layer.typeModal.bsket_detail .totalSummary .total>span:first-child .label-ko {
+        display: block;
+        font-size: 14px;
+        font-weight: normal;
+        color: #000;
+        line-height: 1.3;
+    }
+
+    .ec-base-layer.typeModal.bsket_detail .totalSummary .total>span:first-child .label-en {
+        display: block;
+        font-size: 12px;
+        color: #757575;
+        font-weight: normal;
+        line-height: 1.2;
+        letter-spacing: 0.2px;
+    }
+
+    .ec-base-layer.typeModal.bsket_detail .totalSummary .total .paymentPrice {
+        margin: 0;
+        padding: 0;
+        text-align: right;
+        min-width: 110px;
+        flex: 0 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-start;
+    }
+
+    .ec-base-layer.typeModal.bsket_detail .totalSummary .total .paymentPrice strong {
+        font-weight: normal;
+        color: #000;
+        font-size: 14px;
+        line-height: 1.3;
+        display: block;
+        word-break: break-word;
+    }
+
+    .ec-base-layer.typeModal.bsket_detail .totalSummary .total .paymentPrice strong span {
+        display: block;
+        font-weight: normal;
+        margin-top: 2px;
+    }
+
+    .ec-base-layer.typeModal.bsket_detail .totalSummary .title p .refer,
+    .ec-base-layer.typeModal.bsket_detail .totalSummary .title.shipping>div .refer {
+        display: inline-block;
+        font-size: 12px;
+        word-break: break-all;
+    }
+
+    .ec-base-layer.typeModal.bsket_detail .totalSummary .total .paymentPrice .refer {
+        display: inline-block;
+        font-size: 12px;
+        word-break: break-all;
+    }
 </style>
+<script type="text/javascript">
+    (function () {
+        // AJAX 호출 중복 방지를 위한 플래그
+        var isCalculating = false;
+        var lastCalculatedPrice = 0;
+        var calculationTimeout = null;
+
+        // 장바구니 레이어 가격 계산 함수 (모든 페이지 합산)
+        function calculateLayerBasketTotal() {
+            var $layer = $('.ec-base-layer.typeModal.bsket_detail');
+
+            if ($layer.length === 0 || !$layer.is(':visible')) {
+                return;
+            }
+
+            // 이미 계산 중이면 중복 호출 방지
+            if (isCalculating) {
+                return;
+            }
+
+            isCalculating = true;
+            var totalPrice = 0;
+            var shippingFee = 0;
+
+            // 가격 파싱 헬퍼 함수 (더 정확한 파싱)
+            function parsePriceFromText(text) {
+                if (!text) return 0;
+
+                // ₩ 기호 뒤의 첫 번째 숫자만 추출
+                // 예: "₩1,234,567" 또는 "1,234,567원" 등
+                // 정규식: ₩ 뒤에 오는 숫자와 쉼표만 매칭 (첫 번째 숫자 그룹만)
+                var match = text.match(/₩?\s*([\d,]+)/);
+                if (!match || !match[1]) {
+                    // ₩ 없이 숫자만 있는 경우
+                    match = text.match(/([\d,]+)/);
+                    if (!match || !match[1]) return 0;
+                }
+
+                // 쉼표 제거 후 숫자로 변환
+                var numberStr = match[1].replace(/,/g, '');
+                var parsed = parseInt(numberStr, 10);
+
+                // 합리적인 범위 체크 (0 ~ 1억원) - 개별 상품 가격
+                if (isNaN(parsed) || parsed < 0 || parsed > 100000000) {
+                    return 0;
+                }
+
+                return parsed;
+            }
+
+            // 총액 파싱 헬퍼 함수 (더 큰 범위 허용)
+            function parseTotalPriceFromText(text) {
+                if (!text) return 0;
+
+                // ₩ 기호 뒤의 첫 번째 숫자만 추출
+                var match = text.match(/₩?\s*([\d,]+)/);
+                if (!match || !match[1]) {
+                    match = text.match(/([\d,]+)/);
+                    if (!match || !match[1]) return 0;
+                }
+
+                // 쉼표 제거 후 숫자로 변환
+                var numberStr = match[1].replace(/,/g, '');
+                var parsed = parseInt(numberStr, 10);
+
+                // 합리적인 범위 체크 (0 ~ 10억원) - 총액
+                if (isNaN(parsed) || parsed < 0 || parsed > 1000000000) {
+                    return 0;
+                }
+
+                return parsed;
+            }
+
+            // 현재 페이지의 상품 가격 합산
+            function sumCurrentPagePrices() {
+                var pageTotal = 0;
+                $layer.find('.grid1 li, .xans-order-list li').each(function () {
+                    var $item = $(this);
+                    var $priceEl = $item.find('.price');
+
+                    if ($priceEl.length > 0) {
+                        var priceText = $priceEl.text().trim();
+                        // strong 태그 안의 텍스트 우선 확인
+                        var priceContent = $priceEl.find('strong').length > 0 ? $priceEl.find('strong').text() : priceText;
+                        var price = parsePriceFromText(priceContent);
+
+                        if (price > 0) {
+                            pageTotal += price;
+                        }
+                    }
+                });
+                return pageTotal;
+            }
+
+            // 현재 페이지 가격 합산
+            totalPrice = sumCurrentPagePrices();
+
+            // 가격 업데이트 함수
+            function updatePrices(price, shipping, skipCheck) {
+                // 값이 같으면 업데이트하지 않음 (깜박임 방지)
+                if (!skipCheck && lastCalculatedPrice === price) {
+                    isCalculating = false;
+                    return;
+                }
+
+                lastCalculatedPrice = price;
+
+                // 총 배송비는 0으로 설정 (필요시 서버에서 받아올 수 있음)
+                var finalShippingFee = shipping || 0;
+
+                // 금액 포맷팅 함수 (장바구니 페이지와 동일한 형식)
+                function formatPrice(amount) {
+                    if (typeof SHOP_PRICE_FORMAT !== 'undefined' && SHOP_PRICE_FORMAT.toShopPrice) {
+                        return SHOP_PRICE_FORMAT.toShopPrice(amount);
+                    }
+                    // ₩ 기호와 쉼표로 천 단위 구분 (유니코드 문자 직접 사용)
+                    var formattedNumber = amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+                    return '\u20A9' + formattedNumber; // ₩ = \u20A9
+                }
+
+                // 영어 금액 포맷팅 함수 (KRW 형식)
+                function formatPriceEn(amount) {
+                    var formattedNumber = amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+                    return 'KRW ' + formattedNumber;
+                }
+
+                // 총 상품금액 업데이트 (한국어 + 영어)
+                var $totalProductPrice = $('#layer_total_product_price strong');
+                if ($totalProductPrice.length > 0) {
+                    var formattedProductPrice = formatPrice(price);
+                    var formattedProductPriceEn = formatPriceEn(price);
+                    $totalProductPrice.html(formattedProductPrice + '<span style="display: block; font-size: 11px; color: #757575; font-weight: normal; margin-top: 3px; line-height: 1.2;">' + formattedProductPriceEn + '</span>');
+                }
+
+                // 총 배송비 업데이트 (한국어 + 영어)
+                var $totalDelvPrice = $('#layer_total_delv_price strong');
+                if ($totalDelvPrice.length > 0) {
+                    var formattedDelvPrice = formatPrice(finalShippingFee);
+                    var formattedDelvPriceEn = formatPriceEn(finalShippingFee);
+                    $totalDelvPrice.html(formattedDelvPrice + '<span style="display: block; font-size: 11px; color: #757575; font-weight: normal; margin-top: 3px; line-height: 1.2;">' + formattedDelvPriceEn + '</span>');
+                }
+
+                // 결제예정금액 업데이트 (한국어 + 영어)
+                var totalOrderPrice = price + finalShippingFee;
+                var $totalOrderPrice = $('#layer_total_order_price strong');
+                if ($totalOrderPrice.length > 0) {
+                    var formattedOrderPrice = formatPrice(totalOrderPrice);
+                    var formattedOrderPriceEn = formatPriceEn(totalOrderPrice);
+                    $totalOrderPrice.html(formattedOrderPrice + '<span style="display: block; font-size: 12px; color: #757575; font-weight: normal; margin-top: 3px; line-height: 1.2;">' + formattedOrderPriceEn + '</span>');
+                }
+
+                isCalculating = false;
+            }
+
+            // 가격 파싱 헬퍼 함수 (더 정확한 파싱)
+            function parsePriceFromText(text) {
+                if (!text) return 0;
+
+                // ₩ 기호 뒤의 숫자만 추출 (쉼표 포함)
+                // 예: "₩1,234,567" -> "1,234,567" -> 1234567
+                var cleaned = text.replace(/[^\d,]/g, ''); // 숫자와 쉼표만 남김
+                if (!cleaned) return 0;
+
+                // 쉼표 제거 후 숫자로 변환
+                var numberStr = cleaned.replace(/,/g, '');
+                var parsed = parseInt(numberStr, 10);
+
+                // 합리적인 범위 체크 (0 ~ 1조원)
+                if (isNaN(parsed) || parsed < 0 || parsed > 1000000000000) {
+                    return 0;
+                }
+
+                return parsed;
+            }
+
+            // AJAX로 장바구니 전체 금액 가져오기
+            $.ajax({
+                url: '/order/basket.html',
+                type: 'GET',
+                dataType: 'html',
+                cache: false,
+                timeout: 5000, // 5초 타임아웃
+                success: function (html) {
+                    try {
+                        var $temp = $('<div>').html(html);
+                        // Order_TotalSummary 모듈에서 총 상품금액 찾기
+                        var $basketTotalSummary = $temp.find('.totalSummary, .xans-order-basketpackage .totalSummary');
+                        if ($basketTotalSummary.length > 0) {
+                            // 총 상품금액 추출 (더 정확한 선택자)
+                            var $productPrice = $basketTotalSummary.find('.title:first p strong').first();
+                            if ($productPrice.length === 0) {
+                                $productPrice = $basketTotalSummary.find('.title:first .paymentPrice strong').first();
+                            }
+
+                            if ($productPrice.length > 0) {
+                                var priceText = $productPrice.text().trim();
+                                var serverTotal = parseTotalPriceFromText(priceText);
+
+                                // 합리적인 값인지 확인 (현재 페이지 합산값의 10배 이하, 최소 1000원 이상)
+                                if (serverTotal >= 1000 && serverTotal <= Math.max(totalPrice * 10, 1000000000)) {
+                                    totalPrice = serverTotal;
+                                    updatePrices(totalPrice, shippingFee, false);
+                                    return;
+                                }
+                            }
+
+                            // 결제예정금액 추출 (더 정확한 선택자)
+                            var $orderPrice = $basketTotalSummary.find('.total .paymentPrice strong').first();
+                            if ($orderPrice.length > 0) {
+                                var orderText = $orderPrice.text().trim();
+                                var serverOrderTotal = parseTotalPriceFromText(orderText);
+
+                                // 합리적인 값인지 확인
+                                if (serverOrderTotal >= 1000 && serverOrderTotal <= Math.max(totalPrice * 10, 1000000000)) {
+                                    totalPrice = serverOrderTotal;
+                                    updatePrices(totalPrice, shippingFee, false);
+                                    return;
+                                }
+                            }
+                        }
+                    } catch (e) {
+                        console.log('전체 금액 파싱 실패:', e);
+                    }
+                    // AJAX 성공했지만 파싱 실패 시 현재 페이지 합산값 사용
+                    updatePrices(totalPrice, shippingFee, false);
+                },
+                error: function () {
+                    // AJAX 실패 시 현재 페이지 합산값 사용
+                    updatePrices(totalPrice, shippingFee, false);
+                }
+            });
+        }
+
+        // Debounce 함수로 중복 호출 방지
+        function debounceCalculate() {
+            if (calculationTimeout) {
+                clearTimeout(calculationTimeout);
+            }
+            calculationTimeout = setTimeout(function () {
+                calculateLayerBasketTotal();
+            }, 300);
+        }
+
+        // 페이지 로드 시 계산
+        $(document).ready(function () {
+            // 초기 계산 (debounce 적용)
+            setTimeout(debounceCalculate, 500);
+
+            // 장바구니 레이어가 표시될 때마다 계산 (debounce 적용)
+            $(document).on('click', function () {
+                setTimeout(function () {
+                    if ($('.ec-base-layer.typeModal.bsket_detail').is(':visible')) {
+                        debounceCalculate();
+                    }
+                }, 300);
+            });
+        });
+
+        // MutationObserver를 사용하여 DOM 변경 감지 (debounce 적용)
+        if (typeof MutationObserver !== 'undefined') {
+            var observer = new MutationObserver(function (mutations) {
+                var $layer = $('.ec-base-layer.typeModal.bsket_detail');
+                if ($layer.length > 0 && $layer.is(':visible') && !isCalculating) {
+                    debounceCalculate();
+                }
+            });
+
+            $(document).ready(function () {
+                if (document.body) {
+                    observer.observe(document.body, {
+                        childList: true,
+                        subtree: true,
+                        attributes: true,
+                        attributeFilter: ['style', 'class']
+                    });
+                }
+            });
+        }
+
+        // 전역 함수로도 노출 (다른 스크립트에서 호출 가능)
+        window.calculateLayerBasketTotal = debounceCalculate;
+    })();
+</script>
 <div module="Order_LayerBasket" class="ec-base-layer typeModal bsket_detail">
     <div class="orba_top">
         <h1>장바구니 ({$item_total})</h1>
@@ -597,6 +1050,39 @@
                 <li><a href="#none" {$param} class="{$param_class}">{$no}</a></li>
             </ol>
             <a href="#none" {$param_next} class="btnNext">다음 페이지</a>
+        </div>
+
+        <!-- 총 주문금액 요약 -->
+        <div module="Order_TotalSummary" class="totalSummary">
+            <div class="title">
+                <h3>
+                    <span class="label-ko">총 상품금액</span>
+                    <span class="label-en">Subtotal</span>
+                </h3>
+                <p id="layer_total_product_price">
+                    <strong></strong>
+                </p>
+            </div>
+
+            <div class="title shipping">
+                <h3>
+                    <span class="label-ko">총 배송비</span>
+                    <span class="label-en">Shipping</span>
+                </h3>
+                <div id="layer_total_delv_price">
+                    <strong></strong>
+                </div>
+            </div>
+
+            <div class="total">
+                <span>
+                    <span class="label-ko">결제예정금액</span>
+                    <span class="label-en">Total</span>
+                </span>
+                <span class="paymentPrice" id="layer_total_order_price">
+                    <strong></strong>
+                </span>
+            </div>
         </div>
     </div>
 
