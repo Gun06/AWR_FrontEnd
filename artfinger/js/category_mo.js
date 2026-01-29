@@ -48,15 +48,31 @@ $(document).ready(function () {
                 }
             });
 
+            // 드롭다운 화살표 클릭 이벤트
             $('.d1-wrap-mo li span.mid_dro').bind('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
                 console.log($(this).parent().hasClass('be'))
                 if ($(this).parent().find('ul').length > 0) {
-                    e.preventDefault();
                     $(this).parent().find('>ul').slideToggle(300);
                     $(this).toggleClass('toacte');
                     $(this).parent().siblings().find('>ul').slideUp(300);
                 }
+            });
 
+            // 세부 메뉴 링크 클릭 이벤트 (정상 동작 보장)
+            $('.d1-wrap-mo li.d2 > a, .d1-wrap-mo li.d3 > a').off('click.categoryMenu').on('click.categoryMenu', function (e) {
+                // nonLink 클래스가 있으면 링크 동작 방지
+                if ($(this).hasClass('nonLink')) {
+                    e.preventDefault();
+                    return false;
+                }
+                // 정상 링크는 그대로 동작하도록 허용
+                var href = $(this).attr('href');
+                if (href && href !== '#' && href !== 'javascript:void(0)') {
+                    // 링크가 정상이면 페이지 이동 허용
+                    return true;
+                }
             });
 
 
@@ -78,7 +94,7 @@ $(document).ready(function () {
 function setCategory2() {
     // 현재 페이지의 카테고리 제목 가져오기
     var look_cate_ti = $('.title h2.hid_ti2').text() || $('.title h2 span').text() || '';
-    
+
     $("#aside .artfinger_slide_wrap .group_nav .xans-layout-category .menu_v_mo ul.d1-wrap-mo > li > ul.d2-wrap > .d2").each(function (index) {
         var look_cate2 = $(this).closest('.d2-wrap').siblings('a').text();
         if (look_cate_ti == look_cate2) {
