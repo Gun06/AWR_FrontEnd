@@ -1,6 +1,9 @@
+<!-- 레이아웃 body에는 use_interest_prd가 없을 수 있음 → 여기서 출력해 JS가 읽음 -->
+<span id="js-use-interest-prd-value" data-value="{$use_interest_prd}" aria-hidden="true" style="display:none!important;position:absolute;left:-9999px"></span>
 <ul>
     <li class="search"><a>Search</a></li>
     <li class="mem_my"><a href="/member/login.html">Login</a></li>
     <li module="Layout_orderBasketcount"><a href="/order/basket.html">Bag (<span
                 class="bas_count">{$basket_count}</span>)</a></li>
+    <li class="{$use_interest_prd|display} js-header-wishlist"><a href="/myshop/wish_list.html">Wishlist</a></li>
 </ul>

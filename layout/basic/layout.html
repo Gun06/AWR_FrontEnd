@@ -29,13 +29,24 @@
     <!--@js(/gridsystem/resource/js/jquery.plugin.js)-->
     <!--@js(/gridsystem/resource/js/common.js)-->
     <!-- do not touch-->
+    <!-- jQuery 1.4.4에는 .off() 없음 → AlphaReview 등 외부 스크립트 호환용 폴리필 -->
+    <script>
+        (function () {
+            if (typeof jQuery !== 'undefined' && typeof jQuery.fn.off === 'undefined') {
+                jQuery.fn.off = function (events, selector, handler) {
+                    if (typeof selector === 'function') { handler = selector; selector = undefined; }
+                    return this.unbind(events, handler);
+                };
+            }
+        })();
+    </script>
     <script src="//ecimg.cafe24img.com/pg1348b90623199053/awesomereason/web/upload/addbase/swiper.js"></script>
     <script src="//ecimg.cafe24img.com/pg1348b90623199053/awesomereason/web/upload/addbase/aos.js"></script>
     <script src="//ecimg.cafe24img.com/pg1348b90623199053/awesomereason/web/upload/addbase/sticky-kit.min.js"></script>
     <script src="//ecimg.cafe24img.com/pg1348b90623199053/awesomereason/web/upload/addbase/classie.js"></script>
 </head>
 
-<body id="layout">
+<body id="layout" data-use-interest-prd="{$use_interest_prd}">
     <div class="progress_line2"></div>
     <!--@import(/artfinger/main_control.html)-->
     <!--header or header2 select-->
@@ -52,6 +63,81 @@
     <!--@import(/artfinger/footer.html)-->
     <!--//footer-->
 
+    <!--
+      [관심상품 use_interest_prd] Cafe24 관리자에서 변수 설정:
+      쇼핑몰관리자 > 상품관리 > 상품표시관리 > 편의기능설정
+      → "좋아요(관심상품)" 사용함/사용안함 선택 후 저장.
+      레이아웃 body에는 변수가 안 넘어올 수 있으므로, memberstate.html의 #js-use-interest-prd-value에서 값을 읽어옴.
+    -->
+    <!-- 관심상품(Wishlist): data-use-interest-prd 값으로 사용함/사용안함 판단 후 표시/숨김 -->
+    <script>
+        (function () {
+            var debounceTimer = null;
+            function applyWishlistVisibility() {
+                if (debounceTimer) clearTimeout(debounceTimer);
+                debounceTimer = setTimeout(function () {
+                    var fromBody = (document.body.getAttribute('data-use-interest-prd') || '').trim();
+                    var fromEl = (function () {
+                        var el = document.getElementById('js-use-interest-prd-value');
+                        return (el && el.getAttribute('data-value')) ? (el.getAttribute('data-value') || '').trim() : '';
+                    })();
+                    var unreplaced = '{$use_interest_prd}';
+                    var useFromEl = (fromEl !== '' && fromEl !== unreplaced);
+                    var raw = useFromEl ? fromEl : fromBody;
+                    var normalized = raw.toUpperCase();
+                    var isUnreplaced = (raw === unreplaced);
+
+                    var show;
+                    if (isUnreplaced) {
+                        // 변수 미치환: 서버 클래스로 판단. 단, 클래스에 '{'가 있으면 |display도 미치환 → 판단 불가, 기본값 숨김
+                        var headerLi = document.querySelector('.js-header-wishlist');
+                        var hasUnreplacedClass = headerLi && (headerLi.className || '').indexOf('{') !== -1;
+                        if (hasUnreplacedClass) {
+                            show = false; // 미치환 시 기본값: 사용안함(숨김)
+                        } else {
+                            show = headerLi ? !headerLi.classList.contains('displaynone') : false;
+                        }
+                    } else {
+                        show = (normalized === 'T' || normalized === 'TRUE' || normalized === 'Y' || normalized === 'YES' || normalized === '1');
+                    }
+
+                    var action = show ? 'remove' : 'add';
+                    var cls = 'displaynone';
+                    document.body.classList[show ? 'add' : 'remove']('wishlist-enabled');
+
+                    var selectors = [
+                        '.js-sidebar-wishlist',
+                        '.js-basket-interest-prd-link',
+                        '.js-header-wishlist',
+                        '.js-hamburg-wishlist'
+                    ];
+                    selectors.forEach(function (selector) {
+                        document.querySelectorAll(selector).forEach(function (el) {
+                            el.classList[action](cls);
+                        });
+                    });
+                    document.querySelectorAll('a[href="/myshop/wish_list.html"]').forEach(function (a) {
+                        var li = a.closest('li');
+                        if (li && !li.classList.contains('js-sidebar-wishlist') &&
+                            !li.classList.contains('js-header-wishlist') &&
+                            !li.classList.contains('js-hamburg-wishlist')) {
+                            li.classList[action](cls);
+                        }
+                    });
+                }, 50);
+            }
+
+            applyWishlistVisibility();
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', applyWishlistVisibility);
+            }
+            window.addEventListener('load', applyWishlistVisibility);
+            if (typeof MutationObserver !== 'undefined') {
+                var observer = new MutationObserver(function () { applyWishlistVisibility(); });
+                observer.observe(document.body, { childList: true, subtree: true });
+            }
+        })();
+    </script>
 </body>
 
 </html>

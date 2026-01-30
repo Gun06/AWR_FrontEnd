@@ -905,3 +905,33 @@ div#mCafe24Basket .ec-base-layer {
 .prdBoard.option td .option-button-group {
     width: 100%;
 }
+
+/* 관심상품: 기본 숨김. body.wishlist-enabled 일 때만 표시 */
+.js-sidebar-wishlist,
+.js-header-wishlist,
+.js-hamburg-wishlist {
+    display: none !important;
+}
+
+body.wishlist-enabled .js-sidebar-wishlist {
+    display: list-item !important;
+}
+
+body.wishlist-enabled .js-header-wishlist,
+body.wishlist-enabled .js-hamburg-wishlist {
+    display: inline-block !important;
+}
+
+/* displaynone 클래스로 숨긴 경우 */
+.displaynone,
+li.displaynone,
+.js-sidebar-wishlist.displaynone,
+.js-header-wishlist.displaynone,
+.js-hamburg-wishlist.displaynone,
+.js-basket-interest-prd-link.displaynone {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+}

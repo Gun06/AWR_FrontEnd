@@ -584,3 +584,8 @@
 @media all and (min-width : 1101px) and (max-width : 1430px) {}
 
 @media all and (min-width : 1431px) {}
+
+/* 장바구니 관심상품 링크: 관리자 설정(사용안함) 시 숨김 */
+.xans-order-basketpackage .js-basket-interest-prd-link.displaynone {
+    display: none !important;
+}

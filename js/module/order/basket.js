@@ -55,6 +55,34 @@ $(document).ready(function () {
     $('[id^="basket_chk_id_"]').click(function (e) {
         fixedLayerPriceSet();
     });
+
+    // 관심상품 등록 기능: 관리자 설정에 따라 장바구니 내 관심상품 링크 표시/숨김
+    // 헤더의 관심상품 링크가 숨겨져 있으면 장바구니 링크도 숨김
+    function toggleBasketInterestLink() {
+        var $headerInterestLink = $('a[href="/myshop/wish_list.html"]');
+        var isHeaderHidden = false;
+
+        if ($headerInterestLink.length > 0) {
+            var $parentLi = $headerInterestLink.closest('li');
+            // displaynone 클래스가 있거나, 실제로 숨겨져 있는지 확인
+            isHeaderHidden = $parentLi.hasClass('displaynone') ||
+                $parentLi.css('display') === 'none' ||
+                !$parentLi.is(':visible');
+        } else {
+            // 헤더에 관심상품 링크가 아예 없으면 사용안함으로 간주
+            isHeaderHidden = true;
+        }
+
+        if (isHeaderHidden) {
+            $('.js-basket-interest-prd-link').addClass('displaynone');
+        } else {
+            $('.js-basket-interest-prd-link').removeClass('displaynone');
+        }
+    }
+
+    // 즉시 실행 및 약간의 지연 후 재실행 (헤더 렌더링 대기)
+    toggleBasketInterestLink();
+    setTimeout(toggleBasketInterestLink, 100);
 });
 
 // 장바구니 선택상품 삭제
