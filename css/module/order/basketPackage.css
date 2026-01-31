@@ -97,6 +97,7 @@
 .xans-order-basketpackage .ec-base-fold .ec-base-prdInfo {
     padding: 15px 0 15px 5px;
     border-bottom: 1px solid #dfdfdf;
+    overflow: visible;
 }
 
 .xans-order-basketpackage .ec-base-fold .ec-base-prdInfo::after {
@@ -225,8 +226,10 @@
     width: 300px;
     display: flex;
     flex-direction: column;
-    height: 97px;
+    min-height: 97px;
+    height: auto;
     justify-content: center;
+    overflow: visible;
 }
 
 .xans-order-basketpackage .ec-base-fold .ec-base-prdInfo .layerOptionModify {
@@ -242,6 +245,8 @@
 .xans-order-basketpackage .ec-base-fold .ec-base-prdInfo .option>li {
     position: relative;
     margin: 0px 0 4px;
+    overflow: visible;
+    z-index: 1;
 }
 
 .xans-order-basketpackage .ec-base-fold .ec-base-prdInfo .option>li .name {
@@ -280,6 +285,21 @@
 .xans-order-basketpackage .ec-base-fold .ec-base-prdInfo .option>li .modify select {
     height: 29px;
     line-height: 29px;
+}
+
+/* 데스크탑 옵션 변경 창: select 드롭다운이 잘리지 않도록, 레이어 z-index 보정 */
+.xans-order-basketpackage .ec-base-fold .ec-base-prdInfo .option>li .modify {
+    position: relative;
+    z-index: 10;
+}
+
+#ec-basketOptionModifyLayer.layerOptionModify {
+    z-index: 9999;
+    overflow: visible;
+}
+
+.xans-order-basketpackage .ec-base-fold .contents {
+    overflow: visible;
 }
 
 .xans-order-basketpackage .ec-base-fold .ec-base-prdInfo .option .file a {

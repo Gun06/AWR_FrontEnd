@@ -935,11 +935,3 @@ li.displaynone,
     height: 0 !important;
     overflow: hidden !important;
 }
-
-/* 알파리뷰(AlphaReview) 온사이트 캠페인 팝업 숨김 - "지금 이 순간 가장 핫한 상품!" */
-push-script-onsite-campaign,
-[id^="app-saladlab-alphareview-onsite"] {
-    display: none !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
-}
