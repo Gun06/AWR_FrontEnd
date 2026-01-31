@@ -8,13 +8,13 @@ main_color_before = "#fff";
 main_color_after = "#000";
 
 /* 상단 띠 배너의 사용유무 결정 사용할시 ="on" 사용하지안을시 = "off" */
-top_promotionBanner = "on";
+top_promotionBanner = "off";
 
 /* 하단 회사 정보에 연락처,주소의사용유무 결정 사용할시 ="on" 사용하지안을시 = "off" */
 bottom_info_company = "on";
 
 /* 메인 하단 팝업 배너의 사용유무 결정 사용할시 ="on" 사용하지안을시 = "off" */
-promotionbanner = "on";
+promotionbanner = "off";
 
 /* 게시판 대분류의 명칭입니다."사이의 문구만 수정해주세요. 삭제는 절대하지말아주세요. */
 category_ti1 = "COMMUNITY";
