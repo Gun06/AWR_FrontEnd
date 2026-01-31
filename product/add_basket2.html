@@ -1140,3 +1140,22 @@
 
     <a href="#none" class="btnClose" onclick="$('#confirmLayer').hide();">닫기</a>
 </div>
+<script>
+    (function () {
+        /* 장바구니 레이어 로드 시 상단 Bag 개수 동기화 */
+        try {
+            var h1 = document.querySelector('.orba_top h1') || document.querySelector('.ec-base-layer.bsket_detail h1') || document.querySelector('h1');
+            if (h1) {
+                var m = (h1.textContent || h1.innerText || '').match(/장바구니\s*\((\d+)\)/);
+                if (m) {
+                    var count = parseInt(m[1], 10);
+                    if (window.parent !== window) {
+                        window.parent.postMessage({ type: 'basketCountUpdate', count: count }, '*');
+                    } else if (typeof window.updateBasketCountInHeader === 'function') {
+                        window.updateBasketCountInHeader(count);
+                    }
+                }
+            }
+        } catch (e) { }
+    })();
+</script>
