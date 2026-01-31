@@ -300,27 +300,61 @@
         transform: translate(-50%, -50%) rotate(135deg);
     }
 
+    /* 레이어 열렸을 때 배경(body) 스크롤 방지 - 모바일에서 장바구니만 스크롤 */
+    body.layer-basket-open {
+        overflow: hidden !important;
+        position: fixed !important;
+        width: 100% !important;
+        height: 100% !important;
+        left: 0 !important;
+        top: 0 !important;
+        background-color: #fff !important;
+    }
+
     /* 반응형: 모바일 */
     @media all and (max-width:768px) {
+
+        /* 모바일: 레이어가 헤더 바로 아래부터 시작, 상단 빈 공간 최소화 */
         .ec-base-layer.typeModal.bsket_detail {
             width: 100% !important;
             max-width: 100% !important;
             left: 0 !important;
             right: 0 !important;
-            top: 0;
-            bottom: 0;
+            top: 52px !important;
+            bottom: 0 !important;
+            height: calc(100vh - 48px) !important;
+            height: calc(100dvh - 48px) !important;
+            max-height: calc(100dvh - 48px) !important;
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+            box-sizing: border-box !important;
             background-color: #fff !important;
         }
 
+        /* 모바일: 배경 오버레이 회색 제거(extend.css 블러/반투명 덮어씀) */
         .ec-base-layer.typeModal.bsket_detail::before {
             right: 0 !important;
+            background: #fff !important;
             background-color: #fff !important;
+            -webkit-backdrop-filter: none !important;
+            backdrop-filter: none !important;
         }
 
+        /* 모바일: 장바구니 제목(h1) 상단 고정, 상단 여백 최소화 */
         .ec-base-layer.typeModal.bsket_detail h1 {
-            padding: 30px 60px 15px 15px;
+            position: sticky !important;
+            top: 0 !important;
+            z-index: 2 !important;
+            flex-shrink: 0 !important;
+            padding: 10px 60px 10px 15px !important;
             font-size: 13px !important;
+            line-height: 24px !important;
+            min-height: 44px !important;
+            box-sizing: border-box !important;
+            display: flex !important;
+            align-items: center !important;
             background-color: #fff !important;
+            border-bottom: 1px solid #fff;
         }
 
         .ec-base-layer.typeModal.bsket_detail .wrap {
@@ -339,13 +373,18 @@
             max-width: calc(100% - 95px);
         }
 
+        /* 모바일: h1·닫기는 고정, 상품+페이지네이션+요약만 스크롤, 상단 여백 없음 */
         .ec-base-layer.typeModal.bsket_detail.bsket_detail .orba_top {
-            overflow: visible !important;
-            overflow-y: visible !important;
+            overflow-x: hidden !important;
+            overflow-y: auto !important;
+            -webkit-overflow-scrolling: touch;
+            min-height: 0 !important;
+            padding-top: 0 !important;
+            margin: 0 !important;
             background-color: #fff !important;
             background: #fff !important;
-            margin: 0 !important;
-            flex: 1;
+            flex: 1 !important;
+            touch-action: pan-y;
         }
 
         .ec-base-layer.typeModal.bsket_detail.bsket_detail .orba_top::-webkit-scrollbar,
@@ -354,12 +393,15 @@
             width: 0 !important;
         }
 
+        /* 모바일: Checkout 하단 고정, 구분선도 흰색으로 상단 회색 느낌 제거 */
         .ec-base-layer.typeModal.bsket_detail.bsket_detail .orba_bottom {
+            flex-shrink: 0 !important;
             margin-top: 0 !important;
             margin-bottom: 0 !important;
-            padding: 12px;
+            padding: 12px 15px max(16px, env(safe-area-inset-bottom)) 15px !important;
             background-color: #fff !important;
             background: #fff !important;
+            border-top: 1px solid #fff;
         }
 
         .ec-base-layer.typeModal.bsket_detail.bsket_detail .ec-base-button a {
@@ -368,9 +410,11 @@
             line-height: 45px;
         }
 
+        /* 모바일: 닫기 버튼 고정 - 장바구니 제목과 같은 높이(위로 올림) */
         .ec-base-layer.typeModal.bsket_detail.bsket_detail .btnClose {
-            top: 30px;
-            right: 15px;
+            top: 22px !important;
+            transform: translateY(-50%) !important;
+            right: 15px !important;
         }
 
         /* 모바일에서 모든 요소 흰색 강제 */
@@ -1157,5 +1201,33 @@
                 }
             }
         } catch (e) { }
+    })();
+
+    /* 모바일: 장바구니 레이어 열릴 때 body 스크롤 잠금, 닫히면 해제 → 장바구니만 스크롤 */
+    (function () {
+        var layerSel = '.ec-base-layer.typeModal.bsket_detail';
+        function isLayerVisible() {
+            var el = document.querySelector(layerSel);
+            if (!el) return false;
+            var s = window.getComputedStyle(el);
+            return s.display !== 'none' && s.visibility !== 'hidden' && el.offsetParent !== null;
+        }
+        function updateBodyLock() {
+            if (isLayerVisible()) {
+                document.body.classList.add('layer-basket-open');
+            } else {
+                document.body.classList.remove('layer-basket-open');
+            }
+        }
+        var layer = document.querySelector(layerSel);
+        if (layer) {
+            var observer = new MutationObserver(updateBodyLock);
+            observer.observe(layer, { attributes: true, attributeFilter: ['style', 'class'] });
+            updateBodyLock();
+        }
+        document.addEventListener('DOMContentLoaded', updateBodyLock);
+        $(document).on('click', '.ec-base-layer.typeModal.bsket_detail .btnClose', function () {
+            setTimeout(updateBodyLock, 50);
+        });
     })();
 </script>
