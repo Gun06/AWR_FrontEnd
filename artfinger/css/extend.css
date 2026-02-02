@@ -831,13 +831,12 @@ div#mCafe24Basket .ec-base-layer {
     padding: 24px 20px 35px;
 }
 
-/* fieldset.bg_white 아래만 제거 (위·양옆 유지), 위쪽 여백 확대 */
+/* fieldset.bg_white 위·아래 제거, 양옆만 유지 */
 .signin-style .login fieldset.bg_white,
 .xans-member-login.signin-style .login fieldset.bg_white {
     border-bottom: none !important;
     border-bottom-width: 0 !important;
-    padding-bottom: 0 !important;
-    padding-top: 40px !important;
+    padding: 0 20px 0 !important;
 }
 
 .signin-style .login .boxTitle,
