@@ -374,6 +374,11 @@ body#main .swiper-container-main {
     width: 900px;
 }
 
+/* 장바구니 페이지 위쪽 여백 제거 */
+.mypage_wrap.bg_gray .basket_cont {
+    padding-top: 60px !important;
+}
+
 /* mypage area layout for tab_etc*/
 .mypage_wrap .mypage_contTab_etc {
     padding-top: 50px;
@@ -517,6 +522,17 @@ body#main .swiper-container-main {
         padding: 30px 10px 100px;
     }
 
+    /* 장바구니 페이지 위쪽 여백 제거 (모바일/태블릿) */
+    .mypage_wrap.bg_gray .basket_cont {
+        padding-top: 0 !important;
+    }
+
+    /* 장바구니 페이지 #wrap 위쪽 여백 제거 (모바일/태블릿) */
+    body#layout:has(.mypage_wrap.bg_gray .basket_cont) #wrap,
+    body#layout:has(.mypage_wrap.bg_gray .basket_cont) #wrap.content {
+        padding-top: 0 !important;
+    }
+
     .order_list {
         padding: 0;
     }
@@ -646,6 +662,12 @@ header.dnd_module_9742c60d3a2ee81fffada3eade8d931d {
 
     /* 메인 페이지에서는 메인 슬라이더가 헤더와 겹치도록 (padding-top 없음) */
     body#main #wrap {
+        padding-top: 0 !important;
+    }
+
+    /* 장바구니 페이지 위쪽 여백 제거 (PC) */
+    body#layout:has(.mypage_wrap.bg_gray .basket_cont) #wrap,
+    body#layout:has(.mypage_wrap.bg_gray .basket_cont) #wrap.content {
         padding-top: 0 !important;
     }
 
