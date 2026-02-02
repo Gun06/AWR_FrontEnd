@@ -43,6 +43,11 @@
     overflow: hidden;
 }
 
+/* 메인 페이지에서만 메인 슬라이더가 헤더와 겹치도록 (메인 페이지는 padding-top이 없으므로 자연스럽게 겹침) */
+body#main .swiper-container-main {
+    margin-top: 0;
+}
+
 .swiper-container-main .swiper-wrapper {}
 
 .swiper-container-main .swiper-slide {
@@ -620,6 +625,37 @@ header.dnd_module_9742c60d3a2ee81fffada3eade8d931d {
 
 .dnd_module_9742c60d3a2ee81fffada3eade8d931d>header.open .header {
     z-index: 10000 !important;
+}
+
+/* ============================================
+   본문 콘텐츠가 헤더 아래에서 시작하도록 padding-top 추가
+   헤더가 fixed이므로 본문에 헤더 높이만큼 여백 필요
+   메인 페이지(body#main)는 제외하고, 다른 페이지(body#layout)에만 적용
+   ============================================ */
+/* 메인 페이지가 아닌 경우에만 padding-top 적용 */
+body#layout #wrap,
+body#layout #wrap.content,
+body#layout #wrap {
+    padding-top: 80px !important;
+}
+
+/* 메인 페이지에서는 메인 슬라이더가 헤더와 겹치도록 (padding-top 없음) */
+body#main #wrap {
+    padding-top: 0 !important;
+}
+
+/* 모바일에서는 헤더 높이가 다를 수 있으므로 조정 */
+@media all and (max-width: 1000px) {
+
+    body#layout #wrap,
+    body#layout #wrap.content,
+    body#layout #wrap {
+        padding-top: 60px !important;
+    }
+
+    body#main #wrap {
+        padding-top: 0 !important;
+    }
 }
 
 /* 장바구니 레이어의 z-index를 헤더보다 낮게 조정 */
