@@ -765,6 +765,14 @@ div#mCafe24Basket .ec-base-layer {
     padding: 24px 20px 35px;
 }
 
+/* fieldset.bg_white 아래만 제거 (위·양옆 유지) */
+.signin-style .login fieldset.bg_white,
+.xans-member-login.signin-style .login fieldset.bg_white {
+    border-bottom: none !important;
+    border-bottom-width: 0 !important;
+    padding-bottom: 0 !important;
+}
+
 .signin-style .login .boxTitle,
 .xans-member-login.signin-style .login .boxTitle {
     text-align: left;
@@ -802,6 +810,7 @@ div#mCafe24Basket .ec-base-layer {
     border-radius: 2px;
     height: 36px;
     line-height: 36px;
+    padding: 0 12px !important;
     box-sizing: border-box;
 }
 
@@ -810,6 +819,8 @@ div#mCafe24Basket .ec-base-layer {
 .xans-member-login.signin-style .login fieldset input[type=text]::placeholder,
 .xans-member-login.signin-style .login fieldset input[type=password]::placeholder {
     color: #999;
+    font-size: 14px;
+    font-weight: 200;
 }
 
 .signin-style .login fieldset .btn_signin,
@@ -889,18 +900,64 @@ div#mCafe24Basket .ec-base-layer {
 
 .signin-style .login .log_wp2,
 .xans-member-login.signin-style .login .log_wp2 {
-    margin-top: 24px;
+    margin-top: 72px;
     padding-top: 0;
     border-top: 0;
 }
 
-.signin-style .login .log_wp2 .join_but p,
-.xans-member-login.signin-style .login .log_wp2 .join_but p {
+.signin-style .login .log_wp2 .join_but:not(.order-status-block) p,
+.xans-member-login.signin-style .login .log_wp2 .join_but:not(.order-status-block) p {
     display: none;
 }
 
-.signin-style .login .log_wp2 .join_but a,
-.xans-member-login.signin-style .login .log_wp2 .join_but a {
+/* 비회원 주문조회 → Order Status 텍스트 스타일 (두 번째 이미지) */
+.signin-style .login .log_wp2 .order-status-block,
+.xans-member-login.signin-style .login .log_wp2 .order-status-block {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-top: none;
+}
+
+.login-page-wrap .signin-style .login .log_wp2 .order-status-desc,
+.login-page-wrap .xans-member-login.signin-style .login .log_wp2 .order-status-desc {
+    margin-bottom: 0;
+}
+
+.signin-style .login .log_wp2 .order-status-link,
+.xans-member-login.signin-style .login .log_wp2 .order-status-link {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    text-decoration: none;
+    border: none;
+    background: none;
+    height: auto;
+    line-height: 1.5;
+    padding: 0;
+    margin: 0;
+}
+
+.signin-style .login .log_wp2 .order-status-link:hover,
+.xans-member-login.signin-style .login .log_wp2 .order-status-link:hover {
+    text-decoration: underline;
+    color: #333;
+}
+
+.signin-style .login .log_wp2 .order-status-desc,
+.xans-member-login.signin-style .login .log_wp2 .order-status-desc {
+    display: block;
+    margin: 8px 0 0 0;
+    font-size: 13px;
+    font-weight: 300;
+    color: #777;
+    line-height: 1.5;
+}
+
+.signin-style .login .log_wp2 .join_but:not(.order-status-block) a,
+.xans-member-login.signin-style .login .log_wp2 .join_but:not(.order-status-block) a {
     display: block;
     height: 38px;
     line-height: 38px;
@@ -908,6 +965,115 @@ div#mCafe24Basket .ec-base-layer {
     box-sizing: border-box;
     border: 1px solid #dfdfdf;
     border-radius: 2px;
+}
+
+/* ============================================
+   비회원 주문조회 폼 (Order Status) - 2·3번 이미지 스타일
+   ============================================ */
+/* Order Status와 입력 폼을 한 블록으로: 래퍼 + 기본 CSS 덮어쓰기 */
+.login-page-wrap .guest-order-form,
+.login-page-wrap .xans-myshop-orderhistorynologin.guest-order-form {
+    margin: 0 auto !important;
+    margin-top: 0 !important;
+    padding: 12px 20px 40px !important;
+    max-width: 600px;
+    box-sizing: border-box;
+    border-top: none;
+}
+
+.guest-order-form,
+.xans-myshop-orderhistorynologin.guest-order-form {
+    margin: 0 auto;
+    margin-top: 0 !important;
+    padding: 12px 20px 40px;
+    max-width: 600px;
+    box-sizing: border-box;
+    border-top: none;
+}
+
+.guest-order-form .guest-order-title,
+.xans-myshop-orderhistorynologin.guest-order-form .guest-order-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 8px 0;
+    text-align: left;
+}
+
+.guest-order-form .guest-order-desc,
+.xans-myshop-orderhistorynologin.guest-order-form .guest-order-desc {
+    font-size: 14px;
+    font-weight: 300;
+    color: #777;
+    margin: 0 0 24px 0;
+    line-height: 1.5;
+}
+
+.guest-order-form .guest-order-fields,
+.xans-myshop-orderhistorynologin.guest-order-form .guest-order-fields {
+    margin: 0;
+}
+
+.guest-order-form .guest-order-fields dt,
+.xans-myshop-orderhistorynologin.guest-order-form .guest-order-fields dt {
+    display: none;
+}
+
+.guest-order-form .guest-order-fields dd,
+.xans-myshop-orderhistorynologin.guest-order-form .guest-order-fields dd {
+    margin: 0;
+    margin-inline-start: 0;
+    margin-left: 0;
+}
+
+.guest-order-form .guest-order-fields dd:not(:first-of-type),
+.xans-myshop-orderhistorynologin.guest-order-form .guest-order-fields dd:not(:first-of-type) {
+    margin-top: 12px;
+}
+
+.guest-order-form .guest-order-fields input,
+.xans-myshop-orderhistorynologin.guest-order-form .guest-order-fields input {
+    width: 100%;
+    height: 38px;
+    line-height: 38px;
+    padding: 0 12px;
+    font-size: 14px !important;
+    font-weight: 200 !important;
+    color: #000;
+    background: #fff;
+    border: 1px solid #dfdfdf;
+    border-radius: 2px;
+    box-sizing: border-box;
+}
+
+.guest-order-form .guest-order-fields input::placeholder,
+.xans-myshop-orderhistorynologin.guest-order-form .guest-order-fields input::placeholder {
+    color: #999;
+    font-size: 14px !important;
+    font-weight: 200 !important;
+}
+
+.guest-order-form .submit,
+.xans-myshop-orderhistorynologin.guest-order-form .submit {
+    margin: 24px 0 0 0;
+}
+
+.guest-order-form .guest-order-submit,
+.xans-myshop-orderhistorynologin.guest-order-form .guest-order-submit {
+    display: block;
+    width: 100%;
+    height: 38px;
+    line-height: 38px;
+    padding: 0 16px;
+    font-size: 14px;
+    font-weight: 300;
+    color: #333;
+    text-align: center;
+    background: #f5f5f5;
+    border: 1px solid #dfdfdf;
+    border-radius: 2px;
+    box-sizing: border-box;
+    cursor: pointer;
 }
 
 /* ============================================

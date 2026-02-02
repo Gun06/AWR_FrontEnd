@@ -1,78 +1,105 @@
-<div module="member_login" class="ec-base-box typeBlank bg_gray signin-style">
-    <!--@css(/css/module/member/login.css)-->
-    <!--
+<div class="login-page-wrap">
+    <div module="member_login" class="ec-base-box typeBlank bg_gray signin-style">
+        <!--@css(/css/module/member/login.css)-->
+        <!--
         $defaultReturnUrl = /index.html
         $forbidIpUrl = member/adminFail.html
     -->
-    <div class="login">
-        <fieldset class="bg_white">
-            <h3 class="boxTitle">Sign In</h3>
-            <legend>ACCOUNT</legend>
-            <div class="log_wp">
-                <div class="log_wp1">
-                    <label class="id ePlaceholder">{$form.member_id}</label>
-                    <label class="password ePlaceholder">{$form.member_passwd}</label>
-                    <a href="#none" class="btn_signin btn_sizeX" onclick="{$action_func_login}">Sign In</a>
-                    <a href="/member/join.html" class="btn_create_account btn_sizeX">Create Account</a>
-                    <ul class="snsArea">
-                        <li class="{$display_kakao|display} kakao">
-                            <a href="#none" onclick="{$kakao_func_login}">Login Via Kakao</a>
-                        </li>
-                        <li class="{$display_naver|display} naver">
-                            <a href="#none" onclick="{$naver_func_login}">Login Via Naver</a>
-                        </li>
-                        <li class="{$display_facebook|display} facebook">
-                            <a href="#none" onclick="{$facebook_func_login}"><img src="//ecudemo309264.cafe24.com/web/upload/addbase/addimage/fac-w.svg">Facebook으로 로그인</a>
-                        </li>
-                        <li class="{$display_google|display} google">
-                            <a href="#none" onclick="{$google_func_login}"><img src="//ecudemo309264.cafe24.com/web/upload/addbase/addimage/goo.svg">구글 로그인</a>
-                        </li>
-                        <li class="{$display_line|display} line">
-                            <a href="#none" onclick="{$line_func_login}"><img src="//ecudemo309264.cafe24.com/web/upload/addbase/addimage/nav-w.svg">LINE 로그인</a>
-                        </li>
-                        <li class="{$display_apple|display} apple">
-                            <a href="#none" onclick="{$apple_func_login}"><img src="//ecudemo309264.cafe24.com/web/upload/addbase/addimage/apple.svg">Apple로 로그인</a>
-                        </li>
-                    </ul>
-                    <div class="forgot_link">
-                        <a href="/member/id/find_id.html">Forgot Id?</a>
-                        <a href="/member/passwd/find_passwd_info.html">Forgot Password?</a>
+        <div class="login">
+            <fieldset class="bg_white">
+                <h3 class="boxTitle">Sign In</h3>
+                <legend>ACCOUNT</legend>
+                <div class="log_wp">
+                    <div class="log_wp1">
+                        <label class="id ePlaceholder">{$form.member_id}</label>
+                        <label class="password ePlaceholder">{$form.member_passwd}</label>
+                        <a href="#none" class="btn_signin btn_sizeX" onclick="{$action_func_login}">Sign In</a>
+                        <a href="/member/join.html" class="btn_create_account btn_sizeX">Create Account</a>
+                        <ul class="snsArea">
+                            <li class="{$display_kakao|display} kakao">
+                                <a href="#none" onclick="{$kakao_func_login}">Login Via Kakao</a>
+                            </li>
+                            <li class="{$display_naver|display} naver">
+                                <a href="#none" onclick="{$naver_func_login}">Login Via Naver</a>
+                            </li>
+                            <li class="{$display_facebook|display} facebook">
+                                <a href="#none" onclick="{$facebook_func_login}"><img
+                                        src="//ecudemo309264.cafe24.com/web/upload/addbase/addimage/fac-w.svg">Facebook으로
+                                    로그인</a>
+                            </li>
+                            <li class="{$display_google|display} google">
+                                <a href="#none" onclick="{$google_func_login}"><img
+                                        src="//ecudemo309264.cafe24.com/web/upload/addbase/addimage/goo.svg">구글 로그인</a>
+                            </li>
+                            <li class="{$display_line|display} line">
+                                <a href="#none" onclick="{$line_func_login}"><img
+                                        src="//ecudemo309264.cafe24.com/web/upload/addbase/addimage/nav-w.svg">LINE
+                                    로그인</a>
+                            </li>
+                            <li class="{$display_apple|display} apple">
+                                <a href="#none" onclick="{$apple_func_login}"><img
+                                        src="//ecudemo309264.cafe24.com/web/upload/addbase/addimage/apple.svg">Apple로
+                                    로그인</a>
+                            </li>
+                        </ul>
+                        <div class="forgot_link">
+                            <a href="/member/id/find_id.html">Forgot Id?</a>
+                            <a href="/member/passwd/find_passwd_info.html">Forgot Password?</a>
+                        </div>
+                    </div>
+                    <div class="log_wp2">
+                        <div class="join_but order-status-block">
+                            <a href="/myshop/order/list.html" class="order-status-link">Order Status</a>
+                            <p class="order-status-desc">비회원으로 주문하셨더라도 주문 조회가 가능합니다.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="log_wp2">
-                    <div class="join_but">
-                        <a href="/myshop/order/list.html" class="btn_wht_a btn_sizeX">비회원 주문조회</a>
-                    </div>
-                </div>
-            </div>
-        </fieldset>
+            </fieldset>
+        </div>
+    </div>
+
+    <div module="MyShop_OrderHistoryNologin" class="bg_white guest-order-form">
+        <!--@css(/css/module/myshop/orderHistoryNologin.css)-->
+        <!--
+        $orderDetailUrl = /myshop/order/list.html
+    -->
+        <dl class="ec-base-desc guest-order-fields">
+            <dt>이름</dt>
+            <dd>{$form.order_name}</dd>
+            <dt>주문번호</dt>
+            <dd>{$form.order_id}</dd>
+            <dt>게스트 비밀번호</dt>
+            <dd>{$form.order_password}</dd>
+        </dl>
+        <p class="ec-base-button gColumn submit"><button type="submit" class="guest-order-submit">Check status</button>
+        </p>
     </div>
 </div>
 <script>
-(function() {
-    var wrap = document.querySelector('.signin-style');
-    if (!wrap) return;
-    var idInput = wrap.querySelector('.login fieldset .id input[type=text], .login fieldset .id input');
-    var pwInput = wrap.querySelector('.login fieldset .password input[type=password], .login fieldset .password input');
-    if (idInput) idInput.setAttribute('placeholder', 'ID');
-    if (pwInput) pwInput.setAttribute('placeholder', 'Password');
-})();
+    (function () {
+        function setPlaceholders() {
+            var wrap = document.querySelector('.signin-style');
+            if (wrap) {
+                var idInput = wrap.querySelector('.login fieldset .id input[type=text], .login fieldset .id input');
+                var pwInput = wrap.querySelector('.login fieldset .password input[type=password], .login fieldset .password input');
+                if (idInput) idInput.setAttribute('placeholder', 'ID');
+                if (pwInput) pwInput.setAttribute('placeholder', 'Password');
+            }
+            var guestForm = document.querySelector('.guest-order-form');
+            if (guestForm) {
+                var dds = guestForm.querySelectorAll('.guest-order-fields dd');
+                var ph = ['Name', 'Order Number', 'Guest Password'];
+                [].slice.call(dds).slice(0, 3).forEach(function (dd, i) {
+                    var inputs = dd.querySelectorAll('input');
+                    [].slice.call(inputs).forEach(function (el) { el.setAttribute('placeholder', ph[i] || ''); });
+                });
+            }
+        }
+        setPlaceholders();
+        if (document.readyState === 'complete') {
+            setTimeout(setPlaceholders, 50);
+        } else {
+            window.addEventListener('load', function () { setTimeout(setPlaceholders, 50); });
+        }
+    })();
 </script>
-
-<div module="MyShop_OrderHistoryNologin" class="bg_white">
-    <!--@css(/css/module/myshop/orderHistoryNologin.css)-->
-    <!--
-        $orderDetailUrl = /myshop/order/list.html
-    -->
-    <h3 class="boxTitleCenter">비회원 주문조회</h3>
-
-    <dl class="ec-base-desc gBlank20">
-        <dt>{$form_label.order_name}</dt>
-        <dd>{$form.order_name}</dd>
-        <dt>{$form_label.order_id}</dt>
-        <dd style="color:#bbb">{$form.order_id}</dd>
-        <dt>{$form_label.order_password}</dt>
-        <dd>{$form.order_password}</dd>
-    </dl>
-    <p class="ec-base-button gColumn submit"><button type="submit" class="btn_blk_a btn_sizeX">확인</button></p>
-</div>
