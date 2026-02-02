@@ -754,6 +754,163 @@ div#mCafe24Basket .ec-base-layer {
 }
 
 /* ============================================
+   로그인 페이지 Sign In 스타일
+   ============================================ */
+.mypage_wrap .mypage_cont .mypage_innerLogin:has(.signin-style) {
+    max-width: 600px;
+}
+
+.signin-style .login fieldset,
+.xans-member-login.signin-style .login fieldset {
+    padding: 24px 20px 35px;
+}
+
+.signin-style .login .boxTitle,
+.xans-member-login.signin-style .login .boxTitle {
+    text-align: left;
+    font-size: 18px;
+    font-weight: 200;
+    padding-bottom: 20px;
+}
+
+.signin-style .login fieldset,
+.xans-member-login.signin-style .login fieldset {
+    font-weight: 200;
+}
+
+.signin-style .login fieldset .id,
+.signin-style .login fieldset .password,
+.xans-member-login.signin-style .login fieldset .id,
+.xans-member-login.signin-style .login fieldset .password {
+    border: 1px solid #dfdfdf;
+    border-radius: 2px;
+    margin-bottom: 12px;
+    background: #fff;
+    min-height: 38px;
+    box-sizing: border-box;
+}
+
+.signin-style .login fieldset .password {
+    margin-bottom: 18px;
+}
+
+.signin-style .login fieldset input[type=text],
+.signin-style .login fieldset input[type=password],
+.xans-member-login.signin-style .login fieldset input[type=text],
+.xans-member-login.signin-style .login fieldset input[type=password] {
+    border: 0;
+    border-radius: 2px;
+    height: 36px;
+    line-height: 36px;
+    box-sizing: border-box;
+}
+
+.signin-style .login fieldset input[type=text]::placeholder,
+.signin-style .login fieldset input[type=password]::placeholder,
+.xans-member-login.signin-style .login fieldset input[type=text]::placeholder,
+.xans-member-login.signin-style .login fieldset input[type=password]::placeholder {
+    color: #999;
+}
+
+.signin-style .login fieldset .btn_signin,
+.signin-style .login fieldset .btn_create_account,
+.signin-style .login fieldset .snsArea li a,
+.xans-member-login.signin-style .login fieldset .btn_signin,
+.xans-member-login.signin-style .login fieldset .btn_create_account,
+.xans-member-login.signin-style .login fieldset .snsArea li a {
+    display: block;
+    width: 100%;
+    height: 38px;
+    line-height: 38px;
+    margin-top: 10px;
+    padding: 0 16px;
+    font-size: 14px;
+    font-weight: 200;
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box;
+    border: 1px solid #dfdfdf;
+    border-radius: 2px;
+    background: #fff;
+    color: #000;
+}
+
+.signin-style .login fieldset .btn_create_account,
+.xans-member-login.signin-style .login fieldset .btn_create_account {
+    background: #e0e0e0;
+    border-color: #dfdfdf;
+}
+
+.signin-style .login fieldset .snsArea li.kakao a,
+.signin-style .login fieldset .snsArea li.naver a,
+.xans-member-login.signin-style .login fieldset .snsArea li.kakao a,
+.xans-member-login.signin-style .login fieldset .snsArea li.naver a {
+    background: #fff !important;
+    color: #000 !important;
+}
+
+.signin-style .login fieldset .snsArea li.facebook,
+.signin-style .login fieldset .snsArea li.google,
+.signin-style .login fieldset .snsArea li.line,
+.signin-style .login fieldset .snsArea li.apple,
+.xans-member-login.signin-style .login fieldset .snsArea li.facebook,
+.xans-member-login.signin-style .login fieldset .snsArea li.google,
+.xans-member-login.signin-style .login fieldset .snsArea li.line,
+.xans-member-login.signin-style .login fieldset .snsArea li.apple {
+    display: none;
+}
+
+.signin-style .login fieldset .snsArea li a>img {
+    display: none;
+}
+
+.signin-style .login fieldset .forgot_link,
+.xans-member-login.signin-style .login fieldset .forgot_link {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.signin-style .login fieldset .forgot_link a,
+.xans-member-login.signin-style .login fieldset .forgot_link a {
+    display: block;
+    font-size: 13px;
+    font-weight: 200;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.signin-style .login fieldset .forgot_link a:last-child {
+    margin-bottom: 0;
+}
+
+.signin-style .login fieldset .forgot_link span {
+    display: none;
+}
+
+.signin-style .login .log_wp2,
+.xans-member-login.signin-style .login .log_wp2 {
+    margin-top: 24px;
+    padding-top: 0;
+    border-top: 0;
+}
+
+.signin-style .login .log_wp2 .join_but p,
+.xans-member-login.signin-style .login .log_wp2 .join_but p {
+    display: none;
+}
+
+.signin-style .login .log_wp2 .join_but a,
+.xans-member-login.signin-style .login .log_wp2 .join_but a {
+    display: block;
+    height: 38px;
+    line-height: 38px;
+    font-weight: 200;
+    box-sizing: border-box;
+    border: 1px solid #dfdfdf;
+    border-radius: 2px;
+}
+
+/* ============================================
    카카오톡 상담 아이콘 교체 (Help 아이콘으로 변경)
    ============================================ */
 .mbi-simpletalk-kakao>.badge img {
