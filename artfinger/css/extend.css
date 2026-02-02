@@ -636,7 +636,7 @@ header.dnd_module_9742c60d3a2ee81fffada3eade8d931d {
 body#layout #wrap,
 body#layout #wrap.content,
 body#layout #wrap {
-    padding-top: 80px !important;
+    padding-top: 60px !important;
 }
 
 /* 메인 페이지에서는 메인 슬라이더가 헤더와 겹치도록 (padding-top 없음) */
