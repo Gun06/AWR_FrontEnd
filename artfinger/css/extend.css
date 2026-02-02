@@ -374,7 +374,7 @@ body#main .swiper-container-main {
     width: 900px;
 }
 
-/* 장바구니 페이지 위쪽 여백 제거 */
+/* 장바구니 페이지 위쪽 여백 추가 */
 .mypage_wrap.bg_gray .basket_cont {
     padding-top: 60px !important;
 }
@@ -1345,4 +1345,11 @@ li.displaynone,
     opacity: 0 !important;
     height: 0 !important;
     overflow: hidden !important;
+}
+
+/* PC에서 content_info 상단 여백 제거 */
+@media all and (min-width: 1001px) {
+    #container .content_info {
+        margin-top: 20px !important;
+    }
 }
