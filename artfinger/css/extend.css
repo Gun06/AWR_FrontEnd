@@ -867,9 +867,9 @@ div#mCafe24Basket .ec-base-layer {
    ============================================ */
 /* 취소선이 그어진 가격 요소의 색상을 밝은 회색으로 변경 */
 /* ID 선택자로 직접 타겟팅 - 취소선과 회색 유지, 폰트 두께만 얇게 */
-#span_product_price_text,
-strong#span_product_price_text,
-span#span_product_price_text,
+/* 할인 가격에만 취소선 적용 (style 속성에 line-through가 있는 경우) */
+strong#span_product_price_text[style*="line-through"],
+span#span_product_price_text[style*="line-through"],
 strong[id*="product_price_text"][style*="line-through"],
 span[id*="product_price_text"][style*="line-through"] {
     color: #bcbcbc !important;
@@ -878,6 +878,9 @@ span[id*="product_price_text"][style*="line-through"] {
     font-weight: normal !important;
     font-weight: 200 !important;
 }
+
+/* 할인 가격이 있을 때 취소선 유지 (할인 가격 요소와 함께 있을 때) */
+/* JavaScript가 할인 가격을 감지하면 취소선을 유지하므로, CSS는 기본 스타일만 제공 */
 
 /* 판매가 영역 내의 취소선이 그어진 요소 */
 tr[rel="판매가"] strong[style*="line-through"],
@@ -890,7 +893,7 @@ tr[rel="판매가"] strong[style*="text-decoration"],
     font-weight: 200 !important;
 }
 
-/* 취소선이 그어진 가격 요소의 색상을 밝은 회색으로 변경 */
+/* 취소선이 그어진 가격 요소의 색상을 밝은 회색으로 변경 (할인 가격에만 적용) */
 .prdPrice [class*="product_price_del"],
 .prdPrice [class*="price_del"],
 .prdPrice .price_throu,
@@ -914,6 +917,13 @@ tr[rel="판매가"] strong[style*="text-decoration"],
     color: #bcbcbc !important;
 }
 
+/* 할인이 아닌 정가는 취소선 제거 - .prdPrice 내부의 일반 요소들 */
+.prdPrice strong:not([style*="line-through"]):not([style*="text-decoration"]):not([class*="product_price_del"]):not([class*="price_del"]):not(.price_throu):not(.strike),
+.prdPrice span:not([style*="line-through"]):not([style*="text-decoration"]):not([class*="product_price_del"]):not([class*="price_del"]):not(.price_throu):not(.strike):not(s):not(del) {
+    text-decoration: none !important;
+    color: #000 !important;
+}
+
 /* 취소선 색상도 밝은 회색으로 */
 .prdPrice [class*="product_price_del"],
 .prdPrice [class*="price_del"],
@@ -930,7 +940,7 @@ tr[rel="판매가"] strong[style*="text-decoration"],
     text-decoration-color: #bcbcbc !important;
 }
 
-/* 취소선이 그어진 모든 가격 요소 (더 포괄적인 선택자) */
+/* 취소선이 그어진 모든 가격 요소 (더 포괄적인 선택자) - 할인 가격에만 적용 */
 .prdPrice span[style*="text-decoration"],
 .prdPrice span[style*="line-through"],
 .prdPrice strong[style*="text-decoration"],
@@ -944,6 +954,7 @@ tr[rel="판매가"] strong[style*="text-decoration"],
     color: #bcbcbc !important;
     text-decoration-color: #bcbcbc !important;
 }
+
 
 /* 모든 취소선이 그어진 strong 요소 (최종 포괄 선택자) */
 strong[style*="text-decoration: line-through"],
@@ -1427,11 +1438,13 @@ li.displaynone,
 }
 
 /* 상품 상세: 사이즈 버튼 */
-/* 1) xans-product-detail 하위 (모듈 공통) */
 .xans-product-detail .xans-product-option .ec-product-button:not(.ec-product-preview) li {
     border: 1px solid #e0e0e0 !important;
     border-radius: 0 !important;
     background: #fff !important;
+    box-sizing: border-box !important;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
 .xans-product-detail .xans-product-option .ec-product-button:not(.ec-product-preview) li a,
@@ -1440,23 +1453,10 @@ li.displaynone,
     background: transparent !important;
 }
 
-/* 선택됨: 연한 회색 배경, 진한 글씨, 같은 얇은 테두리 */
-.xans-product-detail .xans-product-option .ec-product-button:not(.ec-product-preview) li.ec-product-selected,
-.xans-product-detail .xans-product-option .ec-product-button:not(.ec-product-preview) .ec-product-selected {
-    border: 1px solid #e0e0e0 !important;
-    background: #e8e8e8 !important;
-}
-
+/* 선택됨: a 태그에만 배경색 적용 */
 .xans-product-detail .xans-product-option .ec-product-button:not(.ec-product-preview) li.ec-product-selected a,
-.xans-product-detail .xans-product-option .ec-product-button:not(.ec-product-preview) li.ec-product-selected a span,
-.xans-product-detail .xans-product-option .ec-product-button:not(.ec-product-preview) .ec-product-selected a,
-.xans-product-detail .xans-product-option .ec-product-button:not(.ec-product-preview) .ec-product-selected a span {
-    color: #1b1b1b !important;
-    background: transparent !important;
-}
-
 .xans-product-detail .xans-product-option .ec-product-button:not(.ec-product-preview) .ec-product-selected a {
-    margin: 0 !important;
+    background: #e8e8e8 !important;
 }
 
 /* 품절: 흰색 배경 강제 (모든 경우), 회색 글씨 + 취소선만 */
@@ -1477,7 +1477,6 @@ li.displaynone,
     background: transparent !important;
 }
 
-/* 2) prdDescription 사용 시 */
 .prdDescription .xans-product-option .ec-product-button:not(.ec-product-preview) li {
     border: 1px solid #e0e0e0 !important;
     border-radius: 0 !important;
@@ -1485,6 +1484,7 @@ li.displaynone,
     min-width: 32px !important;
     padding: 0 !important;
     margin: 0 !important;
+    box-sizing: border-box !important;
 }
 
 .prdDescription .xans-product-option .ec-product-button:not(.ec-product-preview) li a {
@@ -1497,6 +1497,8 @@ li.displaynone,
     box-sizing: border-box !important;
     text-align: center !important;
     line-height: 1.4 !important;
+    width: 100% !important;
+    margin: 0 !important;
 }
 
 .prdDescription .xans-product-option .ec-product-button:not(.ec-product-preview) li a span {
@@ -1505,17 +1507,11 @@ li.displaynone,
     font-size: 13px !important;
 }
 
-/* 선택됨: 연한 회색만 */
-.prdDescription .xans-product-option .ec-product-button:not(.ec-product-preview) li.ec-product-selected {
-    border: 1px solid #e0e0e0 !important;
+/* 선택됨: a 태그에만 배경색 적용 */
+.prdDescription .xans-product-option .ec-product-button:not(.ec-product-preview) li.ec-product-selected a {
     background: #e8e8e8 !important;
 }
 
-.prdDescription .xans-product-option .ec-product-button:not(.ec-product-preview) li.ec-product-selected a,
-.prdDescription .xans-product-option .ec-product-button:not(.ec-product-preview) li.ec-product-selected a span {
-    background: transparent !important;
-    color: #1b1b1b !important;
-}
 
 /* 기본 상태: 취소선 없음 */
 .prdDescription .xans-product-option .ec-product-button:not(.ec-product-preview) li a span {

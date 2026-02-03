@@ -128,6 +128,7 @@
     function updatePriceDisplay() {
         overridePriceFormat();
         updateAllPriceText();
+        removeStrikethroughFromRegularPrice();
     }
 
     /**
@@ -174,6 +175,241 @@
     }, 15000);
 
     /**
+     * 할인이 아닌 정가에서 취소선 제거
+     * price_sale (span#span_product_price_sale 또는 rel="할인판매가")이 있을 때만 취소선 유지
+     */
+    function removeStrikethroughFromRegularPrice() {
+        if (!document.body) return;
+
+        // 전체 문서에서 할인 가격이 있는지 확인 (더 정확하게)
+        var hasSalePrice = false;
+
+        /**
+         * 할인 가격 요소가 실제로 표시되고 있는지 확인하는 함수
+         */
+        function isElementVisible(element) {
+            if (!element) return false;
+            var style = window.getComputedStyle(element);
+            return style.display !== 'none' &&
+                style.visibility !== 'hidden' &&
+                style.opacity !== '0' &&
+                element.offsetWidth > 0 &&
+                element.offsetHeight > 0;
+        }
+
+        /**
+         * 텍스트가 실제 가격인지 확인하는 함수
+         */
+        function isValidPriceText(text) {
+            if (!text || text.trim() === '') return false;
+            var trimmed = text.trim();
+            // KRW나 숫자가 포함되어 있고, 실제 가격 형식인지 확인
+            return (trimmed.indexOf('KRW') !== -1 || /\d/.test(trimmed)) &&
+                trimmed.length > 0 &&
+                trimmed !== '0' &&
+                trimmed !== 'KRW 0' &&
+                trimmed !== '0원';
+        }
+
+        // 1. span#span_product_price_sale이 있는지 확인 (표시되고 있는지, 유효한 가격인지)
+        var salePriceSpan = document.getElementById('span_product_price_sale');
+        if (salePriceSpan && isElementVisible(salePriceSpan)) {
+            var saleText = salePriceSpan.textContent ? salePriceSpan.textContent.trim() : '';
+            if (isValidPriceText(saleText)) {
+                hasSalePrice = true;
+            }
+        }
+
+        // 2. rel="할인판매가"가 있는 tr 요소가 있는지 확인 (표시되고 있는지, 유효한 가격인지)
+        var salePriceRows = document.querySelectorAll('tr[rel="할인판매가"]');
+        if (salePriceRows.length > 0) {
+            salePriceRows.forEach(function (row) {
+                if (isElementVisible(row)) {
+                    var rowText = row.textContent ? row.textContent.trim() : '';
+                    if (isValidPriceText(rowText)) {
+                        // tr 내부에 실제 가격 텍스트가 있는지 확인
+                        var priceElements = row.querySelectorAll('span, strong, td');
+                        var hasValidPrice = false;
+                        priceElements.forEach(function (el) {
+                            var elText = el.textContent ? el.textContent.trim() : '';
+                            if (isValidPriceText(elText)) {
+                                hasValidPrice = true;
+                            }
+                        });
+                        if (hasValidPrice || isValidPriceText(rowText)) {
+                            hasSalePrice = true;
+                        }
+                    }
+                }
+            });
+        }
+
+        // 3. .prdSalePrice 클래스가 있는지 확인 (표시되고 있는지, 유효한 가격인지)
+        var salePriceElements = document.querySelectorAll('.prdSalePrice');
+        if (salePriceElements.length > 0) {
+            salePriceElements.forEach(function (el) {
+                if (isElementVisible(el)) {
+                    var elText = el.textContent ? el.textContent.trim() : '';
+                    if (isValidPriceText(elText)) {
+                        hasSalePrice = true;
+                    }
+                }
+            });
+        }
+
+        // 4. 정가와 할인가를 비교하여 실제로 할인이 있는지 확인
+        var regularPriceSpan = document.getElementById('span_product_price_text');
+        if (regularPriceSpan && salePriceSpan) {
+            var regularText = regularPriceSpan.textContent ? regularPriceSpan.textContent.trim() : '';
+            var saleText = salePriceSpan.textContent ? salePriceSpan.textContent.trim() : '';
+
+            // 숫자 추출하여 비교
+            var regularPrice = parseFloat(regularText.replace(/[^\d]/g, ''));
+            var salePrice = parseFloat(saleText.replace(/[^\d]/g, ''));
+
+            if (!isNaN(regularPrice) && !isNaN(salePrice) && regularPrice > 0 && salePrice > 0) {
+                // 할인가가 정가보다 작으면 할인
+                if (salePrice < regularPrice) {
+                    hasSalePrice = true;
+                } else {
+                    // 할인가가 정가와 같거나 크면 할인 아님
+                    hasSalePrice = false;
+                }
+            }
+        }
+
+        // 할인 가격이 있으면 취소선 유지 (확인 및 강제 적용)
+        if (hasSalePrice) {
+            // span#span_product_price_text에 취소선이 있으면 유지, 없으면 추가
+            var priceTextSpan = document.getElementById('span_product_price_text');
+            if (priceTextSpan) {
+                // 취소선이 없으면 추가
+                if (!priceTextSpan.style.textDecoration || priceTextSpan.style.textDecoration.indexOf('line-through') === -1) {
+                    priceTextSpan.style.textDecoration = 'line-through';
+                }
+                // 회색 색상 유지
+                if (priceTextSpan.style.color !== 'rgb(188, 188, 188)' && priceTextSpan.style.color !== '#bcbcbc') {
+                    priceTextSpan.style.color = '#bcbcbc';
+                }
+            }
+
+            // tr[rel="판매가"] 내부의 가격에 취소선 유지
+            var priceRows = document.querySelectorAll('tr[rel="판매가"]');
+            priceRows.forEach(function (row) {
+                var priceTextInRow = row.querySelector('#span_product_price_text, [id*="product_price_text"]');
+                if (priceTextInRow) {
+                    if (!priceTextInRow.style.textDecoration || priceTextInRow.style.textDecoration.indexOf('line-through') === -1) {
+                        priceTextInRow.style.textDecoration = 'line-through';
+                    }
+                    if (priceTextInRow.style.color !== 'rgb(188, 188, 188)' && priceTextInRow.style.color !== '#bcbcbc') {
+                        priceTextInRow.style.color = '#bcbcbc';
+                    }
+                }
+            });
+        }
+        // 할인 가격이 없으면 모든 취소선 제거
+        else {
+            // span#span_product_price_text에서 취소선 제거
+            var priceTextSpan = document.getElementById('span_product_price_text');
+            if (priceTextSpan) {
+                // 취소선 제거
+                priceTextSpan.style.removeProperty('text-decoration');
+                priceTextSpan.style.removeProperty('text-decoration-line');
+                priceTextSpan.style.removeProperty('text-decoration-style');
+                // 회색 색상 제거
+                if (priceTextSpan.style.color === 'rgb(188, 188, 188)' || priceTextSpan.style.color === '#bcbcbc') {
+                    priceTextSpan.style.color = '#000';
+                }
+            }
+
+            // 모든 span_product_price_text ID를 가진 요소에서 취소선 제거
+            var allPriceTextSpans = document.querySelectorAll('[id*="product_price_text"]');
+            allPriceTextSpans.forEach(function (span) {
+                var hasLineThrough = span.style.textDecoration && span.style.textDecoration.indexOf('line-through') !== -1;
+                var hasLineThroughLine = span.style.textDecorationLine && span.style.textDecorationLine.indexOf('line-through') !== -1;
+                var isGray = span.style.color === 'rgb(188, 188, 188)' || span.style.color === '#bcbcbc';
+
+                if (hasLineThrough || hasLineThroughLine || isGray) {
+                    // 인라인 스타일에서 취소선 관련 속성 제거
+                    span.style.removeProperty('text-decoration');
+                    span.style.removeProperty('text-decoration-line');
+                    span.style.removeProperty('text-decoration-style');
+                    if (isGray) {
+                        span.style.color = '#000';
+                    }
+                }
+            });
+
+            // tr[rel="판매가"] 내부의 취소선 제거 (단, 같은 테이블에 할인판매가가 없을 때만)
+            var priceRows = document.querySelectorAll('tr[rel="판매가"]');
+            priceRows.forEach(function (row) {
+                // 같은 테이블 내에 할인판매가가 있는지 확인
+                var table = row.closest('table');
+                var hasSaleInTable = false;
+                if (table) {
+                    var saleRowsInTable = table.querySelectorAll('tr[rel="할인판매가"]');
+                    if (saleRowsInTable.length > 0) {
+                        hasSaleInTable = true;
+                    }
+                }
+
+                // 할인 가격이 없을 때만 취소선 제거
+                if (!hasSaleInTable && !hasSalePrice) {
+                    var children = row.querySelectorAll('*');
+                    children.forEach(function (child) {
+                        var hasLineThrough = child.style.textDecoration && child.style.textDecoration.indexOf('line-through') !== -1;
+                        var hasLineThroughLine = child.style.textDecorationLine && child.style.textDecorationLine.indexOf('line-through') !== -1;
+                        var isGray = child.style.color === 'rgb(188, 188, 188)' || child.style.color === '#bcbcbc';
+
+                        if (hasLineThrough || hasLineThroughLine || isGray) {
+                            child.style.removeProperty('text-decoration');
+                            child.style.removeProperty('text-decoration-line');
+                            child.style.removeProperty('text-decoration-style');
+                            if (isGray) {
+                                child.style.color = '#000';
+                            }
+                        }
+                    });
+                }
+            });
+
+            // .prdPrice 내부의 취소선 제거
+            var prdPriceElements = document.querySelectorAll('.prdPrice');
+            prdPriceElements.forEach(function (prdPriceEl) {
+                var allChildren = prdPriceEl.querySelectorAll('*');
+                allChildren.forEach(function (child) {
+                    var hasDelClass = child.classList && (
+                        child.classList.contains('product_price_del') ||
+                        child.classList.contains('price_del') ||
+                        child.classList.contains('price_throu') ||
+                        child.classList.contains('strike')
+                    );
+
+                    if (!hasDelClass) {
+                        var hasLineThrough = child.style.textDecoration && child.style.textDecoration.indexOf('line-through') !== -1;
+                        var hasLineThroughLine = child.style.textDecorationLine && child.style.textDecorationLine.indexOf('line-through') !== -1;
+                        var isGray = child.style.color === 'rgb(188, 188, 188)' || child.style.color === '#bcbcbc';
+
+                        if (hasLineThrough || hasLineThroughLine || isGray) {
+                            child.style.removeProperty('text-decoration');
+                            child.style.removeProperty('text-decoration-line');
+                            child.style.removeProperty('text-decoration-style');
+                            if (isGray) {
+                                child.style.color = '#000';
+                            }
+                        }
+                    }
+                });
+
+                if (prdPriceEl.style.textDecoration && prdPriceEl.style.textDecoration.indexOf('line-through') !== -1) {
+                    prdPriceEl.style.removeProperty('text-decoration');
+                    prdPriceEl.style.removeProperty('text-decoration-line');
+                }
+            });
+        }
+    }
+
+    /**
      * 취소선이 그어진 가격의 strong 태그를 span으로 변경 (취소선 스타일 유지)
      */
     function convertStrongToSpan() {
@@ -215,7 +451,10 @@
     if (typeof MutationObserver !== 'undefined') {
         var observer = new MutationObserver(function (mutations) {
             var shouldUpdate = false;
+            var shouldCheckStrikethrough = false;
+
             mutations.forEach(function (mutation) {
+                // 노드 추가
                 if (mutation.addedNodes.length > 0) {
                     mutation.addedNodes.forEach(function (node) {
                         if (node.nodeType === Node.TEXT_NODE && node.textContent && node.textContent.indexOf('₩') !== -1) {
@@ -232,24 +471,60 @@
                                 node.classList.contains('prd_price_sale')
                             )) {
                                 shouldUpdate = true;
+                                shouldCheckStrikethrough = true;
+                            }
+                            // 가격 관련 ID 확인
+                            if (node.id && (
+                                node.id === 'span_product_price_text' ||
+                                node.id === 'span_product_price_sale' ||
+                                node.id.indexOf('product_price_text') !== -1
+                            )) {
+                                shouldUpdate = true;
+                                shouldCheckStrikethrough = true;
                             }
                             // strong 태그가 추가된 경우
                             if (node.tagName === 'STRONG' && (node.id === 'span_product_price_text' || node.id.indexOf('product_price_text') !== -1)) {
                                 shouldUpdate = true;
-                                setTimeout(convertStrongToSpan, 50);
+                                setTimeout(convertStrongToSpan, 10);
                             }
                         }
                     });
                 }
+
+                // 속성 변경 (스타일 변경 감지)
+                if (mutation.type === 'attributes') {
+                    var target = mutation.target;
+                    if (target.id && target.id.indexOf('product_price') !== -1) {
+                        shouldCheckStrikethrough = true;
+                    }
+                    if (target.classList && (
+                        target.classList.contains('prdPrice') ||
+                        target.classList.contains('prdSalePrice')
+                    )) {
+                        shouldCheckStrikethrough = true;
+                    }
+                    if (mutation.attributeName === 'style') {
+                        shouldCheckStrikethrough = true;
+                    }
+                }
+
+                // 텍스트 변경
                 if (mutation.type === 'characterData' && mutation.target.textContent && mutation.target.textContent.indexOf('₩') !== -1) {
                     shouldUpdate = true;
                 }
             });
+
             if (shouldUpdate) {
                 setTimeout(function () {
                     updatePriceDisplay();
                     convertStrongToSpan();
-                }, 50);
+                }, 10);
+            }
+
+            if (shouldCheckStrikethrough) {
+                setTimeout(function () {
+                    removeStrikethroughFromRegularPrice();
+                }, 10);
             }
         });
 
@@ -257,13 +532,38 @@
             observer.observe(document.body, {
                 childList: true,
                 subtree: true,
-                characterData: true
+                characterData: true,
+                attributes: true,
+                attributeFilter: ['style', 'class', 'id']
             });
         }
     }
 
     // 초기 실행 시 strong 태그를 span으로 변경 (취소선 유지)
+    setTimeout(convertStrongToSpan, 0);
+    setTimeout(convertStrongToSpan, 50);
+    setTimeout(convertStrongToSpan, 100);
     setTimeout(convertStrongToSpan, 200);
     setTimeout(convertStrongToSpan, 500);
     setTimeout(convertStrongToSpan, 1000);
+
+    // 초기 실행 시 할인이 아닌 정가에서 취소선 제거 (더 자주 실행)
+    setTimeout(removeStrikethroughFromRegularPrice, 0);
+    setTimeout(removeStrikethroughFromRegularPrice, 50);
+    setTimeout(removeStrikethroughFromRegularPrice, 100);
+    setTimeout(removeStrikethroughFromRegularPrice, 200);
+    setTimeout(removeStrikethroughFromRegularPrice, 500);
+    setTimeout(removeStrikethroughFromRegularPrice, 1000);
+    setTimeout(removeStrikethroughFromRegularPrice, 1500);
+    setTimeout(removeStrikethroughFromRegularPrice, 2000);
+    setTimeout(removeStrikethroughFromRegularPrice, 3000);
+
+    // 지속적으로 체크 (인라인 스타일이 나중에 적용될 수 있음)
+    var checkInterval = setInterval(function () {
+        removeStrikethroughFromRegularPrice();
+    }, 500);
+
+    setTimeout(function () {
+        clearInterval(checkInterval);
+    }, 10000);
 })();
