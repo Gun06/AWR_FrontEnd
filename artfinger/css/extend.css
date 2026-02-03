@@ -1554,13 +1554,13 @@ li.displaynone,
 
 /* 상품 상세: prdDescription 크기·정렬 조정 */
 .prdDescription {
-    padding-left: 30px !important;
+    padding-left: 0 !important;
     padding-right: 0 !important;
     box-sizing: border-box !important;
 }
 
 .prdDescription.is_stuck {
-    padding-left: 30px !important;
+    padding-left: 0 !important;
     padding-right: 0 !important;
 }
 
@@ -1614,10 +1614,18 @@ li.displaynone,
     display: none !important;
 }
 
-.xans-product-detail .xans-product-option .ec-product-button .ec-product-selected {
+/* 색상 선택 박스에만 그림자 적용 (ec-product-preview가 있는 경우) */
+.xans-product-detail .xans-product-option .ec-product-button.ec-product-preview .ec-product-selected {
     border-radius: 0 !important;
     width: 30px !important;
     height: 30px !important;
+    border: none !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* 사이즈 선택 박스는 그림자 제거 */
+.xans-product-detail .xans-product-option .ec-product-button:not(.ec-product-preview) .ec-product-selected {
+    box-shadow: none !important;
 }
 
 .xans-product-detail .xans-product-option .ec-product-button .ec-product-selected a {
@@ -1660,10 +1668,18 @@ li.displaynone,
     display: none !important;
 }
 
-#product_detail_option_layer .xans-product-option td .ec-product-button .ec-product-selected {
+/* 색상 선택 박스에만 그림자 적용 */
+#product_detail_option_layer .xans-product-option td .ec-product-button.ec-product-preview .ec-product-selected {
     border-radius: 0 !important;
     width: 30px !important;
     height: 30px !important;
+    border: none !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* 사이즈 선택 박스는 그림자 제거 */
+#product_detail_option_layer .xans-product-option td .ec-product-button:not(.ec-product-preview) .ec-product-selected {
+    box-shadow: none !important;
 }
 
 #product_detail_option_layer .xans-product-option td .ec-product-button .ec-product-selected a {
@@ -1706,10 +1722,18 @@ li.displaynone,
     display: none !important;
 }
 
-.xans-product-optionselectlayer .xans-product-option .ec-product-button .ec-product-selected {
+/* 색상 선택 박스에만 그림자 적용 */
+.xans-product-optionselectlayer .xans-product-option .ec-product-button.ec-product-preview .ec-product-selected {
     border-radius: 0 !important;
     width: 30px !important;
     height: 30px !important;
+    border: none !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* 사이즈 선택 박스는 그림자 제거 */
+.xans-product-optionselectlayer .xans-product-option .ec-product-button:not(.ec-product-preview) .ec-product-selected {
+    box-shadow: none !important;
 }
 
 .xans-product-optionselectlayer .xans-product-option .ec-product-button .ec-product-selected a {
