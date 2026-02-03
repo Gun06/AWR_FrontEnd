@@ -842,6 +842,119 @@ div#mCafe24Basket .ec-base-layer {
 }
 
 /* ============================================
+   가격 표시 형식 변경: ₩ → KRW
+   ============================================ */
+/* 가격 요소에서 ₩ 기호를 KRW로 변경 */
+.prdPrice::before,
+.prdSalePrice::before,
+.product_price::before,
+.prd_price_sale::before,
+[title="판매가"]::before,
+[title="할인판매가"]::before {
+    content: none !important;
+}
+
+/* CSS로 추가된 ₩ 기호를 KRW로 변경 (필요시) */
+.prdPrice,
+.prdSalePrice,
+.product_price,
+.prd_price_sale {
+    /* CSS content로 ₩가 추가되는 경우 대비 */
+}
+
+/* ============================================
+   취소선이 그어진 가격 색상 변경 (밝은 회색)
+   ============================================ */
+/* 취소선이 그어진 가격 요소의 색상을 밝은 회색으로 변경 */
+/* ID 선택자로 직접 타겟팅 - 취소선과 회색 유지, 폰트 두께만 얇게 */
+#span_product_price_text,
+strong#span_product_price_text,
+span#span_product_price_text,
+strong[id*="product_price_text"][style*="line-through"],
+span[id*="product_price_text"][style*="line-through"] {
+    color: #bcbcbc !important;
+    text-decoration: line-through !important;
+    text-decoration-color: #bcbcbc !important;
+    font-weight: normal !important;
+    font-weight: 200 !important;
+}
+
+/* 판매가 영역 내의 취소선이 그어진 요소 */
+tr[rel="판매가"] strong[style*="line-through"],
+tr[rel="판매가"] strong[style*="text-decoration"],
+.xans-product-detaildesign tr[rel="판매가"] strong[style*="line-through"],
+.xans-product-detaildesign tr[rel="판매가"] strong[style*="text-decoration"] {
+    color: #bcbcbc !important;
+    text-decoration-color: #bcbcbc !important;
+    font-weight: normal !important;
+    font-weight: 200 !important;
+}
+
+/* 취소선이 그어진 가격 요소의 색상을 밝은 회색으로 변경 */
+.prdPrice [class*="product_price_del"],
+.prdPrice [class*="price_del"],
+.prdPrice .price_throu,
+.prdPrice .strike,
+.prdPrice [style*="text-decoration: line-through"],
+.prdPrice [style*="text-decoration-line: line-through"],
+.product_price.price_throu,
+.product_price [class*="product_price_del"],
+.product_price [class*="price_del"],
+.product_price .strike,
+.product_price [style*="text-decoration: line-through"],
+.product_price [style*="text-decoration-line: line-through"],
+.prdPrice s,
+.prdPrice del,
+.product_price s,
+.product_price del,
+.xans-product-detail .prdPrice .strike,
+.xans-product-detail .prdPrice [class*="product_price_del"],
+.xans-product-detail .prdPrice [class*="price_del"],
+.xans-product-detail .prdPrice .price_throu {
+    color: #bcbcbc !important;
+}
+
+/* 취소선 색상도 밝은 회색으로 */
+.prdPrice [class*="product_price_del"],
+.prdPrice [class*="price_del"],
+.prdPrice .price_throu,
+.prdPrice .strike,
+.product_price.price_throu,
+.product_price [class*="product_price_del"],
+.product_price [class*="price_del"],
+.product_price .strike,
+.xans-product-detail .prdPrice .strike,
+.xans-product-detail .prdPrice [class*="product_price_del"],
+.xans-product-detail .prdPrice [class*="price_del"],
+.xans-product-detail .prdPrice .price_throu {
+    text-decoration-color: #bcbcbc !important;
+}
+
+/* 취소선이 그어진 모든 가격 요소 (더 포괄적인 선택자) */
+.prdPrice span[style*="text-decoration"],
+.prdPrice span[style*="line-through"],
+.prdPrice strong[style*="text-decoration"],
+.prdPrice strong[style*="line-through"],
+.product_price span[style*="text-decoration"],
+.product_price span[style*="line-through"],
+.product_price strong[style*="text-decoration"],
+.product_price strong[style*="line-through"],
+.xans-product-detaildesign strong[style*="line-through"],
+.xans-product-detaildesign strong[style*="text-decoration"] {
+    color: #bcbcbc !important;
+    text-decoration-color: #bcbcbc !important;
+}
+
+/* 모든 취소선이 그어진 strong 요소 (최종 포괄 선택자) */
+strong[style*="text-decoration: line-through"],
+strong[style*="text-decoration-line: line-through"] {
+    color: #bcbcbc !important;
+    text-decoration-color: #bcbcbc !important;
+    font-weight: normal !important;
+    font-weight: 400 !important;
+}
+
+/* ============================================
    로그인 페이지 Sign In 스타일
    ============================================ */
 .mypage_wrap .mypage_cont .mypage_innerLogin:has(.signin-style) {
