@@ -1372,18 +1372,18 @@ li.displaynone,
 .prdDescription .prdBoard.option table tr:has(td .ec-product-button) th {
     display: block !important;
     width: 100% !important;
-    padding: 0 0 8px 0 !important;
+    padding: 0 !important;
     padding-top: 12px !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
     margin: 0 !important;
-    min-height: 20px !important;
+    height: 30px !important;
+    min-height: 30px !important;
     font-size: 12px !important;
     font-weight: 300 !important;
     color: #000 !important;
     text-align: left !important;
     font-family: inherit !important;
-    line-height: 1.5 !important;
+    line-height: 30px !important;
+    vertical-align: middle !important;
 }
 
 .prdDescription .prdBoard.option table tr:has(td .ec-product-button):first-of-type th {
@@ -1401,11 +1401,25 @@ li.displaynone,
 
 /* 버튼 행: 왼쪽 정렬, 버튼 간격 8px */
 .prdDescription .prdBoard.option .ec-product-button {
+    display: flex !important;
+    flex-wrap: wrap !important;
     justify-content: flex-start !important;
-    align-items: stretch !important;
+    align-items: flex-start !important;
     gap: 8px !important;
     margin: 0 !important;
     padding: 0 !important;
+    text-align: left !important;
+}
+
+/* 색상 버튼 왼쪽 정렬 보정 */
+.prdDescription .prdBoard.option .ec-product-button.ec-product-preview {
+    justify-content: flex-start !important;
+    align-items: center !important;
+}
+
+.prdDescription .prdBoard.option .ec-product-button.ec-product-preview li {
+    margin-left: 0 !important;
+    margin-right: 8px !important;
 }
 
 .prdDescription .prdBoard.option .ec-product-button:not(.ec-product-preview) li {
@@ -1561,4 +1575,161 @@ li.displaynone,
     #container .content_info {
         margin-top: 20px !important;
     }
+}
+
+/* ============================================
+   색상 선택 박스를 정사각형 30x30으로 변경 (사이즈 박스와 동일한 크기)
+   ============================================ */
+/* 상품 상세 페이지의 색상 선택 박스 (정사각형 30x30, 네모 모양) */
+.xans-product-detail .xans-product-option .ec-product-button.ec-product-preview li {
+    padding: 0 !important;
+    border-radius: 0 !important;
+    width: 30px !important;
+    height: 30px !important;
+    min-width: 30px !important;
+    min-height: 30px !important;
+}
+
+.xans-product-detail .xans-product-option .ec-product-button.ec-product-preview li a {
+    width: 30px !important;
+    height: 30px !important;
+    min-width: 30px !important;
+    min-height: 30px !important;
+    padding: 0 !important;
+    line-height: 30px !important;
+    border-radius: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.xans-product-detail .xans-product-option .ec-product-button.ec-product-preview li a img {
+    width: 30px !important;
+    height: 30px !important;
+    object-fit: cover !important;
+    border-radius: 0 !important;
+}
+
+.xans-product-detail .xans-product-option .ec-product-button.ec-product-preview li a span {
+    display: none !important;
+}
+
+.xans-product-detail .xans-product-option .ec-product-button .ec-product-selected {
+    border-radius: 0 !important;
+    width: 30px !important;
+    height: 30px !important;
+}
+
+.xans-product-detail .xans-product-option .ec-product-button .ec-product-selected a {
+    width: 30px !important;
+    height: 30px !important;
+    margin: 0 !important;
+}
+
+/* 옵션 레이어의 색상 선택 박스 */
+#product_detail_option_layer .xans-product-option td .ec-product-button.ec-product-preview li {
+    padding: 0 !important;
+    border-radius: 0 !important;
+    width: 30px !important;
+    height: 30px !important;
+    min-width: 30px !important;
+    min-height: 30px !important;
+}
+
+#product_detail_option_layer .xans-product-option td .ec-product-button.ec-product-preview li a {
+    width: 30px !important;
+    height: 30px !important;
+    min-width: 30px !important;
+    min-height: 30px !important;
+    padding: 0 !important;
+    line-height: 30px !important;
+    border-radius: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+#product_detail_option_layer .xans-product-option td .ec-product-button.ec-product-preview li a img {
+    width: 30px !important;
+    height: 30px !important;
+    object-fit: cover !important;
+    border-radius: 0 !important;
+}
+
+#product_detail_option_layer .xans-product-option td .ec-product-button.ec-product-preview li a span {
+    display: none !important;
+}
+
+#product_detail_option_layer .xans-product-option td .ec-product-button .ec-product-selected {
+    border-radius: 0 !important;
+    width: 30px !important;
+    height: 30px !important;
+}
+
+#product_detail_option_layer .xans-product-option td .ec-product-button .ec-product-selected a {
+    width: 30px !important;
+    height: 30px !important;
+    margin: 0 !important;
+}
+
+/* 옵션 선택 레이어의 색상 선택 박스 */
+.xans-product-optionselectlayer .xans-product-option .ec-product-button.ec-product-preview li {
+    padding: 0 !important;
+    border-radius: 0 !important;
+    width: 30px !important;
+    height: 30px !important;
+    min-width: 30px !important;
+    min-height: 30px !important;
+}
+
+.xans-product-optionselectlayer .xans-product-option .ec-product-button.ec-product-preview li a {
+    width: 30px !important;
+    height: 30px !important;
+    min-width: 30px !important;
+    min-height: 30px !important;
+    padding: 0 !important;
+    line-height: 30px !important;
+    border-radius: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.xans-product-optionselectlayer .xans-product-option .ec-product-button.ec-product-preview li a img {
+    width: 30px !important;
+    height: 30px !important;
+    object-fit: cover !important;
+    border-radius: 0 !important;
+}
+
+.xans-product-optionselectlayer .xans-product-option .ec-product-button.ec-product-preview li a span {
+    display: none !important;
+}
+
+.xans-product-optionselectlayer .xans-product-option .ec-product-button .ec-product-selected {
+    border-radius: 0 !important;
+    width: 30px !important;
+    height: 30px !important;
+}
+
+.xans-product-optionselectlayer .xans-product-option .ec-product-button .ec-product-selected a {
+    width: 30px !important;
+    height: 30px !important;
+    margin: 0 !important;
+}
+
+/* ============================================
+   상품 옵션 테이블 th 요소 높이 30px로 설정
+   ============================================ */
+.prdBoard.option th,
+.prdBoard.option table th,
+.xans-product-detaildesign .prdBoard.option th,
+.xans-product-detaildesign .prdBoard.option table th,
+.xans-product-option th,
+.xans-product-option table th {
+    height: 30px !important;
+    min-height: 30px !important;
+    line-height: 30px !important;
+    padding: 0 !important;
+    vertical-align: middle !important;
 }
