@@ -7,6 +7,40 @@
     justify-content: space-between;
 }
 
+/* PC: 브래드크럼+Sort by 1행, 카테고리 2행 왼쪽 정렬 */
+@media all and (min-width: 1001px) {
+    .top_prd .middle_area_line {
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+
+    .top_prd .middle_area_line .path {
+        order: 1;
+        flex: 1;
+        justify-content: flex-start;
+        min-width: 0;
+    }
+
+    .top_prd .middle_area_line .xans-product-normalmenu {
+        order: 2;
+        flex: 0 0 auto;
+        justify-content: flex-end;
+    }
+
+    .top_prd .middle_area_line .xans-product-menupackage {
+        order: 3;
+        width: 100%;
+        flex: 0 0 100%;
+        justify-content: flex-start;
+        margin-top: 0px;
+    }
+
+    .top_prd .middle_area_line .xans-product-menupackage .menuCategory {
+        text-align: left;
+        padding-left: 20px;
+    }
+}
+
 .top_prd .middle_area_line>div {
     flex: 1;
     box-sizing: border-box;
@@ -21,7 +55,7 @@
 }
 
 .top_prd .middle_area_line .path {
-    padding: 15px 0 15px 20px;
+    padding: 15px 0 0px 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -66,7 +100,8 @@
     margin: 20px 0 10px;
 }
 
-.top_prd .middle_area_line .xans-product-menupackage {
+.top_prd .middle_area_line .xans-product-menupackage,
+.top_prd .middle_area_line .prd_menupackage {
     flex: 2;
     vertical-align: middle;
 }
@@ -271,6 +306,24 @@
 }
 
 /*.xans-board-title ul > li:nth-child(2)::after { content: "·";  position: absolute; top: 0px; left: -18px; font-weight:bold;}*/
+
+/* PC: 카테고리 아예 아래 행으로 (base flex:2 덮어쓰기) */
+@media all and (min-width: 1001px) {
+
+    .top_prd .middle_area_line .xans-product-menupackage,
+    .top_prd .middle_area_line .prd_menupackage {
+        flex: 0 0 100% !important;
+        width: 100%;
+        max-width: 100%;
+        justify-content: flex-start;
+    }
+
+    .top_prd .middle_area_line .xans-product-menupackage .menuCategory,
+    .top_prd .middle_area_line .prd_menupackage .menuCategory {
+        text-align: left;
+        padding: 0px 10px 5px 20px;
+    }
+}
 
 @media all and (max-width : 1000px) {
     .top_prd {
