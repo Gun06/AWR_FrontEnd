@@ -19,6 +19,7 @@
         flex: 1;
         justify-content: flex-start;
         min-width: 0;
+        padding-bottom: 0;
     }
 
     .top_prd .middle_area_line .xans-product-normalmenu {
@@ -32,7 +33,7 @@
         width: 100%;
         flex: 0 0 100%;
         justify-content: flex-start;
-        margin-top: 0px;
+        margin-top: 5px;
     }
 
     .top_prd .middle_area_line .xans-product-menupackage .menuCategory {
@@ -55,7 +56,7 @@
 }
 
 .top_prd .middle_area_line .path {
-    padding: 15px 0 0px 20px;
+    padding: 15px 0 15px 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -309,19 +310,23 @@
 
 /* PC: 카테고리 아예 아래 행으로 (base flex:2 덮어쓰기) */
 @media all and (min-width: 1001px) {
+    .top_prd .middle_area_line .path {
+        padding-bottom: 0;
+    }
 
     .top_prd .middle_area_line .xans-product-menupackage,
     .top_prd .middle_area_line .prd_menupackage {
         flex: 0 0 100% !important;
         width: 100%;
         max-width: 100%;
+        margin-top: 0px;
         justify-content: flex-start;
     }
 
     .top_prd .middle_area_line .xans-product-menupackage .menuCategory,
     .top_prd .middle_area_line .prd_menupackage .menuCategory {
         text-align: left;
-        padding: 0px 10px 5px 20px;
+        padding: 0 10px 5px 40px;
     }
 }
 
