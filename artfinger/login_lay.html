@@ -49,7 +49,8 @@
                     </div>
                     <div class="log_wp2">
                         <div class="join_but order-status-block">
-                            <a href="/myshop/order/list.html" class="order-status-link">Order Status</a>
+                            <a href="#none" class="order-status-link" id="order-status-toggle"
+                                aria-expanded="false">Order Status</a>
                             <p class="order-status-desc">비회원으로 주문하셨더라도 주문 조회가 가능합니다.</p>
                         </div>
                     </div>
@@ -58,21 +59,24 @@
         </div>
     </div>
 
-    <div module="MyShop_OrderHistoryNologin" class="bg_white guest-order-form">
-        <!--@css(/css/module/myshop/orderHistoryNologin.css)-->
-        <!--
+    <div class="guest-order-form-toggle is-closed" id="guest-order-form-toggle" aria-hidden="true">
+        <div module="MyShop_OrderHistoryNologin" class="bg_white guest-order-form">
+            <!--@css(/css/module/myshop/orderHistoryNologin.css)-->
+            <!--
         $orderDetailUrl = /myshop/order/list.html
     -->
-        <dl class="ec-base-desc guest-order-fields">
-            <dt>이름</dt>
-            <dd>{$form.order_name}</dd>
-            <dt>주문번호</dt>
-            <dd>{$form.order_id}</dd>
-            <dt>게스트 비밀번호</dt>
-            <dd>{$form.order_password}</dd>
-        </dl>
-        <p class="ec-base-button gColumn submit"><button type="submit" class="guest-order-submit">Check status</button>
-        </p>
+            <dl class="ec-base-desc guest-order-fields">
+                <dt>이름</dt>
+                <dd>{$form.order_name}</dd>
+                <dt>주문번호</dt>
+                <dd>{$form.order_id}</dd>
+                <dt>게스트 비밀번호</dt>
+                <dd>{$form.order_password}</dd>
+            </dl>
+            <p class="ec-base-button gColumn submit"><button type="submit" class="guest-order-submit">Check
+                    status</button>
+            </p>
+        </div>
     </div>
 </div>
 <script>
@@ -100,6 +104,19 @@
             setTimeout(setPlaceholders, 50);
         } else {
             window.addEventListener('load', function () { setTimeout(setPlaceholders, 50); });
+        }
+
+        /* Order Status 클릭 시 비회원 주문조회 폼 펼치기/접기 */
+        var toggleBtn = document.getElementById('order-status-toggle');
+        var formWrap = document.getElementById('guest-order-form-toggle');
+        if (toggleBtn && formWrap) {
+            toggleBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                var isClosed = formWrap.classList.contains('is-closed');
+                formWrap.classList.toggle('is-closed', !isClosed);
+                formWrap.setAttribute('aria-hidden', isClosed ? 'false' : 'true');
+                toggleBtn.setAttribute('aria-expanded', isClosed ? 'true' : 'false');
+            });
         }
     })();
 </script>

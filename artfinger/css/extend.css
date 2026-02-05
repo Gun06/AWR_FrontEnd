@@ -1188,6 +1188,27 @@ strong[style*="text-decoration-line: line-through"] {
 /* ============================================
    비회원 주문조회 폼 (Order Status)
    ============================================ */
+/* Order Status 클릭 시 아래로 펼쳐지는 래퍼 */
+.login-page-wrap .guest-order-form-toggle {
+    max-height: 420px;
+    opacity: 1;
+    transform: translateY(0);
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.25, 0.1, 0.25, 1),
+        opacity 0.35s cubic-bezier(0.25, 0.1, 0.25, 1),
+        transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.login-page-wrap .guest-order-form-toggle.is-closed {
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-8px);
+    overflow: hidden;
+    transition: max-height 0.35s cubic-bezier(0.25, 0.1, 0.25, 1),
+        opacity 0.25s cubic-bezier(0.25, 0.1, 0.25, 1),
+        transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
 /* Order Status와 입력 폼을 한 블록으로: 래퍼 + 기본 CSS 덮어쓰기 */
 .login-page-wrap .guest-order-form,
 .login-page-wrap .xans-myshop-orderhistorynologin.guest-order-form {
