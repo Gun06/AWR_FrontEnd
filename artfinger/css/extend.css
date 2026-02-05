@@ -1,4 +1,9 @@
 /*user style mc24cafe appl page_*/
+/* Stockist, About 페이지 메인 제목 h2만 font-weight 200 (캡처한 h2 전용) */
+.content_info .shopinfo_ti h2.tit_page_main {
+    font-weight: 300;
+}
+
 /*order orderconfirm*/
 .main_control {
     display: none;
