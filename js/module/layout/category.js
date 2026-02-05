@@ -157,18 +157,24 @@ function setCategory() {
     })();
 
     // 현재 페이지의 카테고리 제목 가져오기
-    var look_cate_ti = $('.title h2 span').text() || '';
-
-    $("#header .header_wrap .gnb .artcate .d2-wrap .d2").each(function (index) {
-        var look_cate = $(this).closest('.d2-wrap').prev('a').text();
-        if (look_cate_ti == look_cate) {
-            $(this).children('a').addClass('nonLink');
-        };
-
-        $('.nonLink').click(function (a) {
+    // 상품 상세 페이지에서는 .title h2 span에 상위 카테고리명(예: Shop)이 들어가
+    // Shop 세부메뉴 전체에 nonLink가 붙어 클릭이 막히므로, 목록 페이지에서만 nonLink 적용
+    var isListPage = (function () {
+        var path = window.location.pathname || '';
+        return /\/product\/list(\.[a-z]+)?(\/|$)/i.test(path) || path.indexOf('list.html') !== -1;
+    })();
+    if (isListPage) {
+        var look_cate_ti = $('.title h2 span').text() || '';
+        $("#header .header_wrap .gnb .artcate .d2-wrap .d2").each(function (index) {
+            var look_cate = $(this).closest('.d2-wrap').prev('a').text();
+            if (look_cate_ti == look_cate) {
+                $(this).children('a').addClass('nonLink');
+            }
+        });
+        $("#header .nonLink").off('click.nonLink').on('click.nonLink', function (a) {
             a.preventDefault();
         });
-    });
+    }
 
 }
 
