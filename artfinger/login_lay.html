@@ -7,20 +7,19 @@
     -->
         <div class="login">
             <fieldset class="bg_white">
-                <h3 class="boxTitle">Sign In</h3>
+                <h3 class="boxTitle">Log In</h3>
                 <legend>ACCOUNT</legend>
                 <div class="log_wp">
                     <div class="log_wp1">
                         <label class="id ePlaceholder">{$form.member_id}</label>
                         <label class="password ePlaceholder">{$form.member_passwd}</label>
-                        <a href="#none" class="btn_signin btn_sizeX" onclick="{$action_func_login}">Sign In</a>
-                        <a href="/member/join.html" class="btn_create_account btn_sizeX">Create Account</a>
+                        <a href="#none" class="btn_signin btn_sizeX" onclick="{$action_func_login}">Log In</a>
                         <ul class="snsArea">
                             <li class="{$display_kakao|display} kakao">
-                                <a href="#none" onclick="{$kakao_func_login}">Login Via Kakao</a>
+                                <a href="#none" onclick="{$kakao_func_login}">Log In With Kakao</a>
                             </li>
                             <li class="{$display_naver|display} naver">
-                                <a href="#none" onclick="{$naver_func_login}">Login Via Naver</a>
+                                <a href="#none" onclick="{$naver_func_login}">Log In With Naver</a>
                             </li>
                             <li class="{$display_facebook|display} facebook">
                                 <a href="#none" onclick="{$facebook_func_login}"><img
@@ -42,6 +41,7 @@
                                     로그인</a>
                             </li>
                         </ul>
+                        <a href="/member/join.html" class="btn_create_account btn_sizeX">Create Account</a>
                         <div class="forgot_link">
                             <a href="/member/id/find_id.html">Forgot Id?</a>
                             <a href="/member/passwd/find_passwd_info.html">Forgot Password?</a>

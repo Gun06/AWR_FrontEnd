@@ -1058,9 +1058,15 @@ strong[style*="text-decoration-line: line-through"] {
     color: #000;
 }
 
+.signin-style .login fieldset .btn_signin,
+.xans-member-login.signin-style .login fieldset .btn_signin {
+    background: #e0e0e0;
+    border-color: #dfdfdf;
+}
+
 .signin-style .login fieldset .btn_create_account,
 .xans-member-login.signin-style .login fieldset .btn_create_account {
-    background: #e0e0e0;
+    background: #fff;
     border-color: #dfdfdf;
 }
 
