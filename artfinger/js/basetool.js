@@ -61,6 +61,8 @@ $(function () {
     var galleryTop2 = new Swiper('.gallery-top2', {
         slidesPerView: 1,
         spaceBetween: 0,
+        threshold: 15,
+        touchReleaseOnEdges: true,
         pagination: {
             el: ".swiper-pagination-detail2",
             type: "fraction",
