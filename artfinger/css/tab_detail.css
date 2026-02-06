@@ -138,3 +138,93 @@ div.tabcontents p {
     }
 
 }
+
+/* ============================================
+   상품 상세 아코디언 스타일 (클릭 시 펼침/접힘)
+   ============================================ */
+.product-accordion.css3-tab {
+    display: block;
+    margin: 30px 0 40px;
+    padding: 0;
+}
+
+.product-accordion .accordion-item {
+    list-style: none;
+}
+
+.product-accordion .accordion-head {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 16px 0;
+    font-size: 13px;
+    font-weight: 400;
+    color: #333;
+    cursor: pointer;
+    list-style: none;
+    text-align: left;
+    background: none;
+    border: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.product-accordion .accordion-head::-webkit-details-marker,
+.product-accordion .accordion-head::marker {
+    display: none;
+}
+
+.product-accordion .accordion-icon {
+    font-size: 0;
+    flex-shrink: 0;
+    margin-left: 8px;
+}
+
+.product-accordion .accordion-icon::before {
+    content: "+";
+    font-size: 16px;
+    font-weight: 300;
+    color: #333;
+    line-height: 1;
+}
+
+.product-accordion .accordion-item[open] .accordion-icon::before {
+    content: "−";
+}
+
+.product-accordion .accordion-body {
+    padding: 0 0 20px;
+    font-size: 12px;
+    line-height: 20px;
+    color: #333;
+}
+
+.product-accordion .accordion-body .tx_for,
+.product-accordion .accordion-body .tx_for span,
+.product-accordion .accordion-body .tx_for p,
+.product-accordion .accordion-body .tx_for div,
+.product-accordion .accordion-body pre {
+    font-size: 12px !important;
+    line-height: 20px !important;
+}
+
+.product-accordion .accordion-body pre {
+    white-space: pre-line;
+    margin: 0;
+}
+
+.product-accordion .accordion-body table th,
+.product-accordion .accordion-body table td {
+    padding: 8px 12px 8px 0;
+    font-size: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.product-accordion .accordion-body table th {
+    font-weight: 500;
+    color: #333;
+}
