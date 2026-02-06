@@ -1411,7 +1411,7 @@ li.displaynone,
     min-height: 58px !important;
 }
 
-/* Color, Size 라벨: 가격·상품명과 동일한 톤, 라벨 영역 높이 통일 */
+/* Color, Size 라벨: 가격·상품명과 동일한 톤(13px/300), 라벨 영역 높이 통일 */
 .prdDescription .prdBoard.option table tr:has(td .ec-product-button) th {
     display: block !important;
     width: 100% !important;
@@ -1420,7 +1420,7 @@ li.displaynone,
     margin: 0 !important;
     height: 30px !important;
     min-height: 30px !important;
-    font-size: 12px !important;
+    font-size: 13px !important;
     font-weight: 300 !important;
     color: #000 !important;
     text-align: left !important;
@@ -1578,6 +1578,12 @@ li.displaynone,
     color: #9e9e9e !important;
     text-decoration: line-through !important;
     background: transparent !important;
+}
+
+/* 컬러 미선택 시 사이즈 비활성화(.ec-product-disabled)에는 취소선 표시 안 함 */
+.prdDescription .xans-product-option .ec-product-button:not(.ec-product-preview) .ec-product-disabled a span,
+.prdDescription .xans-product-option .ec-product-button:not(.ec-product-preview) li.ec-product-disabled a span {
+    text-decoration: none !important;
 }
 
 /* 상품 상세: prdDescription 크기·정렬 조정 */
@@ -1844,4 +1850,51 @@ li.displaynone,
     border: 1px solid #d3d3d3 !important;
     border-radius: 0;
     color: #333;
+}
+
+/* ============================================
+   상품 상세 제목·가격·TOTAL·REVIEW·Q&A 폰트 통일 (13px / font-weight 300)
+   - 테이블(prdBoard) 상품명/판매가 인라인 스타일 덮어씀
+   - span_product_price_text, total_area, add_button 포함
+   ============================================ */
+/* 1) 상품명 (테이블 + 리스트 공통) */
+.prdBoard.info tr[rel="상품명"] td,
+.prdBoard.info tr[rel="상품명"] td *,
+.prdDescription .prdName,
+.prdDescription .prdName a {
+    font-size: 13px !important;
+    font-weight: 300 !important;
+}
+
+/* 2) 가격 (테이블 + span id + 리스트 공통) */
+#span_product_price_text,
+.prdDescription tr[rel="판매가"] td,
+.prdDescription tr[rel="판매가"] td span,
+.prdDescription tr[rel="판매가"] td strong,
+.prdDescription .prdPrice,
+.prdDescription .prdPrice span,
+.prdDescription .prdPrice strong,
+.prdDescription .prdSalePrice {
+    font-size: 13px !important;
+    font-weight: 300 !important;
+}
+
+/* 3) TOTAL · REVIEW · Q&A */
+.prdDescription .totalPrice,
+.prdDescription .totalPrice .title,
+.prdDescription .totalPrice strong,
+.prdDescription .totalPrice span,
+.prdDescription .add_button a.scroll_detailview {
+    font-size: 13px !important;
+    font-weight: 300 !important;
+}
+
+/* 4) 옵션 테이블 헤더 (Size, 수량, 구매방법 등) */
+.prdDescription .prdBoard.option th,
+.prdDescription .prdBoard.option table th,
+.prdDescription .quantity_single_div th,
+.prdDescription .quantity_single_div table th,
+.prdDescription .ec-base-table th {
+    font-size: 13px !important;
+    font-weight: 300 !important;
 }
