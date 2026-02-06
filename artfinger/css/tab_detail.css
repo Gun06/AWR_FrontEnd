@@ -202,9 +202,10 @@ div.tabcontents p {
 
 .product-accordion .accordion-body {
     padding: 0 0 12px;
-    font-size: 12px;
+    font-size: 13px;
     line-height: 20px;
     color: #333;
+    font-weight: 300;
 }
 
 .product-accordion .accordion-body .tx_for,
@@ -212,7 +213,8 @@ div.tabcontents p {
 .product-accordion .accordion-body .tx_for p,
 .product-accordion .accordion-body .tx_for div,
 .product-accordion .accordion-body pre {
-    font-size: 12px !important;
+    font-size: 13px !important;
+    font-weight: 300 !important;
     line-height: 20px !important;
 }
 
@@ -224,11 +226,12 @@ div.tabcontents p {
 .product-accordion .accordion-body table th,
 .product-accordion .accordion-body table td {
     padding: 8px 12px 8px 0;
-    font-size: 12px;
+    font-size: 13px;
+    font-weight: 300;
     border-bottom: 1px solid #eee;
 }
 
 .product-accordion .accordion-body table th {
-    font-weight: 500;
+    font-weight: 300;
     color: #333;
 }

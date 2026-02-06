@@ -262,6 +262,9 @@ body#main .swiper-container-main {
     z-index: 1;
     overflow: hidden;
     margin-bottom: 20px;
+    /* 스크롤 문제 해결: Swiper가 세로 스크롤을 방해하지 않도록 */
+    touch-action: pan-y pinch-zoom;
+    overscroll-behavior: contain;
 }
 
 .swiper-button-prev-detail2 {
@@ -1897,4 +1900,69 @@ li.displaynone,
 .prdDescription .ec-base-table th {
     font-size: 13px !important;
     font-weight: 300 !important;
+}
+
+/* 5) 옵션 선택된 상품명·가격 (p.product, ec-front-product-item-price) - 13px/300, 한 줄 유지 */
+.prdDescription p.product,
+.prdDescription .option_product p.product,
+.prdDescription .option_product .product,
+.prdDescription .ec-front-product-item-price,
+.prdDescription #totalProducts .option_product td .price,
+.prdDescription #totalProducts .option_product .price,
+.prdDescription #totalProducts .option_product td.right {
+    font-size: 13px !important;
+    font-weight: 300 !important;
+}
+
+/* 옵션 행 한 줄 유지 (상품명이 두 줄로 내려가지 않도록) */
+.prdDescription #totalProducts .option_product td p.product,
+.prdDescription #totalProducts .option_product td:first-child p.product {
+    white-space: nowrap !important;
+}
+
+/* 6) 상품 상세 설명 본문 (features, fit&size, fabric 등) */
+.prdDescription #prdDetailContent,
+.prdDescription #prdDetailContent *,
+.prdDescription .tx_for,
+.prdDescription .tx_for *,
+.prdDescription .prdDetailContent,
+.prdDescription .prdDetailContent * {
+    font-size: 13px !important;
+    font-weight: 300 !important;
+}
+
+/* 7) 아코디언 내용 (Exchange & Refunds, 정책 등) */
+.product-accordion .accordion-body,
+.product-accordion .accordion-body *,
+.product-accordion .accordion-body .tx_for,
+.product-accordion .accordion-body .tx_for *,
+.product-accordion .accordion-body p,
+.product-accordion .accordion-body span,
+.product-accordion .accordion-body div,
+.product-accordion .accordion-body pre,
+.product-accordion .accordion-body table th,
+.product-accordion .accordion-body table td {
+    font-size: 13px !important;
+    font-weight: 300 !important;
+}
+
+/* ============================================
+   스크롤 자동 내려가는 문제 해결 (CSS만으로)
+   ============================================ */
+/* 페이지 전체 스크롤 체이닝 방지 */
+.prdDescription {
+    overscroll-behavior-y: contain;
+}
+
+/* Swiper 이미지 영역이 페이지 스크롤을 방해하지 않도록 */
+.swiper-container-detail2 .swiper-wrapper,
+.swiper-container-detail2 .swiper-slide {
+    touch-action: pan-y pinch-zoom;
+}
+
+/* 옵션/버튼 영역 터치 동작 정상화 */
+.prdDescription .prdBoard,
+.prdDescription .productAction,
+.prdDescription .total_area {
+    touch-action: manipulation;
 }
