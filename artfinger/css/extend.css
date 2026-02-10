@@ -850,27 +850,6 @@ div#mCafe24Basket .ec-base-layer {
 }
 
 /* ============================================
-   가격 표시 형식 변경: ₩ → KRW
-   ============================================ */
-/* 가격 요소에서 ₩ 기호를 KRW로 변경 */
-.prdPrice::before,
-.prdSalePrice::before,
-.product_price::before,
-.prd_price_sale::before,
-[title="판매가"]::before,
-[title="할인판매가"]::before {
-    content: none !important;
-}
-
-/* CSS로 추가된 ₩ 기호를 KRW로 변경 (필요시) */
-.prdPrice,
-.prdSalePrice,
-.product_price,
-.prd_price_sale {
-    /* CSS content로 ₩가 추가되는 경우 대비 */
-}
-
-/* ============================================
    취소선이 그어진 가격 색상 변경 (밝은 회색)
    ============================================ */
 /* 취소선이 그어진 가격 요소의 색상을 밝은 회색으로 변경 */
@@ -1918,6 +1897,22 @@ li.displaynone,
 .prdDescription #totalProducts .option_product td p.product,
 .prdDescription #totalProducts .option_product td:first-child p.product {
     white-space: nowrap !important;
+}
+
+/* 가격이 두 줄로 나뉘지 않도록 (KRW 86,000 등) */
+.prdDescription .ec-front-product-item-price,
+.prdDescription #totalProducts .option_product td .price,
+.prdDescription #totalProducts .option_product .price,
+.prdDescription #totalProducts .option_product td.right,
+.prdDescription #totalProducts .option_product td.right * {
+    white-space: nowrap !important;
+}
+
+/* 옵션 상품 td 가로 너비 200px */
+.prdDescription #totalProducts .option_product td {
+    width: 200px !important;
+    max-width: 200px !important;
+    min-width: 200px !important;
 }
 
 /* 6) 상품 상세 설명 본문 (features, fit&size, fabric 등) */

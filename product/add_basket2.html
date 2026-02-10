@@ -873,31 +873,26 @@
                     return '\u20A9' + formattedNumber;
                 }
 
-                function formatPriceEn(amount) {
-                    var formattedNumber = amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-                    return 'KRW ' + formattedNumber;
-                }
-
-                // 총 상품금액 (Subtotal) - KRW만 표기
+                // 총 상품금액 (Subtotal) - 기본 통화 포맷 사용
                 var $totalProductPrice = $('#layer_total_product_price strong');
                 if ($totalProductPrice.length > 0) {
-                    $totalProductPrice.html(formatPriceEn(price));
+                    $totalProductPrice.html(formatPrice(price));
                 }
 
-                // 할인 (Discount) - KRW만 표기, 할인일 때는 "- KRW X" 형태
+                // 할인 (Discount) - 기본 통화 포맷 사용
                 var $totalDiscount = $('#layer_total_discount strong');
                 if ($totalDiscount.length > 0) {
                     if (discountAmount > 0) {
-                        $totalDiscount.html('- ' + formatPriceEn(discountAmount));
+                        $totalDiscount.html('- ' + formatPrice(discountAmount));
                     } else {
-                        $totalDiscount.html(formatPriceEn(0));
+                        $totalDiscount.html(formatPrice(0));
                     }
                 }
 
-                // 총 배송비 (Shipping) - KRW만 표기
+                // 총 배송비 (Shipping) - 기본 통화 포맷 사용
                 var $totalDelvPrice = $('#layer_total_delv_price strong');
                 if ($totalDelvPrice.length > 0) {
-                    $totalDelvPrice.html(formatPriceEn(finalShippingFee));
+                    $totalDelvPrice.html(formatPrice(finalShippingFee));
                 }
 
                 // 결제예정금액 (Total) = Subtotal - Discount + Shipping
@@ -905,7 +900,7 @@
                 if (totalOrderPrice < 0) totalOrderPrice = 0;
                 var $totalOrderPrice = $('#layer_total_order_price strong');
                 if ($totalOrderPrice.length > 0) {
-                    $totalOrderPrice.html(formatPriceEn(totalOrderPrice));
+                    $totalOrderPrice.html(formatPrice(totalOrderPrice));
                 }
 
                 isCalculating = false;
