@@ -334,6 +334,30 @@ $(function () {
 
 
 
+    // 상품 상세 아코디언: 한 번에 하나만 열리도록 처리
+    (function () {
+        var accordions = document.querySelectorAll('.product-accordion');
+        if (!accordions || !accordions.length) return;
+
+        accordions.forEach(function (accordion) {
+            var items = accordion.querySelectorAll('.accordion-item');
+            if (!items || !items.length) return;
+
+            items.forEach(function (item) {
+                item.addEventListener('toggle', function () {
+                    // 현재 클릭한 details가 열릴 때만 나머지를 닫음
+                    if (!item.open) return;
+                    items.forEach(function (other) {
+                        if (other !== item && other.open) {
+                            other.removeAttribute('open');
+                        }
+                    });
+                });
+            });
+        });
+    })();
+
+
 });
 
 
