@@ -66,9 +66,17 @@
     font-size: 12px;
     box-sizing: border-box;
     vertical-align: top;
-    margin-top: -10px;
+    /* PC 기본값 (필요시 상단 여백) */
+    margin-top: 20px;
     /* 좌우 패딩을 줄여 정보 영역 가로폭을 좁게 보이도록 조정 */
     padding: 0 40px;
+}
+
+/* 모바일(<= 1000px)에서는 상단 여백 제거 */
+@media all and (max-width: 1000px) {
+    .xans-product-detail .prdDescription {
+        margin-top: 0;
+    }
 }
 
 .xans-product-detail .prdDescription .icon {

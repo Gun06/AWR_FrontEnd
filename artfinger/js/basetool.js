@@ -296,10 +296,12 @@ $(function () {
         });
     });
 
-    $(".scroll_detailview").click(function (event) {
-        event.preventDefault();
-        $('html,body').animate({ scrollTop: $(this.hash).offset().top - 0 }, 400);
-    });
+    // 상품 상세 내 Review / Q&A 등으로 부드럽게 스크롤시키던 기능
+    // 자동 스크롤 이슈가 있어 비활성화
+    // $(".scroll_detailview").click(function (event) {
+    //     event.preventDefault();
+    //     $('html,body').animate({ scrollTop: $(this.hash).offset().top - 0 }, 400);
+    // });
 
     //prd option select title
     $('.prdDescription .xans-product-option select[option_style="select"]').each(function () {

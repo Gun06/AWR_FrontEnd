@@ -28,34 +28,4 @@
 
 <!--@js(/product/detail.js)-->
 <!--@js(/artfinger/js/pre_ico_detail.js)-->
-<script type="text/javascript">
-    if ($(window).width() > 800) {
-        (function () {
-            var win = $(window);
-            var sizes = {
-                half: 0.5,
-                full: 1,
-                threequarter: 3 / 4,
-                onefive: 1.5,
-                "double": 2,
-                triple: 3
-            }
-            for (k in sizes) {
-                var v = sizes[k]
-                $("." + k).css({
-                    height: Math.floor(win.height() * v) + "px"
-                });
-            };
-
-            function attach() {
-                $('.detail_area_ .prdDescription').stick_in_parent({ offset_top: 145 });
-                $(".detail_area_ .prdDescription:not(.use_manual)").stick_in_parent();
-                $(".detail_area_ .prdDescription.use_manual").stick_in_parent({
-                    parent: ".container2",
-                    spacer: ".manual_spacer"
-                });
-            };
-            attach();
-        })();
-    }        
-</script>
+<!-- 상품 상세에서 스크롤 자동 이동/고정(stick_in_parent) 기능 제거 -->
