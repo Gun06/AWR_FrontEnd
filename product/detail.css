@@ -67,7 +67,8 @@
     box-sizing: border-box;
     vertical-align: top;
     margin-top: -10px;
-    padding: 0px 100px;
+    /* 좌우 패딩을 줄여 정보 영역 가로폭을 좁게 보이도록 조정 */
+    padding: 0 40px;
 }
 
 .xans-product-detail .prdDescription .icon {
@@ -4298,14 +4299,18 @@ textarea {
     zoom: 1;
     *display: inline;
     vertical-align: top;
-    width: 60%;
+    /* 이미지 영역을 조금 넓게 */
+    /* 좌측 이미지 영역 (조금 더 넓게) */
+    width: 70%;
     min-height: 100vh;
 }
 
 .detail_area_ .prdDescription {
     display: inline-block;
     float: right;
-    width: 40%;
+    /* 우측 정보 영역을 슬림하게 */
+    width: 30%;
+    max-width: 520px;
     vertical-align: top;
 }
 
