@@ -49,7 +49,7 @@
                     </div>
                     <div class="log_wp2">
                         <div class="join_but order-status-block">
-                            <a href="#none" class="order-status-link" id="order-status-toggle"
+                            <a href="javascript:;" class="order-status-link" id="order-status-toggle"
                                 aria-expanded="false">Order Status</a>
                             <p class="order-status-desc">비회원으로 주문하셨더라도 주문 조회가 가능합니다.</p>
                         </div>
@@ -60,23 +60,29 @@
     </div>
 
     <div class="guest-order-form-toggle is-closed" id="guest-order-form-toggle" aria-hidden="true">
-        <div module="MyShop_OrderHistoryNologin" class="bg_white guest-order-form">
-            <!--@css(/css/module/myshop/orderHistoryNologin.css)-->
-            <!--
-        $orderDetailUrl = /myshop/order/list.html
-    -->
-            <dl class="ec-base-desc guest-order-fields">
-                <dt>이름</dt>
-                <dd>{$form.order_name}</dd>
-                <dt>주문번호</dt>
-                <dd>{$form.order_id}</dd>
-                <dt>게스트 비밀번호</dt>
-                <dd>{$form.order_password}</dd>
-            </dl>
-            <p class="ec-base-button gColumn submit"><button type="submit" class="guest-order-submit">Check
-                    status</button>
-            </p>
-        </div>
+        <form id="historyNoLogin" name="historyNoLogin" action="/exec/front/MyShop/OrderHistoryLogin/" method="POST"
+            enctype="multipart/form-data" class="bg_white guest-order-form">
+            <div class="xans-element- xans-myshop xans-myshop-orderhistorynologin ">
+                <dl class="ec-base-desc guest-order-fields">
+                    <dt>이름</dt>
+                    <dd><input id="order_name" name="order_name" fw-filter="isFill" fw-label="주문자명" fw-msg=""
+                            class="inputTypeText" placeholder="Name" value="" type="text"></dd>
+                    <dt>주문번호</dt>
+                    <dd>
+                        <input id="order_id1" name="order_id1" maxlength="20" fw-filter="isFill" fw-label="주문번호"
+                            fw-msg="" placeholder="Order Number" value="" type="text">
+                        <input id="order_id2" name="order_id2" value="" type="hidden">
+                    </dd>
+                    <dt>게스트 비밀번호</dt>
+                    <dd><input id="order_password" name="order_password" fw-filter="isFill" fw-label="비회원주문 비밀번호"
+                            fw-msg="" placeholder="Guest Password" value="" type="password"></dd>
+                </dl>
+                <p class="ec-base-button gColumn submit">
+                    <button type="button" class="guest-order-submit"
+                        onclick="document.getElementById('historyNoLogin').submit();">Check status</button>
+                </p>
+            </div>
+        </form>
     </div>
 </div>
 <script>
@@ -107,16 +113,35 @@
         }
 
         /* Order Status 클릭 시 비회원 주문조회 폼 펼치기/접기 */
-        var toggleBtn = document.getElementById('order-status-toggle');
-        var formWrap = document.getElementById('guest-order-form-toggle');
-        if (toggleBtn && formWrap) {
-            toggleBtn.addEventListener('click', function (e) {
+        function initOrderStatusToggle() {
+            var toggleBtn = document.getElementById('order-status-toggle');
+            var formWrap = document.getElementById('guest-order-form-toggle');
+            var targetContainer = document.querySelector('.order-status-block');
+
+            if (!toggleBtn || !formWrap) return;
+
+            /* 폼을 Order Status 설명 바로 아래에 오도록 .order-status-block 안으로 이동 */
+            if (targetContainer && formWrap.parentNode !== targetContainer) {
+                targetContainer.appendChild(formWrap);
+            }
+
+            toggleBtn.onclick = function (e) {
                 e.preventDefault();
                 var isClosed = formWrap.classList.contains('is-closed');
-                formWrap.classList.toggle('is-closed', !isClosed);
-                formWrap.setAttribute('aria-hidden', isClosed ? 'false' : 'true');
-                toggleBtn.setAttribute('aria-expanded', isClosed ? 'true' : 'false');
-            });
+                if (isClosed) {
+                    formWrap.classList.remove('is-closed');
+                    formWrap.setAttribute('aria-hidden', 'false');
+                    toggleBtn.setAttribute('aria-expanded', 'true');
+                } else {
+                    formWrap.classList.add('is-closed');
+                    formWrap.setAttribute('aria-hidden', 'true');
+                    toggleBtn.setAttribute('aria-expanded', 'false');
+                }
+            };
         }
+
+        initOrderStatusToggle();
+        document.addEventListener('DOMContentLoaded', initOrderStatusToggle);
+        window.addEventListener('load', initOrderStatusToggle);
     })();
 </script>

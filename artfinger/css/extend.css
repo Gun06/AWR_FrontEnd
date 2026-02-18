@@ -975,9 +975,10 @@ strong[style*="text-decoration-line: line-through"] {
 .signin-style .login .boxTitle,
 .xans-member-login.signin-style .login .boxTitle {
     text-align: left;
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: 600;
     padding-bottom: 20px;
+    color: #333;
 }
 
 .signin-style .login fieldset,
@@ -1200,9 +1201,10 @@ strong[style*="text-decoration-line: line-through"] {
 .login-page-wrap .guest-order-form,
 .login-page-wrap .xans-myshop-orderhistorynologin.guest-order-form {
     margin: 0 auto !important;
-    margin-top: 0 !important;
-    padding: 12px 20px 40px !important;
-    max-width: 600px box-sizing: border-box;
+    margin-top: 12px !important;
+    padding: 0 0 40px !important;
+    max-width: 600px;
+    box-sizing: border-box;
     border-top: none;
 }
 
@@ -1246,29 +1248,47 @@ strong[style*="text-decoration-line: line-through"] {
 
 .guest-order-form .guest-order-fields dd,
 .xans-myshop-orderhistorynologin.guest-order-form .guest-order-fields dd {
-    margin: 0;
+    margin: 0 !important;
     margin-inline-start: 0;
     margin-left: 0;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+    font-size: 0;
+    line-height: 0;
 }
 
 .guest-order-form .guest-order-fields dd:not(:first-of-type),
 .xans-myshop-orderhistorynologin.guest-order-form .guest-order-fields dd:not(:first-of-type) {
-    margin-top: 12px;
+    margin-top: 12px !important;
+}
+
+/* Order Number dd 내 hidden input이 간격에 영향 주지 않도록 */
+.guest-order-form .guest-order-fields input[type="hidden"],
+.xans-myshop-orderhistorynologin.guest-order-form .guest-order-fields input[type="hidden"] {
+    display: none !important;
+    position: absolute !important;
+    width: 0 !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
 }
 
 .guest-order-form .guest-order-fields input,
 .xans-myshop-orderhistorynologin.guest-order-form .guest-order-fields input {
-    width: 100%;
-    height: 38px;
-    line-height: 38px;
-    padding: 0 12px;
+    width: 100% !important;
+    height: 38px !important;
+    line-height: 38px !important;
+    margin: 0 !important;
+    padding: 0 12px !important;
     font-size: 14px !important;
     font-weight: 200 !important;
-    color: #000;
-    background: #fff;
-    border: 1px solid #dfdfdf;
-    border-radius: 2px;
-    box-sizing: border-box;
+    color: #000 !important;
+    background: #fff !important;
+    border: 1px solid #dfdfdf !important;
+    border-radius: 2px !important;
+    box-sizing: border-box !important;
 }
 
 .guest-order-form .guest-order-fields input::placeholder,
@@ -1289,6 +1309,7 @@ strong[style*="text-decoration-line: line-through"] {
     width: 100%;
     height: 38px;
     line-height: 38px;
+    margin: 0 !important;
     padding: 0 16px;
     font-size: 14px;
     font-weight: 300;
