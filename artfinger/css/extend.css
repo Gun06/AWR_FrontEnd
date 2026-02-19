@@ -602,8 +602,15 @@ div.ec-base-layer.typeModal.bsket_detail:before,
 
 #layout #header .header_wrap .account_area>ul li a {
     padding: 0 0 0 25px !important;
-    font-size: 13px !important;
+    font-size: 12px !important;
     color: #000 !important;
+}
+
+/* 헤더 로고 텍스트(글자 로고) 12px 통일 */
+#header .header_wrap .logo_area .xans-layout-logotop a,
+#layout #header .header_wrap .logo_area .xans-layout-logotop a,
+#header .header_wrap .logo_area [module="Layout_LogoTop"] a {
+    font-size: 12px !important;
 }
 
 /* 언어 메뉴가 메인 메뉴와 같은 줄에 표시되도록 */

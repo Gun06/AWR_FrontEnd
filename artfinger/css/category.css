@@ -144,7 +144,7 @@
 /* user control */
 #header .header_wrap .gnb .artcate .d1-wrap .d1>a,
 #header .header_wrap .account_area>ul li a {
-    font-size: 13px;
+    font-size: 12px;
     line-height: 40px;
     display: block;
 }
@@ -178,7 +178,7 @@
 
 #header .header_wrap .gnb .artcate .d1-wrap .d1>a {
     position: relative;
-    font-size: 13px;
+    font-size: 12px;
     padding: 0 25px 0 0;
     height: 40px;
     line-height: 40px;
@@ -251,7 +251,7 @@
 }
 
 #header .header_wrap .gnb .artcate .d2-wrap .d2>a {
-    font-size: 13px;
+    font-size: 12px;
     line-height: 22px;
     padding: 0 20px 0 0
 }
@@ -300,7 +300,7 @@
 #header .header_wrap .gnb .artcate .d2-wrap .img span {
     display: block;
     padding: 10px 0 0;
-    font-size: 11px;
+    font-size: 12px;
     text-align: left;
 }
 
@@ -313,7 +313,7 @@
 }
 
 #header .header_wrap .gnb .artcate .d3-wrap .d3>a {
-    font-size: 11px;
+    font-size: 12px;
     line-height: 18px;
     padding: 0 10px 0 0
 }
@@ -335,7 +335,7 @@
 #header .header_wrap .gnb .artcate .d4-wrap .d4 {}
 
 #header .header_wrap .gnb .artcate .d4-wrap .d4>a {
-    font-size: 11px;
+    font-size: 12px;
     color: #666;
     line-height: 24px;
     padding: 0 10px
@@ -347,7 +347,7 @@
 }
 
 #header .header_wrap .gnb .artcate .d2-wrap>ul.cowd>li.d2>a {
-    font-size: 13px;
+    font-size: 12px;
 }
 
 #header .header_wrap .gnb .artcate .d2-wrap>ul.cowd>li.d2 .d3-wrap {
@@ -356,7 +356,7 @@
 
 #header .header_wrap .gnb .artcate .d3-wrap .d3>a {
     line-height: 18px;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 300;
 }
 
@@ -382,7 +382,7 @@
 }
 
 #header .header_wrap .account_area>ul li a {
-    font-size: 13px;
+    font-size: 12px;
     padding: 0 0 0 25px;
     height: 40px;
     line-height: 40px;
@@ -394,7 +394,7 @@
 }
 
 #header .header_wrap .account_area>ul li .bas_count {
-    font-size: 13px;
+    font-size: 12px;
 }
 
 #header .header_wrap .hamber_momenu {
@@ -416,7 +416,7 @@
 }
 
 #header .header_wrap .hamber_momenu li.top_member a {
-    font-size: 13px;
+    font-size: 12px;
 }
 
 #header .header_wrap .hamber_momenu li svg {
@@ -678,7 +678,7 @@ html.expand #aside {
 #aside .artfinger_slide_wrap .group_nav .xans-layout-category .menu_v_mo ul.d1-wrap-mo>li .category_ti1,
 #aside .artfinger_slide_wrap .group_nav .xans-layout-category .menu_v_mo ul.d1-wrap-mo>li>a {
     line-height: 30px;
-    font-size: 14px;
+    font-size: 12px;
     display: block;
 }
 
@@ -701,7 +701,7 @@ html.expand #aside {
 
 #aside .artfinger_slide_wrap .group_nav .xans-layout-category .menu_v_mo ul.d1-wrap-mo>li.board span.category_ti1 {
     line-height: 30px;
-    font-size: 14px;
+    font-size: 12px;
     display: block;
     margin-right: 14px;
     width: 100%;
@@ -723,7 +723,7 @@ html.expand #aside {
 }
 
 #aside .artfinger_slide_wrap .group_nav .xans-layout-category .menu_v_mo ul.d1-wrap-mo>li>ul.d2-wrap>li a {
-    font-size: 13px;
+    font-size: 12px;
     line-height: 30px;
 }
 
@@ -781,7 +781,7 @@ html.expand #aside {
 
 #aside .artfinger_slide_wrap .group_nav .xans-layout-category .menu_v_mo .member li a {
     line-height: 30px;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 #aside .artfinger_slide_wrap .group_nav .xans-layout-category .menu_v_mo .snscate {
@@ -801,7 +801,7 @@ html.expand #aside {
 
 #aside .artfinger_slide_wrap .group_nav .xans-layout-category .menu_v_mo .snscate li a.show {
     display: block;
-    font-size: 18px;
+    font-size: 12px;
 }
 
 /* mobile */
@@ -923,7 +923,7 @@ html.expand #aside {
 
 /* Language 메뉴 텍스트 스타일 */
 #aside .menu_v_mo ul.d1-wrap-mo>li[module="Layout_multishopList"]>a {
-    font-size: 14px !important;
+    font-size: 12px !important;
     line-height: 30px !important;
     color: #000 !important;
     display: block !important;
