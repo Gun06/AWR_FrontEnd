@@ -1,24 +1,28 @@
 <!--@layout(/layout/basic/layout.html)-->
 <!-- js(/product/product_timedeal.js)-->
 <div class="content_prd">
-    <div class="top_prd">
-        <div class="middle_area_line">
-            <div class="path" module="product_headcategory">
-                <ol>
-                    <li class="{$disp_cate_1|display}"><a href="{$link_product_list_1}">{$name_1}</a></li>
-                    <li class="{$disp_cate_2|display}"><a href="{$link_product_list_2}">{$name_2}</a></li>
-                    <li class="{$disp_cate_3|display}"><a href="{$link_product_list_3}">{$name_3}</a></li>
-                    <li class="{$disp_cate_4|display}"><strong><a href="{$link_product_list_4}">{$name_4}</a></strong>
-                    </li>
-                </ol>
+    <div class="content_prd_wrap">
+        <div class="content_prd_main">
+            <div class="top_prd">
+                <div class="middle_area_line">
+                    <div class="path" module="product_headcategory">
+                        <ol>
+                            <li class="{$disp_cate_1|display}"><a href="{$link_product_list_1}">{$name_1}</a></li>
+                            <li class="{$disp_cate_2|display}"><a href="{$link_product_list_2}">{$name_2}</a></li>
+                            <li class="{$disp_cate_3|display}"><a href="{$link_product_list_3}">{$name_3}</a></li>
+                            <li class="{$disp_cate_4|display}"><strong><a href="{$link_product_list_4}">{$name_4}</a></strong>
+                            </li>
+                        </ol>
+                    </div>
+                    <!--@import(/artfinger/product_menupackage.html)-->
+                    <div class="prd_sort_trigger_wrap">
+                        <button type="button" class="prd_sort_trigger" id="prdSortTrigger" aria-label="Sort by">Sort by</button>
+                    </div>
+                </div>
             </div>
-            <!--@import(/artfinger/product_menupackage.html)-->
-            <!--@import(/artfinger/condition.html)-->
-        </div>
-    </div>
 
 
-    <!-- 추천상품 -->
+            <!-- 추천상품 -->
     <div class="swiper-container-recommend" module="product_listrecommend">
         <h3 class="lr_pad"><span>BEST SELLERS</span></h3>
         <div class="swiper-wrapper">
@@ -56,6 +60,10 @@
             <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
         </ol>
         <!--@import(/artfinger/prd_page_next.html)-->
+    </div>
+        </div>
+        <!-- 오른쪽 정렬/필터 사이드바 (첫 번째 사진 스타일) -->
+        <!--@import(/artfinger/condition.html)-->
     </div>
 </div>
 

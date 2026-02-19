@@ -1,0 +1,184 @@
+/**
+ * 상품 목록 Sort by 슬라이드 패널
+ * - 기본: 닫힘. "Sort by" 클릭 시 오른쪽에서 패널 슬라이드
+ * - Close 또는 딤머 클릭 시 닫힘
+ */
+
+.content_prd_wrap {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.content_prd_main {
+    width: 100%;
+    min-width: 0;
+}
+
+/* 상단 바 오른쪽 Sort by 트리거 - 브레드크럼(Shop)과 동일한 상하 높이, 오른쪽 여백 */
+.prd_sort_trigger_wrap {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 15px 24px 15px 20px;
+}
+
+.prd_sort_trigger {
+    padding: 0;
+    font-size: 12px;
+    color: #333;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: inherit;
+}
+
+.prd_sort_trigger:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+/* PC: 1행에 path + Sort by 오른쪽 정렬, 브레드크럼과 같은 세로 높이 */
+@media all and (min-width: 1001px) {
+    .top_prd .middle_area_line .prd_sort_trigger_wrap {
+        order: 2;
+        flex: 0 0 auto;
+        padding: 15px 24px 15px 20px;
+    }
+}
+
+/* 숨김 select (정렬 URL은 서버에서 출력, 기존 모듈/JS 호환) */
+.prd_filter_sidebar_select_wrap {
+    position: absolute !important;
+    left: -9999px !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+}
+
+/* 딤머: 패널 열렸을 때 배경 + 블러 (헤더는 가리지 않음, 헤더보다 z-index 낮음) */
+.prd_filter_sidebar_dimmer {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 60px;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 9990;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.content_prd_wrap.is_sort_open .prd_filter_sidebar_dimmer {
+    display: block;
+    opacity: 1;
+}
+
+/* 슬라이드 패널: 헤더 아래에서만 열림, 헤더(z-index:9999)보다 낮게 */
+.prd_filter_sidebar {
+    position: fixed;
+    top: 60px;
+    right: 0;
+    width: 280px;
+    max-width: 90vw;
+    height: calc(100vh - 60px);
+    background: #fff;
+    box-shadow: -2px 0 12px rgba(0, 0, 0, 0.1);
+    z-index: 9991;
+    overflow-y: auto;
+    box-sizing: border-box;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+}
+
+.content_prd_wrap.is_sort_open .prd_filter_sidebar {
+    transform: translateX(0);
+}
+
+/* Close: 패널 우측 상단 */
+.prd_filter_sidebar_header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 16px 20px 0 20px;
+}
+
+.prd_filter_sidebar_close {
+    padding: 4px 0;
+    font-size: 12px;
+    color: #333;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.prd_filter_sidebar_close:hover {
+    color: #000;
+}
+
+/* Sort 제목: 왼쪽 들여쓰기, 본문과 동일한 폰트 두께 */
+.prd_filter_sidebar_section {
+    padding: 16px 20px 20px 24px;
+}
+
+/* 옵션(New arrivals 등)과 동일: 12px, color #333 → 대비도 비슷하게 */
+.prd_filter_sidebar_title {
+    font-size: 12px;
+    font-weight: 300;
+    margin: 0 0 10px;
+    color: #333;
+    padding-left: 0;
+}
+
+/* 옵션 목록: 제목보다 더 들여쓰기, 항목 간 간격 축소 */
+.prd_filter_sort_list {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 16px;
+}
+
+.prd_filter_sort_list li {
+    margin: 0 0 8px;
+}
+
+.prd_filter_sort_list li:last-child {
+    margin-bottom: 0;
+}
+
+.prd_filter_sort_list li a {
+    display: block;
+    padding: 0;
+    font-size: 12px;
+    color: #333;
+    text-decoration: none;
+}
+
+.prd_filter_sort_list li a:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+.prd_filter_sort_list li a.selected {
+    font-weight: normal;
+    color: #000;
+}
+
+/* 모바일: 헤더 높이에 맞춰 패널/딤머 시작 위치 */
+@media all and (max-width: 1000px) {
+    .prd_filter_sidebar_dimmer {
+        top: 48px;
+    }
+
+    .prd_filter_sidebar {
+        top: 48px;
+        height: calc(100vh - 48px);
+    }
+}

@@ -1,16 +1,28 @@
-<div module="product_normalmenu">
-    <!--
-                    $compare_page = /product/compare.html
-                -->
-    <div class="sort">
-        <select id="selArray" name="selArray" module="product_Orderby">
-            <option value="">Sort by</option>
-            <option value="{$param}">New arrivals</option>
-            <option value="{$param}">Name</option>
-            <option value="{$param}">Low price</option>
-            <option value="{$param}">Hight price</option>
-            <option value="{$param}">Menufacture</option>
-            <option value="{$param}">Review</option>
-        </select>
+<!--@css(/artfinger/css/product_filter_sidebar.css)-->
+<div class="prd_filter_sidebar_dimmer" id="prdFilterSidebarDimmer" aria-hidden="true"></div>
+<aside class="prd_filter_sidebar" id="prdFilterSidebar">
+    <div class="prd_filter_sidebar_header">
+        <button type="button" class="prd_filter_sidebar_close" aria-label="Close">Close</button>
     </div>
-</div>
+    <div class="prd_filter_sidebar_section prd_filter_sort">
+        <h3 class="prd_filter_sidebar_title">Sort</h3>
+        <ul class="prd_filter_sort_list" id="sortSidebarOptions"></ul>
+    </div>
+    <!-- 정렬 동작용 select (숨김, 옵션 URL은 서버에서 출력) -->
+    <div class="prd_filter_sidebar_select_wrap" aria-hidden="true">
+        <div module="product_normalmenu">
+            <div class="sort">
+                <select id="selArray" name="selArray" module="product_Orderby">
+                    <option value="">Sort by</option>
+                    <option value="{$param}">New arrivals</option>
+                    <option value="{$param}">Name</option>
+                    <option value="{$param}">Low price</option>
+                    <option value="{$param}">Hight price</option>
+                    <option value="{$param}">Menufacture</option>
+                    <option value="{$param}">Review</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</aside>
+<!--@js(/artfinger/js/product_filter_sidebar.js)-->
