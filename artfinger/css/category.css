@@ -810,11 +810,56 @@ html.expand #aside {
         padding: 5px 10px;
         width: 100%;
         box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 48px;
+    }
+
+    #header .header_wrap::after {
+        display: none !important;
+    }
+
+    /* 로고 영역이 헤더 높이 안에서 상하 가운데 오도록 */
+    #header.logocenter .header_wrap .logo_area {
+        float: none;
+        display: flex;
+        align-items: center;
+        align-self: center;
+    }
+
+    /* 모바일/태블릿: 로고 26px, h1(.xans-layout-logotop) 안에서 a 태그 가운데 정렬 → img 가운데 */
+    #header.logocenter .header_wrap .logo_area>.xans-layout-logotop {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: auto !important;
+        min-height: 26px;
+        line-height: normal;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* a 태그를 h1 안에서 상하·좌우 가운데 정렬 (a 안의 img도 함께 가운데) */
+    #header.logocenter .header_wrap .logo_area>.xans-layout-logotop a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-self: center;
+        line-height: 0;
+        margin: 0;
+        padding: 0;
     }
 
     #header.logocenter .header_wrap .logo_area>.xans-layout-logotop img {
-        height: 16px !important;
-        padding-top: 7px;
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        transform: none !important;
+        height: 26px !important;
+        max-height: 26px !important;
+        padding-top: 0;
+        vertical-align: middle;
     }
 
     #header.logocenter .header_wrap .logo_area img {
@@ -828,7 +873,10 @@ html.expand #aside {
     }
 
     #header .header_wrap .hamber_momenu {
-        display: block;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        margin-left: auto;
     }
 
     #header .header_wrap .account_area>ul li.search a {}

@@ -160,7 +160,10 @@ div.tabcontents p {
     padding: 6px 0;
     font-size: 13px;
     font-weight: 300;
-    color: #333;
+    font-family: Pretendard;
+    color: #000;
+    letter-spacing: 0;
+    line-height: 1.2;
     cursor: pointer;
     list-style: none;
     text-align: left;
@@ -190,7 +193,7 @@ div.tabcontents p {
     content: "+";
     font-size: 13px;
     font-weight: 200;
-    color: #333;
+    color: #000;
     line-height: 1;
     vertical-align: baseline;
 }
@@ -203,19 +206,32 @@ div.tabcontents p {
 .product-accordion .accordion-body {
     padding: 0 0 12px;
     font-size: 13px;
-    line-height: 20px;
-    color: #333;
+    line-height: 1.2;
+    color: #000;
     font-weight: 300;
+    font-family: Pretendard;
+    letter-spacing: 0;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
 }
 
 .product-accordion .accordion-body .tx_for,
 .product-accordion .accordion-body .tx_for span,
 .product-accordion .accordion-body .tx_for p,
 .product-accordion .accordion-body .tx_for div,
-.product-accordion .accordion-body pre {
+.product-accordion .accordion-body .tx_for strong,
+.product-accordion .accordion-body .tx_for li,
+.product-accordion .accordion-body pre,
+.product-accordion .accordion-body table th,
+.product-accordion .accordion-body table td {
+    font-family: Pretendard !important;
     font-size: 13px !important;
     font-weight: 300 !important;
-    line-height: 20px !important;
+    color: #000 !important;
+    letter-spacing: 0 !important;
+    line-height: 1.2 !important;
+    -webkit-font-smoothing: antialiased !important;
+    font-smoothing: antialiased !important;
 }
 
 .product-accordion .accordion-body pre {
@@ -233,5 +249,5 @@ div.tabcontents p {
 
 .product-accordion .accordion-body table th {
     font-weight: 300;
-    color: #333;
+    color: #000;
 }

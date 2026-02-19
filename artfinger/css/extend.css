@@ -1614,6 +1614,16 @@ li.displaynone,
     }
 }
 
+/* 테블릿·PC(851px 이상): 상품 상세 오른쪽 정보 영역 스크롤 시 고정(sticky) */
+@media all and (min-width: 851px) {
+    .xans-product-detail .prdDescription {
+        position: sticky !important;
+        top: 100px !important;
+        /* fixed 헤더 아래에 오도록 */
+        align-self: flex-start !important;
+    }
+}
+
 /* ============================================
    색상 선택 박스를 정사각형 30x30으로 변경 (사이즈 박스와 동일한 크기)
    ============================================ */
@@ -1943,21 +1953,6 @@ li.displaynone,
 .prdDescription .tx_for *,
 .prdDescription .prdDetailContent,
 .prdDescription .prdDetailContent * {
-    font-size: 13px !important;
-    font-weight: 300 !important;
-}
-
-/* 7) 아코디언 내용 (Exchange & Refunds, 정책 등) */
-.product-accordion .accordion-body,
-.product-accordion .accordion-body *,
-.product-accordion .accordion-body .tx_for,
-.product-accordion .accordion-body .tx_for *,
-.product-accordion .accordion-body p,
-.product-accordion .accordion-body span,
-.product-accordion .accordion-body div,
-.product-accordion .accordion-body pre,
-.product-accordion .accordion-body table th,
-.product-accordion .accordion-body table td {
     font-size: 13px !important;
     font-weight: 300 !important;
 }
