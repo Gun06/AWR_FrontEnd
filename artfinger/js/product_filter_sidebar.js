@@ -28,16 +28,36 @@
         var currentHref = window.location.href;
         var currentSearch = (window.location.search || '').replace(/^\?/, '');
 
+        // 사이드바에 노출할 정렬 옵션 (원본 select 옵션 "순서" 기준)
+        // Cafe24 기본 product_Orderby 출력 순서를 전제로 함:
+        //  0: Sort by (placeholder)
+        //  1: New arrivals
+        //  2: Name
+        //  3: Low price   → 실제 동작은 높은 가격 → 낮은 가격이라고 가정 (High to Low)
+        //  4: High price  → 실제 동작은 낮은 가격 → 높은 가격이라고 가정 (Low to High)
+        var displayConfigs = [
+            { index: 1, label: 'New Arrivals' },
+            { index: 4, label: 'Low to High' },
+            { index: 3, label: 'High to Low' }
+        ];
+
         list.innerHTML = '';
-        for (var i = 0; i < options.length; i++) {
-            var opt = options[i];
+
+        displayConfigs.forEach(function (config) {
+            var idx = config.index;
+            if (typeof idx !== 'number') return;
+            if (idx < 0 || idx >= options.length) return;
+
+            var opt = options[idx];
+            if (!opt) return;
+
             var val = (opt.value || '').toString().trim();
-            var text = (opt.text || '').toString().trim();
-            if (!val) continue;
+            if (!val) return;
 
             var a = document.createElement('a');
             a.href = val;
-            a.textContent = text;
+            a.textContent = config.label;
+
             var optNorm = val.split('?')[1] || '';
             var isSelected = (currentSearch && currentSearch === optNorm) ||
                 (currentHref === val) ||
@@ -46,10 +66,11 @@
                 a.setAttribute('aria-current', 'page');
                 a.className = 'selected';
             }
+
             var li = document.createElement('li');
             li.appendChild(a);
             list.appendChild(li);
-        }
+        });
     }
 
     function initOpenClose() {
