@@ -65,21 +65,18 @@
             <div class="xans-element- xans-myshop xans-myshop-orderhistorynologin ">
                 <dl class="ec-base-desc guest-order-fields">
                     <dt>이름</dt>
-                    <dd><input id="order_name" name="order_name" fw-filter="isFill" fw-label="주문자명" fw-msg=""
+                    <dd><input id="order_name" name="order_name"
                             class="inputTypeText" placeholder="Name" value="" type="text"></dd>
                     <dt>주문번호</dt>
                     <dd>
-                        <input id="order_id1" name="order_id1" maxlength="20" fw-filter="isFill" fw-label="주문번호"
-                            fw-msg="" placeholder="Order Number" value="" type="text">
+                        <input id="order_id1" name="order_id1" maxlength="20" placeholder="Order Number" value="" type="text">
                         <input id="order_id2" name="order_id2" value="" type="hidden">
                     </dd>
                     <dt>게스트 비밀번호</dt>
-                    <dd><input id="order_password" name="order_password" fw-filter="isFill" fw-label="비회원주문 비밀번호"
-                            fw-msg="" placeholder="Guest Password" value="" type="password"></dd>
+                    <dd><input id="order_password" name="order_password" placeholder="Guest Password" value="" type="password"></dd>
                 </dl>
                 <p class="ec-base-button gColumn submit">
-                    <button type="button" class="guest-order-submit"
-                        onclick="document.getElementById('historyNoLogin').submit();">Check status</button>
+                    <button type="button" class="guest-order-submit" id="guest-order-submit-btn">Check status</button>
                 </p>
             </div>
         </form>
@@ -140,8 +137,45 @@
             };
         }
 
+        /* Check status 클릭 시에만 비회원 주문조회 폼 검증 후 제출 */
+        function validateAndSubmitGuestOrder() {
+            var form = document.getElementById('historyNoLogin');
+            if (!form) return;
+            var orderName = (form.order_name && form.order_name.value) ? form.order_name.value.trim() : '';
+            var orderId = (form.order_id1 && form.order_id1.value) ? form.order_id1.value.trim() : '';
+            var orderPw = (form.order_password && form.order_password.value) ? form.order_password.value.trim() : '';
+            if (!orderName) {
+                alert('주문자명 항목은 필수 입력값입니다.');
+                if (form.order_name) form.order_name.focus();
+                return;
+            }
+            if (!orderId) {
+                alert('주문번호 항목은 필수 입력값입니다.');
+                if (form.order_id1) form.order_id1.focus();
+                return;
+            }
+            if (!orderPw) {
+                alert('비회원주문 비밀번호 항목은 필수 입력값입니다.');
+                if (form.order_password) form.order_password.focus();
+                return;
+            }
+            form.submit();
+        }
+
+        function initGuestOrderSubmit() {
+            var btn = document.getElementById('guest-order-submit-btn');
+            if (btn) btn.onclick = function (e) { e.preventDefault(); validateAndSubmitGuestOrder(); };
+        }
+
         initOrderStatusToggle();
-        document.addEventListener('DOMContentLoaded', initOrderStatusToggle);
-        window.addEventListener('load', initOrderStatusToggle);
+        initGuestOrderSubmit();
+        document.addEventListener('DOMContentLoaded', function () {
+            initOrderStatusToggle();
+            initGuestOrderSubmit();
+        });
+        window.addEventListener('load', function () {
+            initOrderStatusToggle();
+            initGuestOrderSubmit();
+        });
     })();
 </script>
