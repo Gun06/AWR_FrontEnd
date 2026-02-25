@@ -962,6 +962,18 @@ strong[style*="text-decoration-line: line-through"] {
 /* ============================================
    로그인 페이지 Sign In 스타일
    ============================================ */
+/* 로그인 페이지 전체 텍스트: 13px, 동일 굵기(200), Pretendard 통일 */
+.login-page-wrap,
+.login-page-wrap * {
+    font-family: 'Pretendard', sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 200 !important;
+}
+/* placeholder는 폰트 사이즈만 13px */
+.login-page-wrap input::placeholder {
+    font-size: 13px !important;
+}
+
 .mypage_wrap .mypage_cont .mypage_innerLogin:has(.signin-style) {
     max-width: 600px;
 }
