@@ -1,10 +1,15 @@
 <button type="button" class="btnCate category">
     <span></span><span></span><span></span>
 </button>
+<li class="search mo_he top_member">
+    <form class="search_inline_form" action="/product/search.html" method="get">
+        <input type="text" name="keyword" placeholder="Search" autocomplete="off">
+    </form>
+    <a href="#none" class="search-toggle">Search</a>
+</li>
+<li class="top_member" module="Layout_stateLogoff"><a href="/member/login.html">Login</a></li>
+<li class="top_member" module="Layout_statelogon"><a href="/myshop/index.html">Account</a></li>
 <li class="top_member {$use_interest_prd|display} js-hamburg-wishlist"><a href="/myshop/wish_list.html">Wishlist</a>
 </li>
 <li class="top_member"><a module="Layout_orderBasketcount" href="/order/basket.html">Bag
         (<span>{$basket_count}</span>)</a></li>
-<li class="top_member" module="Layout_stateLogoff"><a href="/member/login.html">Login</a></li>
-<li class="top_member" module="Layout_statelogon"><a href="/myshop/index.html">Account</a></li>
-<li class="search mo_he top_member"><a>Search</a></li>

@@ -2,10 +2,15 @@
 <span id="js-use-interest-prd-value" data-value="{$use_interest_prd}" aria-hidden="true"
     style="display:none!important;position:absolute;left:-9999px"></span>
 <ul>
+    <li class="search">
+        <form class="search_inline_form" action="/product/search.html" method="get">
+            <input type="text" name="keyword" placeholder="Search" autocomplete="off">
+        </form>
+        <a href="#none" class="search-toggle">Search</a>
+    </li>
+    <li class="mem_my" module="Layout_stateLogoff"><a href="/member/login.html">Login</a></li>
+    <li class="mem_my" module="Layout_statelogon"><a href="/myshop/index.html">Account</a></li>
     <li class="{$use_interest_prd|display} js-header-wishlist"><a href="/myshop/wish_list.html">Wishlist</a></li>
     <li module="Layout_orderBasketcount"><a href="/order/basket.html">Bag (<span
                 class="bas_count">{$basket_count}</span>)</a></li>
-    <li class="mem_my" module="Layout_stateLogoff"><a href="/member/login.html">Login</a></li>
-    <li class="mem_my" module="Layout_statelogon"><a href="/myshop/index.html">Account</a></li>
-    <li class="search"><a>Search</a></li>
 </ul>

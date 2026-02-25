@@ -10,10 +10,26 @@ $(function () {
     });
 
 
-    //header search    
-    $("#header .search ").click(function () {
-        $("#header #searchBarForm").slideToggle(300);
-        $(this).toggleClass("open");
+    //header search (inline menu style)
+    $("#header .search .search-toggle").click(function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var $searchItem = $(this).closest(".search");
+        var willOpen = !$searchItem.hasClass("open");
+
+        $("#header .search").removeClass("open");
+        if (willOpen) {
+            $searchItem.addClass("open");
+            setTimeout(function () {
+                $searchItem.find("input[name='keyword']").first().focus();
+            }, 10);
+        }
+    });
+
+    $(document).click(function (e) {
+        if (!$(e.target).closest("#header .search").length) {
+            $("#header .search").removeClass("open");
+        }
     });
 
     //header multilanguage togle 

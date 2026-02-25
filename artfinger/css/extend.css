@@ -600,11 +600,191 @@ div.ec-base-layer.typeModal.bsket_detail:before,
     display: none !important;
 }
 
+#header .header_wrap .account_area>ul li a,
 #layout #header .header_wrap .account_area>ul li a {
-    padding: 0 0 0 25px !important;
+    padding: 0 0 0 16px !important;
     font-size: 12px !important;
+    color: rgba(255, 255, 255, 0.78) !important;
+}
+
+/* Search 메뉴 안에서 확장되는 인라인 검색창 */
+#header .header_wrap .account_area > ul {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+}
+
+#header .header_wrap .account_area > ul li:not(.displaynone),
+#layout #header .header_wrap .account_area > ul li:not(.displaynone) {
+    float: none !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+#header .header_wrap .account_area > ul li.search,
+#layout #header .header_wrap .account_area > ul li.search,
+#header .header_wrap .hamber_momenu li.search,
+#layout #header .header_wrap .hamber_momenu li.search {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0 !important;
+}
+
+#header .search .search-toggle,
+#layout #header .search .search-toggle {
+    padding-left: 0 !important;
+}
+
+#header .search .search_inline_form,
+#layout #header .search .search_inline_form {
+    display: flex;
+    align-items: center;
+    width: 0;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+    transition: width .22s ease, opacity .18s ease;
+}
+
+#header .search.open .search_inline_form,
+#layout #header .search.open .search_inline_form {
+    width: 168px;
+    margin-right: 8px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#header .search .search_inline_form input[name="keyword"],
+#layout #header .search .search_inline_form input[name="keyword"] {
+    width: 100%;
+    height: 22px;
+    line-height: 22px;
+    padding: 0;
+    border: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.62);
+    background: transparent;
+    text-align: left;
+    direction: ltr;
+    font-size: 12px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.78);
+    caret-color: rgba(255, 255, 255, 0.78);
+}
+
+#header .search .search_inline_form input[name="keyword"]::placeholder,
+#layout #header .search .search_inline_form input[name="keyword"]::placeholder {
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.62);
+}
+
+/* 밝은 헤더(예: body#layout)에서는 검색 placeholder/밑줄을 검정으로 */
+body#layout #header .search .search_inline_form input[name="keyword"] {
+    color: #000;
+    caret-color: #000;
+    border-bottom-color: #000;
+}
+
+body#layout #header .search .search_inline_form input[name="keyword"]::placeholder {
+    color: #000;
+}
+
+/* 리스트/일반 페이지(body#layout) 헤더 텍스트는 검정 통일 */
+body#layout #header .header_wrap .gnb .artcate .d1-wrap .d1 > a,
+body#layout #header .header_wrap .account_area > ul li a,
+body#layout #header .header_wrap .hamber_momenu li.top_member > a,
+body#layout #header .header_wrap .hamber_momenu li.search .search-toggle,
+body#layout #header .header_wrap .account_area > ul li .bas_count,
+body#layout #header .header_wrap .hamber_momenu li .bas_count {
     color: #000 !important;
 }
+
+body#layout #header .header_wrap .hamber_momenu button > span {
+    background-color: #000 !important;
+}
+
+@media (max-width: 1023px) {
+    #header .header_wrap .account_area {
+        display: none !important;
+    }
+
+    #header .header_wrap .hamber_momenu {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+    }
+
+    #header .header_wrap .hamber_momenu li.top_member {
+        float: none !important;
+        display: flex !important;
+        align-items: center !important;
+        height: auto !important;
+        line-height: 1 !important;
+        padding-left: 12px !important;
+        flex: 0 0 auto !important;
+        white-space: nowrap !important;
+    }
+
+    #header .header_wrap .hamber_momenu li.top_member.displaynone {
+        display: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 0 !important;
+    }
+
+    #header .header_wrap .hamber_momenu li.search {
+        order: 1 !important;
+    }
+
+    #header .header_wrap .hamber_momenu li[module="Layout_stateLogoff"],
+    #header .header_wrap .hamber_momenu li[module="Layout_statelogon"] {
+        order: 2 !important;
+    }
+
+    #header .header_wrap .hamber_momenu li.js-hamburg-wishlist {
+        order: 3 !important;
+    }
+
+    #header .header_wrap .hamber_momenu li.top_member:not(.search):not(.js-hamburg-wishlist):not([module="Layout_stateLogoff"]):not([module="Layout_statelogon"]) {
+        order: 4 !important;
+    }
+
+    #header .header_wrap .hamber_momenu button.btnCate {
+        order: 5 !important;
+        float: none !important;
+        margin-top: 0 !important;
+        margin-left: 12px !important;
+        flex: 0 0 auto !important;
+    }
+
+    #header .search.open .search_inline_form,
+    #layout #header .search.open .search_inline_form {
+        width: 118px;
+        margin-right: 6px;
+    }
+
+    #header .header_wrap .hamber_momenu li.search,
+    #layout #header .header_wrap .hamber_momenu li.search {
+        gap: 6px;
+    }
+}
+
+/* Wishlist 비활성화(displaynone) 시 간격까지 완전 제거 */
+#header .header_wrap .account_area > ul li.displaynone,
+#layout #header .header_wrap .account_area > ul li.displaynone,
+#header .header_wrap .account_area > ul li.js-header-wishlist.displaynone,
+#layout #header .header_wrap .account_area > ul li.js-header-wishlist.displaynone,
+#header .header_wrap .hamber_momenu li.js-hamburg-wishlist.displaynone {
+    display: none !important;
+    width: 0 !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    overflow: hidden !important;
+}
+
 
 /* 헤더 로고 텍스트(글자 로고) 12px 통일 */
 #header .header_wrap .logo_area .xans-layout-logotop a,
