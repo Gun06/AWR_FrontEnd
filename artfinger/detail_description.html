@@ -738,6 +738,64 @@
         <div id="{$app_payment_button_box_id}"></div>
     </div>
 
+    <div class="mo-sticky-buybar" id="moStickyBuybar" aria-hidden="true">
+        <div class="mo-sticky-buybar__info">
+            <p class="mo-sticky-buybar__name">{$name}</p>
+            <p class="mo-sticky-buybar__price"><span id="moStickyPriceText">{$product_price}</span></p>
+        </div>
+        <button type="button" class="mo-sticky-buybar__button" id="moStickyAddToBag">Add to Bag</button>
+    </div>
+
+    <script>
+        (function () {
+            var stickyBar = document.getElementById('moStickyBuybar');
+            var stickyPrice = document.getElementById('moStickyPriceText');
+            var stickyButton = document.getElementById('moStickyAddToBag');
+            if (!stickyBar || !stickyButton) return;
+
+            var mobileQuery = window.matchMedia('(max-width: 1024px)');
+            var showAfter = 260;
+
+            var setStickyPrice = function () {
+                var priceSource = document.getElementById('span_product_price_text');
+                if (!priceSource) {
+                    priceSource = document.querySelector('.prdBoard.info tr[rel="판매가"] td');
+                }
+                if (priceSource && stickyPrice) {
+                    stickyPrice.textContent = priceSource.textContent.trim();
+                }
+            };
+
+            var toggleSticky = function () {
+                if (!mobileQuery.matches) {
+                    stickyBar.classList.remove('is-visible');
+                    stickyBar.setAttribute('aria-hidden', 'true');
+                    return;
+                }
+
+                if (window.scrollY > showAfter) {
+                    stickyBar.classList.add('is-visible');
+                    stickyBar.setAttribute('aria-hidden', 'false');
+                } else {
+                    stickyBar.classList.remove('is-visible');
+                    stickyBar.setAttribute('aria-hidden', 'true');
+                }
+            };
+
+            stickyButton.addEventListener('click', function () {
+                var cartButton = document.querySelector('.productAction .button.actionCart');
+                if (cartButton) {
+                    cartButton.click();
+                }
+            });
+
+            setStickyPrice();
+            toggleSticky();
+            window.addEventListener('scroll', toggleSticky);
+            window.addEventListener('resize', toggleSticky);
+        })();
+    </script>
+
     <!--@css(/artfinger/css/tab_detail.css)-->
     <!--@import(/artfinger/detail_product_accordian.html)-->
 

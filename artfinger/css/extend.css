@@ -2176,3 +2176,84 @@ li.displaynone,
 .prdDescription .total_area {
     touch-action: manipulation;
 }
+
+/* Mobile sticky add-to-bag bar */
+.mo-sticky-buybar {
+    display: none;
+}
+
+@media screen and (max-width: 1024px) {
+    .mo-sticky-buybar {
+        display: block;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 120;
+        background: #fff;
+        border-top: 1px solid #dfdfdf;
+        padding: 8px 10px 10px;
+        transform: translateY(110%);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform .25s ease, opacity .25s ease;
+    }
+
+    .mo-sticky-buybar.is-visible {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .mo-sticky-buybar__info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        margin-bottom: 6px;
+    }
+
+    .mo-sticky-buybar__name,
+    .mo-sticky-buybar__price {
+        margin: 0;
+        font-family: inherit;
+        font-size: 13px;
+        line-height: 1.2;
+        font-weight: 300;
+        color: #101010;
+    }
+
+    .mo-sticky-buybar__name {
+        flex: 1;
+        font-size: 13px;
+        letter-spacing: -0.02em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .mo-sticky-buybar__price {
+        flex-shrink: 0;
+        font-size: 13px;
+        letter-spacing: -0.01em;
+        white-space: nowrap;
+    }
+
+    .mo-sticky-buybar__button {
+        width: 100%;
+        height: 38px;
+        border: none;
+        border-radius: 0;
+        background: #eaeaea;
+        color: #333;
+        font-family: inherit;
+        font-size: 13px;
+        font-weight: 300;
+        letter-spacing: 0;
+        cursor: pointer;
+    }
+
+    .prdDescription {
+        padding-bottom: 90px;
+    }
+}
