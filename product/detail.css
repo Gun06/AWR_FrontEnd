@@ -4322,6 +4322,18 @@ textarea {
     vertical-align: top;
 }
 
+@media all and (min-width:901px) {
+    .detail_area_ .prdDescription {
+        width: 450px;
+        min-width: 450px;
+        max-width: 450px;
+    }
+
+    .detail_area_ .prdThumbnail {
+        width: calc(100% - 450px);
+    }
+}
+
 .detail_area_ .prdThumbnail.float {
     display: block;
     border: 1px solid rgb(255, 255, 0);
@@ -4388,7 +4400,7 @@ textarea {
 
 }
 
-@media all and (max-width:850px) {
+@media all and (max-width:900px) {
 
     .pc_im_swier {
         display: none;
@@ -4595,7 +4607,7 @@ textarea {
 
 
 /* option row stability overrides */
-@media all and (max-width:850px) {
+@media all and (max-width:900px) {
     .xans-product-detail .prdDescription #totalProducts>table {
         width: 100% !important;
         table-layout: fixed !important;
@@ -4605,14 +4617,15 @@ textarea {
         position: relative !important;
         min-width: 0 !important;
         padding-right: clamp(50px, 14vw, 70px) !important;
+        overflow: hidden !important;
     }
 
     .xans-product-detail .prdDescription #totalProducts tbody.option_products .option_product td:first-child p.product {
         display: flex !important;
         align-items: center !important;
         flex-wrap: nowrap !important;
-        width: clamp(100px, 52vw, 200px) !important;
-        max-width: min(100%, 200px) !important;
+        width: 100% !important;
+        max-width: 100% !important;
         min-width: 0 !important;
         overflow: hidden !important;
         white-space: nowrap !important;
@@ -4661,7 +4674,7 @@ textarea {
     }
 }
 
-@media all and (min-width:851px) {
+@media all and (min-width:901px) {
     .xans-product-detail .prdDescription #totalProducts>table {
         width: 100% !important;
         table-layout: fixed !important;
@@ -4671,14 +4684,15 @@ textarea {
         position: relative !important;
         min-width: 0 !important;
         padding-right: clamp(62px, 8vw, 76px) !important;
+        overflow: hidden !important;
     }
 
     .xans-product-detail .prdDescription #totalProducts tbody.option_products .option_product td:first-child p.product {
         display: flex !important;
         align-items: center !important;
         flex-wrap: nowrap !important;
-        width: clamp(100px, 26vw, 220px) !important;
-        max-width: min(100%, 220px) !important;
+        width: 100% !important;
+        max-width: 100% !important;
         min-width: 0 !important;
         overflow: hidden !important;
         white-space: nowrap !important;
@@ -4724,6 +4738,18 @@ textarea {
         min-width: 14px !important;
         max-width: 14px !important;
         padding: 0 !important;
+    }
+}
+
+@media all and (max-width:900px) {
+    #fixedActionButton.productAction {
+        display: block !important;
+    }
+}
+
+@media all and (min-width:901px) {
+    #fixedActionButton.productAction {
+        display: none !important;
     }
 }
 

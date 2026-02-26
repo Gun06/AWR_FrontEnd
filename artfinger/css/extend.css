@@ -2186,7 +2186,7 @@ li.displaynone,
     display: none;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 900px) {
     .mo-sticky-buybar {
         display: block;
         position: fixed;
@@ -2259,5 +2259,20 @@ li.displaynone,
 
     .prdDescription {
         padding-bottom: 90px;
+    }
+}
+
+@media screen and (min-width: 901px) {
+    .mo-sticky-buybar,
+    #fixedActionButton.productAction,
+    .xans-product-detail .prdDescription .productAction.gFixed {
+        display: none !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        transform: translateY(110%) !important;
+    }
+
+    .prdDescription {
+        padding-bottom: 0 !important;
     }
 }
