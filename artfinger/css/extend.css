@@ -1817,13 +1817,12 @@ li.displaynone,
     }
 }
 
-/* 테블릿·PC(851px 이상): 상품 상세 오른쪽 정보 영역 스크롤 시 고정(sticky) */
+/* 상품 상세 오른쪽 정보 영역 sticky 사용 중단 */
 @media all and (min-width: 851px) {
     .xans-product-detail .prdDescription {
-        position: sticky !important;
-        top: 100px !important;
-        /* fixed 헤더 아래에 오도록 */
-        align-self: flex-start !important;
+        position: relative !important;
+        top: auto !important;
+        align-self: auto !important;
     }
 }
 
@@ -2187,6 +2186,23 @@ li.displaynone,
 }
 
 @media screen and (max-width: 900px) {
+    .swiper-container-detail2 {
+        overscroll-behavior-y: auto;
+    }
+
+    .swiper-button-prev-detail2,
+    .swiper-button-next-detail2 {
+        width: 14%;
+    }
+
+    .swiper-button-prev-detail2 {
+        left: 0;
+    }
+
+    .swiper-button-next-detail2 {
+        right: 0;
+    }
+
     .mo-sticky-buybar {
         display: block;
         position: fixed;
@@ -2259,20 +2275,5 @@ li.displaynone,
 
     .prdDescription {
         padding-bottom: 90px;
-    }
-}
-
-@media screen and (min-width: 901px) {
-    .mo-sticky-buybar,
-    #fixedActionButton.productAction,
-    .xans-product-detail .prdDescription .productAction.gFixed {
-        display: none !important;
-        opacity: 0 !important;
-        pointer-events: none !important;
-        transform: translateY(110%) !important;
-    }
-
-    .prdDescription {
-        padding-bottom: 0 !important;
     }
 }
