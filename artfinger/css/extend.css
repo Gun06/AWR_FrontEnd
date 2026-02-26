@@ -1582,6 +1582,11 @@ body.wishlist-enabled .js-hamburg-wishlist {
     display: inline-block !important;
 }
 
+/* 헤더/사이드와 동일 기준으로 상세 위시리스트 버튼 제어 */
+body:not(.wishlist-enabled) .prdDescription .productAction .actionWish {
+    display: none !important;
+}
+
 /* displaynone 클래스로 숨긴 경우 */
 .displaynone,
 li.displaynone,
