@@ -4322,7 +4322,7 @@ textarea {
     vertical-align: top;
 }
 
-@media all and (min-width:901px) {
+@media all and (min-width:1101px) {
     .detail_area_ .prdDescription {
         width: 450px;
         min-width: 450px;
@@ -4367,7 +4367,7 @@ textarea {
     display: none;
 }
 
-@media all and (min-width:851px) {
+@media all and (min-width:1101px) {
 
     .xans-product-detail .prdDescription #totalProducts tbody.option_products .option_product td:first-child p.product {
         display: inline-flex;
@@ -4400,7 +4400,7 @@ textarea {
 
 }
 
-@media all and (max-width:900px) {
+@media all and (max-width:1100px) {
 
     .pc_im_swier {
         display: none;
@@ -4607,7 +4607,7 @@ textarea {
 
 
 /* option row stability overrides */
-@media all and (max-width:900px) {
+@media all and (max-width:1100px) {
     .xans-product-detail .prdDescription #totalProducts>table {
         width: 100% !important;
         table-layout: fixed !important;
@@ -4674,7 +4674,7 @@ textarea {
     }
 }
 
-@media all and (min-width:901px) {
+@media all and (min-width:1101px) {
     .xans-product-detail .prdDescription #totalProducts>table {
         width: 100% !important;
         table-layout: fixed !important;
@@ -4738,18 +4738,6 @@ textarea {
         min-width: 14px !important;
         max-width: 14px !important;
         padding: 0 !important;
-    }
-}
-
-@media all and (max-width:900px) {
-    #fixedActionButton.productAction {
-        display: block !important;
-    }
-}
-
-@media all and (min-width:901px) {
-    #fixedActionButton.productAction {
-        display: none !important;
     }
 }
 
