@@ -89,6 +89,53 @@ $(function () {
         },
     });
 
+    // 상세 이미지 페이지 번호를 실제 이미지 우측 끝에 맞춰 자동 정렬
+    function bindDetailPaginationToImage(swiperInstance) {
+        if (!swiperInstance || !swiperInstance.el) return;
+
+        var paginationEl = swiperInstance.pagination && swiperInstance.pagination.el
+            ? swiperInstance.pagination.el
+            : swiperInstance.el.querySelector('.swiper-pagination-detail, .swiper-pagination-detail2');
+        if (!paginationEl) return;
+
+        var updatePaginationPosition = function () {
+            var activeSlide = swiperInstance.el.querySelector('.swiper-slide-active') || swiperInstance.el.querySelector('.swiper-slide');
+            if (!activeSlide) return;
+
+            var imageEl = activeSlide.querySelector('img');
+            if (!imageEl) return;
+
+            var containerRect = swiperInstance.el.getBoundingClientRect();
+            var imageRect = imageEl.getBoundingClientRect();
+            if (!imageRect.width) return;
+
+            var gapFromContainerRight = containerRect.right - imageRect.right;
+            var rightPx = Math.max(20, Math.round(gapFromContainerRight + 20));
+
+            paginationEl.style.right = rightPx + 'px';
+            paginationEl.style.left = 'auto';
+        };
+
+        swiperInstance.on('slideChangeTransitionEnd', updatePaginationPosition);
+        swiperInstance.on('resize', updatePaginationPosition);
+        swiperInstance.on('imagesReady', updatePaginationPosition);
+
+        var images = swiperInstance.el.querySelectorAll('img');
+        for (var i = 0; i < images.length; i++) {
+            if (!images[i].complete) {
+                images[i].addEventListener('load', updatePaginationPosition);
+            }
+        }
+
+        updatePaginationPosition();
+        setTimeout(updatePaginationPosition, 80);
+        setTimeout(updatePaginationPosition, 250);
+        window.addEventListener('resize', updatePaginationPosition);
+    }
+
+    bindDetailPaginationToImage(galleryTop);
+    bindDetailPaginationToImage(galleryTop2);
+
     var swiper = new Swiper('.swiper-container2', {
         slidesPerView: 3,
         spaceBetween: 0,
