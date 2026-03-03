@@ -1,5 +1,5 @@
 /*user style mc24cafe appl page_*/
-/* Stockist, About 페이지 메인 제목 h2만 font-weight 200 (캡처한 h2 전용) */
+/* Stockist, About 페이지 메인 제목 h2 */
 .content_info .shopinfo_ti h2.tit_page_main {
     font-weight: 300;
 }
@@ -1817,9 +1817,19 @@ li.displaynone,
     }
 }
 
-/* 상품 상세 오른쪽 정보 영역 sticky 사용 중단 */
-@media all and (min-width: 851px) {
-    .xans-product-detail .prdDescription {
+/* PC(>1100px): 상품 설명 영역 고정, 스크롤 시 상단 여백 확보 */
+@media screen and (min-width: 1101px) {
+    .xans-product-detail .prdDescription,
+    .detail_area_ .prdDescription {
+        position: sticky !important;
+        top: 96px !important;
+        align-self: flex-start !important;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .xans-product-detail .prdDescription,
+    .detail_area_ .prdDescription {
         position: relative !important;
         top: auto !important;
         align-self: auto !important;
