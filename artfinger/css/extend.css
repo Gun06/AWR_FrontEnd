@@ -96,6 +96,31 @@ body#main .swiper-container-main {
     background-color: #000;
 }
 
+/* 테블릿 PC: 메인 슬라이더 리사이즈 시 깜빡임 방지 (모바일·데스크톱 유지) */
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+    body#main .swiper-container-main {
+        aspect-ratio: 16 / 10;
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        contain: layout style;
+    }
+
+    body#main .swiper-container-main .swiper-wrapper {
+        height: 100% !important;
+    }
+
+    body#main .swiper-container-main .swiper-slide {
+        height: 100% !important;
+    }
+
+    body#main .swiper-container-main .swiper-slide img,
+    body#main .swiper-container-main .swiper-wrapper .slide-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}
 
 /* product recommend*/
 .swiper-container-recommend {
