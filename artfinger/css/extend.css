@@ -1606,6 +1606,19 @@ body.wishlist-enabled .js-hamburg-wishlist {
     display: inline-block !important;
 }
 
+/* 헤더/햄버거 메뉴 위시리스트: 기본은 숨김, 활성화 시 flex */
+#header .header_wrap .account_area > ul li.js-header-wishlist,
+#layout #header .header_wrap .account_area > ul li.js-header-wishlist,
+#header .header_wrap .hamber_momenu li.js-hamburg-wishlist {
+    display: none !important;
+}
+
+body.wishlist-enabled #header .header_wrap .account_area > ul li.js-header-wishlist,
+body.wishlist-enabled #layout #header .header_wrap .account_area > ul li.js-header-wishlist,
+body.wishlist-enabled #header .header_wrap .hamber_momenu li.js-hamburg-wishlist {
+    display: flex !important;
+}
+
 /* 헤더/사이드와 동일 기준으로 상세 위시리스트 버튼 제어 */
 body:not(.wishlist-enabled) .prdDescription .productAction .actionWish {
     display: none !important;
