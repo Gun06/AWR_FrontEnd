@@ -7,6 +7,10 @@
 
 <div class="mypage_wrap bg_gray">
     <div class="mypage_cont">
+        <div class="account_page_title">
+            <h2>Account</h2>
+            <hr class="account_divider">
+        </div>
         <div module="myshop_asyncbenefit">
             <!--@css(/css/module/myshop/benefit.css)-->
             <div class="typeMember gMessage">
@@ -97,69 +101,53 @@
 
 
 
-        <!--@css(/css/module/myshop/orderState.css)-->
-        <div module="myshop_orderstate">
-
-            <div class="inner">
-                <strong class="title">내 주문 현황 <span class="duration">최근 3개월 기준</span></strong>
-                <div class="orderState">
-                    <ul class="order">
-                        <li>
-                            <a href="{$shppiedBeforeUrl}">
-
-                                <strong class="label">입금전</strong> {$shppiedBeforeCount}
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{$shppiedStandbyUrl}">
-
-                                <strong class="label">배송준비중</strong> {$shppiedStandbyCount}
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{$shppiedBeginUrl}">
-
-                                <strong class="label">배송중</strong> {$shppiedBeginCount}
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{$shppiedComplateUrl}">
-
-                                <strong class="label">배송완료</strong> {$shppiedComplateCount}
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class="cs">
-                        <li class="cancel">
-                            <a href="{$orderCancelUrl}">
-                                <strong class="label">취소</strong>{$orderCancelCount}
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{$orderExchangeUrl}">
-                                <strong class="label">교환</strong>{$orderExchangeCount}
-                            </a>
-                        </li>
-                        <li class="return">
-                            <a href="{$orderReturnUrl}">
-                                <strong class="label">반품</strong>{$orderReturnCount}
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+        <div module="myshop_orderstate" class="order_summary_wrap">
+            <a href="/myshop/order/list.html" class="order_summary_link">
+                <span class="summary_label">Order</span>
+                <span class="summary_counts">(<span class="os_order_total">0</span>) / <span class="os_cs_total">0</span></span>
+            </a>
+            <span class="os_cnt os_before" style="display:none">{$shppiedBeforeCount}</span>
+            <span class="os_cnt os_standby" style="display:none">{$shppiedStandbyCount}</span>
+            <span class="os_cnt os_begin" style="display:none">{$shppiedBeginCount}</span>
+            <span class="os_cnt os_complete" style="display:none">{$shppiedComplateCount}</span>
+            <span class="os_cnt os_cancel" style="display:none">{$orderCancelCount}</span>
+            <span class="os_cnt os_exchange" style="display:none">{$orderExchangeCount}</span>
+            <span class="os_cnt os_return" style="display:none">{$orderReturnCount}</span>
+            <script>
+                (function () {
+                    var orderTotal = ['.os_before', '.os_standby', '.os_begin', '.os_complete'].reduce(function (s, c) {
+                        var el = document.querySelector(c); return s + (el ? parseInt(el.textContent) || 0 : 0);
+                    }, 0);
+                    var csTotal = ['.os_cancel', '.os_exchange', '.os_return'].reduce(function (s, c) {
+                        var el = document.querySelector(c); return s + (el ? parseInt(el.textContent) || 0 : 0);
+                    }, 0);
+                    document.querySelector('.os_order_total').textContent = orderTotal;
+                    document.querySelector('.os_cs_total').textContent = csTotal;
+                })();
+            </script>
         </div>
 
+        <div module="myshop_asyncbankbook" class="bankbook_summary">
+            <a href="/myshop/coupon/coupon.html" class="order_summary_link order_summary_wrap">
+                <span class="summary_label">Coupon</span>
+                <span class="summary_counts">(<span>{$coupon_cnt}</span>)</span>
+            </a>
+            <a href="/myshop/mileage/historyList.html" class="order_summary_link order_summary_wrap coupon_summary_wrap">
+                <span class="summary_label">Point</span>
+                <span class="summary_counts">{$total_mileage}</span>
+            </a>
+        </div>
+        <hr class="account_divider">
 
         <div id="myshopMain" module="myshop_main">
             <!--@css(/css/module/myshop/main.css)-->
             <ul>
                 <li class="shopMain order">
-                    <h3><a href="/myshop/order/list.html"><strong>Order history</strong><span>Order history</span></a></h3>
+                    <h3><a href="/myshop/order/list.html"><strong>Order History</strong><span>Order History</span></a></h3>
                     <p><a href="/myshop/order/list.html">고객님께서 주문하신 상품의<br /> 주문내역을 확인하실 수 있습니다.</a></p>
                 </li>
                 <li class="shopMain profile">
-                    <h3><a href="/member/modify.html"><strong>Edit account</strong><span>Edit account</span></a></h3>
+                    <h3><a href="/member/modify.html"><strong>Edit Account</strong><span>Edit Account</span></a></h3>
                     <p><a href="/member/modify.html">회원이신 고객님의 개인정보를<br /> 관리하는 공간입니다.</a></p>
                 </li>
                 <li class="shopMain wishlist">
@@ -194,7 +182,7 @@
                     <p><a href="/myshop/coupon/coupon.html">고객님이 보유하고 계신<br /> 쿠폰내역을 보여드립니다.</a></p>
                 </li>
                 <li module="Myshop_InquiryDash" class="shopMain inquiry">
-                    <h3><a href="/board/inquiry/list.html"><strong>Inquiry</strong><span>Bulk order inquiry</span></a></h3>
+                    <h3><a href="/board/inquiry/list.html"><strong>Inquiry</strong><span>Bulk Order Inquiry</span></a></h3>
                     <p><a href="/board/inquiry/list.html">요청한 대량구매문의 내역을<br /> 확인하고 관리하실 수 있습니다.</a></p>
                 </li>
                 <li class="shopMain regularDelivery {$regular_delivery_display|display}">
@@ -204,8 +192,8 @@
                 </li>
             </ul>
         </div>
-        <div class="log_but" module="Layout_statelogon"><a href="{$action_logout}" class="btn_wht_a btn_sizeX">로그아웃
-                하기</a></div>
+        <div class="log_but" module="Layout_statelogon"><a href="{$action_logout}" class="btn_wht_a btn_sizeX">Logout</a></div>
+        <hr class="account_divider account_divider_bottom">
 
     </div>
 

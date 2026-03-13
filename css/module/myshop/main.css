@@ -4,8 +4,9 @@
 }
 
 #myshopMain ul {
-    border: 1px solid #dfdfdf;
-    padding: 30px 0 0 20px;
+    border: none;
+    padding: 0;
+    list-style: none;
 }
 
 #myshopMain ul:after {
@@ -15,60 +16,107 @@
 }
 
 #myshopMain .shopMain {
-    vertical-align: top;
-    display: inline-block;
-    width: 49%;
-    text-align: left;
-    margin: 0 0 30px 0px;
-    padding: 0px 0px;
+    display: block;
+    width: 100%;
+    margin: 0 0 8px 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 #myshopMain .shopMain h3 {
     position: relative;
     font-size: 13px;
-    color: #333;
-    font-weight: normal;
+    color: #000;
+    font-weight: 300;
+    margin: 0;
 }
 
 #myshopMain .shopMain h3 strong {
     display: none;
-    font-size: 13px;
-    font-weight: normal;
 }
 
 #myshopMain .shopMain h3 span {
-    padding: 6px 0 0;
     font-size: 13px;
-    font-weight: normal;
 }
 
 #myshopMain .shopMain h3 a {
     display: block;
-    padding: 0 0 10px;
+    background-color: #fff;
+    color: #000;
+    font-size: 13px;
+    font-weight: 300;
+    text-align: center;
+    border: 1px solid #dfdfdf;
+    line-height: 38px;
+    padding: 0;
+    text-decoration: none;
+    transition: all .4s;
 }
 
 #myshopMain .shopMain h3 a:hover {
+    background-color: #f5f5f5;
     text-decoration: none;
 }
 
 #myshopMain .shopMain p {
-    font-size: 13px;
+    display: none;
 }
 
-#myshopMain .shopMain p a {
+.account_page_title h2 {
     font-size: 13px;
-    line-height: 18px;
-    color: #8f8f8f;
+    font-weight: 300;
+    color: #000;
+    padding: 6px 0;
+    margin: 0;
+}
+
+.account_divider {
+    border: none;
+    border-top: 1px solid #dfdfdf;
+    margin: 6px 0;
+}
+
+.account_divider_bottom {
+    margin: 6px 0 0;
+}
+
+.order_summary_wrap {
+    padding: 6px 0;
+}
+
+.coupon_summary_wrap {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.bankbook_summary {
+    display: block;
+}
+
+.order_summary_link {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    font-weight: 300;
+    color: #000;
+    text-decoration: none;
+}
+
+.order_summary_link:hover {
+    text-decoration: none;
+    color: #000;
 }
 
 .log_but {
-    margin-top: 10px;
+    margin-top: 6px;
 }
 
 .log_but>a.btn_wht_a {
     font-size: 13px;
-    font-weight: normal;
+    font-weight: 300;
+    background: #e0e0e0;
+    border-color: #dfdfdf;
+    color: #000;
 }
 
 /* 아이콘 */

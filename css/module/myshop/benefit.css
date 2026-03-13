@@ -1,9 +1,24 @@
 .xans-myshop-asyncbenefit {
-    margin: 0 0 10px;
+    margin: 0;
     color: #353535;
 }
 
-.xans-myshop-asyncbenefit .description {}
+.xans-myshop-asyncbenefit .typeMember .information {
+    padding: 0;
+}
+
+.xans-myshop-asyncbenefit .description {
+    font-size: 13px;
+    font-weight: 300;
+    color: #000;
+    padding: 6px 0;
+}
+
+.xans-myshop-asyncbenefit .description span,
+.xans-myshop-asyncbenefit .description strong {
+    font-size: 13px;
+    font-weight: 300;
+}
 
 .xans-myshop-asyncbenefit .invite>strong {
     display: block;
