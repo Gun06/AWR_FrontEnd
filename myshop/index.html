@@ -143,12 +143,12 @@
             <!--@css(/css/module/myshop/main.css)-->
             <ul>
                 <li class="shopMain order">
-                    <h3><a href="/myshop/order/list.html"><strong>Order History</strong><span>Order History</span></a></h3>
-                    <p><a href="/myshop/order/list.html">고객님께서 주문하신 상품의<br /> 주문내역을 확인하실 수 있습니다.</a></p>
+                    <h3><a href="#none" data-acc="order" onclick="toggleAcc('order'); return false;"><strong>Order History</strong><span>Order History</span></a></h3>
+                    <p></p>
                 </li>
                 <li class="shopMain profile">
-                    <h3><a href="/member/modify.html"><strong>Edit Account</strong><span>Edit Account</span></a></h3>
-                    <p><a href="/member/modify.html">회원이신 고객님의 개인정보를<br /> 관리하는 공간입니다.</a></p>
+                    <h3><a href="#none" data-acc="edit" onclick="toggleAcc('edit'); return false;"><strong>Edit Account</strong><span>Edit Account</span></a></h3>
+                    <p></p>
                 </li>
                 <li class="shopMain wishlist">
                     <h3><a href="/myshop/wish_list.html"><strong>Wishlist</strong><span>Wishlist</span></a></h3>
@@ -159,11 +159,8 @@
                     <p><a href="{$myLike_href}">'좋아요'를 선택한 상품과<br /> 상품분류 목록을 보여드립니다.</a></p>
                 </li>
                 <li class="shopMain mileage">
-                    <h3 class="txtTitle16B"><a
-                            href="/myshop/mileage/historyList.html"><strong>Mileage</strong><span>Mileage</span></a>
-                    </h3>
-                    <p class="txtSub11"><a href="/myshop/mileage/historyList.html">Mileage은 상품 구매 시<br /> 사용하실 수
-                            있습니다.</a></p>
+                    <h3 class="txtTitle16B"><a href="#none" data-acc="mileage" onclick="toggleAcc('mileage'); return false;"><strong>Mileage</strong><span>Mileage</span></a></h3>
+                    <p></p>
                 </li>
                 <li class="shopMain deposits {$deposit_display|display}">
                     <h3 class="txtTitle16B"><a
@@ -178,8 +175,8 @@
                     </p>
                 </li>
                 <li class="shopMain coupon {$coupon_display|display}">
-                    <h3><a href="/myshop/coupon/coupon.html"><strong>Coupon</strong><span>Coupon</span></a></h3>
-                    <p><a href="/myshop/coupon/coupon.html">고객님이 보유하고 계신<br /> 쿠폰내역을 보여드립니다.</a></p>
+                    <h3><a href="#none" data-acc="coupon" onclick="toggleAcc('coupon'); return false;"><strong>Coupon</strong><span>Coupon</span></a></h3>
+                    <p></p>
                 </li>
                 <li module="Myshop_InquiryDash" class="shopMain inquiry">
                     <h3><a href="/board/inquiry/list.html"><strong>Inquiry</strong><span>Bulk Order Inquiry</span></a></h3>
@@ -193,7 +190,305 @@
             </ul>
         </div>
         <div class="log_but" module="Layout_statelogon"><a href="{$action_logout}" class="btn_wht_a btn_sizeX">Logout</a></div>
-        <hr class="account_divider account_divider_bottom">
+        <!-- ===== Order History ===== -->
+        <div id="acc-order" class="acc-section" style="display:none">
+            <div class="acc-section-header">
+                <span class="acc-section-title">Order History</span>
+                <hr class="account_divider">
+            </div>
+            <!--@css(/css/module/myshop/orderHistoryHead.css)-->
+            <!--@css(/css/module/myshop/orderHistoryListItem.css)-->
+            <!--@js(/js/module/myshop/orderHistoryHead.js)-->
+            <div module="Myshop_OrderHistoryTab" class="ec-base-tab gBlank7">
+                <ul>
+                    <li class="{$tab_class}"><a href="/myshop/order/list.html"><span>주문내역 조회<span class="number">({$total_orders}건)</span></span></a></li>
+                    <li class="{$tab_class_cs}"><a href="/myshop/order/list.html?mode=cs"><span>취소/교환/반품 내역<span class="number">({$total_orders_cs}건)</span></span></a></li>
+                </ul>
+            </div>
+            <div module="Myshop_OrderHistoryHead">
+                <fieldset>
+                    <legend>검색기간설정</legend>
+                    <div class="stateSelect {$status_bar_display|display}">
+                        <span class="state">상태</span>
+                        {$form.order_status}
+                    </div>
+                    <span class="term">기간</span>
+                    <div class="ec-base-button gColumn">
+                        <a href="#none" class="btnNormal{$now_style}" days="00">오늘</a>
+                        <a href="#none" class="btnNormal{$month_style}" days="30">1개월</a>
+                        <a href="#none" class="btnNormal{$three_style}" days="90">3개월</a>
+                        <a href="#none" class="btnNormal{$six_style}" days="180">6개월</a>
+                        <a href="#none" class="btnBasic eDataSet{$search_style}">기간설정</a>
+                    </div>
+                    <div id="dataSearch">
+                        {$form.start_date} ~ {$form.end_date} {$form.submit_date}
+                    </div>
+                </fieldset>
+                <p class="ec-base-help {$cs_request_guide_display|display}">취소/교환/반품 신청은 주문완료일 기준 {$cs_request_period_day}일까지 가능합니다.</p>
+            </div>
+            <div module="Myshop_OrderHistoryListitem">
+                <!--
+                $login_url = /member/login.html
+            -->
+                <div class="orderList {$list_display|display}">
+                    <div class="order">
+                        <h3 class="{$display_column|display}">
+                            <span class="date" title="주문일자">{$order_date}</span>
+                            <span class="number" title="주문번호"><a href="detail.html{$param_detail}">({$order_id})</a></span>
+                        </h3>
+                        <div class="ec-base-prdInfo">
+                            <div class="prdBox">
+                                <div class="thumbnail"><a href="/product/detail.html{$param}"><img src="{$product_image}" onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';" width="71" alt="" /></a></div>
+                                <div class="description">
+                                    <strong class="prdName" title="상품명">{$product_name_link}</strong>
+                                    <ul class="info">
+                                        <li>
+                                            <span class="price" title="판매가">{$product_price_front_head}<strong>{$product_price_front}</strong>{$product_price_front_tail}<span class="refer {$product_price_ref_display|display}">{$product_price_back_head}{$product_price_back}{$product_price_back_tail}</span></span>
+                                            <span class="ec-base-qty" title="수량"><strong>{$quantity}</strong>개</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <p class="option {$option_str_display|display}">{$option_str}</p>
+                            <div class="prdFoot" title="주문처리상태">
+                                <div class="gLeft">
+                                    {$status}
+                                    <span class="addition {$detail_info_display|display}"><strong class="cancel"><a href="order_detail_cs.html{$params}" target="_blank">[상세정보]</a></strong></span>
+                                </div>
+                                <div class="gRight">
+                                    <span class="{$invoice_no_display|display}"><a href="#none" class="line btnNormal mini" onclick="{$shipping_trace_popup}">배송조회</a></span>
+                                    <a href="/board/product/write.html{$param_postscript}" class="btnNormal mini {$postscript_display|display}">구매후기</a>
+                                    <a href="#none" class="btnNormal mini {$withdraw_cancel_display|display}" onclick="{$action_withdraw_cancel}">취소철회</a>
+                                    <a href="#none" class="btnNormal mini {$withdraw_exchange_display|display}" onclick="{$action_withdraw_exchange}">교환철회</a>
+                                    <a href="#none" class="btnNormal mini {$withdraw_return_display|display}" onclick="{$action_withdraw_return}">반품철회</a>
+                                </div>
+                            </div>
+                            <div class="request {$cs_button_display_column|display}">
+                                <a href="#none" class="{$direct_cancel_display|display} btnNormal" onclick="{$action_direct_cancel}">주문취소</a>
+                                <a href="cancel.html{$param_apply}" class="{$apply_cancel_display|display} btnNormal">취소신청</a>
+                                <a href="exchange.html{$param_apply}" class="{$apply_exchange_display|display} btnNormal">교환신청</a>
+                                <a href="return.html{$param_apply}" class="{$apply_return_display|display} btnNormal">반품신청</a>
+                            </div>
+                        </div>
+                        <a href="detail.html{$param_detail}" class="btnDetail {$display_column|display}">상세보기</a>
+                    </div>
+                </div>
+                <p class="empty {$empty_display|display}">주문 내역이 없습니다.</p>
+            </div>
+        </div>
+
+        <!-- ===== Edit Account ===== -->
+        <div id="acc-edit" class="acc-section" style="display:none">
+            <div class="acc-section-header">
+                <span class="acc-section-title">Edit Account</span>
+                <hr class="account_divider">
+            </div>
+            <!--@css(/css/module/member/edit.css)-->
+            <div module="member_edit">
+                <!--
+                $login_page = /member/login.html
+                $isRuleBasedAddrForm = T
+                -->
+                <div class="ec-base-table ec-base-table-custom typeWrite gClearBorderTop">
+                    <table border="1">
+                        <caption>회원 기본정보</caption>
+                        <colgroup>
+                            <col style="width:100px;">
+                            <col style="width:auto;">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">아이디</th>
+                                <td>{$form.member_id}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">{$display_passwd_title}</th>
+                                <td>
+                                    <span class="eTip">{$form.passwd}</span>
+                                </td>
+                            </tr>
+                            <tr class="{$display_is_none_certification|display}">
+                                <th scope="row">비밀번호 확인</th>
+                                <td>{$form.user_passwd_confirm}</td>
+                            </tr>
+                            <tr style="display:{$display_name}">
+                                <th scope="row">이름</th>
+                                <td>{$form.name}</td>
+                            </tr>
+                            <tr class="{$display_addr|display}">
+                                <th scope="row">주소</th>
+                                <td>{$form.address}</td>
+                            </tr>
+                            <tr class="{$display_mobile|display}">
+                                <th scope="row">휴대전화</th>
+                                <td>{$form.mobile}</td>
+                            </tr>
+                            <tr class="emailCheck">
+                                <th scope="row">이메일</th>
+                                <td>{$form.email}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="ec-base-button gColumn">
+                    <a href="#none" class="btnSubmit" onclick="{$action_func_join}">회원정보수정</a>
+                    <a href="/index.html" class="btnEm">취소</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== Mileage ===== -->
+        <div id="acc-mileage" class="acc-section" style="display:none">
+            <div class="acc-section-header">
+                <span class="acc-section-title">Mileage</span>
+                <hr class="account_divider">
+            </div>
+            <!--@css(/css/module/myshop/summary.css)-->
+            <div module="myshop_mileagePackage">
+                <div module="myshop_summary">
+                    <div class="ec-base-table gClearBorderTop">
+                        <table border="1">
+                            <caption>{$mileage_name}</caption>
+                            <colgroup>
+                                <col style="width:125px;">
+                                <col style="width:auto;">
+                            </colgroup>
+                            <tbody class="right">
+                                <tr class="first">
+                                    <th scope="row">총 {$mileage_name}</th>
+                                    <td><strong class="txtEm">{$total_mileage}</strong></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">사용가능 {$mileage_name}</th>
+                                    <td><strong class="txtEm">{$avail_mileage}</strong></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">사용된 {$mileage_name}</th>
+                                    <td>{$used_mileage}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">미가용 {$mileage_name}</th>
+                                    <td>{$unavail_mileage}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">환불예정 {$mileage_name}</th>
+                                    <td>{$refunded_mileage}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div module="myshop_historyList">
+                    <!--
+                    $login_page = /member/login.html
+                -->
+                </div>
+                <div class="navigation">
+                    <ul>
+                        <li><a href="/myshop/mileage/mileageList.html">적립내역</a></li>
+                        <li><a href="/myshop/mileage/unavailList.html">미가용 적립내역</a></li>
+                        <li><a href="/myshop/mileage/couponList.html">미가용쿠폰/회원등급 적립내역</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== Coupon ===== -->
+        <div id="acc-coupon" class="acc-section" style="display:none">
+            <div class="acc-section-header">
+                <span class="acc-section-title">Coupon</span>
+                <hr class="account_divider">
+            </div>
+            <!--@css(/css/module/myshop/couponList.css)-->
+            <!--@js(/js/module/myshop/couponList.js)-->
+            <div module="myshop_CouponSerial">
+                <!--@css(/css/module/myshop/couponSerial.css)-->
+                <div class="formBox">
+                    <h3>쿠폰인증번호 등록하기</h3>
+                    <!--
+                        $login_page_url = /member/login.html
+                    -->
+                    <p class="ec-base-field">
+                        {$form.coupon_code}
+                        <button type="button" class="btnStrong" onclick="{$action_coupon_submit}">쿠폰번호인증</button>
+                    </p>
+                    <p class="ec-base-help">10~35자 일련번호 "-" 제외<br>쇼핑몰에서 발행한 쿠폰번호만 입력해주세요.</p>
+                </div>
+            </div>
+            <div module="myshop_CouponList">
+                <!--
+                    $product_list_url = coupon_product_list.html
+                -->
+                <h3>마이쿠폰 목록(총 {$coupon_count}장)</h3>
+                <div class="couponList">
+                    <div class="ec-base-table typeList gClearBorderTop">
+                        <table border="1" class="{$display_coupon_list|display}">
+                            <caption>마이 쿠폰 목록</caption>
+                            <colgroup>
+                                <col style="width:45%;">
+                                <col style="width:20%;">
+                                <col style="width:20%;">
+                                <col style="width:15%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="coupon">쿠폰명</th>
+                                    <th scope="col" class="discount">할인</th>
+                                    <th scope="col" class="mileage">적립</th>
+                                    <th scope="col">상세</th>
+                                </tr>
+                            </thead>
+                            <tbody class="center">
+                                <tr>
+                                    <td class="coupon">{$coupon_name}</td>
+                                    <td class="discount">{$coupon_discount}</td>
+                                    <td class="mileage">{$coupon_mileage}</td>
+                                    <td class="layer"><a href="#none">상세</a></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" class="contents" title="쿠폰정보">
+                                        <ul>
+                                            <li>쿠폰번호 : {$coupon_no}</li>
+                                            <li>구매금액 : {$coupon_use_price}</li>
+                                            <li class="{$display_paymethod|display}"><span>결제수단 : </span><span class="payment">{$coupon_paymethod}</span></li>
+                                            <li>할인액(률) : {$coupon_discount}</li>
+                                            <li>적립액(률) : {$coupon_mileage}</li>
+                                            <li>사용가능 기간 : {$coupon_use_date}</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="empty {$display_no_coupon_list|display}">보유하고 계신 쿠폰 내역이 없습니다.</p>
+                </div>
+            </div>
+            <div module="myshop_CouponListPaging" class="ec-base-paginate typeList">
+                <a href="{$prev_url}" class="btnPrev">이전 페이지</a>
+                <ol>
+                    <li><a href="{$url_query}" class="{$param_class}">{$n}</a></li>
+                    <li><a href="{$url_query}" class="{$param_class}">{$n}</a></li>
+                </ol>
+                <a href="{$next_url}" class="btnNext">다음 페이지</a>
+            </div>
+        </div>
+
+        <script>
+            function toggleAcc(id) {
+                var sections = document.querySelectorAll('.acc-section');
+                var target = document.getElementById('acc-' + id);
+                var isOpen = target.style.display !== 'none';
+                sections.forEach(function (s) { s.style.display = 'none'; });
+                document.querySelectorAll('#myshopMain .shopMain h3 a').forEach(function (a) {
+                    a.classList.remove('acc-active');
+                });
+                if (!isOpen) {
+                    target.style.display = 'block';
+                    var btn = document.querySelector('[data-acc="' + id + '"]');
+                    if (btn) btn.classList.add('acc-active');
+                }
+            }
+        </script>
 
     </div>
 

@@ -72,7 +72,8 @@
 }
 
 .xans-myshop-orderhistoryhead fieldset .term {
-    margin-top: 7px;
+    margin-top: 20px;
+    display: block;
 }
 
 .xans-myshop-orderhistoryhead fieldset .term+.ec-base-button {
