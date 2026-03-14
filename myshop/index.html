@@ -315,17 +315,44 @@
                                 <th scope="row">이름</th>
                                 <td>{$form.name}</td>
                             </tr>
+                            <tr class="{$display_birthday|display}">
+                                <th scope="row">생년월일</th>
+                                <td>
+                                    <p class="gBreak7 {$display_calendar_type|display}">{$form.is_solar_calendar}</p>
+                                    {$form.birth_year} 년 {$form.birth_month} 월 {$form.birth_day} 일
+                                </td>
+                            </tr>
                             <tr class="{$display_addr|display}">
                                 <th scope="row">주소</th>
                                 <td>{$form.address}</td>
                             </tr>
+                            <tr class="{$display_phone|display}">
+                                <th scope="row">일반전화</th>
+                                <td>
+                                    <div class="multiForm phone">{$form.phone}</div>
+                                </td>
+                            </tr>
                             <tr class="{$display_mobile|display}">
                                 <th scope="row">휴대전화</th>
-                                <td>{$form.mobile}</td>
+                                <td>
+                                    {$form.mobile}
+                                    <button type="button" class="btnNormal {$display_verify_mobile|display}" id="{$btn_action_verify_mobile}" onclick="{$action_verify_mobile}">인증번호받기</button>
+                                </td>
+                            </tr>
+                            <tr class="{$display_is_sms|display}">
+                                <th scope="row">SMS 수신여부</th>
+                                <td class="middle">{$form.is_sms}</td>
                             </tr>
                             <tr class="emailCheck">
                                 <th scope="row">이메일</th>
-                                <td>{$form.email}</td>
+                                <td>
+                                    {$form.email}
+                                    <p id="{$emailMsg_id}"></p>
+                                </td>
+                            </tr>
+                            <tr class="{$display_is_news_mail|display}">
+                                <th scope="row">이메일 수신여부</th>
+                                <td class="middle">{$form.is_news_mail}</td>
                             </tr>
                         </tbody>
                     </table>
