@@ -114,9 +114,13 @@
 .log_but>a.btn_wht_a {
     font-size: 13px;
     font-weight: 300;
-    background: #e0e0e0;
+    background: #fff;
     border-color: #dfdfdf;
     color: #000;
+}
+
+.log_but>a.btn_wht_a:hover {
+    background-color: #f5f5f5;
 }
 
 .acc-section {
@@ -136,8 +140,8 @@
 }
 
 #myshopMain .shopMain h3 a.acc-active {
-    background-color: #000;
-    color: #fff;
+    background-color: #e0e0e0;
+    color: #000;
 }
 
 /* 아이콘 */
