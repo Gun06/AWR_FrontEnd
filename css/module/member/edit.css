@@ -21,10 +21,13 @@
 }
 
 .xans-member-edit .ec-base-table .ec-address .ec-address-zipcode .btnBasic,
-.xans-member-edit .ec-base-table .btnBasic {
-    height: 28px;
-    line-height: 28px;
-    border-color: #000;
+.xans-member-edit .ec-base-table .ec-address .ec-address-zipcode button {
+    height: 36px;
+    line-height: 36px;
+    padding: 0 10px;
+    border: 1px solid #dfdfdf;
+    background: #fff;
+    box-sizing: border-box;
 }
 
 .xans-member-edit {

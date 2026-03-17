@@ -202,8 +202,8 @@
             <!--@js(/js/module/myshop/orderHistoryHead.js)-->
             <div module="Myshop_OrderHistoryTab" class="ec-base-tab gBlank7">
                 <ul>
-                    <li class="{$tab_class}"><a href="/myshop/order/list.html"><span>주문내역 조회<span class="number">({$total_orders}건)</span></span></a></li>
-                    <li class="{$tab_class_cs}"><a href="/myshop/order/list.html?mode=cs"><span>취소/교환/반품 내역<span class="number">({$total_orders_cs}건)</span></span></a></li>
+                    <li class="{$tab_class}"><a href="/myshop/index.html#order"><span>주문내역 조회<span class="number">({$total_orders}건)</span></span></a></li>
+                    <li class="{$tab_class_cs}"><a href="/myshop/index.html?mode=cs#order"><span>취소/교환/반품 내역<span class="number">({$total_orders_cs}건)</span></span></a></li>
                 </ul>
             </div>
             <div module="Myshop_OrderHistoryHead">
@@ -320,7 +320,7 @@
                                 <th scope="row">Birth</th>
                                 <td>
                                     <p class="gBreak7 {$display_calendar_type|display}">{$form.is_solar_calendar}</p>
-                                    {$form.birth_year} 년 {$form.birth_month} 월 {$form.birth_day} 일
+                                    {$form.birth_year} Y {$form.birth_month} M {$form.birth_day} D
                                 </td>
                             </tr>
                             <tr class="{$display_addr|display}">
@@ -361,7 +361,7 @@
                 <div class="ec-base-button gColumn">
                     <a href="#none" class="btnSubmit" onclick="{$action_func_join}">Edit Account</a>
                     <a href="#none" class="btnSubmit" onclick="{$action_func_del}">Delete Account</a>
-                    <a href="/index.html" class="btnEm">Cancel</a>
+                    <!-- <a href="/index.html" class="btnEm">Cancel</a> -->
                 </div>
             </div>
         </div>
@@ -503,6 +503,40 @@
         </div>
 
         <script>
+            function setAccEditPlaceholders() {
+                var accEdit = document.getElementById('acc-edit');
+                if (!accEdit) return;
+                var placeholders = {
+                    'user_passwd': 'Password',
+                    'passwd': 'Password',
+                    'user_passwd_confirm': 'Re-enter Password',
+                    'name': 'Name',
+                    'postcode1': 'Zipcode',
+                    'postcode2': 'Zipcode',
+                    'addr1': 'Address',
+                    'addr2': 'Address (Detail)',
+                    'address1': 'Address',
+                    'address2': 'Address (Detail)',
+                    'hint': 'Password Hint',
+                    'hint_answer': 'Hint Answer',
+                    'email1': 'Email',
+                    'email2': 'Email domain',
+                    'email3': 'Email domain'
+                };
+                Object.keys(placeholders).forEach(function(id) {
+                    var el = accEdit.querySelector('#' + id);
+                    if (el && (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA')) {
+                        el.setAttribute('placeholder', placeholders[id]);
+                    }
+                });
+                accEdit.querySelectorAll('.ec-address-zipcode input[type="text"]').forEach(function(el) {
+                    el.setAttribute('placeholder', 'Zipcode');
+                });
+                accEdit.querySelectorAll('.ec-address-area input[type="text"]').forEach(function(el) {
+                    var ph = (el.id && el.id.indexOf('addr2') !== -1) || (el.name && el.name.indexOf('addr2') !== -1) ? 'Address (Detail)' : 'Address';
+                    el.setAttribute('placeholder', ph);
+                });
+            }
             function toggleAcc(id) {
                 var sections = document.querySelectorAll('.acc-section');
                 var target = document.getElementById('acc-' + id);
@@ -515,8 +549,16 @@
                     target.style.display = 'block';
                     var btn = document.querySelector('[data-acc="' + id + '"]');
                     if (btn) btn.classList.add('acc-active');
+                    if (id === 'edit') setAccEditPlaceholders();
                 }
             }
+            document.addEventListener('DOMContentLoaded', function() {
+                if (location.hash === '#order' || location.search.indexOf('mode=') !== -1) {
+                    toggleAcc('order');
+                } else if (location.hash === '#edit') {
+                    toggleAcc('edit');
+                }
+            });
         </script>
 
     </div>

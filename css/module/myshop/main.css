@@ -178,6 +178,18 @@
     color: #000 !important;
 }
 
+/* Edit Account - 주소검색 Search 버튼을 입력 필드와 동일한 높이·스타일로 */
+#acc-edit .ec-address-zipcode .btnBasic,
+#acc-edit .ec-address-zipcode button,
+#acc-edit [id*="postBtn"] {
+    height: 36px !important;
+    line-height: 36px !important;
+    padding: 0 10px !important;
+    border: 1px solid #dfdfdf !important;
+    background: #fff !important;
+    box-sizing: border-box !important;
+}
+
 .acc-section-title {
     display: block;
     font-family: 'Pretendard', sans-serif;
