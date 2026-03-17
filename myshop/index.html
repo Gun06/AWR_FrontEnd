@@ -16,9 +16,10 @@
             <div class="typeMember gMessage">
                 <div class="information">
                     <div class="description">
-                        <span><strong class="txtEm">{$member_name}</strong> 님은 <strong>[<span
+                        <span><strong class="txtEm">{$member_name}</strong> 님</span>
+                        <!--<span><strong class="txtEm">{$member_name}</strong> 님은 <strong>[<span
                                     class="{$displayGroupIcon|display}"><img src="{$group_icon}" alt=""
-                                        class="{$group_icon_tag_class}" /></span>{$group_name}]</strong> 회원이십니다.</span>
+                                        class="{$group_icon_tag_class}" /></span>{$group_name}]</strong> 회원이십니다.</span>-->
                         <p class="{$display_no_benefit|display} {$display_no_benefit_class}"><strong
                                 class="txtEm">{$dc_pay} {$dc_min_price}</strong> 구매시 <strong
                                 class="txtEm">{$dc_price}{$dc_type}</strong>을 {$use_dc} 받으실 수 있습니다. {$dc_max_percent}
@@ -298,42 +299,42 @@
                         </colgroup>
                         <tbody>
                             <tr>
-                                <th scope="row">아이디</th>
+                                <th scope="row">ID</th>
                                 <td>{$form.member_id}</td>
                             </tr>
                             <tr>
-                                <th scope="row">{$display_passwd_title}</th>
+                                <th scope="row">Password</th>
                                 <td>
                                     <span class="eTip">{$form.passwd}</span>
                                 </td>
                             </tr>
                             <tr class="{$display_is_none_certification|display}">
-                                <th scope="row">비밀번호 확인</th>
+                                <th scope="row">Re-Password</th>
                                 <td>{$form.user_passwd_confirm}</td>
                             </tr>
                             <tr style="display:{$display_name}">
-                                <th scope="row">이름</th>
+                                <th scope="row">Name</th>
                                 <td>{$form.name}</td>
                             </tr>
                             <tr class="{$display_birthday|display}">
-                                <th scope="row">생년월일</th>
+                                <th scope="row">Birth</th>
                                 <td>
                                     <p class="gBreak7 {$display_calendar_type|display}">{$form.is_solar_calendar}</p>
                                     {$form.birth_year} 년 {$form.birth_month} 월 {$form.birth_day} 일
                                 </td>
                             </tr>
                             <tr class="{$display_addr|display}">
-                                <th scope="row">주소</th>
+                                <th scope="row">Address</th>
                                 <td>{$form.address}</td>
                             </tr>
                             <tr class="{$display_phone|display}">
-                                <th scope="row">일반전화</th>
+                                <th scope="row">Phone</th>
                                 <td>
                                     <div class="multiForm phone">{$form.phone}</div>
                                 </td>
                             </tr>
                             <tr class="{$display_mobile|display}">
-                                <th scope="row">휴대전화</th>
+                                <th scope="row">Mobile</th>
                                 <td>
                                     {$form.mobile}
                                     <button type="button" class="btnNormal {$display_verify_mobile|display}" id="{$btn_action_verify_mobile}" onclick="{$action_verify_mobile}">인증번호받기</button>
@@ -344,7 +345,7 @@
                                 <td class="middle">{$form.is_sms}</td>
                             </tr>
                             <tr class="emailCheck">
-                                <th scope="row">이메일</th>
+                                <th scope="row">E-Mail</th>
                                 <td>
                                     {$form.email}
                                     <p id="{$emailMsg_id}"></p>
@@ -358,8 +359,9 @@
                     </table>
                 </div>
                 <div class="ec-base-button gColumn">
-                    <a href="#none" class="btnSubmit" onclick="{$action_func_join}">회원정보수정</a>
-                    <a href="/index.html" class="btnEm">취소</a>
+                    <a href="#none" class="btnSubmit" onclick="{$action_func_join}">Edit Account</a>
+                    <a href="#none" class="btnSubmit" onclick="{$action_func_del}">Delete Account</a>
+                    <a href="/index.html" class="btnEm">Cancel</a>
                 </div>
             </div>
         </div>

@@ -156,6 +156,28 @@
     margin-bottom: 14px;
 }
 
+/* Edit Account - 주소검색 버튼 → Search (기존 텍스트 숨기고 Search만 표시) */
+#acc-edit .ec-address-zipcode .btnBasic,
+#acc-edit .ec-address-zipcode button,
+#acc-edit [id*="postBtn"] {
+    font-size: 0 !important;
+    color: transparent !important;
+}
+#acc-edit .ec-address-zipcode .btnBasic *,
+#acc-edit .ec-address-zipcode button * {
+    font-size: 0 !important;
+    color: transparent !important;
+}
+#acc-edit .ec-address-zipcode .btnBasic::before,
+#acc-edit .ec-address-zipcode button::before,
+#acc-edit [id*="postBtn"]::before {
+    content: 'Search' !important;
+    font-family: 'Pretendard', sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 200 !important;
+    color: #000 !important;
+}
+
 .acc-section-title {
     display: block;
     font-family: 'Pretendard', sans-serif;
