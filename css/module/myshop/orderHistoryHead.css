@@ -38,7 +38,9 @@
 
 .xans-myshop-orderhistorytab.ec-base-tab ul li a {
     color: #c4c4c4;
+    font-family: 'Pretendard', sans-serif;
     font-size: 13px;
+    font-weight: 200;
 }
 
 .xans-myshop-orderhistorytab.ec-base-tab ul li.selected {
@@ -54,7 +56,9 @@
 .xans-myshop-orderhistoryhead fieldset {
     margin: 0 0px 0;
     padding: 0 0px;
-    font-size: 12px;
+    font-family: 'Pretendard', sans-serif;
+    font-size: 13px;
+    font-weight: 200;
 }
 
 .xans-myshop-orderhistoryhead fieldset img {
@@ -104,7 +108,9 @@
 
 .xans-myshop-orderhistoryhead .btnNormal,
 .xans-myshop-orderhistoryhead .btnBasic {
-    font-size: 12px;
+    font-family: 'Pretendard', sans-serif;
+    font-size: 13px;
+    font-weight: 200;
     letter-spacing: -1px;
     border-color: #dfdfdf;
 }

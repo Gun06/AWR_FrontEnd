@@ -7,7 +7,9 @@
     margin: 7px 0 0;
     padding: 0px;
     color: #000;
+    font-family: 'Pretendard', sans-serif;
     font-size: 13px;
+    font-weight: 200;
     line-height: 43px;
 }
 
@@ -24,6 +26,12 @@
     border-color: #dfdfdf;
 }
 
+.xans-myshop-couponlist .ec-base-table.typeList th {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 13px;
+    font-weight: 200;
+}
+
 /* 리스트 */
 .xans-myshop-couponlist .contents {
     display: none;
@@ -31,7 +39,9 @@
 
 .xans-myshop-couponlist .empty {
     margin: 30px 0 0;
-    font-size: 11px;
+    font-family: 'Pretendard', sans-serif;
+    font-size: 13px;
+    font-weight: 200;
     color: #999;
     text-align: center;
 }
@@ -79,7 +89,9 @@
     color: #757575;
     background: url("//img.echosting.cafe24.com/skin/mobile_ko_KR/myshop/ico_dot.png") 5px 10px no-repeat;
     background-size: 2px 2px;
-    font-size: 11px;
+    font-family: 'Pretendard', sans-serif;
+    font-size: 13px;
+    font-weight: 200;
 }
 
 .xans-myshop-couponlist ul li:after {
@@ -96,13 +108,15 @@
 .xans-myshop-couponlist ul li .data {
     width: 160px;
     padding: 0 0 0 3px;
-    font-weight: normal;
-    font-size: 11px;
+    font-family: 'Pretendard', sans-serif;
+    font-size: 13px;
+    font-weight: 200;
 }
 
 .xans-myshop-couponlist ul li .payment {
     width: 200px;
     padding: 0 0 0 3px;
-    font-weight: normal;
-    font-size: 11px;
+    font-family: 'Pretendard', sans-serif;
+    font-size: 13px;
+    font-weight: 200;
 }

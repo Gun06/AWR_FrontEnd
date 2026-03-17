@@ -4,7 +4,9 @@
 
 .xans-myshop-summary h3 {
     padding: 14px 0;
+    font-family: 'Pretendard', sans-serif;
     font-size: 13px;
+    font-weight: 200;
     line-height: 1.2em;
     color: #000;
     background: #fff;
@@ -15,6 +17,9 @@
 .xans-myshop-summary .ec-base-table th,
 .xans-myshop-summary .ec-base-table td {
     border-color: #dfdfdf;
+    font-family: 'Pretendard', sans-serif;
+    font-size: 13px;
+    font-weight: 200;
 }
 
 /* 관련 링크 */
@@ -40,8 +45,9 @@
     display: block;
     position: relative;
     padding: 14px;
-    font-weight: bold;
-    font-size: 12px;
+    font-family: 'Pretendard', sans-serif;
+    font-size: 13px;
+    font-weight: 200;
     line-height: 1.2em;
     color: #4a5164;
 }

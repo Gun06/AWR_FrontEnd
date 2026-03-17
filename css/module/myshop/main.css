@@ -25,9 +25,10 @@
 
 #myshopMain .shopMain h3 {
     position: relative;
+    font-family: 'Pretendard', sans-serif;
     font-size: 13px;
     color: #000;
-    font-weight: 300;
+    font-weight: 200;
     margin: 0;
 }
 
@@ -43,8 +44,9 @@
     display: block;
     background-color: #fff;
     color: #000;
+    font-family: 'Pretendard', sans-serif;
     font-size: 13px;
-    font-weight: 300;
+    font-weight: 200;
     text-align: center;
     border: 1px solid #dfdfdf;
     line-height: 38px;
@@ -63,8 +65,9 @@
 }
 
 .account_page_title h2 {
+    font-family: 'Pretendard', sans-serif;
     font-size: 13px;
-    font-weight: 300;
+    font-weight: 200;
     color: #000;
     padding: 6px 0;
     margin: 0;
@@ -96,8 +99,9 @@
 .order_summary_link {
     display: flex;
     justify-content: space-between;
+    font-family: 'Pretendard', sans-serif;
     font-size: 13px;
-    font-weight: 300;
+    font-weight: 200;
     color: #000;
     text-decoration: none;
 }
@@ -112,8 +116,9 @@
 }
 
 .log_but>a.btn_wht_a {
+    font-family: 'Pretendard', sans-serif;
     font-size: 13px;
-    font-weight: 300;
+    font-weight: 200;
     background: #fff;
     border-color: #dfdfdf;
     color: #000;
@@ -125,6 +130,26 @@
 
 .acc-section {
     padding-top: 14px;
+    font-family: 'Pretendard', sans-serif;
+    font-size: 13px;
+    font-weight: 200;
+}
+
+.acc-section button,
+.acc-section .btnNormal,
+.acc-section .btnStrong,
+.acc-section .btnBasic,
+.acc-section .btnSubmit,
+.acc-section .btnEm,
+.acc-section .ec-base-paginate,
+.acc-section .ec-base-table th,
+.acc-section .ec-base-table td,
+.acc-section input,
+.acc-section select,
+.acc-section label {
+    font-family: 'Pretendard', sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 200 !important;
 }
 
 .acc-section-header {
@@ -133,8 +158,9 @@
 
 .acc-section-title {
     display: block;
+    font-family: 'Pretendard', sans-serif;
     font-size: 13px;
-    font-weight: 300;
+    font-weight: 200;
     color: #000;
     padding: 6px 0;
 }
