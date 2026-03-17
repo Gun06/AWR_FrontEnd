@@ -199,6 +199,16 @@
     padding: 6px 0;
 }
 
+/* Point 페이지 - 폰트 색상/두께/스타일 통일 */
+#acc-mileage .xans-myshop-historylist,
+#acc-mileage .xans-myshop-historylist .item,
+#acc-mileage .xans-myshop-historylist .item h3,
+#acc-mileage .xans-myshop-historylist .empty {
+    font-family: 'Pretendard', sans-serif !important;
+    font-weight: 200 !important;
+    color: #000 !important;
+}
+
 #myshopMain .shopMain h3 a.acc-active {
     background-color: #e0e0e0;
     color: #000;
