@@ -1,13 +1,27 @@
-//기간 설정하기
-$('.xans-myshop-orderhistoryhead .eDataSet').click(function () {
+// 기간 설정하기
+$('.xans-myshop-orderhistoryhead .eDataSet, [module="Myshop_OrderHistoryHead"] .eDataSet').click(function () {
     $('#dataSearch').toggle();
     $(this).siblings().removeClass('selected');
-    OrderHistory.set_period_mode('search');
+    if (typeof OrderHistory !== 'undefined') OrderHistory.set_period_mode('search');
 });
+
+// 겹치는 남색 이미지 조회 버튼 제거 → 날짜칸과 동일 스타일의 텍스트 버튼으로 교체
+function replaceSearchImageButton(container) {
+    if (!container) return;
+    var imgBtn = container.querySelector('input[type="image"]');
+    if (!imgBtn) return;
+    var form = container.closest('form');
+    var newBtn = document.createElement('button');
+    newBtn.type = 'submit';
+    newBtn.className = 'btn-search-custom';
+    newBtn.textContent = '조회';
+    imgBtn.parentNode.replaceChild(newBtn, imgBtn);
+}
 
 // myshop/index.html 및 기타 페이지: 상태 드롭다운·기간설정 필드가 없으면 order list에서 로드
 (function runOrderHistoryHeadFix() {
     function removeDisplayNone(el) {
+        if (!el) return;
         el.classList.remove('displaynone');
         el.querySelectorAll('.displaynone').forEach(removeDisplayNone);
     }
@@ -19,8 +33,7 @@ $('.xans-myshop-orderhistoryhead .eDataSet').click(function () {
         fetch(listUrl)
             .then(function (r) { return r.text(); })
             .then(function (html) {
-                var parser = new DOMParser();
-                var doc = parser.parseFromString(html, 'text/html');
+                var doc = (new DOMParser()).parseFromString(html, 'text/html');
                 var srcHead = doc.querySelector('.xans-myshop-orderhistoryhead, [module="Myshop_OrderHistoryHead"]');
                 if (!srcHead) return;
                 if (isIndexPage && !hasModeCs) {
@@ -38,6 +51,7 @@ $('.xans-myshop-orderhistoryhead .eDataSet').click(function () {
                     if (form && isIndexPage) {
                         form.action = location.pathname + location.search;
                     }
+                    replaceSearchImageButton(dataSearch);
                 }
             })
             .catch(function () {});
@@ -52,16 +66,17 @@ $('.xans-myshop-orderhistoryhead .eDataSet').click(function () {
             if (orderAcc) {
                 if (hasModeCs) {
                     if (stateSelect) stateSelect.classList.add('displaynone');
-                    return;
-                }
-                if (stateSelect) {
-                    stateSelect.classList.remove('displaynone');
-                    removeDisplayNone(stateSelect);
+                } else {
+                    if (stateSelect) {
+                        stateSelect.classList.remove('displaynone');
+                        removeDisplayNone(stateSelect);
+                    }
                 }
             }
             var needSelect = orderAcc && !hasModeCs && stateSelect && !stateSelect.querySelector('select');
             var needDataSearch = dataSearch && !dataSearch.querySelector('input');
             if (needSelect || needDataSearch) fetchAndInject(orderHead);
+            if (dataSearch && dataSearch.querySelector('input[type="image"]')) replaceSearchImageButton(dataSearch);
         });
     }
     if (document.readyState === 'loading') {

@@ -54,8 +54,8 @@
 
 /* 검색기간설정 폼 */
 .xans-myshop-orderhistoryhead fieldset {
-    margin: 0 0px 0;
-    padding: 0 0px;
+    margin: 24px 0 0;
+    padding: 0;
     font-family: 'Pretendard', sans-serif;
     font-size: 13px;
     font-weight: 200;
@@ -70,9 +70,32 @@
     display: none;
 }
 
-.xans-myshop-orderhistoryhead fieldset #dataSearch button {
-    border: 0;
-    margin: 0 0 0 4px;
+.xans-myshop-orderhistoryhead fieldset #dataSearch button,
+.xans-myshop-orderhistoryhead fieldset #dataSearch input[type="submit"],
+.xans-myshop-orderhistoryhead fieldset #dataSearch .btn-search-custom,
+[module="Myshop_OrderHistoryHead"] fieldset #dataSearch button,
+[module="Myshop_OrderHistoryHead"] fieldset #dataSearch input[type="submit"],
+[module="Myshop_OrderHistoryHead"] fieldset #dataSearch .btn-search-custom {
+    height: 36px;
+    line-height: 36px;
+    padding: 0 14px;
+    margin: 0 0 0 6px;
+    border: 1px solid #dfdfdf;
+    background: #f0f0f0;
+    font-family: 'Pretendard', sans-serif;
+    font-size: 13px;
+    font-weight: 200;
+    color: #000;
+    box-sizing: border-box;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.xans-myshop-orderhistoryhead fieldset #dataSearch .btnEm,
+[module="Myshop_OrderHistoryHead"] fieldset #dataSearch .btnEm {
+    background: #f0f0f0 !important;
+    border: 1px solid #dfdfdf !important;
+    color: #000 !important;
 }
 
 .xans-myshop-orderhistoryhead fieldset .term {
@@ -82,28 +105,29 @@
 
 .xans-myshop-orderhistoryhead fieldset .term+.ec-base-button {
     overflow: hidden;
+    gap: 8px;
+    margin-top: 8px;
 }
 
-.xans-myshop-orderhistoryhead fieldset .term+.ec-base-button a:first-child {}
 
-.xans-myshop-orderhistoryhead fieldset .fText {
-    width: 81px;
-    height: 29px;
-    padding: 0 6px;
-    border: 1px solid #d5d5d5;
-    line-height: 29px;
+.xans-myshop-orderhistoryhead fieldset .fText,
+.xans-myshop-orderhistoryhead fieldset #dataSearch input[type="text"],
+[module="Myshop_OrderHistoryHead"] fieldset .fText,
+[module="Myshop_OrderHistoryHead"] fieldset #dataSearch input[type="text"] {
+    width: 160px;
+    min-width: 140px;
+    height: 36px;
+    padding: 0 10px;
+    border: 1px solid #dfdfdf;
+    line-height: 36px;
+    box-sizing: border-box;
+    font-family: 'Pretendard', sans-serif;
+    font-size: 13px;
+    font-weight: 200;
 }
 
 .xans-myshop-orderhistoryhead fieldset #history_end_date {
-    margin: 0 0 0 5px;
-}
-
-.xans-myshop-orderhistoryhead fieldset input[type="image"] {
-    width: 43px;
-}
-
-.xans-myshop-orderhistoryhead fieldset button {
-    margin: 0 0 0 2px;
+    margin: 0 0 0 6px;
 }
 
 .xans-myshop-orderhistoryhead .btnNormal,
@@ -123,7 +147,7 @@
 .xans-myshop-orderhistoryhead .stateSelect {
     display: block;
     position: relative;
-    margin: 0 0 20px;
+    margin: 0 0 28px;
     padding: 0 1px 0 1px;
 }
 
