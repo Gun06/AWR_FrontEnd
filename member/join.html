@@ -19,7 +19,7 @@
                 <div class="join">
 
                     <div class="join_wrap">
-                        <h3 class="boxTitle">Membership</h3>
+                        <h3 class="boxTitle">회원가입</h3>
                         <div class="ec-base-table typeWrite typeBlank">
                             <table border="1" summary="" class="typeBlank" style="margin-bottom:30px;">
                                 <caption>회원가입</caption>
@@ -122,7 +122,7 @@
                                     <ul>
                                         <li scope="row">ID <img
                                                 src="//img.echosting.cafe24.com/skin/base/common/ico_required_blue.gif"
-                                                alt="필수" /><span class="addinfo-ri">(4-16 chars, lowercase & numbers)</span></li>
+                                                alt="필수" /><span class="addinfo-ri">(영문소문자/숫자, 4~16자)</span></li>
                                         <li>{$form.member_id} <span id="{$idMsg_id}"></span> </li>
                                     </ul>
                                     <ul>
@@ -303,7 +303,7 @@
                                         <li>
                                             <span class="{$display_calendar_type|display}" style="margin:5px 0;display:block;">{$form.is_solar_calendar}</span>
                                             <div class="birth-combined-wrap">
-                                                <input type="text" id="birth-combined-join" class="fText" placeholder="2000.06.26" maxlength="10" autocomplete="off">
+                                                <input type="text" id="birth-combined-join" class="fText" placeholder="YYYY.MM.DD" maxlength="10" autocomplete="off">
                                                 <span class="birth-originals" aria-hidden="true">{$form.birth_year} {$form.birth_month} {$form.birth_day}</span>
                                             </div>
                                         </li>
