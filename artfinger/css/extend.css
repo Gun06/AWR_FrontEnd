@@ -27,9 +27,10 @@
 }
 
 .progress_line>img {
-    width: 140px;
+    width: 112px;
 }
 
+/* layout(account 등) 로딩: 홈과 동일한 헤더 로고, 최소 1.5초 표시 */
 .progress_line2 {
     position: fixed;
     top: 0;
@@ -37,7 +38,15 @@
     right: 0;
     bottom: 0;
     background: #fff;
-    z-index: 200;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress_line2>img {
+    width: 112px;
 }
 
 /* main slider*/

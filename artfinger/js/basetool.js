@@ -2,11 +2,13 @@ $(function () {
 
     $(window).ready(function () {
         $(".progress_line").delay(600).fadeOut("slow");
-        $(".progress_line2").delay(200).fadeOut("slow");
+        var layoutDelay = document.body.id === 'layout' ? 1000 : 200;
+        $(".progress_line2").delay(layoutDelay).fadeOut("slow");
     });
     $(window).resize(function () {
         $(".progress_line").delay(600).fadeOut("slow");
-        $(".progress_line2").delay(200).fadeOut("slow");
+        var layoutDelay = document.body.id === 'layout' ? 1000 : 200;
+        $(".progress_line2").delay(layoutDelay).fadeOut("slow");
     });
 
 
