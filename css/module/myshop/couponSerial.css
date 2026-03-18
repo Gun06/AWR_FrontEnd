@@ -42,9 +42,9 @@
 }
 
 .xans-myshop-couponserial .formBox button.btnStrong:hover {
-    border: 1px solid #000;
-    background: #fff;
-    color: #fff;
+    border: 1px solid #dfdfdf;
+    background: #f0f0f0;
+    color: #000;
 }
 
 .xans-myshop-couponserial .formBox .ec-base-help {
