@@ -302,9 +302,12 @@
                                                 class="{$display_required_is_birthday|display}" alt="필수" /></li>
                                         <li>
                                             <span class="{$display_calendar_type|display}" style="margin:5px 0;display:block;">{$form.is_solar_calendar}</span>
-                                            <div class="birth-combined-wrap">
-                                                <input type="text" id="birth-combined-join" class="fText" placeholder="YYYY.MM.DD" maxlength="10" autocomplete="off">
-                                                <span class="birth-originals" aria-hidden="true">{$form.birth_year} {$form.birth_month} {$form.birth_day}</span>
+                                            <div class="birth-fields-wrap">
+                                                {$form.birth_year}
+                                                <span class="birth-sep">.</span>
+                                                {$form.birth_month}
+                                                <span class="birth-sep">.</span>
+                                                {$form.birth_day}
                                             </div>
                                         </li>
                                     </ul>
@@ -565,56 +568,19 @@
 
                         <script>
                         (function() {
-                            function syncBirthCombinedJoin() {
-                                var combined = document.getElementById('birth-combined-join');
-                                var wrap = combined && combined.closest('.xans-member-join');
-                                var y = wrap && wrap.querySelector('#birth_year');
-                                var m = wrap && wrap.querySelector('#birth_month');
-                                var d = wrap && wrap.querySelector('#birth_day');
-                                if (!combined || !y || !m || !d || combined.getAttribute('data-birth-synced')) return;
-                                combined.setAttribute('data-birth-synced', '1');
-                                function toCombined() {
-                                    var vy = (y.value || '').trim();
-                                    var vm = (m.value || '').trim();
-                                    var vd = (d.value || '').trim();
-                                    if (vy && vm && vd) {
-                                        combined.value = vy + '.' + (vm.length < 2 ? '0' + vm : vm) + '.' + (vd.length < 2 ? '0' + vd : vd);
-                                    } else { combined.value = ''; }
-                                }
-                                function pad2(n) { return (n || '').replace(/^(\d)$/, '0$1'); }
-                                function formatWithDots(v) {
-                                    var digits = (v || '').replace(/\D/g, '');
-                                    if (digits.length <= 4) return digits;
-                                    if (digits.length <= 6) return digits.slice(0, 4) + '.' + digits.slice(4);
-                                    return digits.slice(0, 4) + '.' + digits.slice(4, 6) + '.' + digits.slice(6, 8);
-                                }
-                                function fromCombined() {
-                                    var v = (combined.value || '').replace(/[^0-9.]/g, '');
-                                    var formatted = formatWithDots(v);
-                                    if (formatted !== combined.value) combined.value = formatted;
-                                    var parts = formatted.split('.').filter(Boolean);
-                                    if (parts.length >= 3) {
-                                        y.value = parts[0].slice(0, 4);
-                                        m.value = pad2(parts[1].slice(-2)) || '01';
-                                        d.value = pad2(parts[2].slice(-2)) || '01';
-                                    } else if (parts.length === 1 && parts[0].length >= 8) {
-                                        var s = parts[0];
-                                        y.value = s.slice(0, 4);
-                                        m.value = pad2(s.slice(4, 6)) || '01';
-                                        d.value = pad2(s.slice(6, 8)) || '01';
-                                    }
-                                }
-                                combined.addEventListener('input', fromCombined);
-                                combined.addEventListener('blur', fromCombined);
-                                toCombined();
-                                [y, m, d].forEach(function(el) {
-                                    el.addEventListener('change', toCombined);
-                                    el.addEventListener('input', toCombined);
+                            function initBirthPlaceholders() {
+                                var wrap = document.querySelector('.xans-member-join .birth-fields-wrap');
+                                if (!wrap) return;
+                                var y = wrap.querySelector('#birth_year');
+                                var m = wrap.querySelector('#birth_month');
+                                var d = wrap.querySelector('#birth_day');
+                                [y, m, d].forEach(function(el, i) {
+                                    if (el && el.tagName === 'INPUT') el.setAttribute('placeholder', ['YYYY', 'MM', 'DD'][i]);
                                 });
                             }
                             if (document.readyState === 'loading') {
-                                document.addEventListener('DOMContentLoaded', syncBirthCombinedJoin);
-                            } else { syncBirthCombinedJoin(); }
+                                document.addEventListener('DOMContentLoaded', initBirthPlaceholders);
+                            } else { initBirthPlaceholders(); }
                         })();
                         </script>
 

@@ -248,28 +248,42 @@
     margin: 0 0 7px;
 }
 
-/* 생년월일 단일 필드 (YYYY.MM.DD) */
-#acc-edit .birth-combined-wrap,
-.xans-member-edit .birth-combined-wrap {
-    position: relative;
+/* 생년월일 3개 박스 (YYYY / MM / DD) */
+#acc-edit .birth-fields-wrap,
+.xans-member-edit .birth-fields-wrap {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2px;
 }
 
-#acc-edit .birth-originals,
-.xans-member-edit .birth-originals {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
+#acc-edit .birth-fields-wrap .birth-sep,
+.xans-member-edit .birth-fields-wrap .birth-sep {
+    color: #999;
+    font-size: 13px;
+    padding: 0 2px;
 }
 
-#acc-edit #birth-combined,
-.xans-member-edit #birth-combined {
-    width: 120px;
-    max-width: 140px;
+#acc-edit .birth-fields-wrap #birth_year,
+.xans-member-edit .birth-fields-wrap #birth_year {
+    width: 60px;
+    min-width: 55px;
+    text-align: center;
+}
+
+#acc-edit .birth-fields-wrap #birth_month,
+#acc-edit .birth-fields-wrap #birth_day,
+.xans-member-edit .birth-fields-wrap #birth_month,
+.xans-member-edit .birth-fields-wrap #birth_day {
+    width: 40px;
+    min-width: 36px;
+    text-align: center;
+}
+
+#acc-edit .birth-fields-wrap.birth-readonly,
+.xans-member-edit .birth-fields-wrap.birth-readonly {
+    pointer-events: none;
+    opacity: 0.9;
 }
 
 .xans-member-edit #birth_year,
