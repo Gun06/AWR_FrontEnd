@@ -320,7 +320,10 @@
                                 <th scope="row">Birth</th>
                                 <td>
                                     <p class="gBreak7 {$display_calendar_type|display}">{$form.is_solar_calendar}</p>
-                                    {$form.birth_year} Y {$form.birth_month} M {$form.birth_day} D
+                                    <div class="birth-combined-wrap">
+                                        <input type="text" id="birth-combined" class="fText" placeholder="YYYY.MM.DD" maxlength="10" autocomplete="off" readonly>
+                                        <span class="birth-originals" aria-hidden="true">{$form.birth_year} {$form.birth_month} {$form.birth_day}</span>
+                                    </div>
                                 </td>
                             </tr>
                             <tr class="{$display_addr|display}">
@@ -503,9 +506,44 @@
         </div>
 
         <script>
+            function syncBirthCombined(accEdit) {
+                var combined = accEdit && accEdit.querySelector('#birth-combined');
+                var y = accEdit && accEdit.querySelector('#birth_year');
+                var m = accEdit && accEdit.querySelector('#birth_month');
+                var d = accEdit && accEdit.querySelector('#birth_day');
+                if (!combined || !y || !m || !d || combined.getAttribute('data-birth-synced')) return;
+                combined.setAttribute('data-birth-synced', '1');
+                function toCombined() {
+                    var vy = (y.value || '').trim();
+                    var vm = (m.value || '').trim();
+                    var vd = (d.value || '').trim();
+                    if (vy && vm && vd) {
+                        combined.value = vy + '.' + (vm.length < 2 ? '0' + vm : vm) + '.' + (vd.length < 2 ? '0' + vd : vd);
+                    } else {
+                        combined.value = '';
+                    }
+                }
+                function pad2(n) { return (n || '').replace(/^(\d)$/, '0$1'); }
+                function fromCombined() {
+                    var v = (combined.value || '').trim().replace(/[^0-9.]/g, '');
+                    var parts = v.split('.').filter(Boolean);
+                    if (parts.length >= 3) {
+                        y.value = parts[0].slice(0, 4);
+                        m.value = pad2(parts[1].slice(-2)) || '01';
+                        d.value = pad2(parts[2].slice(-2)) || '01';
+                    } else if (parts.length === 1 && parts[0].length >= 8) {
+                        var s = parts[0];
+                        y.value = s.slice(0, 4);
+                        m.value = pad2(s.slice(4, 6)) || '01';
+                        d.value = pad2(s.slice(6, 8)) || '01';
+                    }
+                }
+                toCombined();
+            }
             function setAccEditPlaceholders() {
                 var accEdit = document.getElementById('acc-edit');
                 if (!accEdit) return;
+                syncBirthCombined(accEdit);
                 var placeholders = {
                     'user_passwd': 'Password',
                     'passwd': 'Password',
