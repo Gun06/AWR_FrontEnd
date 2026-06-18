@@ -2,6 +2,9 @@
 
 
 $(document).ready(function () {
+    var shopAllUrl = '/product/list.html?cate_no=45';
+    $('.d1-wrap > li.d1[data-param*="cate_no=24"] > a, .d1-wrap-mo > li.d1[data-param*="cate_no=24"] > a').attr('href', shopAllUrl);
+
     var $d1_wrap = $('.d1-wrap');
     var $ul;
     var hasClass;

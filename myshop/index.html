@@ -320,7 +320,7 @@
                                 <th scope="row">Birth</th>
                                 <td>
                                     <p class="gBreak7 {$display_calendar_type|display}">{$form.is_solar_calendar}</p>
-                                    <div class="birth-fields-wrap birth-readonly">
+                                    <div class="birth-fields-wrap">
                                         {$form.birth_year}
                                         <span class="birth-sep">.</span>
                                         {$form.birth_month}
@@ -518,6 +518,11 @@
                 [y, m, d].forEach(function(el, i) {
                     if (el && el.tagName === 'INPUT') el.setAttribute('placeholder', ['YYYY', 'MM', 'DD'][i]);
                 });
+                var vy = (y && (y.value || y.options?.[y.selectedIndex]?.value || '')) || '';
+                var vm = (m && (m.value || m.options?.[m.selectedIndex]?.value || '')) || '';
+                var vd = (d && (d.value || d.options?.[d.selectedIndex]?.value || '')) || '';
+                var hasBirth = vy.trim() && vm.trim() && vd.trim();
+                wrap.classList.toggle('birth-readonly', !!hasBirth);
             }
             function setAccEditPlaceholders() {
                 var accEdit = document.getElementById('acc-edit');
@@ -640,4 +645,5 @@
     <!--            <a href="/myshop/coupon/coupon.html" class="btnNormal">조회</a>
     <!--        </li>
     <!--    </ul>
+    <!--</div>-->
     <!--</div>-->

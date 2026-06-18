@@ -1,5 +1,32 @@
 <!--@layout(/layout/basic/layout.html)-->
 <!-- js(/product/product_timedeal.js)-->
+<script>
+    (function () {
+        var shopAllUrl = '/product/list.html?cate_no=45';
+        var path = window.location.pathname || '';
+        var cateNo = new URLSearchParams(window.location.search).get('cate_no');
+
+        if (cateNo === '24' || /\/category\/shop\/24\/?$/i.test(path)) {
+            window.location.replace(shopAllUrl);
+            return;
+        }
+
+        function fixShopBreadcrumb() {
+            document.querySelectorAll('.path ol li a').forEach(function (link) {
+                var href = link.getAttribute('href') || '';
+                if (link.textContent.trim() === 'Shop' && (/cate_no=24|\/category\/shop\/24/i.test(href))) {
+                    link.setAttribute('href', shopAllUrl);
+                }
+            });
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', fixShopBreadcrumb);
+        } else {
+            fixShopBreadcrumb();
+        }
+    })();
+</script>
 <div class="content_prd">
     <div class="content_prd_wrap">
         <div class="content_prd_main">
@@ -10,57 +37,59 @@
                             <li class="{$disp_cate_1|display}"><a href="{$link_product_list_1}">{$name_1}</a></li>
                             <li class="{$disp_cate_2|display}"><a href="{$link_product_list_2}">{$name_2}</a></li>
                             <li class="{$disp_cate_3|display}"><a href="{$link_product_list_3}">{$name_3}</a></li>
-                            <li class="{$disp_cate_4|display}"><strong><a href="{$link_product_list_4}">{$name_4}</a></strong>
+                            <li class="{$disp_cate_4|display}"><strong><a
+                                        href="{$link_product_list_4}">{$name_4}</a></strong>
                             </li>
                         </ol>
                     </div>
                     <!--@import(/artfinger/product_menupackage.html)-->
                     <div class="prd_sort_trigger_wrap">
-                        <button type="button" class="prd_sort_trigger" id="prdSortTrigger" aria-label="Sort by">Sort by</button>
+                        <button type="button" class="prd_sort_trigger" id="prdSortTrigger" aria-label="Sort by">Sort
+                            by</button>
                     </div>
                 </div>
             </div>
 
 
             <!-- 추천상품 -->
-    <div class="swiper-container-recommend" module="product_listrecommend">
-        <h3 class="lr_pad"><span>BEST SELLERS</span></h3>
-        <div class="swiper-wrapper">
-            <!--@import(/artfinger/anchorbox_recommend.html)-->
-        </div>
-        <div class="swiper-button-next-recommend"><!--@import(/artfinger/arrow.html)--></div>
-        <div class="swiper-button-prev-recommend"><!--@import(/artfinger/arrow.html)--></div>
-    </div>
-    <!-- //추천상품 -->
+            <div class="swiper-container-recommend" module="product_listrecommend">
+                <h3 class="lr_pad"><span>BEST SELLERS</span></h3>
+                <div class="swiper-wrapper">
+                    <!--@import(/artfinger/anchorbox_recommend.html)-->
+                </div>
+                <div class="swiper-button-next-recommend"><!--@import(/artfinger/arrow.html)--></div>
+                <div class="swiper-button-prev-recommend"><!--@import(/artfinger/arrow.html)--></div>
+            </div>
+            <!-- //추천상품 -->
 
 
 
-    <div module="product_normalpackage">
-        <!--@css(/css/module/product/listnormal.css)-->
+            <div module="product_normalpackage">
+                <!--@css(/css/module/product/listnormal.css)-->
 
-        <div module="product_listnormal" class="ec-base-product">
-            <!--
+                <div module="product_listnormal" class="ec-base-product">
+                    <!--
                 $count = 12
                 $basket_result = /product/add_basket.html
                 $basket_option = /product/basket_option.html
             -->
-            <ul class="prdList grid4">
-                <!--@import(/artfinger/anchorbox.html)-->
-            </ul>
-        </div>
-    </div>
+                    <ul class="prdList grid4">
+                        <!--@import(/artfinger/anchorbox.html)-->
+                    </ul>
+                </div>
+            </div>
 
-    <div module="product_normalpaging" class="ec-base-paginate">
-        <!--@import(/artfinger/prd_page_prev.html)-->
-        <ol>
-            <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
-            <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
-            <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
-            <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
-            <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
-        </ol>
-        <!--@import(/artfinger/prd_page_next.html)-->
-    </div>
+            <div module="product_normalpaging" class="ec-base-paginate">
+                <!--@import(/artfinger/prd_page_prev.html)-->
+                <ol>
+                    <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+                    <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+                    <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+                    <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+                    <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+                </ol>
+                <!--@import(/artfinger/prd_page_next.html)-->
+            </div>
         </div>
         <!-- 오른쪽 정렬/필터 사이드바 (첫 번째 사진 스타일) -->
         <!--@import(/artfinger/condition.html)-->
