@@ -710,28 +710,37 @@ div.ec-base-layer.typeModal.bsket_detail:before,
     color: rgba(255, 255, 255, 0.62);
 }
 
-/* 밝은 헤더(예: body#layout)에서는 검색 placeholder/밑줄을 검정으로 */
-body#layout #header .search .search_inline_form input[name="keyword"] {
+/* 밝은 헤더(예: body#layout, body#userStyle)에서는 검색 placeholder/밑줄을 검정으로 */
+body#layout #header .search .search_inline_form input[name="keyword"],
+body#userStyle #header .search .search_inline_form input[name="keyword"] {
     color: #000;
     caret-color: #000;
     border-bottom-color: #000;
 }
 
-body#layout #header .search .search_inline_form input[name="keyword"]::placeholder {
+body#layout #header .search .search_inline_form input[name="keyword"]::placeholder,
+body#userStyle #header .search .search_inline_form input[name="keyword"]::placeholder {
     color: #000;
 }
 
-/* 리스트/일반 페이지(body#layout) 헤더 텍스트는 검정 통일 */
+/* 리스트/결제 등 밝은 헤더 페이지(body#layout, body#userStyle) 텍스트는 검정 통일 */
 body#layout #header .header_wrap .gnb .artcate .d1-wrap .d1 > a,
+body#userStyle #header .header_wrap .gnb .artcate .d1-wrap .d1 > a,
 body#layout #header .header_wrap .account_area > ul li a,
+body#userStyle #header .header_wrap .account_area > ul li a,
 body#layout #header .header_wrap .hamber_momenu li.top_member > a,
+body#userStyle #header .header_wrap .hamber_momenu li.top_member > a,
 body#layout #header .header_wrap .hamber_momenu li.search .search-toggle,
+body#userStyle #header .header_wrap .hamber_momenu li.search .search-toggle,
 body#layout #header .header_wrap .account_area > ul li .bas_count,
-body#layout #header .header_wrap .hamber_momenu li .bas_count {
+body#userStyle #header .header_wrap .account_area > ul li .bas_count,
+body#layout #header .header_wrap .hamber_momenu li .bas_count,
+body#userStyle #header .header_wrap .hamber_momenu li .bas_count {
     color: #000 !important;
 }
 
-body#layout #header .header_wrap .hamber_momenu button > span {
+body#layout #header .header_wrap .hamber_momenu button > span,
+body#userStyle #header .header_wrap .hamber_momenu button > span {
     background-color: #000 !important;
 }
 
